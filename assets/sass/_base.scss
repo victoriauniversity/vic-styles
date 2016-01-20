@@ -1,9 +1,8 @@
 //_base.scss
 
 
-@import '../../vendors/bourbon/app/assets/stylesheets/_bourbon.scss';
-// @import '../../vendors/bitters/app/assets/stylesheets/_base.scss';
-@import '../../vendors/neat/app/assets/stylesheets/_neat.scss';
+@import '../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss';
+@import '../../bower_components/neat/app/assets/stylesheets/_neat.scss';
 
 /* First level of partials is injected through Grunt */
 
