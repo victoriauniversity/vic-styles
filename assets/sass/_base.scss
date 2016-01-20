@@ -1,0 +1,542 @@
+//_base.scss
+
+
+@import '../../vendors/bourbon/app/assets/stylesheets/_bourbon.scss';
+// @import '../../vendors/bitters/app/assets/stylesheets/_base.scss';
+@import '../../vendors/neat/app/assets/stylesheets/_neat.scss';
+
+/* First level of partials is injected through Grunt */
+
+// injector
+// endinjector
+//-----------------------
+
+
+@font-face {
+    font-family: 'National';
+    font-weight: 400;
+    src: url('/assets/fonts/NationalWebLF-Regular.eot');
+    src: url('/assets/fonts/NationalWebLF-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/assets/fonts/NationalWebLF-Regular.woff') format('woff'), /* Modern Browsers */
+         url('/assets/fonts/NationalWebLF-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'National';
+    font-weight: 500;
+    src: url('/assets/fonts/NationalWebLF-Semibold.eot');
+    src: url('/assets/fonts/NationalWebLF-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/assets/fonts/NationalWebLF-Semibold.woff') format('woff'), /* Modern Browsers */
+         url('/assets/fonts/NationalWebLF-Semibold.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'National';
+    font-weight: 600;
+    src: url('/assets/fonts/NationalWebLF-Extrabold.eot');
+    src: url('/assets/fonts/NationalWebLF-Extrabold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/assets/fonts/NationalWebLF-Extrabold.woff') format('woff'), /* Modern Browsers */
+         url('/assets/fonts/NationalWebLF-Extrabold.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+
+@font-face
+{
+    font-family: 'fonticons';
+    src: url('../fonts/fontello.eot');
+    src: url('../fonts/fontello.eot#iefix') format('embedded-opentype'),
+        url('../fonts/fontello.woff') format('woff'),
+        url('../fonts/fontello.ttf') format('truetype'),
+        url('../fonts/fontello.svg#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font_display: 'National','Segoe WP Semibold', 'Nimbus Sans L', Arial, 'Helvetica Neue', 'Helvetica', sans-serif; // WP Segoe for Window Phone, Nimbus for Linux
+$font_body: 'Segoe WP', 'Nimbus Sans L', Arial, 'Helvetica Neue', 'Helvetica', sans-serif; //  WP Segoe for Window Phone, Nimbus for Linux, defaults for everyone else: should be Helv Neue on iOS, Helv on Mac, Arial on Windows
+
+// Colors
+//Base
+$white: #fff;
+
+// Vic Colours
+$vic-green: #115737;
+$vic-black: #1d2624;
+$blue: #005ea5;
+
+
+
+// Typography
+$base-font-family: $helvetica;
+$heading-font-family: $base-font-family;
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$blue: #1565c0;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $blue;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
+
+#{$all-buttons} {
+  appearance: none;
+  background-color: $action-color;
+  border: 0;
+  border-radius: $base-border-radius;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: $small-spacing $base-spacing;
+  text-decoration: none;
+  transition: background-color $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    background-color: shade($action-color, 20%);
+    color: #fff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $action-color;
+    }
+  }
+}
+
+
+#{$all-text-inputs},
+select[multiple=multiple] {
+  background-color: $base-background-color;
+  border: $base-border;
+  border-radius: $base-border-radius;
+  box-shadow: $form-box-shadow;
+  box-sizing: border-box;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  margin-bottom: $small-spacing;
+  padding: $base-spacing / 3;
+  transition: border-color $base-duration $base-timing;
+  width: 100%;
+
+  &:hover {
+    border-color: shade($base-border-color, 20%);
+  }
+
+  &:focus {
+    border-color: $action-color;
+    box-shadow: $form-box-shadow-focus;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: shade($base-background-color, 5%);
+    cursor: not-allowed;
+
+    &:hover {
+      border: $base-border;
+    }
+  }
+}
+
+
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-feature-settings: "kern", "liga", "pnum";
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  font-size: $base-font-size;
+  line-height: $heading-line-height;
+  margin: 0 0 $small-spacing;
+}
+
+p {
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  transition: color $base-duration $base-timing;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: lighten($action-color, 15%);
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &%default-ul {
+    list-style-type: disc;
+    margin-bottom: $small-spacing;
+    padding-left: $base-spacing;
+  }
+
+  &%default-ol {
+    list-style-type: decimal;
+    margin-bottom: $small-spacing;
+    padding-left: $base-spacing;
+  }
+}
+
+dl {
+  margin-bottom: $small-spacing;
+
+  dt {
+    font-weight: bold;
+    margin-top: $small-spacing;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+
+
+
+
+@mixin hoverify ()
+{
+    &:hover, &:active, &:focus
+    {
+        @content;
+    }
+}
+
+@mixin objectify ( $display: inline-block, $content: "" )
+{
+    position: relative;
+    display: inline-block;
+    content: $content,
+}
+
+@mixin iconify ( $display: inline-block, $ico-code: "" )
+{
+    font-family: "fonticons";
+    @include objectify ( $display, $ico-code );
+}
+
+
+/* == ICONS ====================================== */
+
+// Icons UNICODE codes
+$ico-arrow-right:       '\e802';
+$ico-book:              '\e803';
+$ico-caret-down:        '\e804';
+$ico-caret-up:          '\e805';
+$ico-magnifier:         '\e801';
+
+.ico
+{
+    &:before
+    {
+        @include iconify();
+    }
+
+    // Standard triangle
+    &.caret:before
+    {
+        display: inline;
+        content: $ico-caret-down;
+        font-size: 85%;
+    }
+
+    &.book:before { content: $ico-book; }
+    &.magnifier:before { content: $ico-magnifier; }
+}
+
+
+
+//-----------------------
+//overirdes refactor
+input[type=text] {
+    min-height: 38px;
+    border: 2px solid #b0b0b0;
+    border-radius: 0;
+    &:focus {
+        border-color: $blue;
+        box-shadow: none;
+    }
+}
+
+
+body {
+    font: {
+        family: $font_body;
+    }
+
+    min-height: 2000px;
+    overflow-x: hidden;
+}
+
+
+
+// New header
+header {
+    width: 100%;
+    background-color: $vic-green;
+    a {
+        color: #fff;
+       }
+}
+
+nav {
+    ul {
+        display: inline-block;
+        width: 100%;
+    }
+    li {
+        width: 100%;
+        position: relative;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        display: inline-block;
+        &:first-child a {
+            border-top: 0;
+            border-radius: 3px 3px 0 0;
+        }
+        &:last-child a {
+            border-radius: 0 0 3px 3px;
+        }
+    }
+    a {
+        font: {
+            family: $font_display;
+            size: 1.5em;
+            }
+        font-size: 1.5em;
+        background-color: rgba( 0, 0, 0, 0.5);
+        text-align: left;
+        padding: 10px 20px;
+        display: block;
+        border-top: 2px solid rgba(250, 250, 250, 0.15);
+        transition: all 0.3s linear;
+        @include hoverify {
+                background-color: $white;
+                color: $vic-green;
+                border-top: 2px solid $vic-green;
+            }
+
+        
+    }
+}
+
+#header_menu {
+    padding: 20px 30px 30px;
+    h1 {
+        margin: 30px 0 40px 0;
+        width: 100%;
+        text-align: center;
+        a {
+            background-color: transparent;
+
+        }
+    }
+}
+
+#header_logo {
+    width: 380px;
+    ;
+}
+
+#right_cycle_nav {
+    position: relative;
+    right: 0;
+    // '>' icon
+    &:before {
+        float: right;
+        @include iconify ( block, $ico-arrow-right);
+        margin: 0 7px;
+
+    }
+}
+
+#left_cycle_nav.cycle_nav {
+    left: 0;
+    position: static;
+    // '>' icon
+    &:before {
+        float: right;
+        @include iconify ( block, $ico-arrow-right);
+        margin: 0 5px;
+        transform: rotate(180deg);
+
+    }
+}
+
+#secondary_menu {
+    height: 20px;
+
+    .main_wrapper {
+        position: relative;
+        overflow-x: auto;
+        min-height: 45px;
+
+        .sub_wrapper {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.4);
+
+        }
+    }
+
+    a.cycle_nav {
+        display: block;
+        background-color: $vic-black;
+        position: absolute;
+        z-index: 2;
+        clear: both;
+        padding: 10px 5px;
+
+        @include hoverify {
+            background-color: $white;
+            color: $vic-black;
+        }
+
+        &.hide_nav_button {
+            display: none;
+        }
+    }
+    ul {
+        padding: 10px 30px;
+        white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        clear: right;
+        li {
+            display: inline;
+            width: 33.33%;
+            a {
+                color: $light-gray;
+                font-size: 0.9em;
+                padding: 10px;
+               @include hoverify {
+                    
+                    color: white;
+                    text-decoration: underline;
+                }
+
+            }
+        }
+    }
+}
+
+#nav_search {
+    margin: 30px 0;
+    padding: 10px;
+    background-color: $light-gray;
+    border-radius: $base-border-radius;
+    & input[type=submit] {
+        width: 100%;
+    }
+}
+
+
+/**
+ * Reset Styles
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+body {
+    margin: 0;
+}
+
+
+/* Responsive: Portrait tablets and up */
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+
+.overview h4,
+.overview h2 {
+    margin: 0;
+}
+
+.overview {
+    margin: 5px 0;
+}
