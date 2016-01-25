@@ -1,4 +1,7 @@
-//_base.scss
+// injector
+@import '/../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss';
+@import '/../bower_components/neat/app/assets/stylesheets/_neat.scss';
+// endinjector
 
 
 @import '../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss';
@@ -6,8 +9,7 @@
 
 /* First level of partials is injected through Grunt */
 
-// injector
-// endinjector
+
 //-----------------------
 
 

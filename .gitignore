@@ -117,9 +117,9 @@ node_modules/
 # --------------------
 # Bower Files
 # --------------------
-.bower-*/
-bower_components
-client/bower_components
+#.bower-*/
+#bower_components
+#client/bower_components
 
 
 # --------------------
@@ -131,3 +131,4 @@ client/bower_components
 #dist
 logs
 #vendors
+build
