@@ -1,0 +1,32 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font-family;
+    font-size: $base-font-size;
+    line-height: $heading-line-height;
+    margin: 0 0 $small-spacing;
+}
+
+p {
+    margin: 0 0 $small-spacing;
+}
+
+a {
+    color: $action-color;
+    text-decoration: none;
+    transition: color $base-duration $base-timing;
+    @include hoverify {
+        color: lighten($action-color, 15%);
+    }
+}
+
+hr {
+    border-bottom: $base-border;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    margin: $base-spacing 0;
+}

@@ -1,0 +1,36 @@
+// Colors
+
+// Vic Colours
+$vic-green: #115737;
+$vic-black: #1d2624;
+
+//TODO: Refactor these to match the naming convention below 
+$green_victoria: $vic-green;
+$black_victoria: $vic-black;
+
+
+// Naming colors 
+// Read 'Color variable that don't suck'
+// https://davidwalsh.name/sass-color-variables-dont-suck
+// Color naming tool
+// http://chir.ag/projects/name-that-color/#005EA5
+
+// Convention
+// ${base_color}_{unique_name_from_tool}
+
+
+//Simple colors
+$white: #ffffff;
+
+
+//Unique Colors
+$blue_endeavoura: #005ea5;
+$gray_mine_shaft: #333333;
+$gray_dusty_gray: #999999;
+$gray_alto: #dddddd;
+
+
+//TODO: refactor back to values
+$dark-gray: $gray_mine_shaft;
+$light-gray: $gray_alto;
+$blue: $blue_endeavoura;

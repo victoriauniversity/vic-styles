@@ -1,0 +1,10 @@
+input[type=text] {
+    min-height: 38px;
+    border: 2px solid #b0b0b0;
+    border-radius: 0;
+    &:focus {
+        border-color: $blue;
+        box-shadow: none;
+    }
+}
+
