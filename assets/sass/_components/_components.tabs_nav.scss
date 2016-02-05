@@ -1,0 +1,113 @@
+.tabs_nav {
+    background-color: $gray_alto;
+    @include size(100% 60px);
+    ul {
+        display: inline-flex;
+        li {
+            border-right: 1px solid $gray_dusty_gray;
+            // @include fill-parent();
+            text-align: center;
+            @include size(100% 60px);
+            a {
+                font-size: 1.3em;
+                color: $green-finlandia;
+                @include pad (18px 30px);
+                display: block;
+                @include hoverify {
+                    background-color: $gray_dusty_gray;
+                }
+            }
+            &:first-child {
+                border-left: 1px solid $gray_dusty_gray;
+            }
+        }
+    }
+    &.fix_top {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+    }
+}
+
+a.tooltips {
+    position: relative;
+    display: inline;
+}
+
+a.tooltips span {
+    position: absolute;
+    width: 140px;
+    color: #FFFFFF;
+    background: #000000;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    visibility: hidden;
+    border-radius: 6px;
+}
+
+a.tooltips span:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -8px;
+    width: 0;
+    height: 0;
+    border-right: 8px solid #000000;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+a:hover.tooltips span {
+    visibility: visible;
+    opacity: 0.8;
+    left: 100%;
+    top: 50%;
+    margin-top: -15px;
+    margin-left: 15px;
+    z-index: 999;
+}
+
+#tooltip {
+    text-align: center;
+    color: #fff;
+    background: #111;
+    position: absolute;
+    z-index: 100;
+    padding: 15px;
+}
+
+#tooltip:after
+/* triangle decoration */
+
+{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #111;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    margin-left: -10px;
+}
+
+#tooltip.top:after {
+    border-top-color: transparent;
+    border-bottom: 10px solid #111;
+    top: -20px;
+    bottom: auto;
+}
+
+#tooltip.left:after {
+    left: 10px;
+    margin: 0;
+}
+
+#tooltip.right:after {
+    right: 10px;
+    left: auto;
+    margin: 0;
+}
