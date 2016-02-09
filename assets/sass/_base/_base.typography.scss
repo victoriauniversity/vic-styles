@@ -1,16 +1,68 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+@function headings($from:1, $to:6) {
+    @if $from==$to {
+        @return 'h#{$from}';
+    }
+    @else {
+        @return 'h#{$from},' + headings($from+1, $to);
+    }
+}
+
+
+// Base settings
+// -------------------------
+
+html {
+    font-size: 100%;
+    // @include text-size-adjust();
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+
+body {
+    font-size: $base_font_size;
+}
+
+
+// Then call it with the rules/styles you want wherever you want (As long as the file/include has access to the above function of course).
+#{headings(1,6)} {
+    color: $green_victoria;
     font-family: $heading-font-family;
-    font-size: $base-font-size;
     line-height: $heading-line-height;
     margin: 0 0 $small-spacing;
 }
 
+#{headings(2,6)} {
+    font-weight: 100;
+}
+
+h1 {
+    font-size: em(46); 
+}
+
+h2 {
+    font-size: em(26); 
+}
+
+h3 {
+    font-size: em(21); 
+}
+
+h4 {
+    font-size: em(18);
+}
+
+h5 {
+    font-size: em(16);
+    // font-weight: 600;
+}
+h6 {
+    font-size: em(14);
+    font-weight: bold;
+}
+
 p {
+    font-size: $base_font_size;
     margin: 0 0 $small-spacing;
 }
 
@@ -19,7 +71,7 @@ a {
     text-decoration: none;
     transition: color $base-duration $base-timing;
     @include hoverify {
-        color: lighten($action-color, 15%);
+        color: $blue_action_lighter;
     }
 }
 

@@ -1,24 +1,24 @@
 .tabs_nav {
-    background-color: $gray_alto;
+    background-color: $grey_alto;
     @include size(100% 60px);
     ul {
         display: inline-flex;
         li {
-            border-right: 1px solid $gray_dusty_gray;
+            border-right: 1px solid $grey_dusty_gray;
             // @include fill-parent();
             text-align: center;
             @include size(100% 60px);
             a {
                 font-size: 1.3em;
-                color: $green-finlandia;
+                color: $green_finlandia;
                 @include pad (18px 30px);
                 display: block;
                 @include hoverify {
-                    background-color: $gray_dusty_gray;
+                    background-color: $grey_dusty_gray;
                 }
             }
             &:first-child {
-                border-left: 1px solid $gray_dusty_gray;
+                border-left: 1px solid $grey_dusty_gray;
             }
         }
     }
@@ -29,85 +29,236 @@
     }
 }
 
-a.tooltips {
-    position: relative;
-    display: inline;
+
+
+
+
+
+
+/* SPINNER GENERAL              */
+/* ============================ */
+.spinner, .spinner:before, .spinner:after {
+  width: 4px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 2px;
 }
 
-a.tooltips span {
-    position: absolute;
-    width: 140px;
-    color: #FFFFFF;
-    background: #000000;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    visibility: hidden;
-    border-radius: 6px;
+.spinner {
+  display: inline-block;
+  position: relative;
+}
+.spinner:before, .spinner:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0px;
+}
+.spinner:before {
+  left: -6px;
+}
+.spinner:after {
+  left: 6px;
 }
 
-a.tooltips span:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 100%;
-    margin-top: -8px;
-    width: 0;
-    height: 0;
-    border-right: 8px solid #000000;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
+
+/* ============================ */
+/* SPINNER BOUNCE MIDDLE        */
+/* ============================ */
+@-webkit-keyframes bounce-middle {
+  0% {
+    height: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  50% {
+    height: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  100% {
+    height: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
+@keyframes bounce-middle {
+  0% {
+    height: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  50% {
+    height: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  100% {
+    height: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
+.spinner-bounce-middle {
+  -webkit-animation: bounce-middle 0.6s ease 0.1s infinite;
+          animation: bounce-middle 0.6s ease 0.1s infinite;
+}
+.spinner-bounce-middle:before, .spinner-bounce-middle:after {
+  top: 50%;
+  -webkit-transform: translateY(-10px) translateZ(0);
+          transform: translateY(-10px) translateZ(0);
+}
+.spinner-bounce-middle:before {
+  -webkit-animation: bounce-middle 0.6s ease 0s infinite;
+          animation: bounce-middle 0.6s ease 0s infinite;
+}
+.spinner-bounce-middle:after {
+  -webkit-animation: bounce-middle 0.6s ease 0.2s infinite;
+          animation: bounce-middle 0.6s ease 0.2s infinite;
 }
 
-a:hover.tooltips span {
-    visibility: visible;
-    opacity: 0.8;
-    left: 100%;
-    top: 50%;
-    margin-top: -15px;
-    margin-left: 15px;
-    z-index: 999;
+/* ============================ */
+/* SPINNER BLINK                */
+/* ============================ */
+@-webkit-keyframes glow {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@keyframes glow {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+.spinner-blink {
+  -webkit-animation: glow 0.6s 0.1s infinite;
+          animation: glow 0.6s 0.1s infinite;
+}
+.spinner-blink:before {
+  -webkit-animation: glow 0.6s 0s infinite;
+          animation: glow 0.6s 0s infinite;
+}
+.spinner-blink:after {
+  -webkit-animation: glow 0.6s 0.2s infinite;
+          animation: glow 0.6s 0.2s infinite;
 }
 
-#tooltip {
-    text-align: center;
-    color: #fff;
-    background: #111;
-    position: absolute;
-    z-index: 100;
-    padding: 15px;
-}
+  
 
-#tooltip:after
-/* triangle decoration */
 
-{
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #111;
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -10px;
-    margin-left: -10px;
-}
+  
+// .spinners {
+//   margin: 60px auto
+//   .row {
+//     height: 50px
+//     padding: 10px 0
+    
+// }
+// }
+// /* ============================ */
+// /* VARIABLES                    */
+// /* ============================ */
+  
+// $bar-width: 4px;
+// $bar-height: 20px;
+// $bar-color: $white;
+// $bar-radius: 2px;
+    
+// /* ============================ */
+// /* SPINNER GENERAL              */
+// /* ============================ */
 
-#tooltip.top:after {
-    border-top-color: transparent;
-    border-bottom: 10px solid #111;
-    top: -20px;
-    bottom: auto;
-}
+// %bar {
+//   width: $bar-width
+//   height: $bar-height
+//   background-color: $bar-color
+//   border-radius: $bar-radius
+// }
 
-#tooltip.left:after {
-    left: 10px;
-    margin: 0;
-}
+// .spinner {
+//   display: inline-block
+//   position: relative
+//   @extend %bar
+//   &:before,
+//   &:after {
 
-#tooltip.right:after {
-    right: 10px;
-    left: auto;
-    margin: 0;
-}
+
+//     content: ""
+//     position: absolute
+//     display: block
+//     @extend %bar
+//     top: 0px
+//   &:before{
+//     left: -1 * ($bar-width + $bar-width/2)}
+//   &:after{
+//     left: $bar-width + $bar-width/2
+//       }
+//   }
+// }
+
+
+// /* ============================ */
+// /* SPINNER BOUNCE MIDDLE        */
+// /* ============================ */
+
+// @keyframes bounce-middle
+//   0%
+//     height: 4px
+//     margin-top: $bar-height / 2 - 2px
+//     margin-bottom: $bar-height / 2 - 2px
+//   50%
+//     height: $bar-height
+//     margin-top: 0px
+//     margin-bottom: 0px
+//   100%
+//     height: 4px
+//     margin-top: $bar-height / 2 - 2px
+//     margin-bottom: $bar-height / 2 - 2px
+    
+// @mixin bounce-middle($dur: 0.5s, $delay: 0s)
+//   animation: bounce-middle $dur ease $delay infinite
+    
+// .spinner-bounce-middle
+//   @include bounce-middle(0.6s, 0.1s)
+//   &:before,
+//   &:after
+//     top: 50%
+//     transform: translateY(-1 * $bar-height / 2) translateZ(0)
+//   &:before
+//     @include bounce-middle(0.6s, 0s)
+//   &:after
+//     @include bounce-middle(0.6s, 0.2s)  
+    
+// /* ============================ */
+// /* SPINNER BLINK                */
+// /* ============================ */
+
+// @keyframes glow
+//   0%
+//     background-color: transparent
+//   50%
+//     background-color: $bar-color
+//   100%
+//     background-color: transparent
+
+// @mixin glow($dur: 0.5s, $delay: 0s)
+//   animation: glow $dur $delay infinite
+    
+// .spinner-blink
+//   @include glow(0.6s, 0.1s)
+//   &:before
+//     @include glow(0.6s, 0s)
+//   &:after
+//     @include glow(0.6s, 0.2s)

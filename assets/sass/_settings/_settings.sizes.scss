@@ -1,15 +1,20 @@
-//TODO: Refactor these to use underscores
+
+// Global Em BaseView Source
+// Sets global base em size for the px-to-em and px-to-rem function. This should be the same size as your body font-size. Setting default is 16px.
+
+$em-base: 14px;
 
 // Font Sizes
-$base-font-size: 1em;
+$base_font_size: $em_base;
 
 // Line height
-$base-line-height: 1.5;
-$heading-line-height: 1.2;
+$base_line_height: 1.5;
+$heading_line_height: 1.2;
 
 // Other Sizes
-$base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
-$small-spacing: $base-spacing / 2;
-$base-z-index: 0;
+$base_border_radius: 2px;
+$base_border_size: 2px;
+$base_spacing: $base_line_height * 1em;
+$small_spacing: $base_spacing / 2;
+$base_z_index: 0;
 

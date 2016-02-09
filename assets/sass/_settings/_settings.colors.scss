@@ -1,13 +1,14 @@
 // Colors
 
 // Vic Colours
-$vic-green: #115737;
-$vic-black: #1d2624;
+$green_victoria: #115737;
+$black_victoria: #1d2624;
+$green_victoria_study: #549349;
 
 //TODO: Refactor these to match the naming convention below 
-$green_victoria: $vic-green;
-$black_victoria: $vic-black;
-$green-victoria_study: #549349;
+$vic-green: $green_victoria;
+$vic-black: $black_victoria;
+
 
 
 // Naming colors 
@@ -26,13 +27,24 @@ $white: #ffffff;
 
 //Unique Colors
 $blue_endeavoura: #005ea5;
-$gray_mine_shaft: #333333;
-$gray_dusty_gray: #999999;
-$gray_alto: #dddddd;
-$green-finlandia: #5F6B5F;
+$blue_congress_blue: #004f8c;
+$blue_lochmara: #007BD8;
+
+
+
+$grey_mine_shaft: #333333;
+$grey_dusty_gray: #999999;
+$grey_alto: #dddddd;
+$grey_mercury: #e6e6e6;
+
+
+$green_finlandia: #5F6B5F;
+
 
 
 //TODO: refactor back to values
-$dark-gray: $gray_mine_shaft;
-$light-gray: $gray_alto;
-$blue: $blue_endeavoura;
+$dark_grey: $grey_mine_shaft;
+$light_grey: $grey_alto;
+$blue_action: $blue_endeavoura;
+$blue_action_darker: $blue_congress_blue;
+$blue_action_lighter: $blue_lochmara;

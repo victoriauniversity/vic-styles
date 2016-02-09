@@ -1,7 +1,7 @@
 #nav_search {
     margin: 30px 0;
     padding: 10px;
-    background-color: $light-gray;
+    background-color: $light-grey;
     border-radius: $base-border-radius;
     & input[type=submit] {
         width: 100%;
@@ -53,7 +53,7 @@
             display: inline;
             width: 33.33%;
             a {
-                color: $light-gray;
+                color: $light-grey;
                 font-size: 0.9em;
                 padding: 10px;
                @include hoverify {

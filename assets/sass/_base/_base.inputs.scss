@@ -1,9 +1,11 @@
+//TODO: remove - This is being set in components
+
 input[type=text] {
     min-height: 38px;
-    border: 2px solid #b0b0b0;
+    border: 2px solid $grey_mine_shaft;
     border-radius: 0;
     &:focus {
-        border-color: $blue;
+        border-color: $blue_action;
         box-shadow: none;
     }
 }
