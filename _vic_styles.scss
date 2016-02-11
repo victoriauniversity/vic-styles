@@ -1,0 +1,41 @@
+// Third party Mixins
+@import 'libs/bourbon/app/assets/stylesheets/_bourbon.scss';
+@import 'libs/neat/app/assets/stylesheets/_neat.scss';
+
+
+
+
+
+
+// ITCSS
+// Settings - Configs; Brand colors, spacing units, variables ect
+// Tools - Global Mixins & Helper functions - including third party mixins - Bourbon & Neat
+// Generic - Low specificity ie. *. Resets, Normalise.css
+// Base - Unclassed elements; Type slectors - h1-h6, links, lists ect
+// Objects - Design patterns; No cosmetics
+// Components - Designed peices of UI, only classes.
+// Trumps (Outdo) - Overrides; Helper classes, only effect one part of DOM
+
+
+// Settings -------------
+@import 'partials/_settings/_settings.base.scss';
+
+//Tools -----------------
+@import 'partials/_tools/_tools.base.scss';
+
+// Generic --------------
+@import 'partials/_generic/_generic.base.scss';
+
+// Base -----------------
+@import 'partials/_base/_base.base.scss';
+
+// Objects -----------------
+@import 'partials/_objects/_objects.base.scss';
+
+// Components -----------------
+@import 'partials/_components/_components.base.scss';
+
+// Trumps -----------------
+@import 'partials/_trumps/_trumps.base.scss';
+
+//-----------------------
