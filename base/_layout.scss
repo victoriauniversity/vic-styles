@@ -1,4 +1,13 @@
-// New header
+/*===============================
+=            LAYOUT             =
+===============================*/
+
+
+body {
+    font-size: $base-font-size;
+}
+
+/* TODO: Review & (looks too specific for this section)
 header {
     width: 100%;
     background-color: $vic-green;
@@ -6,6 +15,15 @@ header {
         color: #fff;
        }
 }
+
+html {
+    //font-size: 100%;
+    // @include text-size-adjust();
+    //-webkit-text-size-adjust: 100%;
+    //-ms-text-size-adjust: 100%;
+}
+
+
 
 nav {
     ul {
@@ -45,7 +63,8 @@ nav {
                 border-top: 2px solid $vic-green;
             }
 
-        
+
     }
 }
 
+/*

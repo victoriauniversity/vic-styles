@@ -1,0 +1,50 @@
+/*================================================================
+=            VICTORIA UNIVERSITY OF WELLINGTON STYLES            =
+================================================================*/
+
+// Base - Unclassed elements; Type slectors - h1-h6, links, lists ect
+// Objects - Design patterns; No cosmetics
+// Components - Designed pieces of UI, only classes.
+// Trumps (Outdo) - Overrides; Helper classes, only effect one part of DOM
+
+
+/*----------  1) 3rd party libraries  ----------------------------------------*/
+
+@import 'libs/bourbon/app/assets/stylesheets/bourbon.scss';
+@import 'libs/neat/app/assets/stylesheets/neat.scss';
+
+
+/*----------  2) SETTINGS  ---------------------------------------------------*/
+
+@import 'settings/base.scss';
+
+
+/*----------  3) TOOLS  ------------------------------------------------------*/
+
+@import 'tools/base.scss';
+
+
+/*----------  4) GENERIC  ----------------------------------------------------*/
+
+@import 'generic/base.scss';
+
+
+/*----------  5) BASE  -------------------------------------------------------*/
+
+@import 'base/base.scss';
+
+
+/*----------  6) OBJECTS  ----------------------------------------------------*/
+
+@import 'objects/base.scss';
+
+
+/*----------  7) COMPONENTS  -------------------------------------------------*/
+
+@import 'components/base.scss';
+
+
+/*----------  8) TRUMPS  -----------------------------------------------------*/
+
+@import 'trumps/base.scss';
+

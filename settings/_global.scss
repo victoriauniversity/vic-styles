@@ -1,0 +1,37 @@
+/*==========================================================
+=            WIDELY USED VARIABLES AND SETTINGS            =
+==========================================================*/
+
+
+/* ===== CONSTANTS ========================================================== */
+
+// Positioning
+$z-index-top:       10 !default;
+$z-index-middle:    5 !default;
+$z-index-lower:     1 !default;
+$z-index-default:   0 !default;
+
+
+/* ===== DEFAULTS =========================================================== */
+
+// Sets global base em size for the px-to-em and px-to-rem function. This should be the same size as your body font-size. Setting default is 16px.
+$em-base: 14px !default;
+
+// Typography
+$base-font-size:    $em-base !default;
+$base-font-color:   $grey-mine-shaft !default;
+$base-line-height:  1.5 !default;
+$base-font-family:  'Segoe WP', 'Nimbus Sans L', Arial, 'Helvetica Neue', 'Helvetica', sans-serif !default; //  WP Segoe for Window Phone, Nimbus for Linux, defaults for everyone else: should be Helv Neue on iOS, Helv on Mac, Arial on Windows
+$base-spacing:      $base-line-height * 1em !default;
+
+// Positioning
+$base-z-index:      $z-index-default !default;
+
+// Borders
+$base-border-radius:    2px !default;
+$base-border-width:     2px !default;
+
+// Box model
+$base-margin:   15px !default;
+$base-padding:  15px !default;
+

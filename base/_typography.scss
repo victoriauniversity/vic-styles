@@ -1,4 +1,20 @@
-@function headings($from:1, $to:6) {
+/*==================================
+=            TYPOGRAPHY            =
+==================================*/
+
+
+/* ===== PROPERTIES ========================================================= */
+
+$heading-font-family:   $base-font-family;
+$heading-line-height:   $base-line-height;
+$heading-margin:        $base-margin;
+
+
+
+/* ===== HELPERS ============================================================ */
+
+
+@function headings( $from:1, $to:6 ) {
     @if $from==$to {
         @return 'h#{$from}';
     }
@@ -8,28 +24,14 @@
 }
 
 
-// Base settings
-// -------------------------
-
-html {
-    font-size: 100%;
-    // @include text-size-adjust();
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-}
-
-
-body {
-    font-size: $base_font_size;
-}
-
+/* ===== GLOBAL ============================================================= */
 
 // Then call it with the rules/styles you want wherever you want (As long as the file/include has access to the above function of course).
 #{headings(1,6)} {
-    color: $green_victoria;
+    color: $green-victoria;
     font-family: $heading-font-family;
     line-height: $heading-line-height;
-    margin: 0 0 $small-spacing;
+    margin: 0 0 $heading-margin;
 }
 
 #{headings(2,6)} {
@@ -37,15 +39,15 @@ body {
 }
 
 h1 {
-    font-size: em(46); 
+    font-size: em(46);
 }
 
 h2 {
-    font-size: em(26); 
+    font-size: em(26);
 }
 
 h3 {
-    font-size: em(21); 
+    font-size: em(21);
 }
 
 h4 {
@@ -62,8 +64,8 @@ h6 {
 }
 
 p {
-    font-size: $base_font_size;
-    margin: 0 0 $small-spacing;
+    font-size: $base-font-size;
+    margin: 0 0 $heading-margin;
 }
 
 a {
@@ -71,12 +73,12 @@ a {
     text-decoration: none;
     transition: color $base-duration $base-timing;
     @include hoverify {
-        color: $blue_action_lighter;
+        color: $blue-lochmara;
     }
 }
 
 hr {
-    border-bottom: $base-border;
+    border-bottom: $base-border-size;
     border-left: 0;
     border-right: 0;
     border-top: 0;
