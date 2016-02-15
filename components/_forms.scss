@@ -1,17 +1,22 @@
-#{$all-buttons} {
+/*======================================
+=            FORMS & INPUTS            =
+======================================*/
+
+
+.btn {
   appearance: none;
-  background-color: $action-color;
+  background-color: $blue-lochmara;
   border: 0;
   border-radius: $base-border-radius;
   color: $white;
   cursor: pointer;
   display: inline-block;
-  font-family: $font_body_family;
+  font-family: $base-font-family;
   font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
   line-height: 1;
-  padding: $small-spacing $base-spacing;
+  padding: $base-padding $base-spacing;
   text-decoration: none;
   transition: background-color $base-duration $base-timing;
   user-select: none;
@@ -20,9 +25,9 @@
 
   &:hover,
   &:focus {
-    background-color: $blue_action_darker;
+    background-color: $blue-congress-blue;
     outline: none;
-     
+
   }
 
   &:disabled {
@@ -30,35 +35,35 @@
     opacity: 0.5;
 
     &:hover {
-      background-color: $blue_action_darker;
+      background-color: $blue-congress-blue;
     }
   }
 }
 
 
-#{$all-text-inputs},
+input,
 select[multiple=multiple] {
-  background-color: $base-background-color;
+  background-color: $base-bg-colour;
   border: $base-border;
   box-sizing: border-box;
-  font-family: $font_body_family;
+  font-family: $base-font-family;
   font-size: $base-font-size;
-  margin-bottom: $small-spacing;
-  padding: $base-spacing / 3;
+  margin-bottom: $base-margin;
+  padding: $base-padding / 3;
   transition: border-color $base-duration $base-timing;
   width: 100%;
 
   &:hover {
-    border-color: $grey_dusty_gray;
+    border-color: $grey-dusty-gray;
   }
 
   &:focus {
-    border-color: $action-color;
+    border-color: $blue-endeavoura;
     outline: none;
   }
 
   &:disabled {
-    background-color: $grey_mercury;
+    background-color: $grey-mercury;
     cursor: not-allowed;
 
     &:hover {

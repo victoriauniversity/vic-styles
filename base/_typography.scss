@@ -69,16 +69,16 @@ p {
 }
 
 a {
-    color: $action-color;
+    color: $blue-lochmara;
     text-decoration: none;
-    transition: color $base-duration $base-timing;
+transition: color $base-duration $base-timing;
     @include hoverify {
         color: $blue-lochmara;
     }
 }
 
 hr {
-    border-bottom: $base-border-size;
+    border-bottom: $base-border-width;
     border-left: 0;
     border-right: 0;
     border-top: 0;

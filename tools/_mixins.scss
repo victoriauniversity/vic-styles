@@ -22,7 +22,7 @@
 
 
 @mixin iconify( $display: inline-block, $ico-code: "" ) {
-    font-family: $font_icons;
+    font-family: $font-victoria-icons;
     @include objectify( $display, $ico-code );
 }
 

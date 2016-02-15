@@ -15,7 +15,7 @@
 
 body {
     font: {
-        family: $font_body_family;
+        family: $base-font-family;
     }
 	margin: 0;
     min-height: 2000px;
@@ -38,23 +38,23 @@ ol {
 
   &%default-ul {
     list-style-type: disc;
-    margin-bottom: $small-spacing;
-    padding-left: $base-spacing;
+    margin-bottom: $base-margin;
+    padding-left: $base-padding;
   }
 
   &%default-ol {
     list-style-type: decimal;
-    margin-bottom: $small-spacing;
-    padding-left: $base-spacing;
+    margin-bottom: $base-margin;
+    padding-left: $base-padding;
   }
 }
 
 dl {
-  margin-bottom: $small-spacing;
+  margin-bottom: $base-margin;
 
   dt {
     font-weight: bold;
-    margin-top: $small-spacing;
+    margin-top: $base-margin;
   }
 
   dd {

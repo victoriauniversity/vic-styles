@@ -1,3 +1,10 @@
+/*=======================================
+=            NAVIGATION TABS            =
+=======================================*/
+
+
+
+
 .tabs_nav {
     background-color: $grey_alto;
     @include size(100% 60px);
@@ -155,27 +162,27 @@
           animation: glow 0.6s 0.2s infinite;
 }
 
-  
 
 
-  
+
+
 // .spinners {
 //   margin: 60px auto
 //   .row {
 //     height: 50px
 //     padding: 10px 0
-    
+
 // }
 // }
 // /* ============================ */
 // /* VARIABLES                    */
 // /* ============================ */
-  
+
 // $bar-width: 4px;
 // $bar-height: 20px;
 // $bar-color: $white;
 // $bar-radius: 2px;
-    
+
 // /* ============================ */
 // /* SPINNER GENERAL              */
 // /* ============================ */
@@ -226,10 +233,10 @@
 //     height: 4px
 //     margin-top: $bar-height / 2 - 2px
 //     margin-bottom: $bar-height / 2 - 2px
-    
+
 // @mixin bounce-middle($dur: 0.5s, $delay: 0s)
 //   animation: bounce-middle $dur ease $delay infinite
-    
+
 // .spinner-bounce-middle
 //   @include bounce-middle(0.6s, 0.1s)
 //   &:before,
@@ -239,8 +246,8 @@
 //   &:before
 //     @include bounce-middle(0.6s, 0s)
 //   &:after
-//     @include bounce-middle(0.6s, 0.2s)  
-    
+//     @include bounce-middle(0.6s, 0.2s)
+
 // /* ============================ */
 // /* SPINNER BLINK                */
 // /* ============================ */
@@ -255,7 +262,7 @@
 
 // @mixin glow($dur: 0.5s, $delay: 0s)
 //   animation: glow $dur $delay infinite
-    
+
 // .spinner-blink
 //   @include glow(0.6s, 0.1s)
 //   &:before

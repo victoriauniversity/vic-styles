@@ -27,11 +27,20 @@ $base-spacing:      $base-line-height * 1em !default;
 // Positioning
 $base-z-index:      $z-index-default !default;
 
+// Colours
+$base-bg-colour:    $white;
+
 // Borders
 $base-border-radius:    2px !default;
 $base-border-width:     2px !default;
+$base-border-colour:    2px !default;
+
+$base-border:     $base-border-width solid $grey-dusty-gray !default;
 
 // Box model
 $base-margin:   15px !default;
 $base-padding:  15px !default;
 
+// Animations
+$base-duration: .5s !default;
+$base-timing:   100 !default;
