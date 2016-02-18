@@ -5,6 +5,6 @@
 /* Low specificity definitions - Resets, normalisation,
 imports of external styles and fonts. */
 
-
-@import 'fonts.scss';
-@import 'resets.scss';
+@import 'generic.fonts.scss';
+@import 'generic.resets.scss';
+@import 'generic.normalisations.scss';

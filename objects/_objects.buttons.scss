@@ -1,0 +1,52 @@
+/*=======================================
+=            BUTTONS & LINKS            =
+=======================================*/
+
+
+
+/* ===== BUTTONS ============================================================ */
+
+$btn-bg:            $blue-picton !default;
+$btn-corners:       .25em !default;
+$btn-label-colour:  $white !default;
+
+$btn-hover-bg:      shade( $blue-picton, 10% );
+
+
+.btn {
+    display: inline-block;
+    padding: 1em 2em;
+    margin: 1em;
+    border-radius: $btn-corners;
+
+    background-color: $blue-picton;
+
+    font-family: $caption-font-family;
+    font-size: 75%;
+    font-weight: $weight-semibold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $btn-label-colour;
+    white-space: nowrap;
+
+    @include hoverify() {
+        background-color: $btn-hover-bg;
+    };
+
+    .ico {
+        font-size: 120%;
+        margin-left: .9em;
+        line-height: 0;
+    }
+
+    // Sizing
+    &.large { font-size: 100%; }
+    &.small { font-size: 60%; }
+}
+
+.btns-holder {
+    text-align: center;
+}
+
+
+/* ===== LINKS ============================================================== */

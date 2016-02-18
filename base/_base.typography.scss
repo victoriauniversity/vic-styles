@@ -1,0 +1,82 @@
+/*==================================
+=            TYPOGRAPHY            =
+==================================*/
+
+
+/* ===== PROPERTIES ========================================================= */
+
+$heading-font-family:   $caption-font-family;
+$heading-line-height:   $caption-line-height;
+$heading-colour:        $caption-colour;
+$heading-weight:        $weight-light;
+
+
+
+/* ===== HELPERS ============================================================ */
+
+/* Heading's selectors generator. */
+@function headings( $from:1, $to:5 ) {
+    @if $from==$to {
+        @return 'h#{$from}';
+    }
+    @else {
+        @return 'h#{$from},' + headings($from+1, $to);
+    }
+}
+
+
+/* ===== GLOBAL ============================================================= */
+
+
+/* Headings */
+// Then call it with the rules/styles you want wherever you want (As long as the file/include has access to the above function of course).
+#{headings( 1, 6 )} {
+    margin-bottom: .8em;
+    color: $green-victoria;
+    font-family: $heading-font-family;
+    font-weight: $heading-weight;
+    line-height: $heading-line-height;
+}
+
+h1 {
+    font-size: 2.1em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+h5 {
+    font-size: 1.1em;
+}
+
+
+/* Paragraphs */
+p {
+}
+
+a {
+    color: $link-colour;
+    @include transitionise();
+
+    @include hoverify { text-decoration: none; }
+}
+
+
+/* Lists */
+ul, ol {
+}
+
+ul {
+}
+
+ol {
+}

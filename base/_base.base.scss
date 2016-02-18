@@ -5,6 +5,6 @@
 
 /* Non-specific elements (= without classes or IDs), eg. body, h1, p etc. */
 
-@import 'inputs';
-@import 'layout';
-@import 'typography';
+@import 'base.inputs';
+@import 'base.layout';
+@import 'base.typography';

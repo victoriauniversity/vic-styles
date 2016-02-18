@@ -1,0 +1,13 @@
+/*==================================
+=            COMPONENTS            =
+==================================*/
+
+// Pieces of standalone UI (classes definitions *ONLY*).
+
+// *IMPORTANT* Order specific import!
+@import '_components.buttons.scss';
+@import '_components.forms.scss';
+@import '_components.banners.scss';
+@import '_components.navigation.scss';
+@import '_components.tooltips.scss';
+@import '_components.layout.scss';

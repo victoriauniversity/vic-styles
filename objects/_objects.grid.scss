@@ -1,0 +1,91 @@
+/*==================================================
+=            GRID-BASED LAYOUT ELEMENTS            =
+==================================================*/
+
+
+/* ===== SECTORS ============================================================ */
+
+// To divide page into independent sectors.
+.sector {
+    @include clearfix();
+
+    // Highlights sector
+    &.highlighted {
+        background-color: $block-highlight;
+    }
+
+    // Adds line separator to the end of the sector
+    &.separated {
+        border-bottom: $delim-border;
+    }
+}
+
+
+/* ===== BLOCKS ============================================================= */
+
+$block-margin: $base-margin;
+
+// Standard block container
+.block {
+    padding: $block-margin;
+}
+
+// Makes content aligned to the center if the width of the
+// viewport surpasses $base-width.
+.centraliser { @include outer-container(); }
+
+    /* Two-column grid layout. */
+    .two-col-layout {
+
+        // Outter container
+        &.block-container {
+            @include make-table-grid();
+
+            // Column
+            .block {
+
+                // Right column
+                &:last-child { padding-top: 0; }
+
+                @include media( $tablet-and-bigger ) {
+
+                    // Left column
+                    &:first-child {
+                        @include make-table-column( $two-col-layout-left-ratio );
+                    }
+
+                    // Right column
+                    &:last-child {
+                        @include make-table-column( $two-col-layout-right-ratio );
+                        padding-top: $block-margin;
+                    }
+
+                    &.btns-holder {
+                        text-align: left;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+
+        // Adds line separators to divide blocks
+        &.separated {
+            .block {
+
+                // Right column
+                &:last-child {
+                    padding-top: $block-margin;
+                    border-left: none;
+                    border-top: $delim-border;
+                }
+
+                @include media( $tablet-and-bigger ) {
+
+                    &:last-child {
+                        border-left: $delim-border;
+                        border-top: none;
+                    }
+                }
+            }
+        }
+    }
