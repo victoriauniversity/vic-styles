@@ -5,8 +5,10 @@
 /* Configs, brand colors, spacing units, paths and more, defined as variables. */
 
 // *Note*: Imports are order sensitive!
-@import 'paths.scss';
-@import 'fonts.scss';
-@import 'colours.scss';
-@import 'global.scss';
-@import 'responsive.scss';
+@import 'settings.paths.scss';
+@import 'settings.fonts.scss';
+@import 'settings.colours.scss';
+@import 'settings.global.scss';
+@import 'settings.responsive.scss';
+@import 'settings.libs-overrides.scss';
+

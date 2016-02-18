@@ -1,0 +1,46 @@
+/*==============================
+=            LAYOUT            =
+==============================*/
+
+
+/* ===== RESPONSIVE SIZE WRAPPERS =========================================== */
+
+.view-large  {
+    font-size: em( 20px );
+
+    @include media( $tablet ) {
+        font-size: em( 18px );
+    };
+
+    @include media( $mobile-large ) {
+        font-size: em( 16px );
+    }
+
+    @include media( $mobile ) {
+        font-size: em( 15px );
+    }
+}
+
+
+/* ===== LAYOUT MODIFIERS =================================================== */
+
+// Sticks panels to the bottom
+.mobile-sticky-down {
+
+    @include media( $mobile-large-and-smaller ) {
+        &.sector {
+            @include position( fixed, null 0 0 0 );
+        }
+
+        .menu-tabbed {
+            // Switch caret from bottom to top
+            .active:after {
+                bottom: auto; margin-bottom: 0; border-top: none;
+
+                top: 0;
+                margin-top: -$menu-tabbed-item-triangle-height;
+                border-bottom: $menu-tabbed-item-triangle-height solid $menu-tabbed-item-active-bg-colour;
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+/*=============================
+=            ICONS            =
+=============================*/
+
+/* Creates icon class and assigns icon's code. */
+@mixin define-icon( $tag-name, $ico-code ) {
+    &.#{$tag-name}:before {
+        content: $ico-code;
+        @content;
+    }
+}
+
+
+/* ===== FONT ICON'S CODES ================================================== */
+
+$ico-code-heart-thin:    '\e802';
+$ico-code-bubble-thin:   '\e804';
+$ico-code-study-cap-thin:'\e800';
+
+$ico-code-arr-right:    '\e801';
+$ico-code-arr-left:     '\e803';
+$ico-code-arr-down:     '\e805';
+$ico-code-arr-up:       '\e806';
+
+$ico-code-arr-short-down:   '\e807';
+$ico-code-arr-short-left:   '\e808';
+$ico-code-arr-short-right:  '\e809';
+$ico-code-arr-short-up:     '\e80a';
+
+$ico-code-tooltip-circle:   '\e80b';
+
+$ico-code-quote-start:  '\e80c';
+$ico-code-quote-end:    '\e80d';
+
+$ico-code-phone:        '\e80e';
+$ico-code-envelope:     '\e80f';
+
+
+/* ===== ICONS DEFINITIONS ================================================== */
+
+.ico {
+
+    &:before {
+        @include iconify();
+    }
+
+    // Thin icons (menus | headers)
+    @include define-icon( heart, $ico-code-heart-thin );
+    @include define-icon( talk-bubble, $ico-code-bubble-thin );
+    @include define-icon( study-cap, $ico-code-study-cap-thin ) {
+        position: relative; top: 2px;
+    };
+
+    // Standard icons (general usage, eg. buttons, links, headers, one liners)
+    @include define-icon( email, $ico-code-envelope );
+    @include define-icon( phone, $ico-code-phone );
+
+    @include define-icon( arr-right, $ico-code-arr-right );
+    @include define-icon( arr-left, $ico-code-arr-left );
+    @include define-icon( arr-up, $ico-code-arr-up );
+    @include define-icon( arr-down, $ico-code-arr-down );
+}
+
+

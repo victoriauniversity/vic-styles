@@ -3,6 +3,64 @@
 ===============================*/
 
 
+/* Banner with background cover */
+.banner-with-cover {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+
+    .cover-overlay {
+        @include linear-gradient( transparent 0%, transparent 40%, rgba( #171917, .8 ) 100% ); // TODO: Improve using non-linear functino @include linear-gradient(50deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+    }
+
+    .cover-overlay {
+        @include position( absolute, 0 0 0 0 );
+        width: 100%;
+        height: 100%;
+    }
+
+    .cover-overlay {
+    }
+
+    .cover-holder {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+        .cover-pic {
+            height: auto;
+            width: 100%;
+            @include position( absolute, 0 0 0 0);
+
+
+        }
+
+    .intro {
+        @include outer-container( 0.7 * $base-width-px );
+        margin-top: 4.5em;
+        margin-bottom: 2em;
+        padding: 0 $base-padding;
+        color: $white;
+        position: relative;
+        text-align: center;
+        z-index: $z-index-lower;
+    }
+
+    .title {
+        color: $white;
+        display: inline-block;
+        background-color: $green-fern;
+        padding: .35em 1.5em;
+    }
+
+    .abstract {
+        font-size: 120%;
+    }
+}
+
+
+
 .topic_banner {
     max-height: 500px;
     overflow: hidden;

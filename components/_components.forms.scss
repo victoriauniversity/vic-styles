@@ -1,0 +1,34 @@
+/*======================================
+=            FORMS & INPUTS            =
+======================================*/
+
+
+input,
+select[multiple=multiple] {
+  background-color: $base-bg-colour;
+  border: $base-border;
+  box-sizing: border-box;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  margin-bottom: $base-margin;
+  padding: $base-padding / 3;
+  width: 100%;
+
+  &:hover {
+    border-color: $grey-dusty-gray;
+  }
+
+  &:focus {
+    border-color: $blue-endeavoura;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $grey-mercury;
+    cursor: not-allowed;
+
+    &:hover {
+      border: $base-border;
+    }
+  }
+}

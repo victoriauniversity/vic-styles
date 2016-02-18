@@ -1,0 +1,93 @@
+/*==================================================
+=            VICTORIA MIXINS COLLECTION            =
+==================================================*/
+
+// Mixins collection that can be used to simplify SCSS development.
+//
+// *HIGHLY RECOMMENDED* to read through all available mixins before
+// start of active development!
+
+// TODO: Add documentation in forms of comments
+
+/* ===== BOX MODEL ========================================================== */
+
+@mixin objectify( $display: inline-block, $content: "", $position: relative ) {
+    position:   $position;
+    display:    $display;
+    content:    $content,
+}
+
+
+/* ===== TYPOGRAPHY ========================================================= */
+
+@mixin iconify( $display: inline-block, $ico-code: "" ) {
+    @include objectify( $display, $ico-code );
+    font-family: $font-victoria-icons;
+}
+
+
+@mixin make-list-square-bullet( $size, $colour: $text-fade-colour ) {
+    &:before {
+        @include objectify( inline-block, $position: static );
+        @include size( $size );
+        background-color: $colour;
+
+        @content;
+    }
+}
+
+
+/* ===== IMAGES & ICONS ===================================================== */
+
+
+@mixin hoverify() {
+    &:hover,
+    &:active,
+    &:focus {
+        @content;
+    }
+}
+
+
+/* ===== POSITIONING ======================================================== */
+
+
+
+/* ===== LAYOUT & GRID ====================================================== */
+
+/*******************************************************************************
+ * Transforms standard block element into table-cell and makes it responsive.
+ *
+ * @width-ratio        - Precentage ratio (0.0 - 1.0) of the cell's width.
+ * @grid-columns-count - How many columns there's in total (helpful inside
+ *                       media queries).
+ * @content            - Allows to extend dynamic behavior of the cell in views
+ *                       equal or bigger than a tablet view.
+ */
+@mixin make-table-column( $width-ratio: .5, $grid-columns-count: $grid-columns ){
+    @include span-columns( $grid-columns-count * $width-ratio, table );
+    vertical-align: top; // Resetting default top-padding
+
+    @content;
+}
+
+/*******************************************************************************
+ * Transforms standard block element into grid with behavior similar to tables.
+ * *MUST* include elements transformed to table-cells (see `make-table-column` mixin).
+ */
+@mixin make-table-grid() {
+    @include fill-parent();
+    @include row();
+    @include display( table );
+}
+
+
+/* ===== ANIMATIONS ========================================================= */
+
+@mixin transitionise( $duration: $base-transition-duration, $timing-function: $base-transition-function )
+{
+    @include transition-property( all );
+    @include transition-duration( $duration );
+    @include transition-timing-function( $timing-function );
+    @include transition-delay( 0 );
+}
