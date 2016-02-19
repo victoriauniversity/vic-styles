@@ -37,6 +37,9 @@ $btn-hover-bg:      shade( $blue-picton, 10% );
         font-size: 120%;
         margin-left: .9em;
         line-height: 0;
+        &.arr-left {
+		    margin: 0 0.9em 0 0;
+		}
     }
 
     // Sizing

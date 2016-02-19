@@ -88,4 +88,16 @@ $block-margin: $base-margin;
                 }
             }
         }
+
+        &.two-btn-nav-container {
+        	@include make-table-grid();
+	    	 .two-btn-nav {
+	        	@include make-table-column($two-btn-layout);
+	        	&:last-child {
+	        		float: right;
+	        	}
+	        }
+	    }
+       
     }
+

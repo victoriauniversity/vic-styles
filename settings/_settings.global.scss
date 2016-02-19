@@ -27,6 +27,9 @@ $two-col-layout-left-ratio:  .65 !default;
 // % of right column's width (2-column layout)
 $two-col-layout-right-ratio: ( 1 - $two-col-layout-left-ratio ) !default;
 
+//tow button layout
+$two-btn-layout:  .5 !default;
+
 // Typography
 $base-font-size:    em( $em-base, $em-browser-default ) !default;
 $base-font-colour:  $green-river-bed !default;
