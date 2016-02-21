@@ -36,11 +36,20 @@
             // Switch caret from bottom to top
             .active:after {
                 bottom: auto; margin-bottom: 0; border-top: none;
-
                 top: 0;
                 margin-top: -$menu-tabbed-item-triangle-height;
                 border-bottom: $menu-tabbed-item-triangle-height solid $menu-tabbed-item-active-bg-colour;
             }
         }
     }
+}
+
+.sticky-top {
+    @include media ( $tablet-and-bigger ) {
+
+        @include position(fixed, 0 null null null)
+        z-index: $z-index-top;
+        width: 100%;
+
+    }   
 }
