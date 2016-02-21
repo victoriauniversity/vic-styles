@@ -1,0 +1,41 @@
+/*=====================================
+=            GENERAL LISTS            =
+=====================================*/
+
+
+
+/* ===== GRID LIST ========================================================== */
+
+/* List in the form of a table-like grid. */
+$grid-list-border:          1px solid $darker-border-colour;
+$grid-list-items-per-row:   3;
+
+.grid-list {
+
+    position: relative;
+    @include clearfix();
+    margin: $base-margin 0;
+    width: 100%;
+
+    // Item / Cell
+    > li {
+        float: left;
+        display: block;
+        width: 100% / $grid-list-items-per-row;
+
+        &:nth-child(3n+1) { clear: left; }
+
+        // Tablet
+        @include media( $tablet ) {
+            width: 50%;
+            &:nth-child(3n+1) { clear: none; }
+            &:nth-child(2n+1) { clear: left; }
+        }
+
+        // Mobile
+        @include media( $mobile-large-and-smaller ) {
+            width: 100%;
+            clear: left;
+        }
+    }
+}

@@ -10,6 +10,9 @@
     }
 }
 
+$ico-caret-width:   .7em;
+$ico-caret-height:  .35em;
+
 
 /* ===== FONT ICON'S CODES ================================================== */
 
@@ -44,6 +47,8 @@ $ico-code-envelope:     '\e80f';
         @include iconify();
     }
 
+    /* Font icons */
+
     // Thin icons (menus | headers)
     @include define-icon( heart, $ico-code-heart-thin );
     @include define-icon( talk-bubble, $ico-code-bubble-thin );
@@ -59,6 +64,15 @@ $ico-code-envelope:     '\e80f';
     @include define-icon( arr-left, $ico-code-arr-left );
     @include define-icon( arr-up, $ico-code-arr-up );
     @include define-icon( arr-down, $ico-code-arr-down );
+
+    /* CSS only icons */
+    &.caret:before {
+        @include triangle(
+            $ico-caret-width $ico-caret-height,
+            $base-font-colour,
+            down
+        );
+    }
 }
 
 
