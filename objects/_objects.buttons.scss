@@ -11,6 +11,7 @@ $btn-corners:       .25em !default;
 $btn-label-colour:  $white !default;
 
 $btn-hover-bg:      shade( $blue-picton, 10% );
+$btn-ico-margin:    .9em;
 
 
 .btn {
@@ -34,12 +35,18 @@ $btn-hover-bg:      shade( $blue-picton, 10% );
     };
 
     .ico {
-        font-size: 120%;
-        margin-left: .9em;
+        margin-left: $btn-ico-margin;
         line-height: 0;
+        font-size: 120%;
+
+        // Positioning (right position by default)
+        &.left {
+            margin-left: 0;
+            margin-right: $btn-ico-margin;
+        }
     }
 
-    // Sizing
+    // Sizing (normal size by default)
     &.large { font-size: 100%; }
     &.small { font-size: 60%; }
 }
