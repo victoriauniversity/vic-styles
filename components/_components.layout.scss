@@ -51,5 +51,14 @@
         z-index: $z-index-top;
         width: 100%;
 
-    }   
+        &.toggle-up {
+            top: -73px;
+            @include transition(top 0.5s ease-in-out);
+        }
+        &.toggle-down {
+            top: 0;
+            @include transition(top 0.2s ease-in);
+
+        }
+    }
 }
