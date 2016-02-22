@@ -29,7 +29,10 @@
 
     @include media( $mobile-large-and-smaller ) {
         &.sector {
+            z-index: $z-index-middle;
             @include position( fixed, null 0 0 0 );
+
+            &.highlighted { border-top: 1px solid $block-highlight-border; }
         }
 
         .menu-tabbed {
@@ -58,7 +61,6 @@
         &.toggle-down {
             top: 0;
             @include transition(top 0.2s ease-in);
-
         }
     }
 }
