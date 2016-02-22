@@ -65,11 +65,13 @@ p {
 
 a {
     color: $link-colour;
-    @include transitionise();
 
     @include hoverify { text-decoration: none; }
 }
 
+a, a > *:before, a > *:after  {
+    @include transitionise();
+}
 
 /* Lists */
 ul, ol {
