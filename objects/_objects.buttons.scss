@@ -37,7 +37,6 @@ $btn-ico-margin:    .9em;
     .ico {
         margin-left: $btn-ico-margin;
         line-height: 0;
-<<<<<<< HEAD
         font-size: 120%;
 
         // Positioning (right position by default)
@@ -45,11 +44,6 @@ $btn-ico-margin:    .9em;
             margin-left: 0;
             margin-right: $btn-ico-margin;
         }
-=======
-        &.arr-left {
-		    margin: 0 0.9em 0 0;
-		}
->>>>>>> 6968ee1541603e1a330fb97dde87aa9c55d8a8e1
     }
 
     // Sizing (normal size by default)
