@@ -2,7 +2,14 @@
 =            LAYOUT             =
 ===============================*/
 
-html { font-size: inherit; }
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: inherit;
+    -webkit-font-smoothing: antialiased;
+}
 
 body {
     font-size: $base-font-size;

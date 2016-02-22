@@ -10,14 +10,10 @@
     @include clearfix();
 
     // Highlights sector
-    &.highlighted {
-        background-color: $block-highlight;
-    }
+    &.highlighted { background-color: $block-highlight-colour; }
 
     // Adds line separator to the end of the sector
-    &.separated {
-        border-bottom: $delim-border;
-    }
+    &.separated { border-bottom: $delim-border; }
 }
 
 
@@ -26,9 +22,7 @@
 $block-margin: $base-margin;
 
 // Standard block container
-.block {
-    padding: $block-margin;
-}
+.block { padding: $block-margin; }
 
 // Makes content aligned to the center if the width of the
 // viewport surpasses $base-width.
@@ -89,15 +83,16 @@ $block-margin: $base-margin;
             }
         }
 
+        // TODO: refactor (unnecessary re-use of some CSS values)
         &.two-btn-nav-container {
         	@include make-table-grid();
-	    	 .two-btn-nav {
+
+	    	.two-btn-nav {
 	        	@include make-table-column($two-btn-layout);
-	        	&:last-child {
-	        		float: right;
-	        	}
+
+	        	&:last-child { float: right; }
 	        }
 	    }
-       
+
     }
 
