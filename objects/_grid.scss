@@ -1,0 +1,19 @@
+/*==================================================
+=            GRID CONSTRUCTING ELEMENTS            =
+==================================================*/
+
+
+.wrapper {
+    @include outer-container;
+}
+
+.fill_wrapper {
+  @include fill-parent();
+}
+
+.main_col {
+  @include fill-parent();
+    @include span-columns(6);
+    @include shift(3);
+}
+

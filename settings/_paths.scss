@@ -1,0 +1,33 @@
+/*========================================================
+=            PATHS AND URLS TO RELATED ASSETS            =
+========================================================*/
+
+// *Note*: All paths are relative and *COULD* be overriden!
+// Usage inside CSS properties through interpolation as following: #{$pathType}
+
+
+/* ===== LOCAL PATHS ======================================================== */
+
+// Relative path from main css file to the assets folder
+$path-assets:    '..' !default;
+
+// 1st level
+$path-imgs:      $path-assets + '/img' !default;
+$path-fonts:     $path-assets + '/fonts' !default;
+$path-shared:    $path-assets + '/shared' !default;
+
+// 2nd level
+$path-shared-imgs:    $path-shared + '/img' !default;
+$path-shared-fonts:   $path-shared + '/fonts' !default;
+
+
+/* ===== CDNS =============================================================== */
+
+$urlCDNFonts:      '//fonts.googleapis.com/css' !default;
+
+
+/* ===== FONTS ============================================================== */
+
+$path-font-oxygen:        $urlCDNFonts + '?family=Oxygen:300,400,700' !default;
+$path-font-victoria:      $path-shared-fonts + '/NationalWebLF' !default;
+$path-fonticon-victoria:  $path-shared-fonts + '/fontello' !default; // TODO: Rename from 'fontello' to something with Victoria

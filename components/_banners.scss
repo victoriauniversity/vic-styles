@@ -1,0 +1,54 @@
+/*===============================
+=            BANNERS            =
+===============================*/
+
+
+.topic_banner {
+    max-height: 500px;
+    overflow: hidden;
+    position: relative;
+    .overlay {
+         background: rgba(0, 0, 0, 0.35);
+         // @include fill-parent();
+         @include position(absolute, 0 0 0 0);
+         overflow: hidden;
+         max-height: 500px;
+
+    }
+}
+
+.banner_text {
+    @include position( absolute, 20% null null null );
+    @include span-columns(6);
+    @include shift(3);
+}
+
+.banner_title {
+    text-align: center;
+    h1 {
+        background-color: $green-victoria-study;
+        color: $white;
+        font-size: 2em;
+        text-transform: capitalize;
+        display: inline-block;
+        @include pad(20px 30px);
+        @include margin(0 0 20px 0);
+        @include border-top-radius( $base-border-radius );
+        @include border-bottom-radius( $base-border-radius );
+    }
+}
+
+.banner_sub_title {
+    @include margin( 40px 0 0 0 );
+    border-top: 1px $white solid;
+    text-align: center;
+    h2 {
+
+        font-family: $base-font-family;
+        font-weight: lighter;
+        color: $white;
+        font-size: 1.5em;
+        line-height: 1.2;
+        @include pad(20px 0 0 0)
+    }
+}
