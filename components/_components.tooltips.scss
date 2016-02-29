@@ -2,9 +2,6 @@
 =            TOOLTIPS            =
 ================================*/
 
-
-
-
 #tooltip {
     text-align: center;
     color: $white;
@@ -20,16 +17,11 @@
 {
     content: '';
     @include size (0);
-    @include border-color($black_victoria transparent null transparent)
-    @include border-width (10px 10px null 10px)
-    @include border-style(solid solid null solid)
-    @include position(absolute, null null -10px 50%)
-    margin-left: -10px;
+    @include border-color($black_victoria transparent null transparent) @include border-width (10px 10px null 10px) @include border-style(solid solid null solid) @include position(absolute, null null -10px 50%) margin-left: -10px;
 }
 
 #tooltip.top:after {
-    @include border-color(transparent null $black_victoria )
-    border-bottom: 10px solid;
+    @include border-color(transparent null $black_victoria) border-bottom: 10px solid;
     top: -20px;
     bottom: auto;
 }
@@ -43,4 +35,29 @@
     right: 10px;
     left: auto;
     margin: 0;
+}
+
+.more-show-hide {
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+.more-show-hide.ng-hide {
+    opacity: 0;
+}
+
+.toggle-dots-grey {
+    color: darkgrey;
+}
+
+.toggle-dots-yellow {
+    color: yellow;
+}
+
+.toggle-link-yellow {
+    color: yellow;
+}
+
+.toggle-link-grey {
+    color: darkgrey;
 }
