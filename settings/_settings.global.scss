@@ -67,12 +67,12 @@ $caption-font-family:   '#{$font-oxygen}' !default;
 $caption-colour:        $green-river-bed;
 $caption-line-height:   1.35;
 
-// Typography
-$link-colour: $blue-picton;
+$link-colour:           $blue-picton;
 
 // Layout & Grid
-$block-highlight: $grey-mercury;
+$block-highlight:       $grey-mercury;
 
 // Borders & Lines
-$delim-border-colour: $grey-mercury;
-$delim-border: $base-border-width solid $delim-border-colour;
+$delim-border-colour:   $grey-mercury;
+$delim-border:          $base-border-width solid $delim-border-colour;
+$darker-border-colour:  $grey-silver;
