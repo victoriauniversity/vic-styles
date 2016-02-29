@@ -1,0 +1,68 @@
+/*===============================
+=         CONTACT BLOCK         =
+===============================*/
+
+$bg-color: $black-victoria;
+
+
+.victoria-contact {
+
+    .contact-wrap {
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+        height: 100px;
+    }
+
+    background-color: $bg-color;
+    padding: 1.75em;
+
+    h4 {
+        color: $white;
+        line-height: 1.6;
+        text-align: center;
+    }
+    a {
+        color: $white;        
+    }
+    p {
+        color: $grey-dusty-gray; 
+    }
+    .phone {
+        a {
+            text-decoration: none;
+        }
+    }
+    .email {
+        a {
+            font-size: 1.2em;
+            float: right;
+            }
+    }
+
+
+
+    @include media( $tablet-and-bigger) {
+        
+        .block {
+            width: 33%;
+            float: left;
+            display: inline-block;
+            padding: 1em;
+
+            &.button {
+                
+            padding: 0;
+                a {
+                    width: 100%;
+                    text-align: center;
+                }
+
+            }
+        }
+
+    }
+}
+
+
+

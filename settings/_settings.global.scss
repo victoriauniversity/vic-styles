@@ -27,6 +27,7 @@ $two-col-layout-left-ratio:  .65 !default;
 // % of right column's width (2-column layout)
 $two-col-layout-right-ratio: ( 1 - $two-col-layout-left-ratio ) !default;
 
+
 //tow button layout
 $two-btn-layout:  .5 !default;
 
@@ -63,7 +64,7 @@ $base-transition: all $base-transition-duration $base-transition-function !defau
 /* ===== SPECIFIC =========================================================== */
 
 // Typography
-$caption-font-family:   '#{$font-oxygen}' !default;
+$caption-font-family:   '#{$font-victoria}' !default;
 $caption-colour:        $green-mako;
 $caption-line-height:   1.35;
 

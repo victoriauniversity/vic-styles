@@ -6,26 +6,23 @@
 
 /* ===== BUTTONS ============================================================ */
 
-$btn-bg:            $blue-picton !default;
-$btn-corners:       .25em !default;
+$btn-bg:            $blue-azure !default;
+$btn-corners:       2px !default;
 $btn-label-colour:  $white !default;
 
-$btn-hover-bg:      shade( $blue-picton, 10% );
+$btn-hover-bg:      $blue-st-tropaz;
 $btn-ico-margin:    .9em;
 
 
 .btn {
     display: inline-block;
-    padding: 1em 2em;
+    padding: 0.5em 1em;
     margin: 1em;
     border-radius: $btn-corners;
-
-    background-color: $blue-picton;
-
+    background-color: $btn-bg;
     font-family: $caption-font-family;
-    font-size: 75%;
+    font-size: 100%;
     font-weight: $weight-semibold;
-    text-transform: uppercase;
     text-decoration: none;
     color: $btn-label-colour;
     white-space: nowrap;

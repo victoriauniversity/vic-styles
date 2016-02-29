@@ -35,7 +35,7 @@ $block-margin: $base-margin;
         &.block-container {
             @include make-table-grid();
 
-            // Column
+            // Column; makes two cols - 65% and 35% width
             .block {
 
                 // Right column
@@ -57,6 +57,42 @@ $block-margin: $base-margin;
                     &.btns-holder {
                         text-align: left;
                         vertical-align: middle;
+                    }
+                }
+            }
+
+             // Column; makes two cols - 35% and 65% width
+            .block-swap {
+
+                // Right column
+                &:last-child { padding-top: 0; }
+
+                @include media( $tablet-and-bigger ) {
+
+                    // Left column
+                    &:first-child {
+                        @include make-table-column(  $two-col-layout-right-ratio );
+
+                    }
+
+                    // Right column
+                    &:last-child {
+                        @include make-table-column( $two-col-layout-left-ratio );
+                    }
+
+                    &.btns-holder {
+                        text-align: left;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            // Makes two col button container with one button left & one right
+            .two-btn-nav {
+                @include make-table-column($two-btn-layout);
+
+                &:last-child {
+                    a {
+                        float: right; 
                     }
                 }
             }
@@ -82,17 +118,5 @@ $block-margin: $base-margin;
                 }
             }
         }
-
-        // TODO: refactor (unnecessary re-use of some CSS values)
-        &.two-btn-nav-container {
-        	@include make-table-grid();
-
-	    	.two-btn-nav {
-	        	@include make-table-column($two-btn-layout);
-
-	        	&:last-child { float: right; }
-	        }
-	    }
-
     }
 

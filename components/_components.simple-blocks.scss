@@ -1,0 +1,71 @@
+/*===============================
+=           FUN FACT BLOCK      =
+===============================*/
+
+$fun-fact-bg-color: $grey-gallery;
+
+.fun-fact {
+
+    background-color: $fun-fact-bg-color;
+    padding: 1.75em;
+
+    h2 {
+        font-size: 2.5em;
+        margin-bottom: 0em;
+
+    }
+
+    @include media( $tablet-and-bigger) {
+
+        padding-right: 30px;
+
+        h2 {
+            font-size: 2.5em;
+            padding-right: 30px;
+            text-align: right;
+        }
+    }
+}
+
+/*===============================
+=     NEED MORE INFO BLOCK      =
+===============================*/
+
+$nm-bg-color: $grey-alto;
+
+.need-more {
+
+    background-color: $fun-fact-bg-color;
+    padding: 1em;
+
+    @include media( $tablet-and-bigger) {
+
+        .block {
+            width: 90%;
+            margin-right: auto;
+            margin-left: auto;
+
+
+            h4 {
+                float: left;
+                width: 30%;
+                // font-weight: bold;
+                line-height: 1.6;
+            }
+
+            ul {
+                display: table;
+                width: 70%;
+            }
+            
+            li {
+                font-size: 1.2em;
+                display: table-cell;
+                text-align: center;
+            }
+
+        }
+
+    }
+}
+
