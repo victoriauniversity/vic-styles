@@ -38,34 +38,48 @@ $nm-bg-color: $grey-alto;
     background-color: $fun-fact-bg-color;
     padding: 1em;
 
-    @include media( $tablet-and-bigger) {
+    .need-more-block {
+        text-align: center;
 
-        .block {
-            width: 90%;
+        li {
+            padding: 0.5em 0;
+        }
+
+        @include media ( $mobile-large-and-bigger ) {
+            
+            width: 80%;
             margin-right: auto;
             margin-left: auto;
 
-
             h4 {
                 float: left;
-                width: 30%;
-                // font-weight: bold;
-                line-height: 1.6;
+                margin-right: 0.5em;
             }
 
             ul {
                 display: table;
-                width: 70%;
+
             }
-            
             li {
-                font-size: 1.2em;
+                // font-size: 1.2em;
+                padding: 0 0.5em;
                 display: table-cell;
                 text-align: center;
             }
-
         }
 
-    }
+        @include media ( $desktop-and-bigger ) {
+            width: 90%;
+            max-width: 850px;
+            margin-right: auto;
+            margin-left: auto;
+
+            ul {
+                width: 70%;
+                float: right;
+
+            }
+        }
+    }    
 }
 

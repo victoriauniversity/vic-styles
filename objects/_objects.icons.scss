@@ -14,6 +14,9 @@ $ico-caret-width:   .7em;
 $ico-caret-height:  .35em;
 
 
+$ico-margin:    .9em;
+
+
 /* ===== FONT ICON'S CODES ================================================== */
 
 $ico-code-heart-thin:    '\e802';
@@ -41,8 +44,25 @@ $ico-code-envelope:     '\e80f';
 
 /* ===== ICONS DEFINITIONS ================================================== */
 
+//why is this not spelt .icon? Not typing the 'n' is lazy - irwinna 1.3.16
 .ico {
 
+//==============================================================================
+   // Moved this here so can @extend .ico on other element that arent a .btn 
+//===============================================================================
+
+    // Standard icon styles
+    margin-left: $ico-margin;
+    line-height: 0;
+    font-size: 120%;
+    vertical-align: middle;
+
+    // Positioning (right position by default)
+    &.left {
+        margin-left: 0;
+        margin-right: $ico-margin;
+    }
+//============================================ 
     &:before {
         @include iconify();
     }

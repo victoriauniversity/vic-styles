@@ -5,64 +5,153 @@
 $bg-color: $black-victoria;
 
 
+
 .victoria-contact {
 
-    .contact-wrap {
-        width: 90%;
-        margin-right: auto;
-        margin-left: auto;
-        height: 100px;
-    }
-
     background-color: $bg-color;
-    padding: 1.75em;
+    padding: 1.75em 0.5em;
 
-    h4 {
+     h4 {
         color: $white;
         line-height: 1.6;
         text-align: center;
     }
     a {
-        color: $white;        
+        color: $white;
     }
     p {
-        color: $grey-dusty-gray; 
+        color: $grey-dusty-gray;
     }
-    .phone {
+
+    .contact-wrap {
+        min-height: 100px;
+        display: block;
+
+    }
+    .block {
+        padding: 0.5em;
+        min-width: 220px; 
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+    
+    .phone-block {
+
+        .phone-block-wrap {
+
+            a {
+                text-decoration: none;
+                @extend .ico;
+            } 
+        }
+        
+    }
+    .secondary-phone {
+        font-size: 0.75em;
+        // margin-left: 5em;
+
         a {
-            text-decoration: none;
+            margin-left: 0.35em;
         }
     }
-    .email {
+    .button-block {
+        .btn {
+            margin: 0;
+        }
+    }
+    .email-block {
         a {
             font-size: 1.2em;
-            float: right;
-            }
+            vertical-align: middle;
+            line-height: 0;
+        }
     }
+    
 
 
+    @include media( $tablet-and-bigger ) {
 
-    @include media( $tablet-and-bigger) {
-        
+        padding: 1.75em 0;
+
         .block {
+
             width: 33%;
+            height: auto;
             float: left;
             display: inline-block;
-            padding: 1em;
+            padding: 0.5em;
 
-            &.button {
-                
-            padding: 0;
+            &.button-block {
+                padding: 0;
+                width: 33%;
                 a {
-                    width: 100%;
-                    text-align: center;
+                    width: 80%;
+                    min-width: 230px; 
+                    display: block;    
+                    margin-left: auto;
+                    margin-right: auto;
                 }
+            }
+            &.email-block {
+                text-align: left;
+                a {
+                    margin-left: 0.65em;
+                }
+            }
+            &.phone-block {
+                .phone-block-wrap {
+                    float: right;
+                    margin-right: 0.65em;
+                }  
+            }            
+        }
+    }
+    @include media ( $desktop-large ) {
+        .contact-wrap {
+            width: 90%;
+            max-width: 1150px;
+            margin-right: auto;
+            margin-left: auto;
 
+            .block {
+
+                width: 37.5%;
+                padding: 1em;
+
+                &.button-block {
+
+                    width: 25%;
+
+                    a {
+                        width: 100%;
+                    }
+                }
+                &.email-block {
+                    a {
+                        margin-left: 3em;
+                    }
+                }
+                &.phone-block {
+
+                    .phone-block-wrap {
+
+                        margin-right: 3em;
+
+                        .secondary-phone {
+                            margin-left: 5em;
+                        }
+                    }  
+                }
             }
         }
-
     }
 }
+
+
+
+
 
 
 

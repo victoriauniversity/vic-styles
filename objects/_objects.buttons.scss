@@ -11,7 +11,7 @@ $btn-corners:       2px !default;
 $btn-label-colour:  $white !default;
 
 $btn-hover-bg:      $blue-st-tropaz;
-$btn-ico-margin:    .9em;
+
 
 
 .btn {
@@ -31,17 +31,6 @@ $btn-ico-margin:    .9em;
         background-color: $btn-hover-bg;
     };
 
-    .ico {
-        margin-left: $btn-ico-margin;
-        line-height: 0;
-        font-size: 120%;
-
-        // Positioning (right position by default)
-        &.left {
-            margin-left: 0;
-            margin-right: $btn-ico-margin;
-        }
-    }
 
     // Sizing (normal size by default)
     &.large { font-size: 100%; }
