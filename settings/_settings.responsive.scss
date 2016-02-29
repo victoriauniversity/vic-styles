@@ -1,0 +1,44 @@
+/*=========================================================
+=            RESPONSIVE SETTINGS AND VARIABLES            =
+=========================================================*/
+
+
+// Constants
+$mobile-grid-columns:       4;
+$mobile-max-width:          em( 479px, $em-browser-default );
+
+$mobile-large-grid-columns: 6;
+$mobile-large-min-width:    em( 480px, $em-browser-default );
+$mobile-large-max-width:    em( 759px, $em-browser-default );
+
+$tablet-grid-columns:       8;
+$tablet-min-width:          em( 760px, $em-browser-default );
+$tablet-max-width:          em( 989px, $em-browser-default );
+
+$desktop-grid-columns:      12;
+$desktop-min-width:         em( 990px, $em-browser-default );
+$desktop-max-width:         em( $base-width-px - 1 );
+
+$desktop-large-grid-columns: 16;
+$desktop-large-min-width:   em( $base-width-px );
+
+
+// Create reusable breakpoints
+$mobile:                    new-breakpoint( max-width $mobile-max-width $mobile-grid-columns );
+
+$mobile-large:              new-breakpoint( min-width $mobile-large-min-width
+                                            max-width $mobile-large-max-width $mobile-large-grid-columns );
+$mobile-large-and-smaller:  new-breakpoint( max-width $mobile-large-max-width $mobile-large-grid-columns );
+$mobile-large-and-bigger:   new-breakpoint( min-width $mobile-large-min-width $mobile-large-grid-columns );
+
+$tablet:                    new-breakpoint( min-width $tablet-min-width
+                                            max-width $tablet-max-width $tablet-grid-columns );
+$tablet-and-smaller:        new-breakpoint( max-width $tablet-max-width $tablet-grid-columns );
+$tablet-and-bigger:         new-breakpoint( min-width $tablet-min-width $tablet-grid-columns );
+
+$desktop:                   new-breakpoint( min-width $desktop-min-width
+                                            max-width $desktop-min-width $desktop-grid-columns );
+$desktop-and-smaller:       new-breakpoint( max-width $desktop-max-width $desktop-grid-columns );
+$desktop-and-bigger:        new-breakpoint( min-width $desktop-min-width $desktop-grid-columns );
+
+$desktop-large:             new-breakpoint( min-width $desktop-large-min-width $desktop-large-grid-columns );

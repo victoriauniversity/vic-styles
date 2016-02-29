@@ -1,0 +1,90 @@
+/*=======================================
+=            NAVIGATION TABS            =
+=======================================*/
+
+
+/* ===== NAVIGATION MENU - TABS ============================================= */
+
+// Tabed menu - general
+$menu-tabbed-padding-horiz:     .7em !default;
+$menu-tabbed-padding-vertic:    .9em !default;
+
+// Single tab (~ menu item)
+$menu-tabbed-item-max-width:            $base-width / 4 !default; // accommodates up to 4 items
+$menu-tabbed-item-triangle-width:        1.5em !default;
+$menu-tabbed-item-triangle-height:      ( $menu-tabbed-item-triangle-width / 3 ) !default;
+
+$menu-tabbed-item-label-colour:         $grey-stack !default;
+
+$menu-tabbed-item-hover-label-colour:   $link-colour !default;
+$menu-tabbed-item-hover-bg-colour:      $grey-alto !default;
+
+$menu-tabbed-item-active-label-colour:  $white !default;
+$menu-tabbed-item-active-bg-colour:     $green-fern !default;
+
+
+/* Menu or submenu using tab-like layout of its items. */
+.menu-tabbed {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
+
+    // 1st level menu items
+    & > li {
+        position: relative;
+        display: table-cell;
+        width: 100%;
+        min-width: 21%;
+        max-width: $menu-tabbed-item-max-width;
+        vertical-align: middle;
+
+        .ico:before {
+            vertical-align: top;
+            margin-right: .5em;
+        }
+
+        // Selected or activated tab
+        &.active {
+            color: $white;
+            background-color: $menu-tabbed-item-active-bg-colour;
+
+            & > a {
+                color: inherit;
+
+                @include hoverify {
+                    background-color: inherit;
+                    color: inherit;
+                }
+            }
+
+            &:after {
+                @include objectify();
+                position: absolute; left: 50%; bottom: 0;
+                margin-left: -$menu-tabbed-item-triangle-width / 2;
+                margin-bottom: -$menu-tabbed-item-triangle-height;
+                @include triangle(
+                    $menu-tabbed-item-triangle-width $menu-tabbed-item-triangle-height,
+                    $menu-tabbed-item-active-bg-colour,
+                    down
+                );
+            }
+        }
+
+        & > a {
+            display: inline-block;
+            width: 100%;
+            padding: $menu-tabbed-padding-vertic $menu-tabbed-padding-horiz;
+            font-family: $caption-font-family;
+            font-weight: $weight-light;
+            line-height: $caption-line-height;
+            color: $grey-stack;
+            text-decoration: none;
+
+            @include hoverify {
+                background-color: $menu-tabbed-item-hover-bg-colour;
+                color: $menu-tabbed-item-hover-label-colour;
+            }
+        }
+    }
+}

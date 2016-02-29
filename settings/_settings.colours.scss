@@ -22,25 +22,44 @@ $green-victoria:        #115737;
 $black-victoria:        #1d2624;
 $green-victoria-study:  #549349;
 
+
+/* ===== NAMED PALETTE ====================================================== */
+
+$grey-mercury:          #e8e8e8;
+$grey-stack:            #808080;
+$grey-tower:            #A7BBC1;
+$grey-alto:             #DDD;
+$grey-silver:           #CCC;
+
+$green-fern:            #63B960;
+$green-mako:            #475153;
+
+$blue-curious:          #1483EB;
+$blue-picton:           #3C90E6;
+
+
+/* ===== UI HELPERS ========================================================= */
+
+// Typography
+$text-fade-colour:      $grey-tower;
+
+
+/* ===== OUTDATED =========================================================== */
+
 //TODO: REFACTOR & REMOVE!
-$vic-green:     $green-victoria;
-$vic-black:     $black-victoria;
-
-
-/* ===== UI ================================================================= */
-
 $blue-endeavoura:       #005ea5;
 $blue-congress-blue:    #004f8c;
 $blue-lochmara:         #007BD8;
 
+//TODO: REFACTOR & REMOVE!
+$vic-green:     $green-victoria;
+$vic-black:     $black-victoria;
+
 $grey-mine-shaft:       #333;
 $grey-dusty-gray:       #999;
-$grey-alto:             #dddddd;
-$grey-mercury:          #e6e6e6;
 
 $green-finlandia:       #5F6B5F;
 
-//TODO: REFACTOR & REMOVE!
 $light_grey: $grey-alto;
 $blue_action: $blue-endeavoura;
 $blue_action_darker: $blue-congress-blue;

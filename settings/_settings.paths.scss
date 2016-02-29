@@ -30,4 +30,4 @@ $urlCDNFonts:      '//fonts.googleapis.com/css' !default;
 
 $path-font-oxygen:        $urlCDNFonts + '?family=Oxygen:300,400,700' !default;
 $path-font-victoria:      $path-shared-fonts + '/NationalWebLF' !default;
-$path-fonticon-victoria:  $path-shared-fonts + '/fontello' !default; // TODO: Rename from 'fontello' to something with Victoria
+$path-fonticon-victoria:  $path-shared-fonts + '/vic-icons' !default;

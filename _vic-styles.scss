@@ -2,46 +2,43 @@
 =            VICTORIA UNIVERSITY OF WELLINGTON STYLES            =
 ================================================================*/
 
-// Trumps (Outdo) -
 
-
-/*----------  1) 3rd party libraries  ----------------------------------------*/
-
+/* IMPORT LIBRARIES */
 @import 'libs/bourbon/app/assets/stylesheets/bourbon.scss';
 @import 'libs/neat/app/assets/stylesheets/neat.scss';
 
 
-/*----------  2) SETTINGS  ---------------------------------------------------*/
+/*----------  1) SETTINGS  ---------------------------------------------------*/
 
-@import 'settings/base.scss';
-
-
-/*----------  3) TOOLS  ------------------------------------------------------*/
-
-@import 'tools/base.scss';
+@import 'settings/settings.base.scss';
 
 
-/*----------  4) GENERIC  ----------------------------------------------------*/
+/*----------  2) TOOLS  ------------------------------------------------------*/
 
-@import 'generic/base.scss';
-
-
-/*----------  5) BASE  -------------------------------------------------------*/
-
-@import 'base/base.scss';
+@import 'tools/tools.base.scss';
 
 
-/*----------  6) OBJECTS  ----------------------------------------------------*/
+/*----------  3) GENERIC  ----------------------------------------------------*/
 
-@import 'objects/base.scss';
-
-
-/*----------  7) COMPONENTS  -------------------------------------------------*/
-
-@import 'components/base.scss';
+@import 'generic/generic.base.scss';
 
 
-/*----------  8) TRUMPS  -----------------------------------------------------*/
+/*----------  4) BASE  -------------------------------------------------------*/
 
-@import 'trumps/base.scss';
+@import 'base/base.base.scss';
+
+
+/*----------  5) OBJECTS  ----------------------------------------------------*/
+
+@import 'objects/objects.base.scss';
+
+
+/*----------  6) COMPONENTS  -------------------------------------------------*/
+
+@import 'components/components.base.scss';
+
+
+/*----------  7) TRUMPS  -----------------------------------------------------*/
+
+@import 'trumps/trumps.base.scss';
 

@@ -1,0 +1,33 @@
+/*=============================================
+=            CONTENT WRAPPER                  =
+=============================================*/
+
+
+/* Standard content with only basic formatting options. */
+.content-simple {
+
+    /* Collections with shared attributes. */
+    ul, ol, p {
+        margin-bottom: 1.2em;
+
+        &:last-child { margin: 0; }
+    }
+
+    & > ul {
+        line-height: 1.8;
+
+        & > li {
+            padding-left: .4em;
+
+            @include make-list-square-bullet( .5em ) {
+                position: relative; top: -0.1em;
+                margin-right: 1.4em;
+            }
+        }
+    }
+}
+
+
+/* ===== GENERIC HELPERS ==================================================== */
+
+.centered { text-align: center; }
