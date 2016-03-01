@@ -80,6 +80,10 @@ $ico-code-envelope:     '\e80f';
     @include define-icon( email, $ico-code-envelope );
     @include define-icon( phone, $ico-code-phone );
 
+    @include define-icon( tooltip-icon, $ico-code-tooltip-circle );
+    @include define-icon( quote-start, $ico-code-quote-start );
+    @include define-icon( quote-end, $ico-code-quote-end );
+
     @include define-icon( arr-right, $ico-code-arr-right );
     @include define-icon( arr-left, $ico-code-arr-left );
     @include define-icon( arr-up, $ico-code-arr-up );

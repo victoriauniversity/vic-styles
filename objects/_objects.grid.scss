@@ -86,16 +86,7 @@ $block-margin: $base-margin;
                     }
                 }
             }
-            // Makes two col button container with one button left & one right
-            .two-btn-nav {
-                @include make-table-column($two-btn-layout);
-
-                &:last-child {
-                    a {
-                        float: right; 
-                    }
-                }
-            }
+            
         }
 
         // Adds line separators to divide blocks

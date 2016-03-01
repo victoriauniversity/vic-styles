@@ -88,3 +88,27 @@ $menu-tabbed-item-active-bg-colour:     $green-fern !default;
         }
     }
 }
+
+// Makes two col button container with one button left & one right
+.two-btn-nav {
+    @include make-table-column($two-btn-layout);
+
+    padding: 1.5em;
+
+    p {
+        font-size: 80%;
+        color: $grey-stack;
+    }
+
+    .btn {
+        margin: 0;
+        background-color: $grey-dusty-gray;
+    }
+
+    &:last-child {
+        .two-btn-wrap {
+            float: right; 
+            text-align: right;
+        }
+    }
+}

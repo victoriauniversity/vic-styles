@@ -1,0 +1,59 @@
+/*===============================
+=   WELLINGTON PROMO BLOCK      =
+===============================*/
+
+$top-promo-color: $green-victoria;
+$action-promo-color: $green-bottle-green;
+$action-promo-hover: $green-bottle-darker;
+
+
+.image-promo-block {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    padding: 1.5em 0;
+
+    .cover-holder {
+        img {
+            @include position( absolute, 0 );
+            @include size ( 100%);
+             min-height: 100%;
+            min-width: 1200px;
+        }
+    }
+    .promo-body {
+        max-width: 750px;
+        @include margin (2em auto);
+        position: relative;
+        background-color: $top-promo-color;
+        text-align: center;
+        z-index: $z-index-lower;
+        
+        h2, p, a {
+            color: $white;
+        }
+
+        header {
+            padding: 2em 2em 5em;
+        }
+
+        .promo-action {
+            width: 100%;
+            background-color: $action-promo-color;
+            position: absolute;
+            bottom: 0;
+            margin-top: 1em;
+            a {
+                padding: 1em;
+                display: block;
+                width: 100%;
+                @include hoverify () {
+                    color: $grey-silver;
+                    text-decoration: underline;
+                    background-color: $action-promo-hover;
+                }
+            }
+        }
+
+    }
+}

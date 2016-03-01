@@ -22,6 +22,11 @@ $green-victoria:        #115737;
 $black-victoria:        #1d2624;
 $green-victoria-study:  #549349;
 
+
+//Vic Green variations
+$green-bottle-green: 	#0D4B2F;
+$green-bottle-darker: 	#093521;
+
 //Buttons
 $blue-azure: 			#3468B0;
 //Hover button
@@ -43,9 +48,10 @@ $grey-alto:             #DDD; 		//old
 $grey-silver:           #CCC; 		//old
 $grey-dusty-gray:       #999; 		//new
 $grey-mine-shaft:       #333; 		//new
+$grey-mako:            	#475153;
 
 $green-fern:            #63B960;
-$green-mako:            #475153;
+$green-mako: 			$grey-mako;
 
 $blue-curious:          #1483EB;
 $blue-picton:           #3C90E6;
