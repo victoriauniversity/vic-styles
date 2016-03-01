@@ -3,7 +3,7 @@
 ===============================*/
 
 $bg-color: $black-victoria;
-
+$ico-margin: 0.9em;
 
 
 .victoria-contact {
@@ -43,7 +43,18 @@ $bg-color: $black-victoria;
 
             a {
                 text-decoration: none;
-                @extend .ico;
+                .ico {
+                    // Standard icon styles
+                    margin-left: $ico-margin;
+                    line-height: 0;
+                    font-size: 120%;
+                    vertical-align: middle;
+                    // Positioning (right position by default)
+                    &.left {
+                        margin-left: 0;
+                        margin-right: $ico-margin;
+                    }
+                }
             } 
         }
         
@@ -66,6 +77,14 @@ $bg-color: $black-victoria;
             font-size: 1.2em;
             vertical-align: middle;
             line-height: 0;
+
+            .ico {
+                // Positioning (right position by default)
+                &.left {
+                    margin-left: 0;
+                    margin-right: $ico-margin;
+                }
+            }
         }
     }
     
@@ -117,12 +136,12 @@ $bg-color: $black-victoria;
 
             .block {
 
-                width: 37.5%;
+                width: 35%;
                 padding: 1em;
 
                 &.button-block {
 
-                    width: 25%;
+                    width: 30%;
 
                     a {
                         width: 100%;

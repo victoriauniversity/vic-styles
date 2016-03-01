@@ -3,22 +3,15 @@
 ===============================*/
 
 $fun-fact-bg-color: $grey-gallery;
-
 .fun-fact {
-
     background-color: $fun-fact-bg-color;
     padding: 1.75em;
-
     h2 {
         font-size: 2.5em;
         margin-bottom: 0em;
-
     }
-
     @include media( $tablet-and-bigger) {
-
         padding-right: 30px;
-
         h2 {
             font-size: 2.5em;
             padding-right: 30px;
@@ -27,38 +20,30 @@ $fun-fact-bg-color: $grey-gallery;
     }
 }
 
+
 /*===============================
 =     NEED MORE INFO BLOCK      =
 ===============================*/
 
 $nm-bg-color: $grey-alto;
-
 .need-more {
-
     background-color: $fun-fact-bg-color;
     padding: 1em;
-
     .need-more-block {
         text-align: center;
-
         li {
             padding: 0.5em 0;
         }
-
-        @include media ( $mobile-large-and-bigger ) {
-            
+        @include media ( $mobile-large-and-bigger) {
             width: 80%;
             margin-right: auto;
             margin-left: auto;
-
             h4 {
                 float: left;
                 margin-right: 0.5em;
             }
-
             ul {
                 display: table;
-
             }
             li {
                 // font-size: 1.2em;
@@ -67,42 +52,148 @@ $nm-bg-color: $grey-alto;
                 text-align: center;
             }
         }
-
-        @include media ( $desktop-and-bigger ) {
+        @include media ( $desktop-and-bigger) {
             width: 90%;
             max-width: 850px;
             margin-right: auto;
             margin-left: auto;
-
             ul {
                 width: 70%;
                 float: right;
-
-            }
-        }
-    }    
-}
-
-/*===============================
-=      SUBJECT INTRO BLOCK      =
-===============================*/
-
-.intro-about-block {
-
- 
-    .about-subjects-block {
-
-        h3 {
-            .tooltip-icon {
-                font-size: 100%;
-                color: $grey-dusty-gray;
-                margin-left: 0.2em;
-
             }
         }
     }
 }
 
 
+/*===============================
+=      SUBJECT INTRO BLOCK      =
+===============================*/
+
+.intro-about-block {
+    .about-subjects-block {
+        h3 {
+            .tooltip-icon {
+                font-size: 100%;
+                color: $grey-dusty-gray;
+                margin-left: 0.2em;
+            }
+        }
+    }
+}
 
 
+/*===============================
+=     RELATED DEGREE BLOCK      =
+===============================*/
+
+.toggle-block {
+    padding-bottom: 1em;
+    h2 {
+        float: left;
+        a {
+            text-decoration: none;
+            .caret {
+                margin-right: 1em;
+            }
+        }
+    }
+    .tag-wrap {
+        float: right;
+        .tag {
+            font-size: 0.9em;
+            background-color: $grey-alto;
+            padding: 0.5em;
+            border-radius: $base-border-radius;
+            &:first-child {
+                margin-right: 0.3em;
+            }
+        }
+    }
+}
+
+/*===============================
+=     DEGREES BLOCK      =
+===============================*/
+
+$mar-bot: 0.3em;
+
+.toggle-content {
+    .degree-block {
+        @include outer-container;
+
+        border-left: 6px solid $grey-alto;
+        // border-bottom: 1px solid $grey-alto;
+        margin-top: 1.5em;
+        padding: 0.5em 1em 0;
+        &:first-child {
+            margin-top: 0;
+        }
+        h4 {
+            color: $grey-mako;
+            margin-bottom: $mar-bot;
+            .degree-code {
+                color: $green-victoria;
+                font-weight: bold;
+            }
+        }
+        .degree-content {
+            @include span-columns(8);
+
+            @include media ( $mobile-large-and-smaller ) {
+                @include fill-parent();
+
+            }
+
+            .length {
+                font-size: 1em;
+
+                .ico {
+                     &.clock {
+                        font-size: 1.3em;
+                    }
+                }
+            }
+            .leads {
+                font-size: 0.75em;
+                margin-left: 1.5em;
+
+                @include media ( $tablet-and-smaller ) {
+                    margin-left: 1em;
+                }
+
+                a {
+                    font-size: 1.2em;
+                }
+                .ico {
+                    &.arr-right {
+                        font-size: 1.45em;
+                    }
+                }
+
+
+            }
+            .leads,
+            .length {
+                display: inline-block;
+                vertical-align: bottom;
+                .ico {
+                    &.arr-right, &.clock {
+                        margin-right: 0.3em;
+                        margin-top: 0.3em;
+                        line-height: 1;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+        .degree-button {
+            min-width: 160px;
+
+            @include span-columns(2);
+            @include media ($mobile-large-and-smaller ) {
+                max-width: 140px;       
+            }
+        }
+    }
+}
