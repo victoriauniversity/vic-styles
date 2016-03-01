@@ -3,16 +3,13 @@
 =======================================*/
 
 
-
 /* ===== BUTTONS ============================================================ */
 
-$btn-bg:            $blue-azure !default;
-$btn-corners:       2px !default;
-$btn-label-colour:  $white !default;
-
-$btn-hover-bg:      $blue-st-tropaz;
-
-
+$btn-bg: $blue-azure !default;
+$btn-corners: 2px !default;
+$btn-label-colour: $white !default;
+$btn-hover-bg: $blue-st-tropaz;
+$ico-margin:    .9em;
 
 .btn {
     display: inline-block;
@@ -26,15 +23,28 @@ $btn-hover-bg:      $blue-st-tropaz;
     text-decoration: none;
     color: $btn-label-colour;
     white-space: nowrap;
-
     @include hoverify() {
         background-color: $btn-hover-bg;
-    };
-
-
+    }
+    ;
     // Sizing (normal size by default)
-    &.large { font-size: 100%; }
-    &.small { font-size: 60%; }
+    &.large {
+        font-size: 100%;
+    }
+    &.small {
+        font-size: 60%;
+    }
+    // Standard icon styles
+    .ico {
+        margin-left: $ico-margin;
+        line-height: 0;
+        vertical-align: middle;
+        // Positioning (right position by default)
+        &.left {
+            margin-left: 0;
+            margin-right: $ico-margin;
+        }
+    }
 }
 
 .btns-holder {

@@ -31,3 +31,11 @@
 /* ===== GENERIC HELPERS ==================================================== */
 
 .centered { text-align: center; }
+
+.smaller {
+    font-size: 0.75em;
+    padding-top: 0.5em;
+    a {
+        font-size: 1.2em;
+    }
+}
