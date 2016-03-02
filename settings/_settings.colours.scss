@@ -40,25 +40,47 @@ $blue-curious-blue: 	#2B8CC4;
 
 
 
-
 /* ===== NAMED PALETTE ====================================================== */
 
-$grey-gallery: 			#EEE; 		//old
-$grey-mercury:          #e8e8e8; 	//new
-$grey-stack:            #808080; 	//new
-$grey-tower:            #A7BBC1; 	//new
-$grey-alto:             #DDD; 		//old
-$grey-silver:           #CCC; 		//old
-$grey-dusty-gray:       #999; 		//new
-$grey-mine-shaft:       #333; 		//new
-$grey-mako:            	#475153;
+//===================
 
-$green-fern:            #63B960;
-$green-mako: 			$grey-mako;
+// ORINGINAL GREYS
 
-$blue-curious:          #1483EB;
-$blue-picton:           #3C90E6;
+$grey-gallery: 	#EEE; 
+$grey-alto: 	#DDD; 
+$grey-silver: 	#CCC;
 
+//===================
+
+// NEW GREYS 
+
+$grey-mercury:		#e8e8e8; //should remove this keep other greys
+$grey-dusty-gray: 	#999; 
+$grey-stack: 		#808080; 
+$grey-mako: 		#475153;
+$grey-mine-shaft: 	#333; 
+
+//===================
+
+//NEW OTHER - unsure on these 
+
+$green-fern: 		#63B960;
+$blue-curious: 		#1483EB; 
+$blue-picton: 		#3C90E6;
+$blue-grey-tower: 	#A7BBC1; 
+
+//===================
+
+
+// NAME FIXES - refactor
+
+$green-mako: 	$grey-mako;
+$grey-tower: 	$blue-grey-tower;
+
+$vic-green:     $green-victoria;
+$vic-black:     $black-victoria;
+
+//===================
 
 /* ===== UI HELPERS ========================================================= */
 
@@ -70,8 +92,7 @@ $text-fade-colour:      $grey-tower;
 
 
 //TODO: REFACTOR & REMOVE!
-$vic-green:     $green-victoria;
-$vic-black:     $black-victoria;
+
 
 $blue-congress-blue:    #004f8c;
 $blue-lochmara:         #007BD8;
@@ -82,4 +103,71 @@ $light_grey: $grey-alto;
 $blue_action: $blue-endeavoura;
 $blue_action_darker: $blue-congress-blue;
 $blue_action_lighter: $blue-lochmara;
+
+// ========================
+
+
+
+// ==============================
+		// COLOR TESTING
+		// [ROOT]/test
+// ==============================
+@mixin theme($name, $color) {
+  $primary: $color;
+ 
+  .#{$name} {
+    &.test-block {
+      background-color: $primary;
+      span {
+      	background-color: #fff;
+      	color: #000;
+      	padding: 0.51em;
+		
+      	&:before {content: '#{$name}';}
+      }
+    }
+ 
+  }
+}
+$themes: ( 
+grey-gallery: #EEE, //old
+grey-alto: #DDD, //old
+grey-silver: #CCC, //old
+
+grey-mercury: #e8e8e8, //new
+grey-dusty-gray: #999, //new
+grey-stack: #808080, //new
+
+
+grey-mako: #475153, 
+grey-mine-shaft: #333, //new
+green-fern: #63B960, 
+blue-curious: #1483EB, 
+blue-picton: #3C90E6,
+grey-tower: #A7BBC1 //new
+) !default;
+
+
+
+@each $theme, $color in $themes {
+  @include theme($theme, $color);
+}
+
+.test-block {
+	@include size (200px)
+	@include span-columns (1)
+	@include omega()
+}
+
+// =================================
+
+
+
+
+
+
+
+
+
+
 
