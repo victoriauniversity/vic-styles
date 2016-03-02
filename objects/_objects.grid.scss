@@ -8,106 +8,103 @@
 // To divide page into independent sectors.
 .sector {
     @include clearfix();
-
     // Highlights sector
-    &.highlighted { background-color: $block-highlight-colour; }
-
+    &.highlighted {
+        background-color: $block-highlight-colour;
+    }
     // Adds line separator to the end of the sector
-    &.separated { border-bottom: $delim-border; }
+    &.separated {
+        border-bottom: $delim-border;
+    }
 }
 
 
 /* ===== BLOCKS ============================================================= */
 
 $block-margin: $base-margin;
-
 // Standard block container
-.block { padding: $block-margin; }
+.block {
+    padding: $block-margin;
+}
 
 // Makes content aligned to the center if the width of the
 // viewport surpasses $base-width.
-.centraliser { @include outer-container(); }
+.centraliser {
+    @include outer-container();
+}
 
-    /* Two-column grid layout. */
-    .two-col-layout {
+.short-col-wide {
+    @include media ( $desktop-large ) {
+          @include span-columns(12)
+    }
+}
 
-        // Outter container
-        &.block-container {
-            @include make-table-grid();
 
-            // Column; makes two cols - 65% and 35% width
-            .block {
+/* Two-column grid layout. */
 
-                // Right column
-                &:last-child { padding-top: 0; }
-
-                @include media( $tablet-and-bigger ) {
-
-                    // Left column
-                    &:first-child {
-                        @include make-table-column( $two-col-layout-left-ratio );
-                    }
-
-                    // Right column
-                    &:last-child {
-                        @include make-table-column( $two-col-layout-right-ratio );
-                        padding-top: $block-margin;
-                    }
-
-                    &.btns-holder {
-                        text-align: left;
-                        vertical-align: middle;
-                    }
-                }
+.two-col-layout {
+    // Outter container
+    &.block-container {
+        @include make-table-grid();
+        // Column; makes two cols - 65% and 35% width
+        .block {
+            // Right column
+            &:last-child {
+                padding-top: 0;
             }
-
-             // Column; makes two cols - 35% and 65% width
-            .block-swap {
-
-                // Right column
-                &:last-child { padding-top: 0; }
-
-                @include media( $tablet-and-bigger ) {
-
-                    // Left column
-                    &:first-child {
-                        @include make-table-column(  $two-col-layout-right-ratio );
-
-                    }
-
-                    // Right column
-                    &:last-child {
-                        @include make-table-column( $two-col-layout-left-ratio );
-                    }
-
-                    &.btns-holder {
-                        text-align: left;
-                        vertical-align: middle;
-                    }
+            @include media( $tablet-and-bigger) {
+                // Left column
+                &:first-child {
+                    @include make-table-column( $two-col-layout-left-ratio);
                 }
-            }
-            
-        }
-
-        // Adds line separators to divide blocks
-        &.separated {
-            .block {
-
                 // Right column
                 &:last-child {
+                    @include make-table-column( $two-col-layout-right-ratio);
                     padding-top: $block-margin;
-                    border-left: none;
-                    border-top: $delim-border;
                 }
-
-                @include media( $tablet-and-bigger ) {
-
-                    &:last-child {
-                        border-left: $delim-border;
-                        border-top: none;
-                    }
+                &.btns-holder {
+                    text-align: left;
+                    vertical-align: middle;
+                }
+            }
+        }
+        // Column; makes two cols - 35% and 65% width
+        .block-swap {
+            // Right column
+            &:last-child {
+                padding-top: 0;
+            }
+            @include media( $tablet-and-bigger) {
+                // Left column
+                &:first-child {
+                    @include make-table-column( $two-col-layout-right-ratio);
+                }
+                // Right column
+                &:last-child {
+                    @include make-table-column( $two-col-layout-left-ratio);
+                }
+                &.btns-holder {
+                    text-align: left;
+                    vertical-align: middle;
                 }
             }
         }
     }
-
+    // Adds line separators to divide blocks
+    &.separated {
+        .block {
+            // Right column
+            &:last-child {
+                padding-top: $block-margin;
+                border-left: none;
+                border-top: $delim-border;
+            }
+            @include media( $tablet-and-bigger) {
+                &:last-child {
+                    border-left: $delim-border;
+                    border-top: none;
+                }
+            }
+        }
+    }
+}
