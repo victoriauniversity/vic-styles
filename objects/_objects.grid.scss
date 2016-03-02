@@ -52,6 +52,9 @@ $block-margin: $base-margin;
             &:last-child {
                 padding-top: 0;
             }
+            &.btns-holder {
+                    text-align: center;    
+            }
             @include media( $tablet-and-bigger) {
                 // Left column
                 &:first-child {
@@ -65,6 +68,10 @@ $block-margin: $base-margin;
                 &.btns-holder {
                     text-align: left;
                     vertical-align: middle;
+                    @include media ($tablet-and-bigger) {
+                        @include span-columns (3)
+                    }
+                    
                 }
             }
         }
@@ -84,8 +91,11 @@ $block-margin: $base-margin;
                     @include make-table-column( $two-col-layout-left-ratio);
                 }
                 &.btns-holder {
-                    text-align: left;
-                    vertical-align: middle;
+                    text-align: center;
+                    @include media ($tablet-and-bigger) {
+                        @include span-columns (3)
+                    }
+                    
                 }
             }
         }

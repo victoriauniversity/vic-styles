@@ -6,9 +6,14 @@
 /* ===== BUTTONS ============================================================ */
 
 $btn-bg: $blue-azure !default;
+$btn-hover-bg: $blue-st-tropaz;
+
+$sec-bg: $grey-alto;
+$sec-hover-bg: $grey-silver; 
+
 $btn-corners: 2px !default;
 $btn-label-colour: $white !default;
-$btn-hover-bg: $blue-st-tropaz;
+
 $ico-margin:    .9em;
 
 .btn {
@@ -46,11 +51,20 @@ $ico-margin:    .9em;
             margin-right: $ico-margin;
         }
     }
+
+    &.secondary {
+        background-color: $sec-bg;
+        color: $grey-mako;
+        padding: 0.6em 1em;
+        line-height: 1;
+        @include hoverify() {
+            background-color: $sec-hover-bg;
+            // color: $grey-dusty-gray;
+        }
+    }
 }
 
-.btns-holder {
-    text-align: center;
-}
+
 
 
 /* ===== LINKS ============================================================== */
