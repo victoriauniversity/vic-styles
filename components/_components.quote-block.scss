@@ -3,78 +3,81 @@
 ===============================*/
 
 $bg-color: $grey-gallery;
-
 .quote-block {
-
     background-color: $bg-color;
+    header {
+        @include media ($mobile-large-and-smaller) {
+            float: right;
+        }
+    }
+}
 
+.person-block {
+    padding-bottom: 2em;
+    .quote-text {
+         @include media ($mobile-large-and-smaller) {
+            float: right;
+        }
+    }
+    .block {
+        padding-bottom: 0.8em;
+    }
+}
+
+.quote-block,
+.person-block {
     .quote-wrap {
-        
         padding: 1.5em;
         max-width: 1280px;
         margin-right: auto;
         margin-left: auto;
-
         .quote-image {
             float: left;
             margin-right: 3.5em;
-            
-
-
-            @include media ( $mobile-large-and-smaller ) {
+            @include media ( $mobile-large-and-smaller) {
                 margin-right: 2em;
             }
-            @include media ( $mobile ) {
+            @include media ( $mobile) {
                 margin-right: 1em;
             }
-
             img {
                 @include size ( 180px);
                 margin: 0 1em 1em 2.5em;
                 border-radius: 50%;
-
-                @include media ( $mobile ) {
-                    @include size (120px)
-                    margin: 0 0.5em 0.5em;
+                @include media ( $mobile) {
+                    @include size (120px) margin: 0 0.5em 0.5em;
                 }
-
             }
         }
         .quote-body {
             header {
-                float: right;
-                @include media ( $desktop-and-bigger ) {
+                padding-bottom: 1em;
+                @include media ( $desktop-and-bigger) {
                     float: none;
                 }
-
             }
-            h2, h4 {
-                color: $grey-mako;
-            }
-
-            h2 {
-                text-indent: 5px;
-                 @include media ( $desktop-and-bigger ) {
-                    text-indent: -20px;
-                 }
-
-            }
-
+            h2,
+            h3,
             h4 {
+                
                 margin-bottom: 0;
             }
-
+            .quote-text {
+                text-indent: 1em;
+                color: $grey-mako;
+                @include media ( $desktop-and-bigger) {
+                    text-indent: -0.6em;
+                }
+            }
             .ico {
                 color: $grey-silver;
                 padding-right: 0.5em;
-                @include media ( $desktop-and-bigger ) {
-                    padding-right: 0;
+                @include media ( $desktop-and-bigger) {
+                    padding-right: 0.3em;
                 }
-                
                 &:last-child {
                     padding-left: 0.75em;
                 }
-                
             }
         }
     }
@@ -82,4 +85,10 @@ $bg-color: $grey-gallery;
 
 .quote-block + .fun-fact {
     background-color: $white;
+}
+
+.separated {
+    .separated {
+        border-bottom: 0;
+    }
 }

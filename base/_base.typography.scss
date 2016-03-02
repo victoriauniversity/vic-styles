@@ -7,7 +7,7 @@
 
 $heading-font-family:   $caption-font-family;
 $heading-line-height:   $caption-line-height;
-$heading-colour:        $caption-colour;
+$heading-colour:        $green-victoria;
 $heading-weight:        $weight-light;
 
 
@@ -34,7 +34,7 @@ $heading-weight:        $weight-light;
 /* Headings */
 // Then call it with the rules/styles you want wherever you want (As long as the file/include has access to the above function of course).
 #{headings( 1, 6 )} {
-    margin-bottom: .8em;
+    margin-bottom: .3em;
     color: $green-victoria;
     font-family: $heading-font-family;
     font-weight: $heading-weight;
@@ -68,8 +68,8 @@ p {
 
 a {
     color: $link-colour;
-
-    @include hoverify { text-decoration: none; }
+    text-decoration: none;
+    @include hoverify { color: $blue-curious-blue }
 }
 
 a, a > *:before, a > *:after  {
