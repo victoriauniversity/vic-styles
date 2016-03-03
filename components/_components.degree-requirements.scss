@@ -1,0 +1,39 @@
+/*===============================
+=    DEGREE REQUIEMENTS BLOCK   =
+===============================*/
+
+.degree-req {
+    .req-header {
+        padding: 0.8em;
+        background-color: $grey-gallery;
+        border-left: 6px solid $grey-silver;
+        margin-bottom: 0.2em;
+        h3 {
+            font-size: 1em;
+            color: $grey-mine-shaft;
+        }
+        p {
+            font-size: 0.9em;
+
+        }
+        .greenify {
+            color: $green-victoria;
+            font-size: 1.2em;
+        }
+        .req-child {
+            padding: 0.8em;
+            background-color: $grey-alto;
+            .grand-child {
+                border-left: 6px solid $grey-silver;
+                background-color: $grey-gallery;
+                padding: 0.3em 0.5em;
+                margin-top: 0.3em;
+                .great-grand-child {
+                    padding: 0.3em 0.5em;
+                    background-color: $grey-alto;
+                    // border-left: 3px solid $grey-silver;
+                }
+            }
+        }
+    }
+}
