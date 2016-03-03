@@ -1,0 +1,47 @@
+/*===============================
+=       FACTS BLOCK        =
+===============================*/
+
+.facts-block {
+    .facts-wrap {
+        // background-color: $grey-gallery;
+        .ico-wrap {
+            padding-left: 2.75em;
+            position: relative;
+            margin-bottom: 0.5em;
+            p {
+                font-size: 0.9em;
+                padding-top: 0.3em;
+            }
+            h4 {
+                margin: 0;
+            }
+            // @include media ($tablet-and-bigger) {
+            //     padding-left: 55px;
+            // }
+        }
+        .fact {
+            h4 {
+                font-weight: bold;
+            }
+            @include span-columns (6)
+        }
+        .fees-fact {
+            h4 {
+                font-weight: bold;
+            }
+            clear: both;
+        }
+        .ico {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-right: 1.5em;
+            width: 50px;
+            font-size: 1.8em;
+            &:before {
+                vertical-align: top;
+            }
+        }
+    }
+}
