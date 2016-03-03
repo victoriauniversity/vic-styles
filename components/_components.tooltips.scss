@@ -61,3 +61,59 @@
 .toggle-link-grey {
     color: darkgrey;
 }
+
+// SHOW MORE
+
+/* 
+  Allow angular.js to be loaded in body, hiding cloaked elements until 
+  templates compile.  The !important is important given that there may be 
+  other selectors that are more specific or come later and might alter display.  
+ */
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
+.text-container {
+    transition: 0.5s ease max-height;
+    max-height: 80px;
+    overflow: hidden;
+    &.text-expanded {
+        transition: 0.5s ease max-height;
+        overflow: visible;
+        max-height: 1500px;
+    }
+}
+
+.text-wrap {
+    position: relative;
+    .text-overlay {
+        transition: 0.5s ease all;
+        @include position( absolute, 0 0 0 0);
+        @include size( 100% 100%);
+        @include linear-gradient( transparent 0%, transparent 80%, rgba( $white, 1) 100%);
+        &.text-expanded {
+
+            background-image: none;
+        }
+    }
+}
+
+.btn-text-expand.ng-enter,
+.btn-text-expand.ng-leave {
+    transition: 0.3s ease all;
+    opacity: 0;
+    // display: none !important;
+}
+
+.btn-text-collapse.ng-enter,
+.btn-text-collapse.ng-leave {
+    transition: 0.3s ease all;
+    opacity: 0;
+    // display: none !important;
+}
