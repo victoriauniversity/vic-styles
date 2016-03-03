@@ -99,11 +99,21 @@ $nm-bg-color: $grey-alto;
         }
     }
     .tag-wrap {
-        float: right;
+        // float: right;
+        display: inline-block;
+        margin-top: 0.3em;
+        margin-left: 2em;
+        @include span-columns (4)
+
         .tag {
-            font-size: 0.9em;
-            background-color: $grey-alto;
+            vertical-align: bottom;
+            color: $green-victoria;
+            // float: right;
+            font-size: 0.8em;
+            // background-color: $grey-alto;
+            margin: 0.5em;
             padding: 0.5em;
+            border: 1px solid $green-victoria;
             border-radius: $base-border-radius;
             &:first-child {
                 margin-right: 0.3em;
@@ -204,3 +214,5 @@ $mar-bot: 0.3em;
 
 
 .example-course {}
+
+
