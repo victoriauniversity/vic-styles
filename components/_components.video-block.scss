@@ -1,0 +1,59 @@
+/*===============================
+=       VIDEO BLOCK             =
+===============================*/
+
+$bg-color: $grey-gallery;
+.video-block {
+    .video-body {
+        position: relative;
+        // overflow: hidden;/
+        max-width: 970px;
+        min-height: 360px;
+        padding: 0;
+        margin-right: auto;
+        margin-left: auto;
+        .cover-overlay {
+            z-index: $z-index-lower;
+            @include position( absolute, 0);
+            @include size ( 100%);
+            .cover-image-holder {
+                @include position( absolute, 0);
+                img {
+                    @include size (100%)
+                }
+            }
+            .cover-text-overlay {
+                position: relative;
+                min-height: 100%;
+                text-align: center;
+                z-index: $z-index-lower;
+                @include linear-gradient( rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 1%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 50%); // TODO: Improve using non-linear functino @include linear-gradient(50deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+                @include position( absolute, null null null 0);
+                @include size ( 100%);
+                header {
+                    // position: absolute;
+                    // bottom: 0;
+                    padding-top: 2em;
+                    width: 100%;
+                    margin-right: auto;
+                    margin-left: auto;
+                    h2,
+                    h4 {
+                        color: $white;
+                    }
+                    .ico {
+                        color: $white;
+                        font-size: 2em;
+                    }
+                }
+            }
+        }
+        .video-wrap {
+            position: relative;
+        }
+        .video-frame-wrap {
+            @include size(100%)
+            @include position( absolute, 0);
+        }
+    }
+}

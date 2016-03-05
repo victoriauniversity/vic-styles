@@ -93,9 +93,12 @@ $nm-bg-color: $grey-alto;
         float: left;
         a {
             text-decoration: none;
-            .caret {
-                margin-right: 1em;
-            }
+            .ico {
+                display: block;
+                float: left;
+                width: 1em;
+                padding-right: 0.5em;}
+            
         }
     }
     .tag-wrap {
@@ -103,9 +106,7 @@ $nm-bg-color: $grey-alto;
         display: inline-block;
         margin-top: 0.3em;
         margin-left: 2em;
-        @include span-columns (4)
-
-        .tag {
+        @include span-columns (4) .tag {
             vertical-align: bottom;
             color: $green-victoria;
             // float: right;
@@ -122,16 +123,34 @@ $nm-bg-color: $grey-alto;
     }
 }
 
+.related-degree {
+    .toggle-content {
+        max-height: 20000px;
+        // opacity: 1;
+        transition: 0.5s ease all;
+        &.ng-hide {
+            max-height: 0;
+            opacity: 0;
+            
+        }
+        &.ng-add,
+        &.ng-remove {
+            // transition: 1s ease all;
+            // opacity: 0;
+            // display: none !important;
+        }
+    }
+}
+
+
 /*===============================
 =     DEGREES BLOCK      =
 ===============================*/
 
 $mar-bot: 0.3em;
-
 .toggle-content {
     .degree-block {
         @include outer-container;
-
         border-left: 6px solid $grey-alto;
         // border-bottom: 1px solid $grey-alto;
         margin-top: 1em;
@@ -149,17 +168,13 @@ $mar-bot: 0.3em;
         }
         .degree-content {
             @include span-columns(8);
-
-            @include media ( $mobile-large-and-smaller ) {
+            @include media ( $mobile-large-and-smaller) {
                 @include fill-parent();
-
             }
-
             .length {
                 font-size: 1em;
-
                 .ico {
-                     &.clock {
+                    &.clock {
                         font-size: 1.3em;
                     }
                 }
@@ -167,11 +182,9 @@ $mar-bot: 0.3em;
             .leads {
                 font-size: 0.75em;
                 margin-left: 1.5em;
-
-                @include media ( $tablet-and-smaller ) {
+                @include media ( $tablet-and-smaller) {
                     margin-left: 1em;
                 }
-
                 a {
                     font-size: 1.2em;
                 }
@@ -180,15 +193,14 @@ $mar-bot: 0.3em;
                         font-size: 1.45em;
                     }
                 }
-
-
             }
             .leads,
             .length {
                 display: inline-block;
                 vertical-align: bottom;
                 .ico {
-                    &.arr-right, &.clock {
+                    &.arr-right,
+                    &.clock {
                         margin-right: 0.3em;
                         margin-top: 0.3em;
                         line-height: 1;
@@ -199,20 +211,17 @@ $mar-bot: 0.3em;
         }
         .degree-button {
             min-width: 160px;
-
             @include span-columns(2);
-            @include media ($mobile-large-and-smaller ) {
-                max-width: 140px;       
+            @include media ($mobile-large-and-smaller) {
+                max-width: 140px;
             }
         }
     }
 }
 
+
 /*===============================
 =     EXAMPLE COURSE BLOCK      =
 ===============================*/
 
-
 .example-course {}
-
-
