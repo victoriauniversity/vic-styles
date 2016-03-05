@@ -81,12 +81,15 @@ $ico-code-dollar:            '\e811';
     @include define-icon( arr-up, $ico-code-arr-up );
     @include define-icon( arr-down, $ico-code-arr-down );
 
+    @include define-icon( short-arr-right, $ico-code-arr-short-right );
+    @include define-icon( short-arr-down, $ico-code-arr-short-down );
+
     /* CSS only icons */
     &.caret:before {
         @include triangle(
             $ico-caret-width $ico-caret-height,
             $base-font-colour,
-            down
+            right
         );
     }
 }

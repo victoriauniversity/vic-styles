@@ -35,8 +35,8 @@ $grid-area-active-bg:           $green-victoria !default;
             margin-left: .7em;
 
             &.caret:before {
-                position: relative; top: -$grid-area-margin;
-                border-top-color: $grid-area-title-caret-colour;
+                // position: relative; top: -$grid-area-margin;
+                // border-top-color: $grid-area-title-caret-colour;
             }
         }
 
@@ -53,7 +53,7 @@ $grid-area-active-bg:           $green-victoria !default;
                 background-color: $grid-area-hover-bg;
                 color: $link-colour;
 
-                .ico.caret:before { border-top-color: $link-colour; }
+                // .ico.caret:before { border-top-color: $link-colour; }
             }
         }
     }
@@ -75,9 +75,14 @@ $grid-area-active-bg:           $green-victoria !default;
             color: $grid-area-hover-title-colour;
 
             // Flick the caret!
+            .ico { margin-left: .4em;}
             .ico.caret:before {
-                border-top: none;
-                border-bottom: $ico-caret-height solid $grid-area-hover-title-colour;
+                margin-bottom: -0.3em;
+                @include triangle(
+                    $ico-caret-width $ico-caret-height,
+                    $white,
+                    down
+                );
             }
 
             > a {
