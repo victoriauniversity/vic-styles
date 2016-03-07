@@ -1,0 +1,16 @@
+/*===============================
+=       ERROR OVERLAY           =
+===============================*/
+
+.error-overlay {
+    @include position(absolute, 0)
+    background-color: rgba($white, 0.98);
+    z-index: 33333333;
+    text-align: center;
+    padding-top: 3em;
+}
+
+.ico.spin {
+	font-size: 2em;
+}
+
