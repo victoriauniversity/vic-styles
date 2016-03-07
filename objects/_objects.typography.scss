@@ -4,24 +4,28 @@
 
 
 /* Standard content with only basic formatting options. */
+
 .content-simple {
-
     /* Collections with shared attributes. */
-    ul, ol, p {
+    ul,
+    ol,
+    p {
         margin-bottom: 1.2em;
-
-        &:last-child { margin: 0; }
+        &:last-child {
+            margin: 0;
+        }
     }
-
     & > ul {
         line-height: 1.8;
-
+        margin-left: 0;
+        padding-left: 1em;
+        text-indent: -1.55em;
         & > li {
-            padding-left: .4em;
-
-            @include make-list-square-bullet( .5em ) {
-                position: relative; top: -0.1em;
-                margin-right: 1.4em;
+            // padding-left: .4em;
+            @include make-list-square-bullet( .5em) {
+                position: relative;
+                top: -0.1em;
+                margin-right: 1em;
             }
         }
     }
@@ -30,7 +34,9 @@
 
 /* ===== GENERIC HELPERS ==================================================== */
 
-.centered { text-align: center; }
+.centered {
+    text-align: center;
+}
 
 .smaller {
     font-size: 0.75em;

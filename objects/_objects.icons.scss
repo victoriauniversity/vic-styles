@@ -19,31 +19,42 @@ $ico-margin:    .9em;
 
 /* ===== FONT ICON'S CODES ================================================== */
 
-$ico-code-heart-thin:    '\e803';
-$ico-code-bubble-thin:   '\e805';
-$ico-code-study-cap-thin:'\e801';
 
-$ico-code-arr-right:    '\e802';
-$ico-code-arr-left:     '\e804';
-$ico-code-arr-down:     '\e806';
-$ico-code-arr-up:       '\e807';
+$ico-code-study-cap-thin:       '\e806';
+$ico-code-bubble-thin:          '\e80a';
+$ico-code-heart-thin:           '\e808';
 
-$ico-code-arr-short-down:   '\e808';
-$ico-code-arr-short-left:   '\e809';
-$ico-code-arr-short-right:  '\e80a';
-$ico-code-arr-short-up:     '\e80b';
+$ico-code-arr-right:            '\e807';
+$ico-code-arr-left:             '\e809';
+$ico-code-arr-down:             '\e80b';
+$ico-code-arr-up:               '\e80c';
 
-$ico-code-tooltip-circle:   '\e80c';
+$ico-code-arr-short-down:       '\e80d';
+$ico-code-arr-short-left:       '\e80e';
+$ico-code-arr-short-right:      '\e80f';
+$ico-code-arr-short-up:         '\e810';
 
-$ico-code-quote-start:  '\e80d';
-$ico-code-quote-end:    '\e80e';
+$ico-code-help:                 '\e811';
+$ico-code-quote-start:          '\e812';
+$ico-code-quote-end:            '\e813';
+$ico-code-phone:                '\e814';
+$ico-code-mail:                 '\e815';
+$ico-code-dollar:               '\e816';
+$ico-code-clock:                '\e805';
 
-$ico-code-phone:        '\e80f';
-$ico-code-envelope:     '\e810';
+$ico-code-star:                 '\e800';
+$ico-code-link-ext:             '\e801';
+$ico-code-info:                 '\e802';
+$ico-code-book:                 '\e803';
+$ico-code-cancel:               '\e804';
+$ico-code-ext-link:             '\e817';
+$ico-code-ok:                   '\e818';
+$ico-code-youtube-play:         '\e819';
+
+$ico-code-spin:                 '\e81a';
 
 
-$ico-code-clock:             '\e800';
-$ico-code-dollar:            '\e811';
+
 
 
 /* ===== ICONS DEFINITIONS ================================================== */
@@ -65,9 +76,9 @@ $ico-code-dollar:            '\e811';
     };
 
     // Standard icons (general usage, eg. buttons, links, headers, one liners)
-    @include define-icon( email, $ico-code-envelope );
+    @include define-icon( email, $ico-code-mail );
     @include define-icon( phone, $ico-code-phone );
-    @include define-icon( tooltip-icon, $ico-code-tooltip-circle );
+    @include define-icon( tooltip-icon, $ico-code-help );
 
     @include define-icon( clock, $ico-code-clock );
     @include define-icon( dollar, $ico-code-dollar );
@@ -84,6 +95,18 @@ $ico-code-dollar:            '\e811';
     @include define-icon( short-arr-right, $ico-code-arr-short-right );
     @include define-icon( short-arr-down, $ico-code-arr-short-down );
 
+    @include define-icon( star, $ico-code-star );
+    @include define-icon( link-ext, $ico-code-link-ext );
+    @include define-icon( info, $ico-code-info );
+    @include define-icon( book, $ico-code-book );
+    @include define-icon( cancel, $ico-code-cancel );
+    @include define-icon( ext-link, $ico-code-ext-link );
+    @include define-icon( ok, $ico-code-ok );
+    @include define-icon( youtube-play, $ico-code-youtube-play );
+
+    @include define-icon( spin, $ico-code-spin );
+
+
     /* CSS only icons */
     &.caret:before {
         @include triangle(
@@ -91,6 +114,37 @@ $ico-code-dollar:            '\e811';
             $base-font-colour,
             right
         );
+    }
+}
+
+.ico.spin {
+     @include animation( spin 2s 3 linear );
+         // animation: spin 2s infinite linear;
+    display: inline-block;
+}
+
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
     }
 }
 

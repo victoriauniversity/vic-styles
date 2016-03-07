@@ -4,22 +4,49 @@
 
 $bg-color: $grey-gallery;
 .video-block {
+    .block {
+        padding: 1em 0;
+    }
+    .block:last-child {
+        max-width: 970px;
+        margin-right: auto;
+        margin-left: auto;
+        @include media ($tablet-and-smaller) {
+            padding: 1em;
+        }
+    }
     .video-body {
         position: relative;
-        // overflow: hidden;/
-        max-width: 970px;
-        min-height: 360px;
         padding: 0;
         margin-right: auto;
         margin-left: auto;
+        @include media ($desktop-and-bigger) {
+            max-width: 970px;
+            min-height: 546px;
+        }
+        @include media ($tablet-and-smaller) {
+            min-width: 100%;
+            min-height: 360px;
+        }
+        @include media ($mobile-large-and-smaller) {
+            max-width: 480px;
+            min-height: 270px;
+        }
         .cover-overlay {
             z-index: $z-index-lower;
             @include position( absolute, 0);
             @include size ( 100%);
             .cover-image-holder {
                 @include position( absolute, 0);
+                overflow: hidden;
                 img {
-                    @include size (100%)
+                    @include size ( auto 100%);
+                    @include media ($mobile-large-and-bigger) {
+                        @include size ( 100% auto)
+                    }
+                    @include media ($desktop-and-bigger) {
+                        @include size (auto 100%)
+                    }
                 }
             }
             .cover-text-overlay {
@@ -44,16 +71,25 @@ $bg-color: $grey-gallery;
                     .ico {
                         color: $white;
                         font-size: 2em;
+                        &.youtube-play {
+                            font-size: 4em;
+                        }
                     }
                 }
             }
+        }
+        .close {
+            color: $white;
+            font-size: 2em;
+            padding: 0 1em;
+            @include position( absolute, null 0 null null);
+            z-index: $z-index-top;
         }
         .video-wrap {
             position: relative;
         }
         .video-frame-wrap {
-            @include size(100%)
-            @include position( absolute, 0);
+            @include size(100%) @include position( absolute, 0);
         }
     }
 }
