@@ -33,6 +33,9 @@ $nm-bg-color: $grey-alto;
         text-align: center;
         li {
             padding: 0.5em 0;
+            a{
+                cursor: link;
+            }
         }
         @include media ( $mobile-large-and-bigger) {
             width: 80%;
@@ -88,7 +91,7 @@ $nm-bg-color: $grey-alto;
 ===============================*/
 
 .toggle-block {
-    padding-bottom: 1em;
+    padding-bottom: 2em;
     h2 {
         float: left;
         a {
@@ -123,7 +126,7 @@ $nm-bg-color: $grey-alto;
     }
 }
 
-.related-degree {
+.related-degree, .majors-block {
     .toggle-content {
         max-height: 20000px;
         // opacity: 1;
@@ -221,7 +224,18 @@ $mar-bot: 0.3em;
 
 
 /*===============================
-=     EXAMPLE COURSE BLOCK      =
+=     IMAGES BLOCK      =
 ===============================*/
 
-.example-course {}
+.images-block {
+    img {
+        width: 100%;
+        max-width: 500px;
+        border-bottom: 2px solid transparent;
+        @include hoverify () {
+            border-bottom: 2px solid $blue-endeavoura;
+        }
+    }
+}
+
+
