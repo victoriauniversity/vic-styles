@@ -15,6 +15,7 @@ $ico-margin: 0.9em;
         color: $white;
         line-height: 1.6;
         text-align: center;
+        margin-bottom: 0.8em;
     }
     a {
         color: $white;
@@ -90,13 +91,13 @@ $ico-margin: 0.9em;
     
 
 
-    @include media( $tablet-and-bigger ) {
+    @include media( $desktop-and-bigger ) {
 
         padding: 1.75em 0;
 
         .block {
 
-            width: 33%;
+            width: 30%;
             height: auto;
             float: left;
             display: inline-block;
@@ -104,7 +105,7 @@ $ico-margin: 0.9em;
 
             &.button-block {
                 padding: 0;
-                width: 33%;
+                width: 40%;
                 a {
                     width: 80%;
                     min-width: 230px; 

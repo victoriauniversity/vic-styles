@@ -6,7 +6,7 @@
 /* ===== RESPONSIVE VIEW WRAPPERS =========================================== */
 
 .view-large  {
-    font-size: em( 20px );
+    font-size: em( 18px );
 
     @include media( $tablet ) {
         font-size: em( 18px );

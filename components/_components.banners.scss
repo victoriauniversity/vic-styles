@@ -26,10 +26,10 @@ $banner-cover-text-colour:  $white;
     }
 
         .cover-pic {
-            @include position( absolute, 0 0 0 0);
+            @include position( absolute, null 0 0 0);
             min-height: 100%;
             min-width: $banner-cover-max-width;
-            @include size( 100% );
+            @include size(  100% null );
 
             // Specific to this particular image and its width.
             @media screen and ( max-width: $banner-cover-max-width ) {
