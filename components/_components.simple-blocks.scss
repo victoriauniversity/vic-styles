@@ -5,17 +5,42 @@
 $fun-fact-bg-color: $grey-gallery;
 .fun-fact {
     background-color: $fun-fact-bg-color;
-    padding: 1.75em;
+    @include media ($desktop-and-bigger) {
+        padding: 1.75em;
+    }
     h2 {
         font-size: 2.5em;
-        margin-bottom: 0em;
+        // margin-bottom: 0em;
     }
     @include media( $tablet-and-bigger) {
-        padding-right: 30px;
+        // padding-right: 30px;
         h2 {
             font-size: 2.5em;
-            padding-right: 30px;
-            text-align: right;
+            // padding-right: 30px;
+            text-align: center;
+        }
+    }
+    p {
+        // padding-top: 1.2em;
+    }
+    .fact-wrap {
+        padding: 1.5em;
+        @include outer-container;
+        .fact-heading {
+            @include media ($tablet-and-bigger) {
+                @include span-columns (3);
+            }
+            @include media ($desktop-and-bigger) {
+                @include span-columns (4);
+            }
+        }
+        .fact-content {
+            @include media ($tablet-and-bigger) {
+                @include span-columns (5);
+            }
+            @include media ($desktop-and-bigger) {
+                @include span-columns (6);
+            }
         }
     }
 }
@@ -33,7 +58,7 @@ $nm-bg-color: $grey-alto;
         text-align: center;
         li {
             padding: 0.5em 0;
-            a{
+            a {
                 cursor: link;
             }
         }
@@ -42,27 +67,30 @@ $nm-bg-color: $grey-alto;
             margin-right: auto;
             margin-left: auto;
             h4 {
-                float: left;
-                margin-right: 0.5em;
+                // float: left;
+                margin-bottom: 0.8em;
             }
             ul {
-                display: table;
+                // display: table;
             }
             li {
                 // font-size: 1.2em;
-                padding: 0 0.5em;
-                display: table-cell;
+                padding: 0.5em;
+                // display: table-cell;
                 text-align: center;
             }
         }
         @include media ( $desktop-and-bigger) {
-            width: 90%;
+            width: 100%;
             max-width: 850px;
             margin-right: auto;
             margin-left: auto;
             ul {
-                width: 70%;
-                float: right;
+                width: 100%;
+                display: table;
+            }
+            li {
+                display: table-cell;
             }
         }
     }
@@ -85,23 +113,43 @@ $nm-bg-color: $grey-alto;
     }
 }
 
+.subject-block {
+    .toggle-block {
+        h2 {
+            float: left;
+        }
+    }
+}
+
 
 /*===============================
-=     RELATED DEGREE BLOCK      =
+=      STUDY OPTIONS BLOCK      =
 ===============================*/
 
+.study-options {
+    .postgrad-options {
+        // padding-top: 2em;
+    }
+}
+
+.toggle-content {
+    .block {
+        padding-top: 0;
+    }
+}
+
 .toggle-block {
-    padding-bottom: 2em;
+    // padding-bottom: 0em;
     h2 {
-        float: left;
+        // float: left;
         a {
             text-decoration: none;
             .ico {
                 display: block;
                 float: left;
                 width: 1em;
-                padding-right: 0.5em;}
-            
+                padding-right: 0.5em;
+            }
         }
     }
     .tag-wrap {
@@ -126,7 +174,8 @@ $nm-bg-color: $grey-alto;
     }
 }
 
-.related-degree, .majors-block {
+.related-degree,
+.majors-block {
     .toggle-content {
         max-height: 20000px;
         // opacity: 1;
@@ -134,7 +183,6 @@ $nm-bg-color: $grey-alto;
         &.ng-hide {
             max-height: 0;
             opacity: 0;
-            
         }
         &.ng-add,
         &.ng-remove {
@@ -237,5 +285,3 @@ $mar-bot: 0.3em;
         }
     }
 }
-
-
