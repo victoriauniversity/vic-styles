@@ -2,15 +2,27 @@
 =    DEGREE REQUIEMENTS BLOCK   =
 ===============================*/
 
+.req-container {
+    padding-bottom: 1.5em;
+}
+
 .degree-req {
+    padding: 0;
+    @include media ($tablet-and-bigger) {
+        padding: 0 1.5em;
+    }
     .req-header {
-        padding: 0.8em;
+        padding: 0.5em;
+        @include media ($tablet-and-bigger) {
+            padding: 1.2em;
+        }
         background-color: $grey-gallery;
-        border-left: 6px solid $grey-silver;
+        border-left: 6px solid $grey-alto;
         margin-bottom: 0.2em;
         h3 {
             font-size: 1em;
             color: $grey-mine-shaft;
+            // padding-top: 0.3em;
         }
         p {
             font-size: 0.9em;
@@ -20,21 +32,37 @@
             font-size: 1.2em;
         }
         .req-child {
-            padding: 0.8em;
-            background-color: $grey-alto;
+            padding: 1.2em 0;
             h5 {
-                padding-top: 0.5em;
+                padding: 0.5em;
+                background-color: $grey-alto;
+                margin-bottom: 0;
+                margin-top: 0.4em;
             }
             .grand-child {
-                border-left: 6px solid $grey-silver;
-                background-color: $grey-gallery;
-                padding: 0.3em 0.5em;
-                margin-top: 0.3em;
-                p {margin-top: 0.3em;}
+                padding: 0.5em;
+                @include media ($tablet-and-bigger) {
+                   padding: 0.4em 1.2em;
+                }
+                
+                background-color: $grey-alto;
+                // margin-top: 0.3em;
+                p {
+                    margin-top: 0.4em;
+                    padding: 0.5em;
+                    background-color: $grey-gallery;
+                    border-left: 6px solid $grey-silver;
+                }
                 .great-grand-child {
-                    padding: 0.3em 0.9em;
-                    background-color: $grey-alto;
-                    p {font-size: 0.8em;}
+                    padding: 0.4em 0 0 0;
+                    border-left: 6px solid $grey-silver;
+                    p {
+                        background-color: $grey-silver;
+                        font-size: 0.8em;
+                        margin-top: 0.4em;
+                        padding: 0.5em 0.5em 0.5em 1.2em;
+                        // color: $grey-mine-shaft;
+                    }
                     // border-left: 3px solid $grey-silver;
                 }
             }

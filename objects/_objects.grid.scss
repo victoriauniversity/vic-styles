@@ -23,7 +23,7 @@
 
 $block-margin: $base-margin;
 // Standard block container
-.block {
+.block, .block-swap {
     padding: $block-margin;
 }
 
@@ -102,7 +102,7 @@ $block-margin: $base-margin;
     }
     // Adds line separators to divide blocks
     &.separated {
-        .block {
+        .block, .block-swap {
             // Right column
             &:last-child {
                 padding-top: $block-margin;

@@ -5,25 +5,25 @@
 
 /* ===== RESPONSIVE VIEW WRAPPERS =========================================== */
 
-.view-large  {
-    font-size: em( 18px );
-
-    @include media( $tablet ) {
-        font-size: em( 18px );
-    };
-
-    @include media( $mobile-large ) {
-        font-size: em( 16px );
-        //Add margin for stick nav bottom
-         margin-bottom: 60px;
+.view-large {
+    font-size: em( 18px);
+    @include media( $tablet) {
+        font-size: em( 18px);
     }
-
-    @include media( $mobile ) {
-        font-size: em( 15px );
+    ;
+    @include media( $mobile-large) {
+        font-size: em( 16px);
+        //Add margin for stick nav bottom
+        margin-bottom: 60px;
+    }
+    @include media( $mobile) {
+        font-size: em( 15px);
         //Add margin for stick nav bottom
         margin-bottom: 80px;
     }
+    .main-view {
 
+    }
 }
 
 
@@ -31,19 +31,20 @@
 
 // Sticks panels to the bottom
 .mobile-sticky-down {
-
-    @include media( $mobile-large-and-smaller ) {
+    @include media( $mobile-large-and-smaller) {
         &.sector {
             z-index: $z-index-middle;
-            @include position( fixed, null 0 0 0 );
-
-            &.highlighted { border-top: 1px solid $block-highlight-border; }
+            @include position( fixed, null 0 0 0);
+            &.highlighted {
+                border-top: 1px solid $block-highlight-border;
+            }
         }
-
         .menu-tabbed {
             // Switch caret from bottom to top
             .active:after {
-                bottom: auto; margin-bottom: 0; border-top: none;
+                bottom: auto;
+                margin-bottom: 0;
+                border-top: none;
                 top: 0;
                 margin-top: -$menu-tabbed-item-triangle-height;
                 border-bottom: $menu-tabbed-item-triangle-height solid $menu-tabbed-item-active-bg-colour;
@@ -53,12 +54,9 @@
 }
 
 .sticky-top {
-    @include media ( $tablet-and-bigger ) {
-
-        @include position(fixed, 0 null null null)
-        z-index: $z-index-top;
+    @include media ( $tablet-and-bigger) {
+        @include position(fixed, 0 null null null) z-index: $z-index-top;
         width: 100%;
-
         &.toggle-up {
             top: -73px;
             @include transition(top 0.5s ease-in-out);

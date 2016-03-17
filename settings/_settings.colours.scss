@@ -44,21 +44,28 @@ $blue-curious-blue: 	#2B8CC4;
 
 //===================
 
-// ORINGINAL GREYS
+//IN ORDER LIGHT > DARK
 
+// ORINGINAL GREYS
 $grey-gallery: 	#EEE; 
 $grey-alto: 	#DDD; 
 $grey-silver: 	#CCC;
+// NEW GREYS 
+$grey-silver-chalice:    #bfbfbf;
+$grey-dusty-gray:        #999; 
+$grey-stack:             #808080; 
+$grey-mako:              #475153;
+$grey-mine-shaft:        #333; 
+
+// ORINGINAL BLACK
+$black-tundora: #444444;
+
+
 
 //===================
 
 // NEW GREYS 
-
-$grey-mercury:		#e8e8e8; //should remove this keep other greys use grey-gallery instead
-$grey-dusty-gray: 	#999; 
-$grey-stack: 		#808080; 
-$grey-mako: 		#475153;
-$grey-mine-shaft: 	#333; 
+$grey-mercury:		#e8e8e8; //should remove this, use grey-gallery instead
 
 //===================
 
@@ -133,6 +140,7 @@ $themes: (
 grey-gallery: #EEE, //old
 grey-alto: #DDD, //old
 grey-silver: #CCC, //old
+grey-silver-chalice: #bfbfbf, //new
 
 grey-mercury: #e8e8e8, //new
 grey-dusty-gray: #999, //new
