@@ -5,6 +5,9 @@
 .facts-block {
     .facts-wrap {
         // background-color: $grey-gallery;
+        .intro-fact {
+            @include outer-container;
+        }
         .ico-wrap {
             padding-left: 2.75em;
             position: relative;

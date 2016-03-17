@@ -102,7 +102,24 @@ $nm-bg-color: $grey-alto;
 ===============================*/
 
 .intro-about-block {
+    .intro-about {
+        padding: 1.5em;
+        @include media( $tablet-and-bigger) {
+            float: left;
+            
+            @include make-table-column( $two-col-layout-left-ratio);
+        }
+    }
     .about-subjects-block {
+        padding: 1.5em;
+        border-bottom: 1px solid $grey-alto;
+
+        @include media( $tablet-and-bigger) {
+            border-left: 1px solid $grey-alto;
+            border-bottom: 0;
+            float: right;
+            @include make-table-column( $two-col-layout-right-ratio);
+        }
         h3 {
             .tooltip-icon {
                 font-size: 100%;
@@ -113,18 +130,23 @@ $nm-bg-color: $grey-alto;
     }
 }
 
+
+/*===============================
+=      STUDY OPTIONS BLOCK      =
+===============================*/
+
 .subject-block {
     .toggle-block {
         h2 {
             float: left;
         }
     }
+    .explore-postgrad {
+        margin-left: 1.5em;
+        margin-top: 1em;
+        font-size: 0.9em;
+    }
 }
-
-
-/*===============================
-=      STUDY OPTIONS BLOCK      =
-===============================*/
 
 .study-options {
     .postgrad-options {
@@ -157,7 +179,11 @@ $nm-bg-color: $grey-alto;
         display: inline-block;
         margin-top: 0.3em;
         margin-left: 2em;
-        @include span-columns (4) .tag {
+        @include media ($mobile-large-and-smaller) {
+            @include span-columns (6);
+        }
+        @include span-columns (5);
+        .tag {
             vertical-align: bottom;
             color: $green-victoria;
             // float: right;
