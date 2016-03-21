@@ -14,7 +14,7 @@ $banner-cover-text-colour: $white;
     .cover-overlay {
         @include position( absolute, 0 0 0 0);
         @include size( 100% 100%);
-        background-color: rgba( #171917, .6);
+        background-color: rgba( #171917, .2);
         // @include linear-gradient( transparent 0%, transparent 40%, rgba( #171917, .8 ) 100% ); // TODO: Improve using non-linear functino @include linear-gradient(50deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
     }
     .cover-holder {
@@ -36,21 +36,24 @@ $banner-cover-text-colour: $white;
     .intro {
         @include outer-container(990px);
         @include position( relative);
-        margin-top: 2.5em;
-        margin-bottom: 2em;
+        margin-top: 3em;
+        margin-bottom: 2.5em;
         padding: 0 $base-padding;
         color: $banner-cover-text-colour;
         text-align: center;
         z-index: $z-index-lower;
+
     }
     .title {
         display: inline-block;
         padding: .35em .75em;
         color: $banner-cover-text-colour;
-        background-color: $green-victoria;
+        background-color: rgba($green-victoria, 0.9);
     }
     .abstract {
         // font-size: 150%;
         color: $white;
+        padding: 0.5em;
+        background-color: rgba($green-victoria, 0.9);
     }
 }

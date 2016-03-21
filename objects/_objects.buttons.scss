@@ -32,7 +32,11 @@ $ico-margin:    .9em;
         background-color: $btn-hover-bg;
         color: $btn-label-colour;
     }
-    ;
+
+    @include media ($mobile) {
+        white-space: pre-line;
+    }
+    
     // Sizing (normal size by default)
     &.large {
         font-size: 100%;

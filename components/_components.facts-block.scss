@@ -7,6 +7,7 @@
         // background-color: $grey-gallery;
         .intro-fact {
             @include outer-container;
+            margin-bottom: 0.8em;
         }
         .ico-wrap {
             padding-left: 2.75em;
@@ -23,11 +24,30 @@
             //     padding-left: 55px;
             // }
         }
+        .majors-wrap {
+            ul {
+                margin-top: 0.5em;
+            }
+            .highlight {
+                // vertical-align: bottom;
+                // color: #115737;
+                // font-size: 0.8em;
+                margin: -0.2em;
+                padding: 0.2em;
+                border: 1px solid $blue-endeavoura;
+                border-radius: 2px;
+                @include hoverify (){
+                    border: 1px solid $blue-curious-blue;
+                }
+            }
+        }
         .fact {
             h4 {
                 font-weight: bold;
             }
-            @include span-columns (6)
+            @include media ($tablet-and-bigger) {
+                @include make-table-column (0.5)
+            }
         }
         .fees-fact {
             h4 {
