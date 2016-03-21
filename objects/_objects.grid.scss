@@ -23,7 +23,8 @@
 
 $block-margin: $base-margin;
 // Standard block container
-.block, .block-swap {
+.block,
+.block-swap {
     padding: $block-margin;
 }
 
@@ -34,8 +35,8 @@ $block-margin: $base-margin;
 }
 
 .short-col-wide {
-    @include media ( $desktop-large ) {
-          @include span-columns(12)
+    @include media ( $desktop-large) {
+        @include span-columns(12)
     }
 }
 
@@ -53,9 +54,10 @@ $block-margin: $base-margin;
                 padding-top: 0;
             }
             &.btns-holder {
-                    text-align: center;    
+                text-align: center;
+                vertical-align: middle;
             }
-            @include media( $tablet-and-bigger) {
+            @include media( $desktop-and-bigger) {
                 // Left column
                 &:first-child {
                     @include make-table-column( $two-col-layout-left-ratio);
@@ -67,11 +69,8 @@ $block-margin: $base-margin;
                 }
                 &.btns-holder {
                     text-align: left;
-                    vertical-align: middle;
-                    @include media ($tablet-and-bigger) {
-                        @include span-columns (3)
-                    }
                     
+                    @include make-table-column( $two-col-layout-right-ratio);
                 }
             }
         }
@@ -92,17 +91,15 @@ $block-margin: $base-margin;
                 }
                 &.btns-holder {
                     text-align: center;
-                    @include media ($tablet-and-bigger) {
-                        @include span-columns (3)
-                    }
-                    
+                    @include span-columns (3)
                 }
             }
         }
     }
     // Adds line separators to divide blocks
     &.separated {
-        .block, .block-swap {
+        .block,
+        .block-swap {
             // Right column
             &:last-child {
                 padding-top: $block-margin;

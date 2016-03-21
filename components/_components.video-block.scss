@@ -6,6 +6,7 @@ $bg-color: $grey-gallery;
 .video-block {
     .block {
         padding: 1em 0;
+        position: relative;
     }
     .block:last-child {
         max-width: 970px;
@@ -13,6 +14,50 @@ $bg-color: $grey-gallery;
         margin-left: auto;
         @include media ($tablet-and-smaller) {
             padding: 1em;
+        }
+    }
+    .cover-text-overlay {
+         @include media ($tablet-and-bigger) {
+            position: absolute;
+            top: 0;
+            @include span-columns (4)
+            margin: 2em 1em 1em;
+            z-index: 1;
+            background-color: rgba($green-victoria, 0.9);
+         }
+
+        @include outer-container;
+        background-color: $green-victoria;
+        padding: 1em;
+        header {
+            @include span-columns (12);
+            @include media ($mobile-large-and-bigger) {
+                @include span-columns (4);
+
+            }
+            float: left;
+            h2,
+            h4 {
+                color: $white;
+            }
+        }
+        .button-wrap {
+            padding: 0.5em;
+            text-align: center;
+            @include span-columns (12);
+            @include media ($mobile-large-and-bigger) {
+                @include span-columns (2);
+            }
+            .ico {
+                color: $white;
+                &.youtube-play {
+                    font-size: 3em;
+                }
+            }
+        }
+        @include hoverify (){
+            background-color: rgba($green-victoria, 1);
+            cursor: pointer;
         }
     }
     .video-body {
@@ -35,6 +80,7 @@ $bg-color: $grey-gallery;
         .cover-overlay {
             z-index: $z-index-lower;
             @include position( absolute, 0);
+            @include media ($tablet-and-bigger) {}
             @include size ( 100%);
             .cover-image-holder {
                 @include position( absolute, 0);
@@ -49,35 +95,12 @@ $bg-color: $grey-gallery;
                     }
                 }
             }
-            .cover-text-overlay {
-                position: relative;
-                min-height: 100%;
-                text-align: center;
-                z-index: $z-index-lower;
-                @include linear-gradient( rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 1%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 50%); // TODO: Improve using non-linear functino @include linear-gradient(50deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
-                @include position( absolute, null null null 0);
-                @include size ( 100%);
-                header {
-                    @include position(absolute, null 0 0 0);
-                    width: 100%;
-                    padding-bottom: 2em;
-                    h2,
-                    h4 {
-                        color: $white;
-                    }
-                    .ico {
-                        color: $white;
-                        font-size: 2em;
-                        &.youtube-play {
-                            font-size: 4em;
-                        }
-                    }
-                }
-            }
         }
         .close {
             color: $white;
+            background-color: rgba($green-victoria, 0.5);
             font-size: 2em;
+            margin: 0.3em;
             padding: 0 1em;
             @include position( absolute, null 0 null null);
             z-index: $z-index-top;
