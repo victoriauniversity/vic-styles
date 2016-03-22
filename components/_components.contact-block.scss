@@ -4,46 +4,50 @@
 
 $bg-color: $black-victoria;
 $ico-margin: 0.9em;
-
-
 .victoria-contact {
-
     background-color: $bg-color;
     padding: 1.75em 0.5em;
-
-     h4 {
+    h4 {
         color: $white;
         line-height: 1.6;
         text-align: center;
         margin-bottom: 0.8em;
     }
+    .centraliser {
+        text-align: center;
+    }
     a {
         color: $white;
+    }
+    .register {
+        @include hoverify () {
+            text-decoration: underline;
+            color: $grey-dusty-gray;
+        }
     }
     p {
         color: $grey-dusty-gray;
     }
-
     .contact-wrap {
         min-height: 100px;
         display: block;
-
+        text-align: center;
     }
     .block {
         padding: 0.5em;
-        min-width: 220px; 
+        min-width: 220px;
         width: 60%;
         margin-right: auto;
         margin-left: auto;
         text-align: center;
     }
-    
     .phone-block {
-
         .phone-block-wrap {
-
             a {
                 text-decoration: none;
+                @include hoverify () {
+                    color: $grey-dusty-gray;
+                }
                 .ico {
                     // Standard icon styles
                     margin-left: $ico-margin;
@@ -56,14 +60,12 @@ $ico-margin: 0.9em;
                         margin-right: $ico-margin;
                     }
                 }
-            } 
+            }
         }
-        
     }
     .secondary-phone {
         font-size: 0.75em;
         // margin-left: 5em;
-
         a {
             margin-left: 0.35em;
         }
@@ -78,7 +80,9 @@ $ico-margin: 0.9em;
             font-size: 1.2em;
             vertical-align: middle;
             line-height: 0;
-
+            @include hoverify () {
+                color: $grey-dusty-gray;
+            }
             .ico {
                 // Positioning (right position by default)
                 &.left {
@@ -88,28 +92,21 @@ $ico-margin: 0.9em;
             }
         }
     }
-    
-
-
-    @include media( $desktop-and-bigger ) {
-
+    @include media( $desktop-and-bigger) {
         padding: 1.75em 0;
-
         .block {
-
             width: 30%;
             height: auto;
             float: left;
             display: inline-block;
             padding: 0.5em;
-
             &.button-block {
                 padding: 0;
                 width: 40%;
                 a {
                     width: 80%;
-                    min-width: 230px; 
-                    display: block;    
+                    min-width: 230px;
+                    display: block;
                     margin-left: auto;
                     margin-right: auto;
                 }
@@ -124,26 +121,21 @@ $ico-margin: 0.9em;
                 .phone-block-wrap {
                     float: right;
                     margin-right: 0.65em;
-                }  
-            }            
+                }
+            }
         }
     }
-    @include media ( $desktop-large ) {
+    @include media ( $desktop-large) {
         .contact-wrap {
             width: 90%;
             max-width: 1150px;
             margin-right: auto;
             margin-left: auto;
-
             .block {
-
                 width: 35%;
                 padding: 1em;
-
                 &.button-block {
-
                     width: 30%;
-
                     a {
                         width: 100%;
                     }
@@ -154,24 +146,14 @@ $ico-margin: 0.9em;
                     }
                 }
                 &.phone-block {
-
                     .phone-block-wrap {
-
                         margin-right: 3em;
-
                         .secondary-phone {
                             margin-left: 5em;
                         }
-                    }  
+                    }
                 }
             }
         }
     }
 }
-
-
-
-
-
-
-

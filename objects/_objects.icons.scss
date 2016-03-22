@@ -118,6 +118,10 @@ $ico-code-spin:                 '\e81a';
             right
         );
     }
+
+    &.ext-link:before {
+        display: inline;
+    }
 }
 
 .ico.spin {

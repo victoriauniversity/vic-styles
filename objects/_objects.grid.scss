@@ -69,10 +69,10 @@ $block-margin: $base-margin;
                 }
                 &.btns-holder {
                     text-align: left;
-                    
                     @include make-table-column( $two-col-layout-right-ratio);
                 }
             }
+            
         }
         // Column; makes two cols - 35% and 65% width
         .block-swap {

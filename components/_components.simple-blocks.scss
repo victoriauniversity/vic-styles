@@ -178,7 +178,7 @@ $nm-bg-color: $grey-alto;
         // float: right;
         display: inline-block;
         margin-top: 0.3em;
-        margin-left: 2em;
+        padding-left: 1.3em;
         @include media ($mobile-large-and-smaller) {
             @include span-columns (6);
         }

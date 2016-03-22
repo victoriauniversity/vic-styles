@@ -3,15 +3,16 @@
 ======================================*/
 
 
+
 //This shloud probably be in base
 input,
 select[multiple=multiple] {
   background-color: $base-bg-colour;
-  border: $base-border;
+  border: $text-input-border;
   box-sizing: border-box;
   font-family: $base-font-family;
-  font-size: $base-font-size;
-  margin-bottom: $base-margin;
+  font-size: $em-browser-default;
+  margin-bottom: 1em;
   padding: $base-padding / 3;
   width: 100%;
 
