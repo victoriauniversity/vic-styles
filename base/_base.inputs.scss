@@ -18,7 +18,7 @@ $input-active-border-color: $blue-endeavoura !default;
 
 input[ type=text ] {
     min-height: $input-height;
-    border: $input-border-width solid $input-border-color;
+    border: $text-input-border;
     border-radius: $input-border-radius;
 
     &:focus {

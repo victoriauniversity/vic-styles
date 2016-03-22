@@ -45,11 +45,17 @@ $base-z-index:      $z-index-default !default;
 $base-bg-colour:    $white;
 
 // Borders & Lines
-$base-border-radius:    2px !default;
+$base-border-radius:    3px !default;
 $base-border-width:     1px !default;
 $base-border-colour:    $grey-gallery !default;
 
 $base-border:   $base-border-width solid $grey-dusty-gray !default;
+
+//FORMS
+// Original borders
+$text-input-border: 2px solid $grey-silver !default;
+
+
 
 // Box model
 $base-margin:   1.5em !default;
