@@ -15,14 +15,18 @@ $ico-margin: 0.9em;
     }
     .centraliser {
         text-align: center;
+        text-align: -moz-center;
     }
     a {
         color: $white;
     }
-    .register {
-        @include hoverify () {
-            text-decoration: underline;
-            color: $grey-dusty-gray;
+    .register-wrap {
+        clear: both;
+        a.register {
+            @include hoverify () {
+                text-decoration: underline;
+                color: $grey-dusty-gray;
+            }
         }
     }
     p {

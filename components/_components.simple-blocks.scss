@@ -196,6 +196,9 @@ $nm-bg-color: $grey-alto;
             &:first-child {
                 margin-right: 0.3em;
             }
+            @include media ($mobile) {
+                line-height: 3;
+            }
         }
     }
 }
@@ -309,5 +312,13 @@ $mar-bot: 0.3em;
         @include hoverify () {
             border-bottom: 2px solid $blue-endeavoura;
         }
+    }
+}
+
+
+.explore-page{
+    @include outer-container;
+    .block {
+        @include span-columns (6)
     }
 }
