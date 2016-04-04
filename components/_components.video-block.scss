@@ -42,7 +42,7 @@ $bg-color: $grey-gallery;
             }
         }
         .button-wrap {
-            padding: 0.5em;
+            // padding: 0.5em;
             text-align: center;
             @include span-columns (12);
             @include media ($mobile-large-and-bigger) {

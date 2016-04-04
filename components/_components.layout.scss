@@ -21,9 +21,7 @@
         //Add margin for stick nav bottom
         margin-bottom: 80px;
     }
-    .main-view {
-
-    }
+    .main-view {}
 }
 
 
@@ -33,7 +31,7 @@
 .mobile-sticky-down {
     @include media( $mobile-large-and-smaller) {
         &.sector {
-            z-index: $z-index-middle;
+            z-index: $z-index-top;
             @include position( fixed, null 0 0 0);
             &.highlighted {
                 border-top: 1px solid $block-highlight-border;
@@ -55,6 +53,7 @@
 
 .sticky-top {
     @include media ( $tablet-and-bigger) {
+        border-bottom: 1px solid $block-highlight-border;
         @include position(fixed, 0 null null null) z-index: $z-index-top;
         width: 100%;
         &.toggle-up {
@@ -64,6 +63,12 @@
         &.toggle-down {
             top: 0;
             @include transition(top 0.2s ease-in);
+        }
+    }
+    li {
+        border-left: 1px solid $block-highlight-border;
+        &:last-child {
+            border-right: 1px solid $block-highlight-border;
         }
     }
 }

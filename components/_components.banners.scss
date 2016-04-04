@@ -26,7 +26,7 @@ $banner-cover-text-colour: $white;
         @include position( absolute, null 0 0 0);
         min-height: 100%;
         min-width: $banner-cover-max-width;
-        @include size( 100% null);
+        width: 100%;
         // Specific to this particular image and its width.
         @media screen and ( max-width: $banner-cover-max-width) {
             left: 50%;
@@ -36,13 +36,22 @@ $banner-cover-text-colour: $white;
     .intro {
         @include outer-container(990px);
         @include position( relative);
-        margin-top: 3em;
-        margin-bottom: 2.5em;
+        margin-top: 0;
+        margin-bottom: 0.25em;
         padding: 0 $base-padding;
         color: $banner-cover-text-colour;
         text-align: center;
         z-index: $z-index-lower;
+        @include media ($desktop-and-bigger) {
+            margin-top: 3em;
+            margin-bottom: 2.5em;
+        }
+        .banner-link {
+            color: $white;
+            text-decoration: underline;
+            display: block;
 
+        }
     }
     .title {
         display: inline-block;

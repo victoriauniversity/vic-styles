@@ -52,7 +52,7 @@ $ico-code-ok:                   '\e818';
 $ico-code-youtube-play:         '\e819';
 
 $ico-code-spin:                 '\e81a';
-
+$ico-code-search:               '\e81b';
 
 
 
@@ -108,6 +108,7 @@ $ico-code-spin:                 '\e81a';
     @include define-icon( youtube-play, $ico-code-youtube-play );
 
     @include define-icon( spin, $ico-code-spin );
+    @include define-icon( search, $ico-code-search );
 
 
     /* CSS only icons */

@@ -26,6 +26,9 @@ $block-margin: $base-margin;
 .block,
 .block-swap {
     padding: $block-margin;
+    @include media ( $desktop-large) {
+         // padding: 2em;
+    }
 }
 
 // Makes content aligned to the center if the width of the

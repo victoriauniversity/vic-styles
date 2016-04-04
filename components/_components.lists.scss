@@ -80,14 +80,17 @@ $grid-area-active-bg: $green-victoria !default;
         // Show preview!
         .preview {
             display: block;
+            width: 100%;
         }
     }
 }
 
 .content-simple {
     ul.ext-links {
+        text-align: left;
         @include media( $desktop-and-bigger) {
             margin-top: 2.2em;
+            
         }
     }
 }
