@@ -2,12 +2,25 @@
 =            OLD SITE NAVIGATION            =
 =============================================*/
 
+.print-only {
+    display: none;
+}
+
 //Special media break
 $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $tablet-grid-columns);
 #site-header {
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+        display: none !important;
+    }
     position: relative;
     background-color: $black-victoria;
     border-bottom: 6px solid $green-victoria;
+    padding-top: 1.5em;
     @include media ($desktop-and-bigger) {
         // @include outer-container;
         min-height: 110px;
@@ -53,7 +66,23 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
         @include media ($desktop-and-bigger) {
             padding: 0;
         }
-        background-color: $black;
+        @include media ($tablet-and-smaller) {
+            background-color: $black;
+        }
+        max-height: 1000px;
+        transition: 0.7s ease all;
+        &.ng-hide {
+            @include media ($tablet-and-smaller) {
+                max-height: 0;
+                opacity: 0;
+                padding: 0;
+            }
+        }
+        &.ng-hide:not(.ng-hide-animate) {
+            @include media ($desktop-and-bigger) {
+                display: block !important;
+            }
+        }
         ul {
             // padding: 2em;
             @include media ($desktop-and-bigger) {
@@ -81,7 +110,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                         }
                     }
                 }
-                &:last-child {
+                &:nth-child(6) {
                     a {
                         border-radius: 0 0 3px 3px;
                         @include media ($desktop-and-bigger) {
@@ -109,7 +138,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                         font-family: "Nimbus Roman No 9 L", "FreeSerif", "Georgia", serif;
                         font-weight: 500;
                         @include media ($menu-break) {
-                            font-size: 1.3em;
+                            font-size: 1.2em;
                         }
                         @include hoverify () {
                             color: $grey-dusty-gray;
@@ -122,38 +151,83 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                             font-weight: normal;
                         }
                     }
+
+                }
+            }
+            .search-btn {
+                display: none;
+                @include media ($desktop-and-bigger) {
+                    display: block;
+                    .ico {
+                        padding: 0 0.5em;
+                    }
                 }
             }
         }
-        form {
-            margin-top: 1em;
-            background-color: $grey-alto;
-            padding: 1em;
-            border-radius: $base-border-radius;
+        .search-wrap {
             @include media ($desktop-and-bigger) {
-                display: none;
+                // width: 70%;
+                clear: both;
+                display: block;
+                // float: left;
+                width: 100%;
+                max-height: 160px;
+                transition: 0.2s ease all;
+                opacity: 1;
+                &.ng-hide {
+                    transition: 0.7s ease all;
+                    max-height: 0;
+                    opacity: 0;
+                    padding: 0;
+                }
             }
-            input.btn {
-                margin: 0;
-                outline: 0;
-                border: 0;
-                font-size: 1.3em;
-                max-height: 36px;
-            }
-        }
-        max-height: 1000px;
-        // opacity: 1;
-        transition: 0.7s ease all;
-        &.ng-hide {
-            @include media ($tablet-and-smaller) {
-                max-height: 0;
-                opacity: 0;
-                padding: 0;
-            }
-        }
-        &.ng-hide:not(.ng-hide-animate) {
-            @include media ($desktop-and-bigger) {
-                display: block !important;
+            .search-form {
+                margin-top: 1em;
+                background-color: $grey-alto;
+                padding: 1em;
+                border-radius: $base-border-radius;
+                @include media ($desktop-and-bigger) {
+                    // display: none;
+                    margin-top: 0;
+                    margin-bottom: 1em;
+                    // float: left;
+                    margin-right: auto;
+                    margin-left: auto;
+                    width: 70%;
+                    max-height: 160px;
+                    transition: 0.7s ease all;
+                    opacity: 1;
+                    input[type=text] {
+                        // float: left;
+                        width: 79%;
+                        margin-bottom: 0;
+                        margin-right: 2%;
+                        max-height: 160px;
+                        transition: 0.7s ease all;
+                        opacity: 1;
+                        &.ng-hide {
+                            max-height: 0;
+                            opacity: 0;
+                            padding: 0;
+                        }
+                    }
+                    input.btn {
+                        width: 18%;
+                        margin: 1px 0;
+                    }
+                    &.ng-hide {
+                        max-height: 0;
+                        opacity: 0;
+                        padding: 0;
+                    }
+                }
+                input.btn {
+                    margin: 0;
+                    outline: 0;
+                    border: 0;
+                    font-size: 1.3em;
+                    max-height: 40px;
+                }
             }
         }
     }
@@ -188,8 +262,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
         }
     }
     .lines-button {
-        @include position (absolute,
-        0 0 null null);
+        @include position (absolute, 0 0 null null);
         margin-right: 0.5em;
         margin-top: 0.28em;
     }

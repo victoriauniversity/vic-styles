@@ -1,0 +1,139 @@
+/*====================================
+=            PRINT STYLES            =
+====================================*/
+
+// _print.scss 
+// -------------------------------------------------------------
+@media print {
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        filter: none !important;
+        -ms-filter: none !important;
+    } // Black prints faster: h5bp.com/s
+    a,
+    a:visited {
+        text-decoration: none;
+    }
+    %faux-link {
+        border: none !important;
+        color: red !important;
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    } // Don't show links for images, or javascript/internal links 
+    pre,
+    blockquote {
+        // border: 1px solid #999; 
+        page-break-inside: avoid;
+    }
+    thead {
+        display: table-header-group;
+    } // h5bp.com/t 
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    @page {
+        margin: 1cm;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+    #{headings( 1, 6 )} {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    h1 {
+        font-size: 1.8em !important; 
+    }
+    h2 {
+        // font-size: 1.6em !important;
+    }
+    h3 {
+        // font-size: 1.2em !important;
+    }
+    h4 {
+        // font-size: 1.2em !important;
+    }
+    h5 {
+        // font-size: 1em !important;
+    }
+    // Hide stuff we don't need to print
+    #site-header,
+    .cover-holder,
+    .cover-overlay,
+    .menu-tabbed,
+    .need-more-block,
+    .video-block,
+    .slide-show-block,
+    .banner-with-cover .btn,
+    .block .btn,
+    .two-btn-nav,
+    .btn {
+        display: none !important;
+    }
+    .menu-tabbed .active, .print-only {
+        display: block!important;
+    }
+    .banner-with-cover .intro,
+    .victoria-contact .centraliser,
+    .victoria-contact h4,
+    .victoria-contact .contact-wrap,
+    .centered {
+        text-align: left !important;
+    }
+    .banner-with-cover .intro,
+    .degree-req, .block {
+        padding: 0.5em 1.5em !important;
+    }
+    .banner-with-cover .intro,
+    .victoria-contact .block {
+        margin: 0 !important;
+    }
+    .victoria-contact .block {
+        width: auto !important;
+        text-align: left !important;
+    }
+    .banner-with-cover {
+        & h1,
+        & h3 {
+            margin: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+    .grid-list {
+        list-style: disc !important;
+        .area .title {
+            height: auto !important;
+            text-align: left !important;
+        }
+        & > li {
+            float: none !important;
+        }
+    }
+    .degree-req .req-header .req-child h5 {
+        font-size: 80% !important;
+    }
+    .degree-req,
+    .degree-req .req-header .req-child,
+    .degree-req .req-header .req-child h5 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}

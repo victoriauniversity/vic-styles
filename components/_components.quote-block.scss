@@ -5,7 +5,6 @@
 $bg-color: $grey-gallery;
 .quote-block {
     background-color: $bg-color;
-
     header {
         @include media ($mobile-large-and-smaller) {
             float: right;
@@ -34,7 +33,7 @@ $bg-color: $grey-gallery;
         margin-left: auto;
         .quote-image {
             float: left;
-            margin-right: 3.5em;
+            margin-right: 6em;
             @include media ( $mobile-large-and-smaller) {
                 margin-right: 2em;
             }
@@ -70,7 +69,7 @@ $bg-color: $grey-gallery;
                 text-indent: 1em;
                 color: $grey-mako;
                 @include media ( $desktop-and-bigger) {
-                    text-indent: -0.6em;
+                    text-indent: -0.75em;
                 }
             }
             .ico {
@@ -81,6 +80,14 @@ $bg-color: $grey-gallery;
                     &:last-child {
                         padding-left: 0.75em;
                     }
+                }
+            }
+            .btn {
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 0;
+                .ico.arr-right {
+                     color: $grey-mako;
                 }
             }
         }

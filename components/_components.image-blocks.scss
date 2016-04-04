@@ -17,8 +17,9 @@ $action-promo-hover: $green-bottle-green;
         img {
             @include position( absolute, 0 );
             // height: ;
-             min-height: 100%;
+            min-height: 100%;
             min-width: 1200px;
+            width: 100%;
         }
     }
     .promo-body {

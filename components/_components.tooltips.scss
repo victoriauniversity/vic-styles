@@ -7,7 +7,7 @@
     color: $white;
     background: $black_victoria;
     position: absolute;
-    z-index: 100;
+    z-index: $z-index-middle;
     padding: 15px;
 }
 
