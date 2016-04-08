@@ -19,16 +19,21 @@ $ico-margin: 0.9em;
     }
     a {
         color: $white;
-    }
-    .register-wrap {
-        clear: both;
-        a.register {
-            @include hoverify () {
-                text-decoration: underline;
-                color: $grey-dusty-gray;
-            }
+        text-decoration: underline;
+        font-size: 1.1em;
+        @include hoverify () {
+            color: $grey-dusty-gray;
         }
     }
+    // .register-wrap {
+    //     clear: both;
+    //     a.register {
+    //         @include hoverify () {
+    //             text-decoration: underline;
+    //             color: $grey-dusty-gray;
+    //         }
+    //     }
+    // }
     p {
         color: $grey-dusty-gray;
     }
@@ -49,9 +54,7 @@ $ico-margin: 0.9em;
         .phone-block-wrap {
             a {
                 text-decoration: none;
-                @include hoverify () {
-                    color: $grey-dusty-gray;
-                }
+
                 .ico {
                     // Standard icon styles
                     margin-left: $ico-margin;
@@ -84,9 +87,6 @@ $ico-margin: 0.9em;
             font-size: 1.2em;
             vertical-align: middle;
             line-height: 0;
-            @include hoverify () {
-                color: $grey-dusty-gray;
-            }
             .ico {
                 // Positioning (right position by default)
                 &.left {

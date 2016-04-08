@@ -50,16 +50,24 @@ $fun-fact-bg-color: $grey-gallery;
 =     NEED MORE INFO BLOCK      =
 ===============================*/
 
-$nm-bg-color: $grey-alto;
+$nm-bg-color: $grey-gallery;
 .need-more {
-    background-color: $fun-fact-bg-color;
+    background-color: $nm-bg-color;
     padding: 1em;
     .need-more-block {
         text-align: center;
+        .btn {
+            margin-bottom: 1.5em;
+        }
+        h4 {
+            float: left;
+        }
         li {
             padding: 0.5em 0;
             a {
                 cursor: link;
+                text-decoration: underline;
+                white-space: nowrap;
             }
         }
         @include media ( $mobile-large-and-bigger) {
@@ -72,12 +80,14 @@ $nm-bg-color: $grey-alto;
             }
             ul {
                 // display: table;
+                // display: inline;
             }
             li {
                 // font-size: 1.2em;
                 padding: 0.5em;
+                display: inline;
                 // display: table-cell;
-                text-align: center;
+                // text-align: center;
             }
         }
         @include media ( $desktop-and-bigger) {
@@ -86,11 +96,11 @@ $nm-bg-color: $grey-alto;
             margin-right: auto;
             margin-left: auto;
             ul {
-                width: 100%;
-                display: table;
+                // width: 100%;
+                // display: table;
             }
             li {
-                display: table-cell;
+                // display: table-cell;
             }
         }
     }
