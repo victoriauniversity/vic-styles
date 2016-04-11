@@ -54,14 +54,9 @@ $nm-bg-color: $grey-gallery;
 .need-more {
     background-color: $nm-bg-color;
     padding: 1em;
+    text-align: center;
     .need-more-block {
-        text-align: center;
-        .btn {
-            margin-bottom: 1.5em;
-        }
-        h4 {
-            float: left;
-        }
+        padding-top: 1em;
         li {
             padding: 0.5em 0;
             a {
@@ -70,39 +65,25 @@ $nm-bg-color: $grey-gallery;
                 white-space: nowrap;
             }
         }
-        @include media ( $mobile-large-and-bigger) {
-            width: 80%;
-            margin-right: auto;
-            margin-left: auto;
-            h4 {
-                // float: left;
-                margin-bottom: 0.8em;
-            }
-            ul {
-                // display: table;
-                // display: inline;
-            }
-            li {
-                // font-size: 1.2em;
-                padding: 0.5em;
-                display: inline;
-                // display: table-cell;
-                // text-align: center;
-            }
-        }
         @include media ( $desktop-and-bigger) {
             width: 100%;
             max-width: 850px;
             margin-right: auto;
             margin-left: auto;
+            h4 {
+                float: left;
+                margin-bottom: 0.8em;
+            }
             ul {
-                // width: 100%;
-                // display: table;
+                clear: right;
             }
             li {
-                // display: table-cell;
+                padding: 0.5em 0.75em;
+                display: inline;
+                line-height: 1.5;
             }
         }
+     
     }
 }
 

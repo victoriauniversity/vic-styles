@@ -13,10 +13,6 @@ $ico-margin: 0.9em;
         text-align: center;
         margin-bottom: 0.8em;
     }
-    .centraliser {
-        text-align: center;
-        text-align: -moz-center;
-    }
     a {
         color: $white;
         text-decoration: underline;
@@ -25,15 +21,6 @@ $ico-margin: 0.9em;
             color: $grey-dusty-gray;
         }
     }
-    // .register-wrap {
-    //     clear: both;
-    //     a.register {
-    //         @include hoverify () {
-    //             text-decoration: underline;
-    //             color: $grey-dusty-gray;
-    //         }
-    //     }
-    // }
     p {
         color: $grey-dusty-gray;
     }
@@ -45,48 +32,39 @@ $ico-margin: 0.9em;
     .block {
         padding: 0.5em;
         min-width: 220px;
-        width: 60%;
+        width: 33.33%;
         margin-right: auto;
         margin-left: auto;
         text-align: center;
     }
     .phone-block {
-        .phone-block-wrap {
-            a {
-                text-decoration: none;
-
-                .ico {
-                    // Standard icon styles
-                    margin-left: $ico-margin;
-                    line-height: 0;
-                    font-size: 120%;
-                    vertical-align: middle;
-                    // Positioning (right position by default)
-                    &.left {
-                        margin-left: 0;
-                        margin-right: $ico-margin;
-                    }
+        a {
+            .ico {
+                // Standard icon styles
+                margin-left: $ico-margin;
+                line-height: 0;
+                font-size: 120%;
+                vertical-align: middle;
+                // Positioning (right position by default)
+                &.left {
+                    margin-left: 0;
+                    margin-right: $ico-margin;
                 }
             }
         }
-    }
-    .secondary-phone {
-        font-size: 0.75em;
-        // margin-left: 5em;
-        a {
-            margin-left: 0.35em;
-        }
-    }
-    .button-block {
-        .btn {
-            margin: 0 0 1em 0;
+        .secondary-phone {
+            font-size: 0.75em;
+            // margin-left: 5em;
+            a {
+                margin-left: 0.35em;
+            }
         }
     }
     .email-block {
         a {
-            font-size: 1.2em;
-            vertical-align: middle;
-            line-height: 0;
+            font-size: 1.1em;
+            // vertical-align: middle;
+            // line-height: 0;
             .ico {
                 // Positioning (right position by default)
                 &.left {
@@ -96,68 +74,53 @@ $ico-margin: 0.9em;
             }
         }
     }
-    @include media( $desktop-and-bigger) {
-        padding: 1.75em 0;
-        .block {
-            width: 30%;
-            height: auto;
-            float: left;
-            display: inline-block;
-            padding: 0.5em;
-            &.button-block {
-                padding: 0;
-                width: 40%;
-                a {
-                    width: 80%;
-                    min-width: 230px;
-                    display: block;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-            }
-            &.email-block {
-                text-align: left;
-                a {
-                    margin-left: 0.65em;
-                }
-            }
-            &.phone-block {
-                .phone-block-wrap {
-                    float: right;
-                    margin-right: 0.65em;
-                }
+    .reg-block {
+        // padding-left: 2.25em;
+        .ico {
+            // Positioning (right position by default)
+            &.left {
+                margin-left: 0;
+                margin-right: 0.75em;
             }
         }
     }
-    @include media ( $desktop-large) {
-        .contact-wrap {
-            width: 90%;
-            max-width: 1150px;
-            margin-right: auto;
-            margin-left: auto;
-            .block {
-                width: 35%;
-                padding: 1em;
-                &.button-block {
-                    width: 30%;
-                    a {
-                        width: 100%;
-                    }
-                }
-                &.email-block {
-                    a {
-                        margin-left: 3em;
-                    }
-                }
-                &.phone-block {
-                    .phone-block-wrap {
-                        margin-right: 3em;
-                        .secondary-phone {
-                            margin-left: 5em;
-                        }
+    .fine-print {
+        border-top: 1px solid $grey-dusty-gray;
+        // margin-top: 1em;
+        text-align: center;
+        a,
+        p {
+            font-size: 0.75em;
+        }
+        ul {
+            float: left;
+            li {
+                display: inline-block;
+                padding: 0 0.25em;
+                a {
+                    color: $grey-dusty-gray;
+                    @include hoverify () {
+                        color: $white;
                     }
                 }
             }
+        }
+        .copyright {
+            // float: right;
+            padding-top: 0.35em;
+        }
+    }
+    @include media( $desktop-and-bigger) {
+        padding: 1.75em 0;
+        .contact-wrap {
+            max-width: 990px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .block {
+            width: 25%;
+            display: inline-block;
+            vertical-align: top;
         }
     }
 }
