@@ -66,36 +66,65 @@ $bg-color: $grey-gallery;
                 margin-bottom: 0;
             }
             .quote-text {
-                text-indent: 1em;
+                // text-indent: 1em;
                 color: $grey-mako;
-                @include media ( $desktop-and-bigger) {
-                    text-indent: -0.75em;
-                }
+                // @include media ( $desktop-and-bigger) {
+                //     // text-indent: -0.6em;
+                // }
             }
             .ico {
                 color: $grey-silver;
                 padding-right: 0.5em;
-                @include media ( $desktop-and-bigger) {
-                    padding-right: 0.3em;
-                    &:last-child {
-                        padding-left: 0.75em;
-                    }
-                }
+                // @include media ( $desktop-and-bigger) {
+                //     padding-right: 0.3em;
+                //     // &:last-child {
+                //     //     padding-left: 1.5em;
+                //     // }
+                // }
             }
             .btn {
                 margin-left: 0;
                 margin-right: 0;
                 margin-bottom: 0;
                 .ico.arr-right {
-                     color: $grey-mako;
+                    color: $grey-mako;
                 }
             }
         }
     }
 }
 
-.quote-block + .fun-fact {
-    background-color: $white;
+.quote-block {
+    .quote-text {
+        text-indent: .75em;
+        @include media ( $desktop-and-bigger) {
+            text-indent: -0.85em;
+        }
+        .ico {
+            @include media ( $desktop-and-bigger) {
+                &:last-child {
+                    padding-left: 0.75em;
+                }
+            }
+        }
+    }
+}
+
+.person-block {
+    .quote-text {
+        text-indent: 1em;
+        @include media ( $desktop-and-bigger) {
+            text-indent: -0.75em;
+        }
+        .ico {
+            @include media ( $desktop-and-bigger) {
+                padding-right: 0.5em;
+                &:last-child {
+                    padding-left: 1.5em;
+                }
+            }
+        }
+    }
 }
 
 .separated {
