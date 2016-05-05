@@ -51,9 +51,11 @@
         margin-bottom: 0.2em;
         h3 {
             font-size: 1.2em;
-            color: $grey-mine-shaft;
             margin-bottom: 0;
             // padding-top: 0.3em;
+        }
+        h3, h4, h5 {
+            color: $grey-mine-shaft;
         }
         p {
             font-size: 0.9em;

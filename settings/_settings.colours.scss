@@ -18,7 +18,7 @@ $black: #000;
 
 /* ===== BRANDED & ORIGINAL ============================================================ */
 
-$green-victoria:        #115737;
+$green-victoria:        #64a659;
 $black-victoria:        #1d2624;
 $green-victoria-study:  #549349;
 
@@ -47,15 +47,15 @@ $blue-curious-blue: 	#2B8CC4;
 //IN ORDER LIGHT > DARK
 
 // ORINGINAL GREYS
-$grey-gallery: 	#EEE; 
-$grey-alto: 	#DDD; 
+$grey-gallery: 	#EEE;
+$grey-alto: 	#DDD;
 $grey-silver: 	#CCC;
-// NEW GREYS 
+// NEW GREYS
 $grey-silver-chalice:    #bfbfbf;
-$grey-dusty-gray:        #999; 
-$grey-stack:             #808080; 
+$grey-dusty-gray:        #999;
+$grey-stack:             #808080;
 $grey-mako:              #475153;
-$grey-mine-shaft:        #333; 
+$grey-mine-shaft:        #333;
 
 // ORINGINAL BLACK FOR TEXT
 $black-tundora: #444444;
@@ -64,17 +64,17 @@ $black-tundora: #444444;
 
 //===================
 
-// NEW GREYS 
+// NEW GREYS
 $grey-mercury:		#e8e8e8; //should remove this, use grey-gallery instead
 
 //===================
 
-//NEW OTHER - unsure on these 
+//NEW OTHER - unsure on these
 
 $green-fern: 		#63B960;
-$blue-curious: 		#1483EB; 
+$blue-curious: 		#1483EB;
 $blue-picton: 		#3C90E6;
-$blue-grey-tower: 	#A7BBC1; 
+$blue-grey-tower: 	#A7BBC1;
 
 //===================
 
@@ -121,7 +121,7 @@ $blue_action_lighter: $blue-lochmara;
 // ==============================
 @mixin theme($name, $color) {
   $primary: $color;
- 
+
   .#{$name} {
     &.test-block {
       background-color: $primary;
@@ -129,14 +129,14 @@ $blue_action_lighter: $blue-lochmara;
       	background-color: #fff;
       	color: #000;
       	padding: 0.51em;
-		
+
       	&:before {content: '#{$name}';}
       }
     }
- 
+
   }
 }
-$themes: ( 
+$themes: (
 grey-gallery: #EEE, //old
 grey-alto: #DDD, //old
 grey-silver: #CCC, //old
@@ -147,10 +147,10 @@ grey-dusty-gray: #999, //new
 grey-stack: #808080, //new
 
 
-grey-mako: #475153, 
+grey-mako: #475153,
 grey-mine-shaft: #333, //new
-green-fern: #63B960, 
-blue-curious: #1483EB, 
+green-fern: #63B960,
+blue-curious: #1483EB,
 blue-picton: #3C90E6,
 grey-tower: #A7BBC1 //new
 ) !default;
