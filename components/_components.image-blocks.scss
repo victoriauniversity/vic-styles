@@ -2,9 +2,9 @@
 =   WELLINGTON PROMO BLOCK      =
 ===============================*/
 
-$top-promo-color: rgba($green-victoria, 0.9);
-$action-promo-color: rgba($green-bottle-green, 0.5);
-$action-promo-hover: $green-bottle-green;
+$top-promo-color: rgba( $green-victoria, 0.9 );
+$action-promo-color: rgba( darken( $green-victoria, 8% ), 0.75 );
+$action-promo-hover: darken( $green-victoria, 11% );
 
 
 .image-promo-block {
@@ -29,7 +29,7 @@ $action-promo-hover: $green-bottle-green;
         background-color: $top-promo-color;
         text-align: center;
         z-index: $z-index-lower;
-        
+
         h2, p, a {
             color: $white;
         }
@@ -47,7 +47,7 @@ $action-promo-hover: $green-bottle-green;
                 display: block;
                 width: 100%;
                 @include hoverify () {
-                    color: $grey-silver;
+                    color: #FFF;
                     text-decoration: underline;
                     background-color: $action-promo-hover;
                 }
