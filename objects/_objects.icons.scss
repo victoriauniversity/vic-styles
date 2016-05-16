@@ -128,7 +128,7 @@ $ico-code-search:               '\e81b';
 }
 
 .ico.spin {
-     @include animation( spin 2s 3 linear );
+     @include animation( spin 2s infinite linear );
          // animation: spin 2s infinite linear;
     display: inline-block;
 }
@@ -157,5 +157,3 @@ $ico-code-search:               '\e81b';
         transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
     }
 }
-
-
