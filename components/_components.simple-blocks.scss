@@ -3,43 +3,37 @@
 ===============================*/
 
 $fun-fact-bg-color: $grey-gallery;
+
 .fun-fact {
     background-color: $fun-fact-bg-color;
-    @include media ($desktop-and-bigger) {
-        // padding: 1.5em;
-    }
-    h2 {
-        font-size: 2.5em;
-        // margin-bottom: 0em;
-    }
-    @include media( $tablet-and-bigger) {
-        // padding-right: 30px;
+
+    @include media( $tablet-and-bigger ) {
         h2 {
-            font-size: 2.5em;
-            // padding-right: 30px;
+            margin: 0;
+            font-size: 3.2em;
             text-align: center;
         }
     }
-    p {
-        // padding-top: 1.2em;
-    }
+
     .fact-wrap {
-        padding: 1.5em;
         @include outer-container;
+        padding: 1.5em;
+
         .fact-heading {
-            @include media ($tablet-and-bigger) {
-                @include span-columns (3);
+            @include media( $tablet-and-bigger ) {
+                @include span-columns( 3 );
             }
-            @include media ($desktop-and-bigger) {
-                @include span-columns (4);
+            @include media( $desktop-and-bigger ) {
+                @include span-columns( 4 );
             }
         }
+
         .fact-content {
-            @include media ($tablet-and-bigger) {
-                @include span-columns (5);
+            @include media( $tablet-and-bigger ) {
+                @include span-columns( 5 );
             }
-            @include media ($desktop-and-bigger) {
-                @include span-columns (6);
+            @include media( $desktop-and-bigger ) {
+                @include span-columns( 6 );
             }
         }
     }
@@ -83,7 +77,7 @@ $nm-bg-color: $grey-gallery;
                 line-height: 1.5;
             }
         }
-     
+
     }
 }
 
@@ -103,18 +97,12 @@ $nm-bg-color: $grey-gallery;
     .about-subjects-block {
         padding: 1.5em;
         border-bottom: 1px solid $grey-alto;
+
         @include media( $tablet-and-bigger) {
-            border-left: 1px solid $grey-alto;
-            border-bottom: 0;
             float: right;
             @include make-table-column( $two-col-layout-right-ratio);
-        }
-        h3 {
-            .tooltip-icon {
-                font-size: 100%;
-                color: $grey-dusty-gray;
-                margin-left: 0.2em;
-            }
+            border-left: 1px solid $grey-alto;
+            border-bottom: 0;
         }
     }
 }

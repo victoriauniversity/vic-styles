@@ -72,7 +72,7 @@ a {
     @include hoverify { color: $blue-curious-blue }
 }
 
-a, a > *:before, a > *:after  {
+a, a > *:before, a > *:after, .tooltip-icon  {
     @include transitionise();
 }
 
