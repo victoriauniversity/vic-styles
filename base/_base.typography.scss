@@ -34,7 +34,7 @@ $heading-weight:        $weight-semibold;
 /* Headings */
 // Then call it with the rules/styles you want wherever you want (As long as the file/include has access to the above function of course).
 #{headings( 1, 6 )} {
-    margin-bottom: .3em;
+    margin-bottom: .4em;
     color: $green-victoria;
     font-family: $heading-font-family;
     font-weight: $heading-weight;

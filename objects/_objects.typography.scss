@@ -51,13 +51,18 @@
     a { font-size: 1.2em; }
 }
 
+
+.tooltip-inline,
+.tooltip-icon {
+    cursor: default;
+}
+
 /** Inline hint (~ tooltip). */
 $hint-inline-colour:            $base-font-colour;
 $hint-inline-underline-colour:  $grey-dusty-gray;
 $hint-inline-active-colour:     black;
 
 .tooltip-inline {
-    cursor: default;
     color: $hint-inline-colour;
     border-bottom: 1px dashed $hint-inline-underline-colour;
 
@@ -67,12 +72,12 @@ $hint-inline-active-colour:     black;
     };
 }
 
-
 /** Icon for the tooltip. */
 .tooltip-icon {
+    cursor: pointer;
     margin: 0 .2em;
     vertical-align: middle;
-    font-size: 100%;
+    font-size: 90%;
     color: $grey-stack;
     opacity: .6;
 

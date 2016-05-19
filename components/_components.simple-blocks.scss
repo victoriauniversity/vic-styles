@@ -11,6 +11,7 @@ $fun-fact-bg-color: $grey-gallery;
         h2 {
             margin: 0;
             font-size: 3.2em;
+            line-height: 1;
             text-align: center;
         }
     }
@@ -45,6 +46,7 @@ $fun-fact-bg-color: $grey-gallery;
 ===============================*/
 
 $nm-bg-color: $grey-gallery;
+
 .need-more {
     background-color: $nm-bg-color;
     padding: 1em;
@@ -139,9 +141,11 @@ $nm-bg-color: $grey-gallery;
 }
 
 .toggle-block {
-    // padding-bottom: 0em;
+    cursor: pointer;
+
     h2,
     h3 {
+
         // float: left;
         a {
             text-decoration: none;
@@ -153,14 +157,18 @@ $nm-bg-color: $grey-gallery;
             }
         }
     }
+
     .tag-wrap {
-        // float: right;
-        // display: inline-block;
-        // margin-top: 0.3em;
+
+
+        display: block;
+        cursor: default;
         padding-left: 1.3em;
-        @include media ($mobile-large-and-smaller) {
+
+        @include media( $mobile-large-and-smaller ) {
             @include span-columns (6);
         }
+
         @include span-columns (5);
         .tag {
             display: inline-block;
@@ -177,9 +185,7 @@ $nm-bg-color: $grey-gallery;
             &:first-child {
                 margin-right: 0.3em;
             }
-            @include media ($mobile) {
-                line-height: 3;
-            }
+            @include media ($mobile) { line-height: 3; }
         }
     }
 }
@@ -232,42 +238,37 @@ $mar-bot: 0.3em;
             @include media ( $mobile-large-and-smaller) {
                 @include fill-parent();
             }
-            .length {
-                font-size: 1em;
-                .ico {
-                    &.clock {
-                        font-size: 1.3em;
-                    }
-                }
+
+            h4 {
+                margin-bottom: .7em;
             }
-            .leads {
-                font-size: 0.75em;
-                margin-left: 1.5em;
-                @include media ( $tablet-and-smaller) {
-                    margin-left: 1em;
-                }
-                a {
-                    font-size: 1.2em;
-                }
-                .ico {
-                    &.arr-right {
-                        font-size: 1.45em;
-                    }
-                }
-            }
+
             .leads,
             .length {
                 display: inline-block;
                 vertical-align: bottom;
+                margin: 0 1em .3em .5em;
+
                 .ico {
+                    margin: 0 .25em 0 0;
+
                     &.arr-right,
                     &.clock {
-                        margin-right: 0.3em;
-                        margin-top: 0.3em;
                         line-height: 1;
                         vertical-align: middle;
                     }
                 }
+            }
+
+            .length .ico {
+
+                position: relative; top: -.1em;
+                font-size: 120%;
+            }
+
+            .leads .ico {
+                font-size: 1.45em;
+                margin-right: .33em;
             }
         }
         .degree-button {
@@ -282,7 +283,7 @@ $mar-bot: 0.3em;
 
 
 /*===============================
-=     IMAGES BLOCK      =
+=     IMAGES BLOCK             =
 ===============================*/
 
 .images-block {
