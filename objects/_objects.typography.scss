@@ -11,27 +11,30 @@
     ol,
     p {
         margin-bottom: 1.2em;
-        &:last-child {
-            margin: 0;
-        }
+
+        &:last-child { margin: 0; }
     }
+
+    // Unordered list with own square bullet
+    $list-bullet-size:          .5em;
+    $list-bullet-indent-left:   .9em;
+    $list-bullet-indent-right:  1.15em;
+
     ul {
-        line-height: 1.8;
         margin-left: 0;
-        padding-left: 1em;
-        text-indent: -1.55em;
-        & > li {
-            // padding-left: .4em;
-            @include make-list-square-bullet( .5em) {
-                position: relative;
-                top: -0.1em;
-                margin-right: 1em;
+        padding-left: $list-bullet-indent-left + $list-bullet-indent-right + $list-bullet-size;
+        text-indent: -( $list-bullet-indent-right + $list-bullet-size );
+
+        > li {
+            margin: .3em 0;
+            line-height: $base-line-height;
+
+            @include make-list-square-bullet( $list-bullet-size ) {
+                position: relative; top: -0.1em;
+                margin-right: $list-bullet-indent-right;
             }
-        }
-    }
-    p + ul {
-        @include media ($tablet-and-bigger) {
-            margin-left: 1.5em;
+
+
         }
     }
 }
@@ -39,19 +42,44 @@
 
 /* ===== GENERIC HELPERS ==================================================== */
 
-.centered {
-    text-align: center;
-}
+.centered { text-align: center; }
 
 .smaller {
-    font-size: 0.75em;
-    padding-top: 0.5em;
-    a {
-        font-size: 1.2em;
-    }
+    font-size: .75em;
+    padding-top: .5em;
+
+    a { font-size: 1.2em; }
 }
 
+
+.tooltip-inline,
+.tooltip-icon {
+    cursor: default;
+}
+
+/** Inline hint (~ tooltip). */
+$hint-inline-colour:            $base-font-colour;
+$hint-inline-underline-colour:  $grey-dusty-gray;
+$hint-inline-active-colour:     black;
+
 .tooltip-inline {
-    color: $base-font-colour;
-    border-bottom: 1px dashed $blue-endeavoura;
+    color: $hint-inline-colour;
+    border-bottom: 1px dashed $hint-inline-underline-colour;
+
+    @include hoverify() {
+        color: $hint-inline-active-colour;
+        border-bottom-color: $hint-inline-active-colour;
+    };
+}
+
+/** Icon for the tooltip. */
+.tooltip-icon {
+    cursor: pointer;
+    margin: 0 .2em;
+    vertical-align: middle;
+    font-size: 90%;
+    color: $grey-stack;
+    opacity: .6;
+
+    @include hoverify() { opacity: 1; }
 }

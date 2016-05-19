@@ -4,67 +4,56 @@
 
 .facts-block {
     .facts-wrap {
-        // background-color: $grey-gallery;
+
         .intro-fact {
             @include outer-container;
-            margin-bottom: 0.8em;
+            margin-bottom: .8em;
         }
+
         .ico-wrap {
-            padding-left: 2.75em;
             position: relative;
-            margin-bottom: 0.5em;
+            margin-bottom: .5em;
+            padding-left: 2.75em;
+
+            h4 { margin: 0; }
             p {
-                font-size: 0.9em;
-                padding-top: 0.3em;
-            }
-            h4 {
-                margin: 0;
-            }
-            // @include media ($tablet-and-bigger) {
-            //     padding-left: 55px;
-            // }
-        }
-        .majors-wrap {
-            ul {
-                margin-top: 0.5em;
-            }
-            .highlight {
-                // vertical-align: bottom;
-                // color: #115737;
-                // font-size: 0.8em;
-                margin: -0.2em;
-                padding: 0 0.2em;
-                border: 1px solid $blue-endeavoura;
-                border-radius: 2px;
-                @include hoverify (){
-                    border: 1px solid $blue-curious-blue;
-                }
+                font-size: .9em;
+                padding-top: .3em;
             }
         }
-        .fact {
-            h4 {
-                font-weight: bold;
-            }
-            @include media ($tablet-and-bigger) {
-                @include make-table-column (0.5)
-            }
-        }
+
         .fees-fact {
-            h4 {
-                font-weight: bold;
-            }
             clear: both;
+
+            h4 { font-weight: bold; }
         }
+
+        .fact {
+            @extend .fees-fact;
+
+            @include media( $tablet-and-bigger ) {
+                @include make-table-column ( .5 );
+            }
+        }
+
         .ico {
-            position: absolute;
-            top: 0;
-            left: 0;
+            position: absolute; top: 0; left: 0;
             margin-right: 1.5em;
             width: 50px;
-            font-size: 1.8em;
-            &:before {
-                vertical-align: top;
-            }
+            font-size: 1.9em;
+
+            &:before { vertical-align: top; }
+        }
+    }
+
+    .fact__list {
+
+        .tag {
+            font-size: 90%;
+            margin: 0 .2em;
+            color: $grey-dusty-gray;
+            font-weight: $weight-light;
         }
     }
 }
+

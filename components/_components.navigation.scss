@@ -25,6 +25,7 @@ $menu-tabbed-item-active-bg-colour: $green-victoria !default;
     table-layout: fixed;
     width: 100%;
     text-align: center;
+
     // 1st level menu items
     & > li {
         position: relative;
@@ -34,17 +35,17 @@ $menu-tabbed-item-active-bg-colour: $green-victoria !default;
         max-width: $menu-tabbed-item-max-width;
         vertical-align: middle;
         outline: 0;
-       
+
         .ico:before {
             vertical-align: top;
             margin-right: .5em;
         }
-        
 
         // Selected or activated tab
         &.active {
             color: $white;
             background-color: $menu-tabbed-item-active-bg-colour;
+
             & > a {
                 color: inherit;
                 @include hoverify {
@@ -65,12 +66,14 @@ $menu-tabbed-item-active-bg-colour: $green-victoria !default;
         & > a {
             display: inline-block;
             width: 100%;
+            font-size: 1.1em;
             padding: $menu-tabbed-padding-vertic $menu-tabbed-padding-horiz;
             font-family: $caption-font-family;
             font-weight: $weight-light;
-            line-height: $caption-line-height;
+            line-height: 1;
             color: $grey-stack;
             text-decoration: none;
+
             @include hoverify {
                 background-color: $menu-tabbed-item-hover-bg-colour;
                 color: $menu-tabbed-item-hover-label-colour;
