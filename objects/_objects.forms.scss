@@ -1,0 +1,23 @@
+
+/* ===== FORMS ============================================================== */
+
+/** Basic form */
+.form {
+
+    // TODO: Refactor!
+    .form__group {
+        padding: 1em 0;
+    }
+
+    .form__select {
+        height: 2.3em;
+        display: inline-block;
+        max-width: 100%;
+        min-width: 50%;
+        color: #146999;
+        font-weight: $weight-bold;
+        border: 2px solid #DDD;
+    }
+
+    .btn { margin-top: 0; margin-bottom: 0; }
+}
