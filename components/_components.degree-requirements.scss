@@ -101,3 +101,43 @@
         }
     }
 }
+
+// Major block inside Degree requirements page
+// TODO: Refactor (after re-factoring in the app!
+.majors-requirements {
+    .block-container > .block {
+        padding-top: 0;
+        padding-bottom: 1.5em;
+
+        &:first-child { padding-top: 1.5em; }
+    }
+
+    .form { margin-bottom: 1em; }
+
+    .majors-list {
+        margin: 1.3em 0 0.5em 0;
+
+        .study-intro, .req-container { margin-bottom: 0; padding-bottom: 0 }
+    }
+
+    .container-opened {
+        margin-bottom: 1.5em;
+        padding-bottom: 1em;
+        margin-left: -1.5em;
+        margin-right: -1.5em;
+        border-bottom: 1px solid $grey-gallery;
+    }
+
+    .major {
+        margin-bottom: 1.2em;
+
+        &:first-child{ margin-top: 1.1em; }
+        &:last-child {
+            .container-opened {
+                border-bottom: 0;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+    }
+}
