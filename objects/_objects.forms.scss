@@ -5,9 +5,7 @@
 .form {
 
     // TODO: Refactor!
-    .form__group {
-        padding: 1em 0;
-    }
+    .form__group { padding: 1em 0; }
 
     .form__select {
         height: 2.3em;
@@ -20,4 +18,100 @@
     }
 
     .btn { margin-top: 0; margin-bottom: 0; }
+}
+
+$toggle-height: 1.6em;
+$toggle-width: 3.9em;
+$toggle-handle-size: 1.6em;
+$toggle-padding: .12em;
+$toggle-active-colour: lighten( $green-victoria-study, 10% );
+$toggle-inactive-colour: #BBB;
+$toggle-bg-colour: #1d2624;
+
+.group-toggle {
+
+    .toggle-desc {
+        vertical-align: middle;
+        margin-right: 5px;
+        font-weight: $weight-normal;
+        font-size: 90%;
+    }
+
+    input[type=checkbox]{
+        visibility: hidden;
+        position: absolute; margin-left: -9999px;
+
+        & + label {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            padding: $toggle-padding;
+            width: $toggle-width;
+            height: $toggle-height;
+            color: $toggle-inactive-colour;
+            cursor: pointer;
+            outline: none;
+            border-radius: $toggle-handle-size;
+            transition: background 0.4s;
+
+            &:before, &:after {
+                display: block;
+                position: absolute;
+                content: "";
+            }
+
+            &:before {
+                top: 0; left: 0; bottom: 0; right: 0;
+                background-color: rgba( $toggle-bg-colour, .8 );
+                border-radius: $toggle-height;
+                transition: background .4s;
+            }
+
+            &:after {
+                top: $toggle-padding * 2; left: $toggle-padding * 2; bottom: $toggle-padding * 2;
+                width: $toggle-handle-size - ( $toggle-padding * 4 );
+                background-color: $toggle-inactive-colour;
+                border-radius: $toggle-handle-size - ( $toggle-padding * 2 );
+                transition: margin .4s, background .4s;
+            }
+
+            > span {
+                z-index: 9999;
+                position: absolute; right: 5px;
+                padding: 0 .3em;
+                font-size: 85%;
+
+                &:after { content: "OFF"; }
+            }
+
+            @include hoverify(){
+
+                &:before {
+                    background-color: rgba( $toggle-bg-colour, .93 );
+                }
+
+                &:after { background-color: #FFF; }
+            };
+        }
+
+        &:checked + label {
+            &:before {
+                background-color: $toggle-bg-colour;
+            }
+
+            &:after {
+                margin-left: $toggle-width - $toggle-handle-size;
+                background-color: $toggle-active-colour;
+            }
+
+            > span {
+                color: $toggle-active-colour;
+                right: auto; left: .6em;
+                font-size: 90%;
+                font-weight: $weight-semibold;
+
+                &:after{ content: "ON"; }
+            }
+        }
+    }
 }

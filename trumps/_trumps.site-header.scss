@@ -37,16 +37,14 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
             margin-left: 1em;
         }
         @include media ($desktop-and-bigger) {
-            margin-left: 1em;
             background-image: url($path-shared +'/img/logo_desktop-2x.png');
             height: 88px;
             width: 22.5%;
-            margin: 0 0 0 .5%;
+            margin: .5em 0 0 .5%;
             background-size: 192px 48px;
             background-position: 0 47%;
             max-width: 250px;
             float: left;
-            margin-top: 0.5em;
             // @include span-columns (3);
         }
     }
@@ -352,5 +350,12 @@ $transition: .3s; // increase this to see the transformations in slow-motion
     }
     &:after {
         transform: rotate3d(0, 0, 1, -45deg);
+    }
+}
+
+.testlink{ 
+    font-size: 70%; opacity: .4; margin: 1em; 
+    @include hoverify(){
+        opacity: 1;
     }
 }

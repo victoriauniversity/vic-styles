@@ -66,6 +66,11 @@ $ico-margin:    .9em;
             // color: $grey-dusty-gray;
         }
     }
+
+    &.disabled {
+        background-color: #BBB;
+        cursor: no-drop;
+    }
 }
 
 
