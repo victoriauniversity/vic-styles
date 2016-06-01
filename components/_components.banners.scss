@@ -58,7 +58,7 @@ $banner-cover-max-height:   620px;
     .title {
         display: inline-block;
         padding: .35em .75em;
-        margin-top: 1.7em;
+        margin-top: .3em;
         margin-bottom: .5em;
         color: $banner-cover-text-colour;
         background-color: rgba( $green-victoria-old, .75 );
@@ -70,9 +70,22 @@ $banner-cover-max-height:   620px;
         background-color: rgba( $green-victoria-old, .75 );
     }
 
+    /** International/domestic switcher */
+    .content-switcher {
+        position: relative;
+        display: block;
+        float: right;
+        color: #FFF;
+        text-align: center;
+
+        background-color: rgba( #000, .65 );
+        padding: .5em .75em;
+        margin: 1em;
+    }
+
     @include media( $tablet-and-smaller ){
         .intro{ padding: 1.6em; }
-        .title{ font-size: 2em; margin-top: 1em; }
+        .title{ font-size: 2em; }
         .abstract{ font-size: 1.3em; }
     }
 
@@ -80,68 +93,10 @@ $banner-cover-max-height:   620px;
         .intro{ padding: 1em; }
         .title{ margin: 0 0 .5em; }
         .abstract{ margin: 0; font-size: 1.3em; }
-    }
 
-    /** International/domestic switcher */
-    .content-switcher {
-
-        .group-toggle {
-
-            $toggle-height: 25px;
-            $toggle-width: 60px;
-            $toggle-handle-size: 25px;
-
-            input[type=checkbox]{
-                visibility: hidden;
-                position: absolute; margin-left: -9999px;
-
-                & + label {
-                    display: block;
-                    position: relative;
-                    cursor: pointer;
-                    outline: none;
-                    user-select: none;
-
-                    padding: 2px;
-                    width: $toggle-width;
-                    height: $toggle-height;
-                    background-color: #dddddd;
-                    border-radius: $toggle-handle-size;
-                    transition: background 0.4s;
-
-                    &:before, &:after {
-                        display: block;
-                        position: absolute;
-                        content: "";
-                    }
-
-                    &:before {
-                        top: 2px; left: 2px; bottom: 2px; right: 2px;
-                        background-color: #FFF;
-                        border-radius: $toggle-height;
-                        transition: background .4s;
-                    }
-
-                    &:after {
-                        top: 4px; left: 4px; bottom: 4px;
-                        width: $toggle-handle-size - ( 4 * 2 );
-                        background-color: #DDD;
-                        border-radius: $toggle-handle-size - ( 4 * 2 );
-                        transition: margin .4s, background .4s;
-                    }
-                }
-
-                &:checked + label {
-                    background-color: red;
-
-                    &:after {
-                        margin-left: $toggle-width - $toggle-handle-size;
-                        background-color: red;
-                    }
-                }
-            }
+        .content-switcher{ 
+            float: none;
+            margin: 0 0 .5em;
         }
-
-
     }
 }
