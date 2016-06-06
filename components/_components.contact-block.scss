@@ -24,11 +24,14 @@ $ico-margin: 0.9em;
     p {
         color: $grey-dusty-gray;
     }
+    
     .contact-wrap {
         min-height: 100px;
         display: block;
         text-align: center;
+        padding-bottom: 1.5em;
     }
+
     .block {
         padding: 0.5em;
         min-width: 220px;
@@ -36,7 +39,12 @@ $ico-margin: 0.9em;
         margin-right: auto;
         margin-left: auto;
         text-align: center;
+
+        @include media( $tablet-and-smaller ) {
+            width: auto;
+        }
     }
+
     .phone-block {
         a {
             .ico {
@@ -84,19 +92,23 @@ $ico-margin: 0.9em;
             }
         }
     }
+
     .fine-print {
-        border-top: 1px solid $grey-dusty-gray;
-        // margin-top: 1em;
+        border-top: 1px solid rgba( #000, .2 );
         text-align: center;
+
         a,
         p {
             font-size: 0.75em;
         }
+
         ul {
             float: left;
+
             li {
                 display: inline-block;
-                padding: 0 0.25em;
+                padding: 0 .25em;
+
                 a {
                     color: $grey-dusty-gray;
                     @include hoverify () {
@@ -105,18 +117,19 @@ $ico-margin: 0.9em;
                 }
             }
         }
-        .copyright {
-            // float: right;
-            padding-top: 0.35em;
-        }
+
+        .copyright { padding-top: 1.5em; }
     }
+
     @include media( $desktop-and-bigger) {
         padding: 1.75em 0;
+
         .contact-wrap {
             max-width: 990px;
             margin-left: auto;
             margin-right: auto;
         }
+
         .block {
             width: 25%;
             display: inline-block;

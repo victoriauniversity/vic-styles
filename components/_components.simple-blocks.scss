@@ -7,35 +7,25 @@ $fun-fact-bg-color: $grey-gallery;
 .fun-fact {
     background-color: $fun-fact-bg-color;
 
-    @include media( $tablet-and-bigger ) {
-        h2 {
-            margin: 0;
-            font-size: 3.2em;
-            line-height: 1;
-            text-align: center;
-        }
+    .fact__title {
+        margin-bottom: 0;
+        font-size: 3.2em;
+        line-height: 1;
+        text-align: right;
     }
 
-    .fact-wrap {
-        @include outer-container;
-        padding: 1.5em;
+    .fact__heading, 
+    .fact__content {
+        vertical-align: middle;
+    }
 
-        .fact-heading {
-            @include media( $tablet-and-bigger ) {
-                @include span-columns( 3 );
-            }
-            @include media( $desktop-and-bigger ) {
-                @include span-columns( 4 );
-            }
-        }
+    @include media( $tablet-and-smaller ) {
+        .fact__heading.block { padding-bottom: 0; }
+        .fact__content, .fact__title { text-align: center; }
 
-        .fact-content {
-            @include media( $tablet-and-bigger ) {
-                @include span-columns( 5 );
-            }
-            @include media( $desktop-and-bigger ) {
-                @include span-columns( 6 );
-            }
+        .fact__title { 
+            margin-bottom: .2em; 
+            font-size: 3em;
         }
     }
 }
@@ -135,9 +125,7 @@ $nm-bg-color: $grey-gallery;
 }
 
 .toggle-content {
-    .block {
-        padding-top: 0;
-    }
+    margin-top: -$base-margin;
 }
 
 .toggle-block {

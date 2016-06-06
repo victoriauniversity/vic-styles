@@ -3,6 +3,7 @@
 ===============================*/
 
 $bg-color: $grey-gallery;
+
 .video-block {
     .block {
         padding: 1em 0;
@@ -112,4 +113,8 @@ $bg-color: $grey-gallery;
             @include size(100%) @include position( absolute, 0);
         }
     }
+}
+
+.video__description {
+    margin: .5em 0;
 }

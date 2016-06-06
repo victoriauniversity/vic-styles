@@ -56,3 +56,22 @@ $action-promo-hover: darken( $green-victoria, 11% );
 
     }
 }
+
+.images-block {
+
+    $tc-logo-height:    120px;
+    $tc-logo-width:     150px;
+
+    // Triple-crown logos (usually laid next to each other)
+    .logo-triplecrown {
+        vertical-align: middle;
+        margin: .5em 1em;
+        border: none;
+        width: auto;
+        max-height: $tc-logo-height;
+        max-width: $tc-logo-width;
+
+        //TODO: Overriding other rules with same specificity - make it collision free.
+        @include hoverify() { border: none; }
+    }
+}

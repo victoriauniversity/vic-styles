@@ -90,7 +90,6 @@
  */
 @mixin make-table-column( $width-ratio: .5, $grid-columns-count: $grid-columns ){
     @include span-columns( $grid-columns-count * $width-ratio, table );
-    vertical-align: top; // Resetting default top-padding
 
     @content;
 }

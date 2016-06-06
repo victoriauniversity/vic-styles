@@ -17,8 +17,6 @@ $banner-cover-max-height:   620px;
     .cover-overlay {
         @include position( absolute, 0 0 0 0);
         @include size( 100% 100%);
-        //background-color: rgba( #171917, .2);
-        // @include linear-gradient( transparent 0%, transparent 40%, rgba( #171917, .8 ) 100% ); // TODO: Improve using non-linear functino @include linear-gradient(50deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
     }
 
     .cover-holder {
