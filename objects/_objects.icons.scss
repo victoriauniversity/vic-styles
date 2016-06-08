@@ -53,6 +53,7 @@ $ico-code-youtube-play:         '\e819';
 
 $ico-code-spin:                 '\e81a';
 $ico-code-search:               '\e81b';
+$ico-code-person:               '\e81c';
 
 
 
@@ -61,6 +62,7 @@ $ico-code-search:               '\e81b';
 
 //why is this not spelt .icon? Not typing the 'n' is just lazy - irwinna 1.3.16
 .ico {
+
     font-weight: normal;
 
     &:before {
@@ -80,10 +82,10 @@ $ico-code-search:               '\e81b';
     @include define-icon( email, $ico-code-mail );
     @include define-icon( phone, $ico-code-phone );
     @include define-icon( tooltip-icon, $ico-code-help );
-    &.tooltip-icon { display: inline-block; }
 
     @include define-icon( clock, $ico-code-clock );
     @include define-icon( dollar, $ico-code-dollar );
+
 
     @include define-icon( quote-start, $ico-code-quote-start );
     @include define-icon( quote-end, $ico-code-quote-end );
@@ -92,6 +94,7 @@ $ico-code-search:               '\e81b';
     @include define-icon( arr-left, $ico-code-arr-left );
     @include define-icon( arr-up, $ico-code-arr-up );
     @include define-icon( arr-down, $ico-code-arr-down );
+
 
     @include define-icon( arr-short-left, $ico-code-arr-short-left );
     @include define-icon( arr-short-down, $ico-code-arr-short-down );
@@ -109,6 +112,7 @@ $ico-code-search:               '\e81b';
 
     @include define-icon( spin, $ico-code-spin );
     @include define-icon( search, $ico-code-search );
+    @include define-icon( person, $ico-code-person );
 
 
     /* CSS only icons */
