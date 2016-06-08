@@ -2,3 +2,43 @@
 =            BUTTONS & LINKS            =
 =======================================*/
 
+$bubble-size: 2.5em;
+
+.bubble-attribution {
+    display: table-cell;
+    cursor: default;
+    z-index: 999;
+    position: absolute; right: 0; bottom: 0;
+    float: right;
+    width: $bubble-size;
+    height: $bubble-size;
+    margin: 3.5em 2em;
+    content: "";
+    background-color: rgba( #1d2624, .8 );
+    border-radius: $bubble-size / 2;
+    vertical-align: middle;
+    text-align: middle;
+
+    @include hoverify() {
+        background-color: rgba( #1d2624, .98 );
+
+        .ico { color: #FFF; }
+    }
+
+    .ico {
+        color: rgba( #FFF, .7 );
+        display: inline-block;
+        font-size: 1.5em;
+        margin: .03em .45em;
+    }
+
+    @include media( $desktop-and-smaller ) {
+        margin: 1em;
+        right: auto; bottom: auto;
+        top: 0; left: 0;
+    }
+
+    @include media( $mobile-large-and-smaller ) {
+        margin-top: 3.8em;
+    }
+}
