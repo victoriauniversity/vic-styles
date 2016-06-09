@@ -24,7 +24,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
         color: $white;
     }
     .vic-logo {
-        background-image: url($path-shared + '/img/logo-victoria-white@x2.png');
+        background-image: url( $path-imgs + '/logo-victoria-white@x2.png');
         text-indent: -666em;
         background-color: transparent;
         background-repeat: no-repeat;
@@ -37,7 +37,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
             margin-left: 1em;
         }
         @include media ($desktop-and-bigger) {
-            background-image: url($path-shared +'/img/logo_desktop-2x.png');
+            background-image: url( $path-imgs +'/logo_desktop-2x.png');
             height: 88px;
             width: 22.5%;
             margin: .5em 0 0 .5%;
@@ -353,8 +353,8 @@ $transition: .3s; // increase this to see the transformations in slow-motion
     }
 }
 
-.testlink{ 
-    font-size: 70%; opacity: .4; margin: 1em; 
+.testlink{
+    font-size: 70%; opacity: .4; margin: 1em;
     @include hoverify(){
         opacity: 1;
     }
