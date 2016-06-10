@@ -15,6 +15,8 @@
         &:last-child { margin: 0; }
     }
 
+    //irwinna - not sure on this being here. Should be in object.lists with more generic class eg; .ul-list 
+
     // Unordered list with own square bullet
     $list-bullet-size:          .5em;
     $list-bullet-indent-left:   .9em;

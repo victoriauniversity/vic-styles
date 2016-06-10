@@ -5,7 +5,7 @@
 
 
 //This shloud probably be in base
-input,
+input[type=text],  //Not all inputs are text boxes, now buttons have a border.
 select[multiple=multiple] {
   background-color: $base-bg-colour;
   border: $text-input-border;
