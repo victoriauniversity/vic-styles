@@ -21,6 +21,7 @@ $ico-margin:    .9em;
     padding: 0.5em 1em;
     margin: 1em;
     border-radius: $btn-corners;
+    border: 0; //Added to stop browsers adding a border
     background-color: $btn-bg;
     font-family: $caption-font-family;
     font-size: 100%;

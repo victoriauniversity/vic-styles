@@ -10,6 +10,14 @@
 // 3) Assign colour to the variable as following: ${base_color}-{unique_name}.
 
 
+
+// -----*-WARNING-*----- DO NOT change the colour of the variables
+//
+// EG: $green-victoria: #115737; to $green-victoria: #64a659;
+// Change where the variable is used.
+// $banner-color: $green-victoria; to $banner-color: $green-study;
+
+
 /* ===== BASIC ============================================================== */
 
 $white: #FFF;
@@ -18,10 +26,9 @@ $black: #000;
 
 /* ===== BRANDED & ORIGINAL ============================================================ */
 
-$green-victoria:        #64a659;
-$green-victoria-old:    #449F37;
+$green-victoria:        #115737;
 $black-victoria:        #1d2624;
-$green-victoria-study:  #549349;
+$green-victoria-study:  #64a659;
 
 
 //Vic Green variations
@@ -75,6 +82,7 @@ $green-fern: 		#63B960;
 $blue-curious: 		#1483EB;
 $blue-picton: 		#3C90E6;
 $blue-grey-tower: 	#A7BBC1;
+$green-victoria-old:    #449F37;
 
 //===================
 
