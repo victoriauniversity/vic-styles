@@ -16,4 +16,15 @@ body {
     font-family: $base-font-family;
     line-height: $base-line-height;
     color: $base-font-colour;
+
+    > footer {
+        padding: 1.75em .5em;
+
+        @include media( $mobile-large) {
+            padding-bottom: 4.5em;
+        }
+        @include media( $mobile) {
+            padding-bottom: 5.5em;
+        }
+    }
 }

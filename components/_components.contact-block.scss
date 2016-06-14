@@ -2,11 +2,47 @@
 =         CONTACT BLOCK         =
 ===============================*/
 
-$bg-color: $black-victoria;
-$ico-margin: 0.9em;
+$contact-bg-color:      $black-victoria;
+$ico-margin:    0.9em;
+
+.footer {
+    background-color: $contact-bg-color;
+
+    .fine-print {
+        color: $grey-dusty-gray;
+        text-align: center;
+
+        a,
+        p {
+            font-size: .9em;
+        }
+
+        ul {
+            float: left;
+
+            li {
+                display: inline-block;
+                padding: 0 .25em;
+
+                a {
+                    color: $grey-dusty-gray;
+                    @include hoverify () {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .version { margin: .25em; }
+    }
+}
+
 .victoria-contact {
-    background-color: $bg-color;
-    padding: 1.75em 0.5em;
+    background-color: $contact-bg-color;
+    padding: 1.75em .5em;
+
+    border-bottom: 1px solid #333;
+
     h4 {
         color: $white;
         line-height: 1.6;
@@ -24,12 +60,11 @@ $ico-margin: 0.9em;
     p {
         color: $grey-dusty-gray;
     }
-    
+
     .contact-wrap {
-        min-height: 100px;
+        min-height: 6em;
         display: block;
         text-align: center;
-        padding-bottom: 1.5em;
     }
 
     .block {
@@ -68,6 +103,7 @@ $ico-margin: 0.9em;
             }
         }
     }
+
     .email-block {
         a {
             font-size: 1.1em;
@@ -82,6 +118,7 @@ $ico-margin: 0.9em;
             }
         }
     }
+
     .reg-block {
         // padding-left: 2.25em;
         .ico {
@@ -91,34 +128,6 @@ $ico-margin: 0.9em;
                 margin-right: 0.75em;
             }
         }
-    }
-
-    .fine-print {
-        border-top: 1px solid rgba( #000, .2 );
-        text-align: center;
-
-        a,
-        p {
-            font-size: 0.75em;
-        }
-
-        ul {
-            float: left;
-
-            li {
-                display: inline-block;
-                padding: 0 .25em;
-
-                a {
-                    color: $grey-dusty-gray;
-                    @include hoverify () {
-                        color: $white;
-                    }
-                }
-            }
-        }
-
-        .copyright { padding-top: 1.5em; }
     }
 
     @include media( $desktop-and-bigger) {

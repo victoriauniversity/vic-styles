@@ -8,7 +8,6 @@
 $grid-area-margin: .15em !default;
 $grid-area-title-colour: $green-mako !default;
 $grid-area-title-caret-colour: #AAA !default;
-$grid-area-title-height: 3.3em !default;
 $grid-area-hover-title-colour: $white !default;
 $grid-area-bg: $grey-mercury !default;
 $grid-area-hover-bg: $grey-alto !default;
@@ -16,24 +15,21 @@ $grid-area-active-bg: $green-victoria !default;
 // Standard grid list containing areas and their previews
 .area {
     padding: $grid-area-margin;
+
     .title {
         display: table;
         margin: 0;
-        @include size( 100% $grid-area-title-height);
+        @include size( 100% auto );
         font-weight: $weight-light;
         line-height: 1.3;
         text-align: center;
         color: $grid-area-title-colour;
-        .ico {
-            margin-left: .7em;
-            &.caret:before {
-                // position: relative; top: -$grid-area-margin;
-                // border-top-color: $grid-area-title-caret-colour;
-            }
-        }
+
+        .ico { margin-left: .7em; }
+
         > a {
             display: table-cell;
-            padding: .5em 1em;
+            padding: 1.25em 1em;
             color: inherit;
             vertical-align: middle;
             font-size: 75%;
@@ -42,7 +38,6 @@ $grid-area-active-bg: $green-victoria !default;
             @include hoverify() {
                 background-color: $grid-area-hover-bg;
                 color: $link-colour;
-                // .ico.caret:before { border-top-color: $link-colour; }
             }
         }
     }
@@ -56,22 +51,27 @@ $grid-area-active-bg: $green-victoria !default;
             padding-top: $base-padding / 3;
         }
     }
+
     // Active area showing 'preview'
     .expanded & {
         .title {
             position: relative;
             top: .1em;
             color: $grid-area-hover-title-colour;
+
             // Flick the caret!
             .ico {
                 margin-left: .4em;
             }
+
             .ico.caret:before {
                 margin-bottom: -0.3em;
                 @include triangle( $ico-caret-width $ico-caret-height, $white, down);
             }
+
             > a {
                 background-color: $grid-area-active-bg;
+
                 @include hoverify() {
                     color: inherit;
                 }
@@ -86,11 +86,11 @@ $grid-area-active-bg: $green-victoria !default;
 }
 
 .content-simple {
-    ul.ext-links {
+    .ext-links {
         text-align: left;
         @include media( $desktop-and-bigger) {
             margin-top: 2.2em;
-            
+
         }
     }
 }

@@ -10,16 +10,13 @@
     @include media( $tablet) {
         font-size: em( 18px);
     }
-    ;
+
     @include media( $mobile-large) {
         font-size: em( 16px);
-        //Add margin for stick nav bottom
-        margin-bottom: 60px;
     }
+
     @include media( $mobile) {
         font-size: em( 15px);
-        //Add margin for stick nav bottom
-        margin-bottom: 80px;
     }
     .main-view {}
 }
