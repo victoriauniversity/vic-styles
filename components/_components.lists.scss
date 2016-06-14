@@ -19,7 +19,7 @@ $grid-area-active-bg: $green-victoria !default;
     .title {
         display: table;
         margin: 0;
-        @include size( 100% auto );
+        @include size( 100% 3.3em );
         font-weight: $weight-light;
         line-height: 1.3;
         text-align: center;
@@ -29,7 +29,7 @@ $grid-area-active-bg: $green-victoria !default;
 
         > a {
             display: table-cell;
-            padding: 1.25em 1em;
+            padding: .5em 1em;
             color: inherit;
             vertical-align: middle;
             font-size: 75%;
