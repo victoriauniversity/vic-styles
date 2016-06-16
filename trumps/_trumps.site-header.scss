@@ -16,15 +16,15 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
     @include media ($desktop-and-bigger) {
         // @include outer-container;
         min-height: 110px;
-        padding-top: 0.6em;
-        padding-bottom: 0.6em;
+        padding-top: .6em;
+        padding-bottom: .6em;
     }
     // padding: 0 3em 3em;
     a {
         color: $white;
     }
     .vic-logo {
-        background-image: url( $path-imgs + '/logo-victoria-white@x2.png');
+        background-image: url( "#{$path-imgs}/logo-victoria-white@x2.png" );
         text-indent: -666em;
         background-color: transparent;
         background-repeat: no-repeat;
@@ -37,7 +37,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
             margin-left: 1em;
         }
         @include media ($desktop-and-bigger) {
-            background-image: url( $path-imgs +'/logo_desktop-2x.png');
+            background-image: url( "#{$path-imgs}/logo_desktop-2x.png" );
             height: 88px;
             width: 22.5%;
             margin: .5em 0 0 .5%;
@@ -60,7 +60,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
             background-color: $black;
         }
         max-height: 1000px;
-        transition: 0.7s ease all;
+        transition: .7s ease all;
 
         &.ng-hide {
             @include media ($tablet-and-smaller) {
@@ -96,7 +96,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                             border-radius: 0;
                             &:before {
                                 content: "";
-                                margin-left: -0.3em;
+                                margin-left: -.3em;
                             }
                         }
                     }
@@ -116,8 +116,8 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                     text-align: left;
                     display: block;
                     padding: 10px 20px;
-                    border-top: 2px solid rgba(250, 250, 250, 0.14902);
-                    transition: all 0.3s linear;
+                    border-top: 2px solid rgba(250, 250, 250, .14902);
+                    transition: all .3s linear;
                     @include media ($tablet-and-smaller) {
                         @include hoverify () {
                             background-color: $grey-stack;
@@ -125,7 +125,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                     }
                     @include media ($desktop-and-bigger) {
                         border: 0;
-                        padding: 0 0.3em 0 0;
+                        padding: 0 .3em 0 0;
                         font-family: "Nimbus Roman No 9 L", "FreeSerif", "Georgia", serif;
                         font-weight: 500;
                         @include media ($menu-break) {
@@ -135,14 +135,13 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                             color: $grey-dusty-gray;
                         }
                         &:before {
-                            padding-right: 0.3em;
+                            padding-right: .3em;
                             content: "|";
                             color: #555;
                             font-size: 18px;
                             font-weight: normal;
                         }
                     }
-
                 }
             }
             .search-btn {
@@ -150,7 +149,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                 @include media ($desktop-and-bigger) {
                     display: block;
                     .ico {
-                        padding: 0 0.5em;
+                        padding: 0 .5em;
                     }
                 }
             }
@@ -163,11 +162,11 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                 // float: left;
                 width: 100%;
                 max-height: 160px;
-                transition: 0.2s ease all;
+                transition: .2s ease all;
                 opacity: 1;
 
                 &.ng-hide {
-                    transition: 0.7s ease all;
+                    transition: .7s ease all;
                     max-height: 0;
                     opacity: 0;
                     padding: 0;
@@ -187,7 +186,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                     margin-left: auto;
                     width: 70%;
                     max-height: 160px;
-                    transition: 0.7s ease all;
+                    transition: .7s ease all;
                     opacity: 1;
                     input[type=text] {
                         // float: left;
@@ -195,7 +194,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                         margin-bottom: 0;
                         margin-right: 2%;
                         max-height: 160px;
-                        transition: 0.7s ease all;
+                        transition: .7s ease all;
                         opacity: 1;
                         &.ng-hide {
                             max-height: 0;
@@ -255,8 +254,8 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
     }
     .lines-button {
         @include position (absolute, 0 0 null null);
-        margin-right: 0.5em;
-        margin-top: 0.28em;
+        margin-right: .5em;
+        margin-top: .28em;
     }
 }
 
@@ -308,7 +307,7 @@ $transition: .3s; // increase this to see the transformations in slow-motion
         @include line;
         position: absolute;
         left: 0;
-        content: '';
+        content: "";
         transform-origin: $button-size/14 center;
     }
     &:before {
@@ -353,9 +352,9 @@ $transition: .3s; // increase this to see the transformations in slow-motion
     }
 }
 
-.testlink{
+.testlink {
     font-size: 70%; opacity: .4; margin: 1em;
-    @include hoverify(){
+    @include hoverify() {
         opacity: 1;
     }
 }

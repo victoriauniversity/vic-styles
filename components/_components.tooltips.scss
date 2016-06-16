@@ -2,114 +2,62 @@
 =            TOOLTIPS            =
 ================================*/
 
+$tooltip-bg:            $black_victoria;
+$tooltip-caret-size:    20px;
+
 #tooltip {
+    position: absolute;
+    z-index: $z-index-max;
+    padding: 1em;
+    max-width: 35em;
     text-align: center;
     color: $white;
-    background: $black_victoria;
-    position: absolute;
-    z-index: $z-index-middle;
-    padding: 15px;
-}
+    background: $tooltip-bg;
 
-#tooltip:after
-/* triangle decoration */
+    img {
+        @include size( 88px 33px ); // TODO: Make universal
+    }
 
-{
-    content: '';
-    @include size (0);
-    @include border-color($black_victoria transparent null transparent) @include border-width (10px 10px null 10px) @include border-style(solid solid null solid) @include position(absolute, null null -10px 50%) margin-left: -10px;
-}
+    /* Tooltip's `tip` */
 
-#tooltip.top:after {
-    @include border-color(transparent null $black_victoria) border-bottom: 10px solid;
-    top: -20px;
-    bottom: auto;
-}
+    // Bottom position (default)
+    &:after {
+        @include size ( 0 );
+        @include position( absolute, null null null 50% );
+        margin-left: -10px;
+        content: '';
+    }
 
-#tooltip.left:after {
-    left: 10px;
-    margin: 0;
-}
+    // Positions
+    &.bottom {
+        &:after {
+            top: auto;
+            bottom: -1/2*$tooltip-caret-size;
+            @include triangle( $tooltip-caret-size $tooltip-caret-size/2, $tooltip-bg transparent, down );
+        }
+    }
 
-#tooltip.right:after {
-    right: 10px;
-    left: auto;
-    margin: 0;
-}
+    &.top {
+        &:after {
+            @include triangle( $tooltip-caret-size $tooltip-caret-size/2, $tooltip-bg transparent, up );
+            top: -1/2*($tooltip-caret-size);
+            bottom: auto;
+        }
+    }
 
-.more-show-hide {
-    -webkit-transition: all linear 0.2s;
-    transition: all linear 0.2s;
-}
+    &.left {
+        margin-right: 1em;
+        &:after {
+            left: 10px;
+            margin: 0;
+        }
+    }
 
-.more-show-hide.ng-hide {
-    opacity: 0;
-}
-
-.toggle-dots-grey {
-    color: darkgrey;
-}
-
-.toggle-dots-yellow {
-    color: yellow;
-}
-
-.toggle-link-yellow {
-    color: yellow;
-}
-
-.toggle-link-grey {
-    color: darkgrey;
-}
-
-.more-show-hide.ng-leave
-{
-    // max-height: 0;
-    transition: 0.3s ease all;
-    opacity: 0;
-}
-
-
-
-
-
-//These arent used
-
-// .text-container {
-//     transition: 0.5s ease max-height;
-//     max-height: 80px;
-//     overflow: hidden;
-//     &.text-expanded {
-//         transition: 0.5s ease max-height;
-//         overflow: visible;
-//         max-height: 1500px;
-//     }
-// }
-
-// .text-wrap {
-//     position: relative;
-//     .text-overlay {
-//         transition: 0.5s ease all;
-//         @include position( absolute, 0 0 0 0);
-//         @include size( 100% 100%);
-//         @include linear-gradient( transparent 0%, transparent 80%, rgba( $white, 1) 100%);
-//         &.text-expanded {
-
-//             background-image: none;
-//         }
-//     }
-// }
-
-.btn-text-expand.ng-enter,
-.btn-text-expand.ng-leave {
-    transition: 0.3s ease all;
-    opacity: 0;
-    // display: none !important;
-}
-
-.btn-text-collapse.ng-enter,
-.btn-text-collapse.ng-leave {
-    transition: 0.3s ease all;
-    opacity: 0;
-    // display: none !important;
+    &.right {
+        margin-right: 1em;
+        &:after {
+            right: 10px; left: auto;
+            margin: 0;
+        }
+    }
 }

@@ -17,7 +17,7 @@ $bubble-size: 2.5em;
     background-color: rgba( #1d2624, .8 );
     border-radius: $bubble-size / 2;
     vertical-align: middle;
-    text-align: middle;
+    text-align: center;
 
     @include hoverify() {
         background-color: rgba( #1d2624, .98 );
@@ -26,6 +26,7 @@ $bubble-size: 2.5em;
     }
 
     .ico {
+        pointer-events: none;
         color: rgba( #FFF, .7 );
         display: inline-block;
         font-size: 1.5em;
