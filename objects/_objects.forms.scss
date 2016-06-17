@@ -20,13 +20,13 @@
     .btn { margin-top: 0; margin-bottom: 0; }
 }
 
-$toggle-height: 1.6em;
-$toggle-width: 3.9em;
-$toggle-handle-size: 1.6em;
-$toggle-padding: .12em;
-$toggle-active-colour: lighten( $green-victoria-study, 10% );
+$toggle-height:          1.6em;
+$toggle-width:           3.9em;
+$toggle-handle-size:     1.6em;
+$toggle-padding:         .12em;
+$toggle-active-colour:   lighten( $green-victoria-study, 10% );
 $toggle-inactive-colour: #BBB;
-$toggle-bg-colour: #1d2624;
+$toggle-bg-colour:       #1d2624;
 
 .group-toggle {
 
@@ -76,7 +76,7 @@ $toggle-bg-colour: #1d2624;
             }
 
             > span {
-                z-index: 9999;
+                z-index: $z-index-lower;
                 position: absolute; right: 5px;
                 padding: 0 .3em;
                 font-size: 85%;

@@ -59,12 +59,11 @@
   }
 }
 
-$dialog-max-width:  50em;
-$dialog-padding:    1em;
+$dialog-max-width: 50em;
+$dialog-padding:   1em;
 
 
 .dialog {
-
     font-size: 1.2em;
     padding-bottom: 160px;
     padding-top: 160px;
@@ -77,10 +76,10 @@ $dialog-padding:    1em;
     h1, h2, h3 { line-height: 1.05; }
 
 
-    @include media( $desktop-and-bigger ){ 
+    @include media( $desktop-and-bigger ){
 
         .two-col-layout.block-container .block {
-            &:first-child, &:last-child{ 
+            &:first-child, &:last-child{
                 width: 50%
             }
         }
@@ -123,7 +122,6 @@ $dialog-padding:    1em;
       border-radius: 5px;
       color: #444;
       margin: 0 auto;
-      //padding: $base-padding;
       position: relative;
       width: 85%;
       max-width: $dialog-max-width;
@@ -138,7 +136,7 @@ $dialog-padding:    1em;
       right: 0;
       top: 0;
 
-      &:before{ 
+      &:before{
         background: transparent;
         border-radius: 3px;
         color: #bbb;

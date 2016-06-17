@@ -9,7 +9,7 @@ $btn-bg: $blue-azure !default;
 $btn-hover-bg: $blue-st-tropaz;
 
 $sec-bg: $grey-alto;
-$sec-hover-bg: $grey-silver; 
+$sec-hover-bg: $grey-silver;
 
 $btn-corners: 2px !default;
 $btn-label-colour: $white !default;
@@ -34,9 +34,9 @@ $ico-margin:    .9em;
     }
 
     @include media ($mobile) {
-        white-space: pre-line;
+        //white-space: pre-line;
     }
-    
+
     // Sizing (normal size by default)
     &.large {
         font-size: 100%;

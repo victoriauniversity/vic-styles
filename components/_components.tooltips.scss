@@ -7,7 +7,7 @@ $tooltip-caret-size:    20px;
 
 #tooltip {
     position: absolute;
-    z-index: $z-index-max;
+    z-index: $z-index-middle;
     padding: 1em;
     max-width: 35em;
     text-align: center;
@@ -46,7 +46,6 @@ $tooltip-caret-size:    20px;
     }
 
     &.left {
-        margin-right: 1em;
         &:after {
             left: 10px;
             margin: 0;
@@ -54,10 +53,14 @@ $tooltip-caret-size:    20px;
     }
 
     &.right {
-        margin-right: 1em;
         &:after {
             right: 10px; left: auto;
             margin: 0;
         }
     }
+}
+
+// Tooltip, that can be popped up by clicking on it
+.tooltip-popup {
+    cursor: pointer;
 }
