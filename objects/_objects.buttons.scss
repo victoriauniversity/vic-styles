@@ -5,21 +5,23 @@
 
 /* ===== BUTTONS ============================================================ */
 
-$btn-bg: $blue-azure !default;
-$btn-hover-bg: $blue-st-tropaz;
+$btn-bg:           $blue-azure !default;
+$btn-hover-bg:     $blue-st-tropaz;
 
-$sec-bg: $grey-alto;
-$sec-hover-bg: $grey-silver;
+$sec-bg:           $grey-alto;
+$sec-hover-bg:     $grey-silver;
 
-$btn-corners: 2px !default;
+$btn-corners:      2px !default;
 $btn-label-colour: $white !default;
 
-$ico-margin:    .9em;
+$ico-margin:       .9em;
+
 
 .btn {
     display: inline-block;
-    padding: 0.5em 1em;
+    padding: 0.6em 1.1em;
     margin: 1em;
+    line-height: 1.2;
     border-radius: $btn-corners;
     background-color: $btn-bg;
     font-family: $caption-font-family;

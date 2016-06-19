@@ -83,3 +83,19 @@ $hint-inline-active-colour:     black;
 
     @include hoverify() { opacity: 1; }
 }
+
+// Generic inline action link of lower importance
+.link-action {
+    transition: none;
+    font-size: 90%;
+    margin: 0 .3em;
+}
+
+// Inline block that might be or might not be used inside a dynamic content.
+.inliner {
+    margin-right: .3em;
+
+    & + .link-more {
+        margin-left: 0;
+    }
+}
