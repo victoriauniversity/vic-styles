@@ -87,19 +87,3 @@
         }
     }
 }
-
-
-.link-more {
-    transition: none;
-    font-size: 90%;
-    margin: 0 .3em;
-}
-
-// Inline block that might be or might not be used inside a dynamic content.
-.inliner {
-    margin-right: .3em;
-
-    & + .link-more {
-        margin-left: 0;
-    }
-}
