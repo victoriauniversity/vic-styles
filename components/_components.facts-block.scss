@@ -23,9 +23,35 @@
         }
 
         .fees-fact {
+            width: 80%;
             clear: both;
 
+            @include media( $tablet-and-smaller ) {
+                width: 100%;
+            }
+
             h4 { font-weight: bold; }
+
+            header {
+                h4, p { display: inline-block; }
+
+                .note {
+                    font-weight: $weight-light;
+                    display: inline;
+                    margin: 0; padding: 0;
+                }
+            }
+
+            .rate {
+                .note {
+                    padding: 0;
+                    margin-bottom: .3em;
+                    color: #777;
+                    line-height: 1.2;
+                }
+
+                .form { margin: .3em 0; }
+            }
         }
 
         .fact {

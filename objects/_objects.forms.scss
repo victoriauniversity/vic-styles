@@ -20,6 +20,7 @@
     .btn { margin-top: 0; margin-bottom: 0; }
 }
 
+//TODO: Move to widgets >>>
 $toggle-height:          1.6em;
 $toggle-width:           3.9em;
 $toggle-handle-size:     1.6em;
@@ -42,6 +43,7 @@ $toggle-bg-colour:       #1d2624;
         position: absolute; margin-left: -9999px;
 
         & + label {
+            text-align: right;
             position: relative;
             display: inline-block;
             vertical-align: middle;
@@ -76,15 +78,16 @@ $toggle-bg-colour:       #1d2624;
             }
 
             > span {
+                margin: 0 .2em;
                 z-index: $z-index-lower;
-                position: absolute; right: 5px;
+                position: relative; top: -.1em;
                 padding: 0 .3em;
                 font-size: 85%;
 
                 &:after { content: "OFF"; }
             }
 
-            @include hoverify(){
+            @include hoverify() {
 
                 &:before {
                     background-color: rgba( $toggle-bg-colour, .93 );
@@ -95,6 +98,8 @@ $toggle-bg-colour:       #1d2624;
         }
 
         &:checked + label {
+            text-align: left;
+
             &:before {
                 background-color: $toggle-bg-colour;
             }
@@ -106,7 +111,6 @@ $toggle-bg-colour:       #1d2624;
 
             > span {
                 color: $toggle-active-colour;
-                right: auto; left: .6em;
                 font-size: 90%;
                 font-weight: $weight-semibold;
 

@@ -83,14 +83,25 @@ $bg-color: $grey-gallery;
             @include position( absolute, 0);
             @include media ($tablet-and-bigger) {}
             @include size ( 100%);
+
             .cover-image-holder {
                 @include position( absolute, 0);
                 overflow: hidden;
+
                 img {
+                    @include position( absolute, 0);
                     @include size ( auto 100%);
+
                     @include media ($mobile-large-and-bigger) {
                         @include size ( 100% auto)
                     }
+
+                    @include media ($mobile ) {
+                        left: 50%;
+                        margin-left: -240px;
+                    }
+
+
                     @include media ($desktop-and-bigger) {
                         @include size (auto 100%)
                     }

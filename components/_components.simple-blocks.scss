@@ -14,7 +14,7 @@ $fun-fact-bg-color: $grey-gallery;
         text-align: right;
     }
 
-    .fact__heading, 
+    .fact__heading,
     .fact__content {
         vertical-align: middle;
     }
@@ -23,8 +23,8 @@ $fun-fact-bg-color: $grey-gallery;
         .fact__heading.block { padding-bottom: 0; }
         .fact__content, .fact__title { text-align: center; }
 
-        .fact__title { 
-            margin-bottom: .2em; 
+        .fact__title {
+            margin-bottom: .2em;
             font-size: 3em;
         }
     }
@@ -105,22 +105,10 @@ $nm-bg-color: $grey-gallery;
 ===============================*/
 
 .subject-block {
-    .toggle-block {
-        h2,
-        h3 {
-            float: left;
-        }
-    }
     .explore-postgrad {
         margin-left: 1.5em;
         margin-top: 1em;
-        font-size: 0.9em;
-    }
-}
-
-.study-options {
-    .postgrad-options {
-        // padding-top: 2em;
+        font-size: .9em;
     }
 }
 
@@ -128,52 +116,64 @@ $nm-bg-color: $grey-gallery;
     margin-top: -$base-margin;
 }
 
-.toggle-block {
+.toggle-header {
+    display: table;
+    width: 100%;
+    vertical-align: middle;
     cursor: pointer;
 
     h2,
     h3 {
+        display: inline-block;
+        margin-bottom: 0;
 
-        // float: left;
         a {
             text-decoration: none;
+
             .ico {
                 display: block;
                 float: left;
                 width: 1em;
-                padding-right: 0.5em;
+                padding-right: .5em;
             }
         }
     }
 
-    .tag-wrap {
-
-
-        display: block;
+    .tags {
+        position: relative;
+        top: -.1em;
+        margin-left: 1.5em;
         cursor: default;
-        padding-left: 1.3em;
+    }
+}
 
-        @include media( $mobile-large-and-smaller ) {
-            @include span-columns (6);
+/* List of tags */
+.tags {
+    display: inline-block;
+
+    .tag {
+        display: inline-block;
+        color: #888;
+        font-size: 90%;
+        font-weight: $weight-normal;
+
+        &:first-child {
+            .ico {
+                font-size: 115%;
+                margin-right: .5em;
+            }
         }
 
-        @include span-columns (5);
-        .tag {
+        &:after {
             display: inline-block;
-            vertical-align: top;
-            color: $green-victoria;
-            // float: right;
-            font-size: 0.98em;
-            // background-color: $grey-alto;
-            font-weight: 600;
-            // margin: 0.5em;
-            padding: 0.5em;
-            // border: 1px solid $green-victoria;
-            // border-radius: $base-border-radius;
-            &:first-child {
-                margin-right: 0.3em;
+            content: "/";
+            padding: 0 .15em;
+        }
+
+        &:last-child {
+            &::after {
+                content: "";
             }
-            @include media ($mobile) { line-height: 3; }
         }
     }
 }
