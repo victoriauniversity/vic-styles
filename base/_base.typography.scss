@@ -66,6 +66,13 @@ h5 {
 p {
 }
 
+q:before {
+    content: '';
+}
+q:after {
+    content: '';
+}
+
 a {
     color: $link-colour;
     text-decoration: none;
@@ -85,5 +92,3 @@ ul {
 
 ol {
 }
-
-

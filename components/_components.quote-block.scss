@@ -28,18 +28,27 @@ $bg-color: $grey-gallery;
 .person-block {
     .quote-wrap {
         @include outer-container;
-        padding: 1.5em;
+        padding: $base-margin;
         margin-right: auto;
         margin-left: auto;
+
         .quote-image {
             float: left;
-            margin-right: 6em;
-            @include media ( $mobile-large-and-smaller) {
+            margin: 0 5em 1em 0;
+
+
+            @include media ( $tablet ) {
                 margin-right: 2em;
+            }
+
+            @include media ( $mobile-large) {
+                margin-right: 1.5em;
             }
             @include media ( $mobile) {
                 margin-right: 1em;
+                margin-bottom: .5em;
             }
+
             img {
                 @include size ( 180px);
                 margin-left: auto;
@@ -51,9 +60,8 @@ $bg-color: $grey-gallery;
             }
         }
         .quote-body {
-            @include media ( $desktop-large) {
-                @include span-columns (10);
-            }
+            width: 100%;
+
             header {
                 padding-bottom: 1em;
                 @include media ( $desktop-and-bigger) {
@@ -66,64 +74,48 @@ $bg-color: $grey-gallery;
                 margin-bottom: 0;
             }
             .quote-text {
-                // text-indent: 1em;
                 color: $grey-mako;
-                // @include media ( $desktop-and-bigger) {
-                //     // text-indent: -0.6em;
-                // }
+                text-indent: 0;
+
+                @include media ( $desktop-and-bigger) {
+                    text-indent: -1.45em;
+                }
+
+                @include media ( $tablet-and-smaller) {
+                    .ico.quote-start { padding-left: .6em; }
+                }
             }
+
             .ico {
+                display: inline; // Makes it unwrappable
                 color: $grey-silver;
-                padding-right: 0.5em;
-                // @include media ( $desktop-and-bigger) {
-                //     padding-right: 0.3em;
-                //     // &:last-child {
-                //     //     padding-left: 1.5em;
-                //     // }
-                // }
+
+                &:before{ display: inline; }
+
+                &.quote-start { padding-right: .6em; }
+                &.quote-end { padding-left: .6em; }
             }
+
             .btn {
                 margin-left: 0;
                 margin-right: 0;
                 margin-bottom: 0;
-                .ico.arr-right {
-                    color: $grey-mako;
-                }
+
+                .ico.arr-right { color: $grey-mako; }
+            }
+
+            .holder {
+                display: block;
+                overflow: hidden;
             }
         }
     }
 }
 
-.quote-block {
-    .quote-text {
-        text-indent: .75em;
-        @include media ( $desktop-and-bigger) {
-            text-indent: -0.85em;
-        }
-        .ico {
-            @include media ( $desktop-and-bigger) {
-                &:last-child {
-                    padding-left: 0.75em;
-                }
-            }
-        }
-    }
-}
-
-.person-block {
-    .quote-text {
-        text-indent: 1em;
-        @include media ( $desktop-and-bigger) {
-            text-indent: -0.75em;
-        }
-        .ico {
-            @include media ( $desktop-and-bigger) {
-                padding-right: 0.5em;
-                &:last-child {
-                    padding-left: 1.5em;
-                }
-            }
-        }
+.quote-block .quote-body {
+    @include media ( $mobile-large-and-smaller) {
+        .holder { overflow: inherit; }
+        header { margin-top: 1em; }
     }
 }
 

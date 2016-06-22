@@ -37,10 +37,13 @@
 
         .btn-wrap {
             @include media ($tablet-and-bigger) {
+
                 @include span-columns(4);
                 @include reset-display;
             }
             .btn {
+                white-space: nowrap;
+
                 @include media ($tablet-and-bigger) {
                     margin: 0;
                 }

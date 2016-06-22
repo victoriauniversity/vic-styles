@@ -1,0 +1,22 @@
+/*===============================
+=       NOTIFICATION OVERLAY    =
+===============================*/
+
+.notification-overlay {
+    @include position( fixed, 0 );
+    background-color: rgba( $white, .98);
+    z-index: $z-index-max;
+    text-align: center;
+    padding-top: 3em;
+
+    // Notification types
+    .err {
+
+    }
+
+    .loading {
+
+    }
+}
+
+.ico.spin { font-size: 2em; }

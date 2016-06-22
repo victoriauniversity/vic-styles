@@ -34,9 +34,10 @@
 
         .tooltip-icon {
             font-size: 115%;
+            position: relative; top: -.05em;
         }
 
-        .fees-fact {
+    .fees-fact {
             width: 80%;
             clear: both;
 
@@ -50,9 +51,9 @@
                 h4, p { display: inline-block; }
 
                 .note {
-                    font-weight: $weight-light;
                     display: inline;
                     margin: 0; padding: 0;
+                    font-weight: $weight-light;
                 }
             }
 

@@ -29,7 +29,7 @@ $ico-margin:       .9em;
     font-weight: $weight-semibold;
     text-decoration: none;
     color: $btn-label-colour;
-    white-space: nowrap;
+
     @include hoverify() {
         background-color: $btn-hover-bg;
         color: $btn-label-colour;
@@ -51,6 +51,7 @@ $ico-margin:       .9em;
         margin-left: $ico-margin;
         line-height: 0;
         vertical-align: middle;
+
         // Positioning (right position by default)
         &.left {
             margin-left: 0;

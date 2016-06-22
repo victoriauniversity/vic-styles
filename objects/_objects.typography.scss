@@ -17,7 +17,7 @@
 
     // Unordered list with own square bullet
     $list-bullet-size:          .5em;
-    $list-bullet-indent-left:   .9em;
+    $list-bullet-indent-left:   .5em;
     $list-bullet-indent-right:  1.15em;
 
     ul {
@@ -88,6 +88,7 @@ $hint-inline-active-colour:     black;
 .link-action {
     transition: none;
     font-size: 90%;
+    white-space: nowrap;
 }
 
 // Inline block that might be or might not be used inside a dynamic content.
