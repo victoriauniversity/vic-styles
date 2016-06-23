@@ -3,19 +3,35 @@
 ===============================*/
 
 .notification-overlay {
-    @include position( fixed, 0 );
-    background-color: rgba( $white, .98);
+    overflow-y: auto;
+    overflow-x: hidden;
     z-index: $z-index-max;
+    @include position( fixed, 0 );
+    background-color: rgba( $white, .98 );
     text-align: center;
-    padding-top: 3em;
+
+    h1 { margin: 0; }
 
     // Notification types
     .err {
-
     }
 
     .loading {
+    }
 
+    .logo.large {
+        margin: 3em 0 1.5em;
+    }
+
+    @include media( $mobile-large-and-smaller ) {
+        .logo.large {
+            margin: 2em 0 .7em;
+        }
+
+        h1 { font-size: 1.7em; }
+        h2 { font-size: 1.4em; margin-bottom: .2em; }
+
+        h1, h2 { line-height: 1.2; }
     }
 }
 

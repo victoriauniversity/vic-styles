@@ -24,28 +24,31 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
         color: $white;
     }
     .vic-logo {
-        background-image: url( "#{$path-imgs}/logo-victoria-white@x2.png" );
         text-indent: -666em;
         background-color: transparent;
         background-repeat: no-repeat;
         height: 50px;
-        display: block;
         width: 200px;
+        display: block;
         margin-left: auto;
         margin-right: auto;
+        background-image: url( "#{$path-imgs}/vic-logo-mobile.png" ); // Tablet and smaller
+        background-size: 100%;
+
         @include media ($mobile) {
             margin-left: 1em;
+            background-size: 90%;
+            background-position: 0 5%;
         }
         @include media ($desktop-and-bigger) {
-            background-image: url( "#{$path-imgs}/logo_desktop-2x.png" );
+            background-image: url( "#{$path-imgs}/logo_desktop-2x.png" ); // Desktop and bigger
+            float: left;
             height: 88px;
             width: 22.5%;
             margin: .5em 0 0 .5%;
             background-size: 192px 48px;
             background-position: 0 47%;
             max-width: 250px;
-            float: left;
-            // @include span-columns (3);
         }
     }
     .main-nav {

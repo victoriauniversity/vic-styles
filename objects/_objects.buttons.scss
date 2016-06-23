@@ -29,6 +29,7 @@ $ico-margin:       .9em;
     font-weight: $weight-semibold;
     text-decoration: none;
     color: $btn-label-colour;
+    transition-property: background-color; // Prevents flickering of button's text colour on load
 
     @include hoverify() {
         background-color: $btn-hover-bg;

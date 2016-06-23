@@ -131,27 +131,19 @@ $dialog-padding:   1em;
 
     // x button
     .ngdialog-close {
-      border-radius: 5px;
+      position: absolute; right: 0; top: 0;
+      margin: 1em $base-margin;
+      padding: .5em;
       cursor: pointer;
-      position: absolute;
-      margin: $base-margin;
-      right: 0;
-      top: 0;
 
-      &:before{
+      &:before {
+        font-size: 1.7em;
+        line-height: normal;
         background: transparent;
         border-radius: 3px;
-        color: #bbb;
-        content: '\00D7';
-        font-size: 26px;
-        font-weight: 400;
-        height: 30px;
-        line-height: 26px;
-        position: absolute;
-        right: 3px;
-        text-align: center;
-        top: 3px;
-        width: 30px;
+        color: #BBB;
+        content: '\00D7'; // 'X'
+        font-weight: $weight-normal;
       }
 
       @include hoverify() {
@@ -162,28 +154,11 @@ $dialog-padding:   1em;
     }
 
     .ngdialog-message {
-      margin-bottom: .5em;
+        margin-bottom: .5em;
     }
 
     .ngdialog-input {
-      margin-bottom: 1em;
-    }
-
-    .ngdialog-input textarea,
-    .ngdialog-input input[type="text"],
-    .ngdialog-input input[type="password"],
-    .ngdialog-input input[type="email"],
-    .ngdialog-input input[type="url"] {
-      background: #fff;
-      border: 0;
-      border-radius: 3px;
-      font-family: inherit;
-      font-size: inherit;
-      font-weight: inherit;
-      margin: 0 0 .25em;
-      min-height: 2.5em;
-      padding: .25em .67em;
-      width: 100%;
+        margin-bottom: 1em;
     }
 
     .ngdialog-input textarea:focus,
@@ -196,8 +171,6 @@ $dialog-padding:   1em;
     }
 
     .ngdialog-buttons {
-      *zoom: 1;
-
       &:after {
         content: '';
         display: table;
@@ -219,6 +192,8 @@ $dialog-padding:   1em;
       text-transform: uppercase;
     }
 
+    .ngdialog-open .app { position: fixed;  } // Stops Safari on iOS from scrolling
+
     @media (max-width: 568px) {
       .ngdialog-button:focus {
         -webkit-animation: none;
@@ -239,6 +214,12 @@ $dialog-padding:   1em;
 
         .ngdialog-content {
             width: auto;
+        }
+    }
+
+    @include media( $mobile ) {
+        .form__select {
+            width: 90%;
         }
     }
 }

@@ -44,7 +44,7 @@ $block-margin: $base-margin;
 
 /* Two-column grid layout. */
 .two-col-layout {
-    
+
     // Outter container
     &.block-container {
         @include make-table-grid();
@@ -112,11 +112,15 @@ $block-margin: $base-margin;
                 border-left: none;
                 border-top: $delim-border;
             }
-            @include media( $tablet-and-bigger) {
+            @include media( $desktop-and-bigger) {
                 &:last-child {
                     border-left: $delim-border;
                     border-top: none;
                 }
+            }
+
+            @include media( $mobile-large-and-smaller ) {
+                padding: 1em;
             }
         }
     }

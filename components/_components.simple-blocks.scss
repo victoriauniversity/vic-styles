@@ -46,7 +46,7 @@ $nm-bg-color: $grey-gallery;
         li {
             padding: 0.5em 0;
             a {
-                cursor: link;
+                cursor: pointer;
                 text-decoration: underline;
                 white-space: nowrap;
             }
@@ -261,6 +261,8 @@ $mar-bot: 0.3em;
         }
         .degree-button {
             min-width: 160px;
+            white-space: nowrap;
+
             @include span-columns(2);
             @include media ($mobile-large-and-smaller) {
                 max-width: 140px;
