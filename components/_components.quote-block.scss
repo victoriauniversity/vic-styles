@@ -112,10 +112,10 @@ $bg-color: $grey-gallery;
     }
 }
 
-.quote-block .quote-body {
+.quote-block .quote-wrap .quote-body {
     @include media ( $mobile-large-and-smaller) {
         .holder { overflow: inherit; }
-        header { margin-top: 1em; }
+        header { margin-top: 1em;  }
     }
 }
 
