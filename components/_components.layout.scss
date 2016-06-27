@@ -26,7 +26,7 @@
 
 // Sticks panels to the bottom
 .mobile-sticky-down {
-    @include media( $mobile-large-and-smaller) {
+    @include media( $mobile-large-and-smaller ) {
         &.sector {
             z-index: $z-index-top;
             @include position( fixed, null 0 0 0);
@@ -50,18 +50,22 @@
 
 .sticky-top {
     @include media ( $tablet-and-bigger) {
-        border-bottom: 1px solid $block-highlight-border;
-        @include position(fixed, 0 null null null) z-index: $z-index-top;
+        @include position(fixed, 0 null null null);
         width: 100%;
-        &.toggle-up {
-            top: -73px;
-            @include transition(top 0.5s ease-in-out);
+        z-index: $z-index-top;
+        border-bottom: 1px solid $block-highlight-border;
+
+        &.slide-up {
+            //top: panel's height
+            @include transition( top .75s ease-in-out );
         }
-        &.toggle-down {
-            top: 0;
-            @include transition(top 0.2s ease-in);
+
+        &.slide-down {
+            //top: 0;
+            @include transition( top .2s ease-in );
         }
     }
+
     li {
         border-left: 1px solid $block-highlight-border;
         &:last-child {
