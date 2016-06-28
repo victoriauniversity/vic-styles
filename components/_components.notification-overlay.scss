@@ -12,27 +12,37 @@
 
     h1 { margin: 0; }
 
-    // Notification types
-    .err {
-    }
-
-    .loading {
-    }
-
-    .logo.large {
-        margin: 3em 0 1.5em;
-    }
+    .logo.large { margin: 3em 0 1.5em; }
 
     @include media( $mobile-large-and-smaller ) {
-        .logo.large {
-            margin: 2em 0 .7em;
-        }
-
-        h1 { font-size: 1.7em; }
-        h2 { font-size: 1.4em; margin-bottom: .2em; }
+        .logo.large { margin: 2em 0 .7em; }
 
         h1, h2 { line-height: 1.2; }
+
+        h1 { font-size: 1.7em; }
+        h2 {
+            font-size: 1.4em;
+            margin-bottom: .2em;
+        }
+    }
+
+    /* Notification types */
+
+    // Error
+    .err {}
+
+    // Progress
+    .loading {
+        h1 {
+            color: $green-bottle-green;
+            font-weight: $weight-semibold;
+        }
+
+        .ico.spin
+        {
+            vertical-align: middle;
+            margin: .2em;
+        }
     }
 }
 
-.ico.spin { font-size: 2em; }

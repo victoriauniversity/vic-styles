@@ -12,31 +12,32 @@
 
 /* ===== BASIC ============================================================== */
 
-$white: #FFF;
-$black: #000;
+$white:                #FFF;
+$black:                #000;
 
 
 /* ===== BRANDED & ORIGINAL ============================================================ */
 
-$green-victoria:        #64a659;
-$green-victoria-old:    #449F37;
-$black-victoria:        #1d2624;
-$green-victoria-study:  #549349;
+// TODO: Refactor all the greens!
+$green-victoria:       #64a659;
+$green-victoria-old:   #449F37;
+$black-victoria:       #1d2624;
+$green-victoria-study: #549349;
 
 
 //Vic Green variations
-$green-bottle-green: 	#0D4B2F;
-$green-bottle-darker: 	#093521;
+$green-bottle-green:   #0D4B2F;
+$green-bottle-darker:  #093521;
 
 //Buttons
-$blue-azure: 			#3468B0;
+$blue-azure:           #3468B0;
 //Hover button
-$blue-st-tropaz: 		#285189;
+$blue-st-tropaz:       #285189;
 
 //Link text
-$blue-endeavoura:       #005ea5;
+$blue-endeavoura:      #005ea5;
 //Link hover
-$blue-curious-blue: 	#2B8CC4;
+$blue-curious-blue:    #2B8CC4;
 
 
 /* ===== NAMED PALETTE ====================================================== */
@@ -46,19 +47,19 @@ $blue-curious-blue: 	#2B8CC4;
 //IN ORDER LIGHT > DARK
 
 // ORINGINAL GREYS
-$grey-gallery: 	#EEE;
-$grey-alto: 	  #DDD;
-$grey-silver: 	#CCC;
+$grey-gallery:         #EEE;
+$grey-alto:            #DDD;
+$grey-silver:          #CCC;
 
 // NEW GREYS
-$grey-silver-chalice:    #bfbfbf;
-$grey-dusty-gray:        #999;
-$grey-stack:             #808080;
-$grey-mako:              #475153;
-$grey-mine-shaft:        #333;
+$grey-silver-chalice:  #bfbfbf;
+$grey-dusty-gray:      #999;
+$grey-stack:           #808080;
+$grey-mako:            #475153;
+$grey-mine-shaft:      #333;
 
 // ORINGINAL BLACK FOR TEXT
-$black-tundora: #444;
+$black-tundora:        #444;
 
 
 
@@ -71,45 +72,45 @@ $grey-mercury:		#e8e8e8; //should remove this, use grey-gallery instead
 
 //NEW OTHER - unsure on these
 
-$green-fern: 		#63B960;
-$blue-curious: 		#1483EB;
-$blue-picton: 		#3C90E6;
-$blue-grey-tower: 	#A7BBC1;
+$green-fern:           #63B960;
+$blue-curious:         #1483EB;
+$blue-picton:          #3C90E6;
+$blue-grey-tower:      #A7BBC1;
 
 //===================
 
 
 // NAME FIXES - refactor
 
-$green-mako: 	$grey-mako;
-$grey-tower: 	$blue-grey-tower;
+$green-mako:           $grey-mako;
+$grey-tower:           $blue-grey-tower;
 
-$vic-green:     $green-victoria;
-$vic-black:     $black-victoria;
+$vic-green:            $green-victoria;
+$vic-black:            $black-victoria;
 
 //===================
 
 /* ===== UI HELPERS ========================================================= */
 
 // Typography
-$text-fade-colour:      $grey-tower;
+$text-fade-colour:     $grey-tower;
 
 
 /* ===== OLD =========================================================== */
 
 
-//TODO: REFACTOR & REMOVE!
+//TODO:                REFACTOR & REMOVE!
 
 
-$blue-congress-blue:    #004f8c;
-$blue-lochmara:         #007BD8;
+$blue-congress-blue:   #004f8c;
+$blue-lochmara:        #007BD8;
 
-$green-finlandia:       #5F6B5F;
+$green-finlandia:      #5F6B5F;
 
-$light_grey: $grey-alto;
-$blue_action: $blue-endeavoura;
-$blue_action_darker: $blue-congress-blue;
-$blue_action_lighter: $blue-lochmara;
+$light_grey:           $grey-alto;
+$blue_action:          $blue-endeavoura;
+$blue_action_darker:   $blue-congress-blue;
+$blue_action_lighter:  $blue-lochmara;
 
 // ========================
 

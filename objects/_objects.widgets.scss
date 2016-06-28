@@ -24,3 +24,94 @@ $vic-large-logo-width: 480px;
 .overlaid{
     overflow: hidden;
 }
+
+$tile-padding: $base-padding;
+$tile-bg:       #f0f0f0;
+
+.tile {
+    // Desktop-view ONLY
+    display: inline-block;
+    vertical-align: top;
+    background: $tile-bg;
+    width: 48%;
+    margin: 1% .5%;
+
+    .title { line-height: 1.2; }
+
+    .tag {
+        display: inline-block;
+        margin-left: .5em;
+        border-radius: .2em;
+        font-size: 80%;
+        background-color: $green-victoria;
+        color: $white;
+        padding: .15em .6em;
+        white-space: nowrap;
+    }
+
+    .btn-holder {
+        text-align: center;
+
+        .btn { margin-bottom: 0; }
+
+        .note {
+            margin: .2em 0;
+            display: block;
+            font-size: 80%;
+            margin-bottom: 1.3em;
+        }
+    }
+
+    .code {
+        line-height: 1;
+        display: block;
+        float: right;
+        margin: .2em;
+        font-size: 90%;
+        font-weight: $weight-normal;
+        color: $grey-dusty-gray;
+    }
+}
+
+.tile__header {
+    margin: $tile-padding / 2 $tile-padding;
+
+    .description {
+        font-size: 95%;
+    }
+}
+
+.tile__list {
+    margin: .25em $tile-padding .5em $tile-padding;
+    // > li {
+    //     padding: .5em $tile-padding;
+    //     border-top: 1px solid #ddd;
+    // }
+    //
+    //
+    > li { margin-bottom: .15em; }
+
+    .label .ico { margin-right: .3em;
+        color: $grey-mako; }
+
+    &.grid {
+        text-align: center;
+
+        > li {
+            vertical-align: top;
+            display: inline-block;
+            width: 30%;
+            margin-bottom: 1em;
+        }
+
+        .label {
+            display: block;
+            font-size: 80%;
+            font-weight: $weight-bold;
+        }
+
+        .value {
+            font-size: 125%;
+        }
+    }
+}

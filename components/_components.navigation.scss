@@ -6,17 +6,17 @@
 /* ===== NAVIGATION MENU - TABS ============================================= */
 
 // Tabed menu - general
-$menu-tabbed-padding-horiz: .7em !default;
-$menu-tabbed-padding-vertic: .9em !default;
+$menu-tabbed-padding-horiz:            .7em !default;
+$menu-tabbed-padding-vertic:           .9em !default;
 // Single tab (~ menu item)
-$menu-tabbed-item-max-width: $base-width / 4 !default; // accommodates up to 4 items
-$menu-tabbed-item-triangle-width: 1.5em !default;
-$menu-tabbed-item-triangle-height: ( $menu-tabbed-item-triangle-width / 3) !default;
-$menu-tabbed-item-label-colour: $grey-stack !default;
-$menu-tabbed-item-hover-label-colour: $blue-curious-blue !default;
-$menu-tabbed-item-hover-bg-colour: $grey-alto !default;
+$menu-tabbed-item-max-width:           $base-width / 4 !default; // accommodates up to 4 items
+$menu-tabbed-item-triangle-width:      1.5em !default;
+$menu-tabbed-item-triangle-height:     ( $menu-tabbed-item-triangle-width / 3 ) !default;
+$menu-tabbed-item-label-colour:        $grey-stack !default;
+$menu-tabbed-item-hover-label-colour:  $blue-curious-blue !default;
+$menu-tabbed-item-hover-bg-colour:     $grey-alto !default;
 $menu-tabbed-item-active-label-colour: $white !default;
-$menu-tabbed-item-active-bg-colour: $green-victoria !default;
+$menu-tabbed-item-active-bg-colour:    $green-victoria !default;
 
 /* Menu or submenu using tab-like layout of its items. */
 .menu-tabbed {
@@ -24,6 +24,7 @@ $menu-tabbed-item-active-bg-colour: $green-victoria !default;
     table-layout: fixed;
     width: 100%;
     text-align: center;
+
 
     // 1st level menu items
     & > li {
@@ -92,15 +93,16 @@ $menu-tabbed-item-active-bg-colour: $green-victoria !default;
         font-size: 80%;
         color: $grey-stack;
     }
-    .btn {
-        margin: 0;
-    }
+
+    .btn { margin: 0;  }
+
     &:last-child {
         .two-btn-wrap {
             float: right;
             text-align: right;
         }
     }
+
     @include media ($tablet-and-bigger) {
         padding: 1.5em;
     }

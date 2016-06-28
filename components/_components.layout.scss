@@ -24,32 +24,11 @@
 
 /* ===== LAYOUT MODIFIERS =================================================== */
 
-// Sticks panels to the bottom
-.mobile-sticky-down {
-    @include media( $mobile-large-and-smaller ) {
-        &.sector {
-            z-index: $z-index-top;
-            @include position( fixed, null 0 0 0);
-            &.highlighted {
-                border-top: 1px solid $block-highlight-border;
-            }
-        }
-        .menu-tabbed {
-            // Switch caret from bottom to top
-            .active:after {
-                bottom: auto;
-                margin-bottom: 0;
-                border-top: none;
-                top: 0;
-                margin-top: -$menu-tabbed-item-triangle-height;
-                border-bottom: $menu-tabbed-item-triangle-height solid $menu-tabbed-item-active-bg-colour;
-            }
-        }
-    }
-}
-
 .sticky-top {
     @include media ( $tablet-and-bigger) {
+
+        box-shadow: rgba(#000, .2) 0 1px 15px;
+
         @include position(fixed, 0 null null null);
         width: 100%;
         z-index: $z-index-top;
@@ -73,3 +52,30 @@
         }
     }
 }
+
+// Sticks panels to the bottom
+.mobile-sticky-down {
+    box-shadow: rgba(#000, .12) 0 -1px 10px;
+
+    @include media( $mobile-large-and-smaller ) {
+        &.sector {
+            z-index: $z-index-top;
+            @include position( fixed, null 0 0 0);
+            &.highlighted {
+                border-top: 1px solid $block-highlight-border;
+            }
+        }
+        .menu-tabbed {
+            // Switch caret from bottom to top
+            .active:after {
+                bottom: auto;
+                margin-bottom: 0;
+                border-top: none;
+                top: 0;
+                margin-top: -$menu-tabbed-item-triangle-height;
+                border-bottom: $menu-tabbed-item-triangle-height solid $menu-tabbed-item-active-bg-colour;
+            }
+        }
+    }
+}
+
