@@ -25,27 +25,42 @@ $vic-large-logo-width: 480px;
     overflow: hidden;
 }
 
+/* Cards-like tiles. */
 $tile-padding: $base-padding;
 $tile-bg:       #f0f0f0;
+
+.tiles {
+    width: 100%;
+    -moz-column-count: 1;
+    -moz-column-gap: 0;
+    -webkit-column-count: 1;
+    -webkit-column-gap: 0;
+    column-count: 1;
+    column-gap: 0;
+}
 
 .tile {
     // Desktop-view ONLY
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     background: $tile-bg;
     width: 48%;
-    margin: 1% .5%;
+    margin: 1%;
+    vertical-align: top;
+
+    @include media ( $tablet-and-smaller ) {
+        margin-left: 0; margin-right: 0;
+        width: 100%;
+    }
 
     .title { line-height: 1.2; }
 
     .tag {
         display: inline-block;
-        margin-left: .5em;
         border-radius: .2em;
-        font-size: 80%;
         background-color: $green-victoria;
         color: $white;
-        padding: .15em .6em;
+        padding: .2em .6em;
         white-space: nowrap;
     }
 
@@ -63,10 +78,10 @@ $tile-bg:       #f0f0f0;
     }
 
     .code {
-        line-height: 1;
         display: block;
         float: right;
         margin: .2em;
+        line-height: 1;
         font-size: 90%;
         font-weight: $weight-normal;
         color: $grey-dusty-gray;
@@ -74,7 +89,7 @@ $tile-bg:       #f0f0f0;
 }
 
 .tile__header {
-    margin: $tile-padding / 2 $tile-padding;
+    margin: $tile-padding;
 
     .description {
         font-size: 95%;
@@ -83,35 +98,52 @@ $tile-bg:       #f0f0f0;
 
 .tile__list {
     margin: .25em $tile-padding .5em $tile-padding;
-    // > li {
-    //     padding: .5em $tile-padding;
-    //     border-top: 1px solid #ddd;
-    // }
-    //
-    //
-    > li { margin-bottom: .15em; }
 
-    .label .ico { margin-right: .3em;
-        color: $grey-mako; }
+    > li {
+        margin-bottom: .3em;
+
+        > .ico:before {
+            color: #666;
+            width: 1em;
+            margin-right: .15em;
+        }
+    }
+
+    .label {
+            color: #666;
+    }
+
+    .tooltip-icon { vertical-align: initial; }
+
 
     &.grid {
         text-align: center;
+        margin-bottom: 1.5em;
+        margin-left: 1em;
+        margin-right: 1em;
 
         > li {
             vertical-align: top;
             display: inline-block;
-            width: 30%;
-            margin-bottom: 1em;
+            width: 32%;        }
+
+        .label, .value, .note {
+            display: block;
+            line-height: 1.15;
         }
 
-        .label {
-            display: block;
+        .label{
+            font-size: 90%;
+            margin-bottom: .5em;
+        }
+
+        .note {
             font-size: 80%;
-            font-weight: $weight-bold;
         }
 
         .value {
-            font-size: 125%;
+            font-size: 130%;
+            margin-bottom: .2em;
         }
     }
 }

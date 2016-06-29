@@ -10,50 +10,55 @@
     }
 }
 
-$ico-caret-width:   .7em;
-$ico-caret-height:  .35em;
+$ico-caret-width:  .7em;
+$ico-caret-height: .35em;
 
 
-$ico-margin:    .9em;
+$ico-margin:       .9em;
 
 
 /* ===== FONT ICON'S CODES ================================================== */
 
 
-$ico-code-study-cap-thin:       '\e806';
-$ico-code-bubble-thin:          '\e80a';
-$ico-code-heart-thin:           '\e808';
+$ico-code-study-cap-thin:  '\e806';
+$ico-code-bubble-thin:     '\e80a';
+$ico-code-heart-thin:      '\e808';
 
-$ico-code-arr-right:            '\e807';
-$ico-code-arr-left:             '\e809';
-$ico-code-arr-down:             '\e80b';
-$ico-code-arr-up:               '\e80c';
+$ico-code-arr-right:       '\e807';
+$ico-code-arr-left:        '\e809';
+$ico-code-arr-down:        '\e80b';
+$ico-code-arr-up:          '\e80c';
 
-$ico-code-arr-short-down:       '\e80d';
-$ico-code-arr-short-left:       '\e80e';
-$ico-code-arr-short-right:      '\e80f';
-$ico-code-arr-short-up:         '\e810';
+$ico-code-arr-short-down:  '\e80d';
+$ico-code-arr-short-left:  '\e80e';
+$ico-code-arr-short-right: '\e80f';
+$ico-code-arr-short-up:    '\e810';
 
-$ico-code-help:                 '\e811';
-$ico-code-quote-start:          '\e812';
-$ico-code-quote-end:            '\e813';
-$ico-code-phone:                '\e814';
-$ico-code-mail:                 '\e815';
-$ico-code-dollar:               '\e816';
-$ico-code-clock:                '\e805';
+$ico-code-help:            '\e811';
+$ico-code-quote-start:     '\e812';
+$ico-code-quote-end:       '\e813';
+$ico-code-phone:           '\e814';
+$ico-code-mail:            '\e815';
+$ico-code-dollar:          '\e816';
+$ico-code-clock:           '\e805';
 
-$ico-code-star:                 '\e800';
-$ico-code-link-ext:             '\e801';
-$ico-code-info:                 '\e802';
-$ico-code-book:                 '\e803';
-$ico-code-cancel:               '\e804';
-$ico-code-ext-link:             '\e817';
-$ico-code-ok:                   '\e818';
-$ico-code-youtube-play:         '\e819';
+$ico-code-star:            '\e800';
+$ico-code-link-ext:        '\e801';
+$ico-code-info:            '\e802';
+$ico-code-book:            '\e803';
+$ico-code-cancel:          '\e804';
+$ico-code-ext-link:        '\e817';
+$ico-code-ok:              '\e818';
+$ico-code-youtube-play:    '\e819';
 
-$ico-code-spin:                 '\e81a';
-$ico-code-search:               '\e81b';
-$ico-code-person:               '\e81c';
+$ico-code-spin:            '\e81a';
+$ico-code-search:          '\e81b';
+$ico-code-person:          '\e81c';
+
+$ico-code-location:        '\e81d';
+$ico-code-tick:            '\e81e';
+$ico-code-calendar:        '\e81f';
+$ico-code-flag:            '\e820';
 
 
 
@@ -86,7 +91,6 @@ $ico-code-person:               '\e81c';
     @include define-icon( clock, $ico-code-clock );
     @include define-icon( dollar, $ico-code-dollar );
 
-
     @include define-icon( quote-start, $ico-code-quote-start );
     @include define-icon( quote-end, $ico-code-quote-end );
 
@@ -113,6 +117,11 @@ $ico-code-person:               '\e81c';
     @include define-icon( spin, $ico-code-spin );
     @include define-icon( search, $ico-code-search );
     @include define-icon( person, $ico-code-person );
+
+    @include define-icon( location, $ico-code-location );
+    @include define-icon( tick, $ico-code-tick );
+    @include define-icon( calendar, $ico-code-calendar );
+    @include define-icon( flag, $ico-code-flag );
 
 
     /* CSS only icons */
