@@ -12,7 +12,7 @@
     p {
         margin-bottom: 1.2em;
 
-        &:last-child { margin: 0; }
+        &:last-child { margin-bottom: 0; }
     }
 
     // Unordered list with own square bullet
@@ -20,21 +20,36 @@
     $list-bullet-indent-left:   .5em;
     $list-bullet-indent-right:  1.15em;
 
+    ul, ol {
+        > li {
+            line-height: $base-line-height;
+            margin-bottom: .35em;
+            margin-top: .35em;
+        }
+    }
+
     ul {
         margin-left: 0;
         padding-left: $list-bullet-indent-left + $list-bullet-indent-right + $list-bullet-size;
         text-indent: -( $list-bullet-indent-right + $list-bullet-size );
+        list-style-position: outside;
 
         > li {
-            margin: .3em 0;
             line-height: $base-line-height;
 
             @include make-list-square-bullet( $list-bullet-size ) {
-                position: relative; top: -0.1em;
+                position: relative; top: -.1em;
                 margin-right: $list-bullet-indent-right;
             }
+        }
+    }
 
+    ol {
+        list-style: decimal;
 
+        > li {
+            margin-left: 1.5em;
+            padding-left: $list-bullet-indent-right - $list-bullet-size;
         }
     }
 }
