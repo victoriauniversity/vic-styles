@@ -2,6 +2,10 @@
 =            SETTINGS            =
 ================================*/
 
+// 1. IMPORT BASE LIBRARIES
+@import '../libs/bourbon/app/assets/stylesheets/bourbon.scss';
+@import '../libs/neat/app/assets/stylesheets/neat.scss';
+
 /* Configs, brand colors, spacing units, paths and more, defined as variables. */
 
 // *Note*: Imports are order sensitive!
