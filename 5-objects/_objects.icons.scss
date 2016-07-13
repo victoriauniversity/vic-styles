@@ -3,17 +3,43 @@
 =============================*/
 
 /* Creates icon class and assigns icon's code. */
-@mixin define-icon( $tag-name, $ico-code ) {
-    &.#{$tag-name}:before {
+@mixin define-icon( $tag-name, $ico-code, $placement:'before' ) {
+    &.#{$tag-name}:#{$placement} {
         content: $ico-code;
         @content;
     }
 }
 
+
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+
+
 $ico-caret-width:  .7em;
 $ico-caret-height: .35em;
-
-
 $ico-margin:       .9em;
 
 
@@ -43,7 +69,7 @@ $ico-code-dollar:          '\e816';
 $ico-code-clock:           '\e805';
 
 $ico-code-star:            '\e800';
-$ico-code-link-ext:        '\e801';
+$ico-code-link-ext:        '\e801'; //TODO: DEPRECATED
 $ico-code-info:            '\e802';
 $ico-code-book:            '\e803';
 $ico-code-cancel:          '\e804';
@@ -65,9 +91,7 @@ $ico-code-flag:            '\e820';
 
 /* ===== ICONS DEFINITIONS ================================================== */
 
-//why is this not spelt .icon? Not typing the 'n' is just lazy - irwinna 1.3.16
 .ico {
-
     font-weight: normal;
 
     &:before {
@@ -99,7 +123,6 @@ $ico-code-flag:            '\e820';
     @include define-icon( arr-up, $ico-code-arr-up );
     @include define-icon( arr-down, $ico-code-arr-down );
 
-
     @include define-icon( arr-short-left, $ico-code-arr-short-left );
     @include define-icon( arr-short-down, $ico-code-arr-short-down );
     @include define-icon( arr-short-right, $ico-code-arr-short-right );
@@ -114,7 +137,10 @@ $ico-code-flag:            '\e820';
     @include define-icon( ok, $ico-code-ok );
     @include define-icon( youtube-play, $ico-code-youtube-play );
 
-    @include define-icon( spin, $ico-code-spin );
+    @include define-icon( spin, $ico-code-spin ){
+        display: inline-block;
+        @include animation( spin 2s infinite linear );
+    };
     @include define-icon( search, $ico-code-search );
     @include define-icon( person, $ico-code-person );
 
@@ -124,48 +150,13 @@ $ico-code-flag:            '\e820';
     @include define-icon( flag, $ico-code-flag );
 
 
-    /* CSS only icons */
+    /* CSS only icons. */
+
     &.caret:before {
         @include triangle(
             $ico-caret-width $ico-caret-height,
             $base-font-colour,
             right
         );
-    }
-
-    &.ext-link:before {
-        display: inline;
-        margin-left: .3em;
-    }
-}
-
-.ico.spin {
-     @include animation( spin 2s infinite linear );
-         // animation: spin 2s infinite linear;
-    display: inline-block;
-}
-
-@-webkit-keyframes spin {
-    0%   {
-        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-        -ms-transform: rotate(0deg);  /* IE 9 */
-        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
-    }
-    100% {
-        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-        -ms-transform: rotate(360deg);  /* IE 9 */
-        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
-    }
-}
-@keyframes spin {
-    0%   {
-        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-        -ms-transform: rotate(0deg);  /* IE 9 */
-        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
-    }
-    100% {
-        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-        -ms-transform: rotate(360deg);  /* IE 9 */
-        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
     }
 }

@@ -4,10 +4,25 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+
+
+
 ## [Unreleased]
 
 
+### Changed
+ - External link's icon is now inbuilt into `.link--external`.
+
+
+### Deprecated
+ - `.link-ext` - Use `.ext-link` instead;
+
+
+
+
+
 ## v0.1.0 - 2016-07-12
+
 
 ### Added
  - Proper documentation (see [README.md](https://github.com/victoriauniversity/vic-styles/blob/master/README.md)).
