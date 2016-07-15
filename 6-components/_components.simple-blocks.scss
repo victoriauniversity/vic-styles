@@ -2,33 +2,46 @@
 =           FUN FACT BLOCK      =
 ===============================*/
 
+
 $fun-fact-bg-color: $grey-gallery;
 
-.fun-fact {
-    background-color: $fun-fact-bg-color;
+
+.block__fact {}
+
+
+.fact__title {
+    margin-bottom: 0;
+    font-size: 3.2em;
+    line-height: 1;
+    text-align: right;
+}
+
+
+.fact__heading,
+.fact__content {
+    vertical-align: middle;
+}
+
+
+@include media( $tablet-and-smaller ) {
+
+    .fact__heading.block { padding-bottom: 0; }
+
+    .fact__content,
+    .fact__title {
+        text-align: center;
+    }
 
     .fact__title {
-        margin-bottom: 0;
-        font-size: 3.2em;
-        line-height: 1;
-        text-align: right;
+        margin-bottom: .2em;
+        font-size: 3em;
     }
 
-    .fact__heading,
-    .fact__content {
-        vertical-align: middle;
-    }
-
-    @include media( $tablet-and-smaller ) {
-        .fact__heading.block { padding-bottom: 0; }
-        .fact__content, .fact__title { text-align: center; }
-
-        .fact__title {
-            margin-bottom: .2em;
-            font-size: 3em;
-        }
-    }
 }
+
+
+
+
 
 
 /*===============================

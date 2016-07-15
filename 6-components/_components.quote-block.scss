@@ -3,8 +3,7 @@
 ===============================*/
 
 $bg-color: $grey-gallery;
-.quote-block {
-    background-color: $bg-color;
+.block__quote {
     header {
         @include media ($mobile-large-and-smaller) {
             float: right;
@@ -14,6 +13,7 @@ $bg-color: $grey-gallery;
 
 .person-block {
     padding-bottom: 2em;
+
     .quote-text {
         @include media ($mobile-large-and-smaller) {
             float: right;
@@ -24,7 +24,7 @@ $bg-color: $grey-gallery;
     }
 }
 
-.quote-block,
+.block__quote,
 .person-block {
     .quote-wrap {
         @include outer-container;
@@ -112,7 +112,7 @@ $bg-color: $grey-gallery;
     }
 }
 
-.quote-block .quote-wrap .quote-body {
+.block__quote .quote-wrap .quote-body {
     @include media ( $mobile-large-and-smaller) {
         .holder { overflow: inherit; }
         header { margin-top: 1em;  }
@@ -123,13 +123,4 @@ $bg-color: $grey-gallery;
     .separated {
         border-bottom: 0;
     }
-}
-
-// TODO: Refactor!
-.image-promo-block {
-    .promo-body .promo-action {
-        margin-top: 0;
-    }
-
-    padding-left: $base-margin; padding-right: $base-margin;
 }

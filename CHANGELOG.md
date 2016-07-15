@@ -10,6 +10,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 
+### Added
+ - Printing styles: image attribution, toggle control.
+
+
 ### Changed
  - External link's icon is now inbuilt into `.link--external`.
 

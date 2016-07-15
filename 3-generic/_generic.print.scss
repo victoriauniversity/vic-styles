@@ -2,7 +2,10 @@
 =            PRINT STYLES            =
 ====================================*/
 
-// _print.scss 
+
+// TODO: Requires extensive redesign!
+
+// _print.scss
 // -------------------------------------------------------------
 @media print {
     * {
@@ -28,15 +31,15 @@
     a[href^="javascript:"]:after,
     a[href^="#"]:after {
         content: "";
-    } // Don't show links for images, or javascript/internal links 
+    } // Don't show links for images, or javascript/internal links
     pre,
     blockquote {
-        // border: 1px solid #999; 
+        // border: 1px solid #999;
         page-break-inside: avoid;
     }
     thead {
         display: table-header-group;
-    } // h5bp.com/t 
+    } // h5bp.com/t
     tr,
     img {
         page-break-inside: avoid;
@@ -59,7 +62,7 @@
         margin-right: 0 !important;
     }
     h1 {
-        font-size: 1.8em !important; 
+        font-size: 1.8em !important;
     }
     h2 {
         // font-size: 1.6em !important;
@@ -79,7 +82,7 @@
     .cover-overlay,
     .menu-tabbed,
     .need-more-block,
-    .video-block,
+    .block__video,
     .slide-show-block,
     .banner-with-cover .btn,
     .block .btn,
@@ -135,5 +138,32 @@
     .degree-req .req-header .req-child h5 {
         padding-top: 0 !important;
         padding-bottom: 0 !important;
+    }
+
+    /** Content switcher - show label only + toggle's Yes/No. */
+    .content-switcher {
+        .group-toggle {
+            input[type=checkbox]{
+                & + label {
+                    width: auto;
+
+                    > span:after{
+                        content: "No";
+                        font-weight: $weight-bold;
+                    }
+                }
+
+                &:checked + label {
+                    > span:after{
+                        content: "Yes";
+                    }
+                }
+            }
+        }
+    }
+
+    /** Attribution bubble - Don't show. */
+    .bubble-attribution {
+        display: none !important;
     }
 }

@@ -9,9 +9,9 @@
 .sector {
     @include clearfix();
 
-    // Highlights sector
+    // Adds highlight
     &.highlighted {
-        background-color: $block-highlight-colour;
+        background-color: $block-highlight-colour; // TODO: Deprecated!
     }
 
     // Adds line separator to the end of the sector
@@ -20,12 +20,19 @@
     }
 }
 
+    // Adds highlight
+    .sector--highlight {
+        display: block;
+        background-color: $block-highlight-colour;
+    }
+
 
 /* ===== BLOCKS ============================================================= */
 
 $block-margin: $base-margin;
 // Standard block container
 .block {
+    display: block;
     padding: $block-margin;
     vertical-align: top;
 }

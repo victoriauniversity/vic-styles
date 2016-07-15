@@ -4,19 +4,19 @@
 
 $bg-color: $grey-gallery;
 
-.video-block {
-    .block {
-        padding: 1em 0;
-        position: relative;
-    }
-    .block:last-child {
+.block__video {
+    padding: 1em 0;
+    position: relative;
+
+    &:last-child {
+        margin-right: auto; margin-left: auto; // Center
         max-width: 970px;
-        margin-right: auto;
-        margin-left: auto;
+
         @include media ($tablet-and-smaller) {
             padding: 1em;
         }
     }
+
     .cover-text-overlay {
          @include media ($tablet-and-bigger) {
             position: absolute;
