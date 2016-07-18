@@ -20,7 +20,7 @@ $bg-color: $grey-gallery;
         }
     }
     .block {
-        padding-bottom: 0.8em;
+        padding-bottom: .8em;
     }
 }
 
@@ -28,7 +28,6 @@ $bg-color: $grey-gallery;
 .person-block {
     .quote-wrap {
         @include outer-container;
-        padding: $base-margin;
         margin-right: auto;
         margin-left: auto;
 

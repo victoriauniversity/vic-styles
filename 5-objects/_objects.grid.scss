@@ -2,11 +2,12 @@
 =            GRID-BASED LAYOUT ELEMENTS            =
 ==================================================*/
 
+$block-margin: $base-margin;
 
 /* ===== SECTORS ============================================================ */
 
 // To divide page into independent sectors.
-.sector {
+.sector, .sector-container {
     @include clearfix();
 
     // Adds highlight
@@ -16,7 +17,7 @@
 
     // Adds line separator to the end of the sector
     &.separated {
-        border-bottom: $delim-border;
+        border-bottom: $delim-border; // TODO: Deprecated!
     }
 }
 
@@ -26,16 +27,27 @@
         background-color: $block-highlight-colour;
     }
 
+    // Separates sector with a line
+    .sector--separated {
+        display: block;
+        border-bottom: $delim-border;
+    }
+
+
 
 /* ===== BLOCKS ============================================================= */
 
-$block-margin: $base-margin;
 // Standard block container
 .block {
     display: block;
-    padding: $block-margin;
     vertical-align: top;
+    padding: $block-margin;
+
+    .sector + .sector & { padding-top: 0; }
+    .sector + .sector.sector--highlight & { padding-top: $block-margin; }
+    .sector--highlight + .sector & { padding-top: $block-margin; }
 }
+
 
 // Makes content aligned to the center if the width of the
 // viewport surpasses $base-width.
@@ -55,34 +67,34 @@ $block-margin: $base-margin;
     // Outter container
     &.block-container {
         @include make-table-grid();
+    }
 
-        // Column; makes two cols - 65% and 35% width
-        .block {
-            // Right column
-            &:last-child { padding-top: 0; }
+    // Column; makes two cols - 65% and 35% width
+    .block {
+        // Right column
+        &:last-child { padding-top: 0; }
 
-            &.btns-holder {
-                text-align: center;
-                vertical-align: middle;
+        &.btns-holder {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        @include media( $desktop-and-bigger) {
+
+            // Left column
+            &:first-child {
+                @include make-table-column( $two-col-layout-left-ratio);
             }
 
-            @include media( $desktop-and-bigger) {
+            // Right column
+            &:last-child {
+                @include make-table-column( $two-col-layout-right-ratio);
+                padding-top: $block-margin;
+            }
 
-                // Left column
-                &:first-child {
-                    @include make-table-column( $two-col-layout-left-ratio);
-                }
-
-                // Right column
-                &:last-child {
-                    @include make-table-column( $two-col-layout-right-ratio);
-                    padding-top: $block-margin;
-                }
-
-                &.btns-holder {
-                    text-align: left;
-                    @include make-table-column( $two-col-layout-right-ratio);
-                }
+            &.btns-holder {
+                text-align: right;
+                @include make-table-column( $two-col-layout-right-ratio);
             }
         }
     }
@@ -91,9 +103,6 @@ $block-margin: $base-margin;
 
         // Swap column blocks - 35% left and 65% right
         .block {
-            // Right column
-            &:last-child { padding-top: 0; }
-
             @include media( $desktop-and-bigger) {
 
                 // Left column
@@ -104,7 +113,6 @@ $block-margin: $base-margin;
                 // Right column
                 &:last-child {
                     @include make-table-column( $two-col-layout-left-ratio );
-                    padding-top: $block-margin;
                 }
             }
         }
@@ -113,21 +121,19 @@ $block-margin: $base-margin;
     // Adds line separators to divide blocks
     &.separated {
         .block {
+
             // Right column
             &:last-child {
                 padding-top: $block-margin;
                 border-left: none;
                 border-top: $delim-border;
             }
+
             @include media( $desktop-and-bigger) {
                 &:last-child {
                     border-left: $delim-border;
                     border-top: none;
                 }
-            }
-
-            @include media( $mobile-large-and-smaller ) {
-                padding: 1em;
             }
         }
     }

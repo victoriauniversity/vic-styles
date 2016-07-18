@@ -5,7 +5,6 @@
 $bg-color: $grey-gallery;
 
 .block__video {
-    padding: 1em 0;
     position: relative;
 
     &:last-child {
@@ -64,8 +63,8 @@ $bg-color: $grey-gallery;
     .video-body {
         position: relative;
         padding: 0;
-        margin-right: auto;
-        margin-left: auto;
+        margin: 0 auto .5em auto;
+
         @include media ($desktop-and-bigger) {
             max-width: 970px;
             min-height: 546px;
@@ -127,7 +126,6 @@ $bg-color: $grey-gallery;
 }
 
 .video__description {
-    margin: .5em 0;
 }
 
 // TODO: refactor
