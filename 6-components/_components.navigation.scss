@@ -95,13 +95,14 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
     .btn { margin: 0; }
 
     &:last-child {
+
         .two-btn-wrap {
             float: right;
             text-align: right;
         }
     }
+}
 
-    @include media ($tablet-and-bigger) {
-        //padding: 1.5em;
-    }
+.two-col-layout {
+    .two-btn-nav.block:last-child { padding-top: $block-margin; }
 }

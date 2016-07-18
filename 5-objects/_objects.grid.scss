@@ -35,6 +35,10 @@ $block-margin: $base-margin;
 
 
 
+.layout-rebase {} // Layout normaliser => Reset previous layouting rules
+
+
+
 /* ===== BLOCKS ============================================================= */
 
 // Standard block container
@@ -43,9 +47,16 @@ $block-margin: $base-margin;
     vertical-align: top;
     padding: $block-margin;
 
+    // 1. Collapse space in all siblings (default)
     .sector + .sector & { padding-top: 0; }
+
+    // 2. Enable in some cases
     .sector + .sector.sector--highlight & { padding-top: $block-margin; }
-    .sector--highlight + .sector & { padding-top: $block-margin; }
+    .sector--highlight + .sector &,
+    .sector.separated + .sector & { padding-top: $block-margin; }
+
+    // Reset
+    .sector .layout-rebase & { padding-top: $block-margin; }
 }
 
 
@@ -62,7 +73,7 @@ $block-margin: $base-margin;
 }
 
 /* Two-column grid layout. */
-.two-col-layout {
+.sector .two-col-layout {
 
     // Outter container
     &.block-container {
