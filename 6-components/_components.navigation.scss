@@ -94,7 +94,12 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
 
     .btn { margin: 0; }
 
+    &:first-child {
+        padding-right: .5em;
+    }
+
     &:last-child {
+        padding-left: .5em;
 
         .two-btn-wrap {
             float: right;
@@ -105,4 +110,30 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
 
 .two-col-layout {
     .two-btn-nav.block:last-child { padding-top: $block-margin; }
+}
+
+// Sticks panels to the bottom
+.mobile-sticky-down {
+    box-shadow: rgba(#000, .12) 0 -1px 10px;
+
+    @include media( $mobile-large-and-smaller ) {
+        &.sector {
+            z-index: $z-index-top;
+            @include position( fixed, null 0 0 0);
+            &.highlighted {
+                border-top: 1px solid $block-highlight-border;
+            }
+        }
+        .menu-tabbed {
+            // Switch caret from bottom to top
+            .active:after {
+                bottom: auto;
+                margin-bottom: 0;
+                border-top: none;
+                top: 0;
+                margin-top: -$menu-tabbed-item-triangle-height;
+                border-bottom: $menu-tabbed-item-triangle-height solid $menu-tabbed-item-active-bg-colour;
+            }
+        }
+    }
 }

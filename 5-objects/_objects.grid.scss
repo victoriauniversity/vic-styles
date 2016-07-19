@@ -47,8 +47,9 @@ $block-margin: $base-margin;
     vertical-align: top;
     padding: $block-margin;
 
-    // 1. Collapse space in all siblings (default)
+    // 1. Collapse space in all siblings (default)...
     .sector + .sector & { padding-top: 0; }
+
 
     // 2. Enable in some cases
     .sector + .sector.sector--highlight & { padding-top: $block-margin; }
@@ -57,6 +58,11 @@ $block-margin: $base-margin;
 
     // Reset
     .sector .layout-rebase & { padding-top: $block-margin; }
+
+    // 1B. ... and all block-containers
+    .sector .block-container &:not(:first-child) {
+        padding-top: 0;
+    }
 }
 
 

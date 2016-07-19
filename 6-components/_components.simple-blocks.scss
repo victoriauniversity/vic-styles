@@ -229,9 +229,9 @@ $mar-bot: .3em;
         color: $grey-mako;
         margin-bottom: $mar-bot;
 
-        .degree-code {
-            color: $green-victoria;
-            font-weight: bold;
+        .code {
+            color: #999;
+            font-weight: $weight-light;
         }
     }
 

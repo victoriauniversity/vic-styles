@@ -19,7 +19,7 @@ $ico-margin:       .9em;
 
 .btn {
     display: inline-block;
-    padding: 0.6em 1.1em;
+    padding: .6em 1.1em;
     margin: 1em;
     line-height: 1.2;
     border-radius: $btn-corners;
@@ -52,6 +52,10 @@ $ico-margin:       .9em;
         margin-left: $ico-margin;
         line-height: 0;
         vertical-align: middle;
+        display: inline;
+        transition: none;
+
+        &:before { display: inline; }
 
         // Positioning (right position by default)
         &.left {
@@ -63,8 +67,9 @@ $ico-margin:       .9em;
     &.secondary {
         background-color: $sec-bg;
         color: $grey-mako;
-        padding: 0.6em 1em;
+        padding: .6em 1em;
         line-height: 1;
+
         @include hoverify() {
             background-color: $sec-hover-bg;
             // color: $grey-dusty-gray;
@@ -85,10 +90,4 @@ $ico-margin:       .9em;
 
 // .link {}
 
-    /** Link outside of the site with `ico ext-link`. */
-    .link--external {
-        &:after {
-            @include iconify( inline, $ico-code-ext-link );
-            margin-left: .25em;
-        }
-    }
+

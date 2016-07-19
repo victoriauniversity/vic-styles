@@ -70,7 +70,7 @@
 .tooltip-inline,
 .tooltip-icon {
     cursor: default;
-    }
+}
 
 /** Inline hint (~ tooltip). */
 $hint-inline-colour:            $base-font-colour;
@@ -89,12 +89,15 @@ $hint-inline-active-colour:     black;
 
 /** Icon for the tooltip. */
 .tooltip-icon {
+    display: inline;
     cursor: pointer;
-    margin: 0 .2em;
+    margin: 0 .35em;
     vertical-align: middle;
     font-size: 90%;
     color: $grey-stack;
     opacity: .6;
+
+    &:before { display: inline; }
 
     @include hoverify() { opacity: 1; }
 }
@@ -104,6 +107,10 @@ $hint-inline-active-colour:     black;
     transition: none;
     font-size: 90%;
     white-space: nowrap;
+}
+
+.link--external {
+    display: inline;
 }
 
 // Inline block that might be or might not be used inside a dynamic content.

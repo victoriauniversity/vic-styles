@@ -2,77 +2,91 @@
 =       SLIDE SHOW             =
 ===============================*/
 
-.slide-show-block {
-    // .block:last-child {
-    //     max-width: 970px;
-    //     margin-right: auto;
-    //     margin-left: auto;
-        
-    // }
+.block__slide-show {
+
+    .block-container { display: block; }
+
     .slide-show-image {
-        position: relative;
-        border: 1px solid $grey-silver;
-        background-color: $vic-black;
-        margin-right: auto;
-        margin-left: auto;
-        padding-bottom: 2em;
+
+    }
+}
+
+.slide-show__wrap {
+}
+
+.slide-show__description {
+    text-align: center;
+    margin: .8em 0 1em;
+}
+
+.slide-show__slide {
+    @include media ($desktop-and-bigger) {
+        max-width: 970px;
+        min-height: 546px;
+    }
+
+    @include media ($tablet-and-smaller) {
+        min-width: 100%;
+        min-height: 360px;
+    }
+
+    @include media ($mobile-large-and-smaller) {
+        max-width: 480px;
+        min-height: 270px;
+    }
+
+    position: relative;
+    border: 1px solid $grey-silver;
+    background-color: $vic-black;
+    padding-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+        vertical-align: middle;
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
         @include media ($desktop-and-bigger) {
-            max-width: 970px;
-            min-height: 546px;
-        }
-        @include media ($tablet-and-smaller) {
-            min-width: 100%;
-            min-height: 360px;
-        }
-        @include media ($mobile-large-and-smaller) {
-            max-width: 480px;
-            min-height: 270px;
-        }
-        img {
-            vertical-align: middle;
-            max-width: 100%;
-            max-height: 100%;
-            height: auto;
-            display: block;
-            margin: auto;
-            @include media ($desktop-and-bigger) {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-            }
-        }
-        .nav-wrap {
-            height: 3em;
-            width: 100%;
-            display: inline-block;
             position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
             bottom: 0;
-            background-color: rgba($grey-stack, 0.3);
-            .slide-nav {
-                position: relative;
-                display: inline-block;
+        }
+    }
+    .nav-wrap {
+        height: 3em;
+        width: 100%;
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        background-color: rgba($grey-stack, 0.3);
+
+        .slide-nav {
+            position: relative;
+            display: inline-block;
+            height: 100%;
+            width: 49.7%;
+            padding: 0 0.5em;
+            @include span-columns (6) a {
+                padding: 0 50%;
+                @include position(absolute, 0);
+                @include hoverify() {
+                    color: $grey-stack;
+                    background-color: rgba($grey-stack, 0.4);
+                    cursor: pointer;
+                }
+                z-index: $z-index-top;
+                text-align: middle;
                 height: 100%;
-                width: 49.7%;
-                padding: 0 0.5em;
-                @include span-columns (6) a {
-                    padding: 0 50%;
-                    @include position(absolute, 0);
-                    @include hoverify() {
-                        color: $grey-stack;
-                        background-color: rgba($grey-stack, 0.4);
-                        cursor: pointer;
-                    }
-                    z-index: $z-index-top;
-                    text-align: middle;
-                    height: 100%;
-                    color: $white;
-                    .ico {
-                        font-size: 3em;
-                        &:before {
-                            top: -0.3em;
-                        }
+                color: $white;
+                .ico {
+                    font-size: 3em;
+                    &:before {
+                        top: -0.3em;
                     }
                 }
             }

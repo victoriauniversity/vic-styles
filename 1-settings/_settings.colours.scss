@@ -2,6 +2,11 @@
 =            COLOUR DEFINITIONS            =
 ==========================================*/
 
+// 1. Import of base libraries
+@import '../libs/bourbon/app/assets/stylesheets/bourbon.scss';
+@import '../libs/neat/app/assets/stylesheets/neat.scss';
+
+
 // *IMPORTANT* - Colour naming convention
 //
 // 1) Read why https://davidwalsh.name/sass-color-variables-dont-suck
@@ -163,9 +168,9 @@ grey-tower: #A7BBC1 //new
 }
 
 .test-block {
-	@include size (200px)
-	@include span-columns (1)
-	@include omega()
+	@include size( 200px );
+	@include span-columns (1);
+	@include omega();
 }
 
 // =================================

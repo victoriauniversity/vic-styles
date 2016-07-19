@@ -25,7 +25,9 @@ $grid-area-active-bg: $green-victoria !default;
         text-align: center;
         color: $grid-area-title-colour;
 
-        .ico { margin-left: .7em; }
+        .ico {
+            margin-left: .7em;
+        }
 
         > a {
             display: table-cell;
@@ -62,11 +64,6 @@ $grid-area-active-bg: $green-victoria !default;
             // Flick the caret!
             .ico {
                 margin-left: .4em;
-            }
-
-            .ico.caret:before {
-                margin-bottom: -0.3em;
-                @include triangle( $ico-caret-width $ico-caret-height, $white, down);
             }
 
             > a {
