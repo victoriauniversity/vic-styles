@@ -159,19 +159,17 @@ $nm-bg-color: $grey-gallery;
 /* List of tags */
 .tags {
     display: inline-block;
+    color: $grey-stack;
+
+    &.ico:before {
+        font-size: 110%;
+        margin-right: .3em;
+    }
 
     .tag {
         display: inline-block;
-        color: #888;
         font-size: 90%;
         font-weight: $weight-normal;
-
-        &:first-child {
-            .ico {
-                font-size: 115%;
-                margin-right: .5em;
-            }
-        }
 
         &:after {
             display: inline-block;
@@ -209,9 +207,8 @@ $mar-bot: .3em;
 
 .block__study-options {
 
-    .block.degree-block {
-        padding-top: .35em;
-        padding-bottom: .35em;
+    .degree-block {
+        padding: .4em 1em;
     }
 
 }
@@ -219,11 +216,10 @@ $mar-bot: .3em;
 .degree-block {
     @include outer-container;
     border-left: 6px solid $grey-alto;
-    margin-top: 1em;
+    margin: 1em 0;
 
-    &:first-child {
-        margin-top: 0;
-    }
+    &:last-child {  margin-bottom: 0; }
+    &:first-child { margin-top: 0; }
 
     h3 {
         color: $grey-mako;
@@ -263,7 +259,6 @@ $mar-bot: .3em;
         }
 
         .length .ico {
-
             position: relative; top: -.1em;
             font-size: 120%;
         }
@@ -271,6 +266,11 @@ $mar-bot: .3em;
         .leads .ico {
             font-size: 1.45em;
             margin-right: .33em;
+        }
+
+        .description {
+            margin-top: 1em;
+            font-size: 90%;
         }
     }
     .degree-button {

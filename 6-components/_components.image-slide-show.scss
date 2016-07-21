@@ -16,7 +16,19 @@
 
 .slide-show__description {
     text-align: center;
-    margin: .8em 0 1em;
+    margin: .8em auto 0;
+
+    @include media ($desktop-and-bigger) {
+        max-width: 970px;
+    }
+
+    @include media ($tablet-and-smaller) {
+        min-width: 100%;
+    }
+
+    @include media ($mobile-large-and-smaller) {
+        max-width: 480px;
+    }
 }
 
 .slide-show__slide {

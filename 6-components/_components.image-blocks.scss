@@ -62,7 +62,21 @@ $action-promo-hover: darken( $green-victoria, 11% );
 }
 
 
+/** Set of images laid next to/behind each other. */
+.block__images {
+    text-align: center;
 
+    img {
+        display: block;
+        margin: 0 .7em .7em .7em;
+
+        &.stretched {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
 
 
 /** Logos laid next to each other in the available column */

@@ -21,7 +21,7 @@ $vic-large-logo-width: 480px;
     }
 }
 
-.overlaid{ overflow: hidden; }
+.overlaid { overflow: hidden; }
 
 
 /* Cards-like tiles. */
@@ -181,19 +181,36 @@ $tile-bg:      #f0f0f0;
     }
 }
 
+
 /** Collapsible/Expandable block. */
+
+$collapsible-transparency-height: 2.5em;
 
 .collapsible-wrapper {
 
     .collapsible__control {
+        position: relative;
         display: block;
-        margin: 0 1em 1.5em 1em;
+        margin: 1em 0;
         text-align: center;
+
 
         > a { padding: .5em; }
     }
 
     .collapsed {}
+
+    // Adds semi-transparent overlay to see part of the collapsed block
+    &.collapsed .semitransparent + .collapsible__control {
+        &:before {
+            position: absolute;
+            top: -$collapsible-transparency-height;
+            display: block;
+            @include size( 100% $collapsible-transparency-height );
+            background: linear-gradient( transparent 0%, white 100% );
+            content: "";
+        }
+    }
 }
 
 .collapsible {

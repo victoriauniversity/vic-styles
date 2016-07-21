@@ -80,11 +80,23 @@
 
     .fact__list {
 
-        .tag {
+        .tags {
+            margin-left: .7em;
+            &.ico:before {
+                font-size: 100%;
+                margin-right: 0;
+            }
+        }
+
+        .collapsible__control {
             font-size: 90%;
-            margin: 0 .2em;
-            color: $grey-dusty-gray;
-            font-weight: $weight-light;
+            padding-top: 0;
+
+            @include media( $desktop-and-bigger ) {
+                text-align: left;
+
+                & > a { padding-left: 0; }
+            }
         }
     }
 }

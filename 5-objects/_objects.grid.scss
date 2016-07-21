@@ -4,6 +4,7 @@
 
 $block-margin: $base-margin;
 
+
 /* ===== SECTORS ============================================================ */
 
 // To divide page into independent sectors.
@@ -12,30 +13,27 @@ $block-margin: $base-margin;
 
     // Adds highlight
     &.highlighted {
-        background-color: $block-highlight-colour; // TODO: Deprecated!
-    }
-
-    // Adds line separator to the end of the sector
-    &.separated {
-        border-bottom: $delim-border; // TODO: Deprecated!
-    }
-}
-
-    // Adds highlight
-    .sector--highlight {
         display: block;
         background-color: $block-highlight-colour;
     }
 
-    // Separates sector with a line
-    .sector--separated {
+    // Adds line separator to the end of the sector
+    &.separated {
         display: block;
         border-bottom: $delim-border;
     }
 
+    // Empty sector, hide it's visibility
+    &.blank {
+        &.separated { border: none; }
+        &.highlighted { background: none; }
+    }
+}
 
 
 .layout-rebase {} // Layout normaliser => Reset previous layouting rules
+
+
 
 
 
@@ -44,25 +42,26 @@ $block-margin: $base-margin;
 // Standard block container
 .block {
     display: block;
-    vertical-align: top;
     padding: $block-margin;
+    vertical-align: top;
 
     // 1. Collapse space in all siblings (default)...
     .sector + .sector & { padding-top: 0; }
 
 
     // 2. Enable in some cases
-    .sector + .sector.sector--highlight & { padding-top: $block-margin; }
-    .sector--highlight + .sector &,
-    .sector.separated + .sector & { padding-top: $block-margin; }
+    .sector + .sector.highlighted & { padding-top: $block-margin; }
 
-    // Reset
+    .sector.highlighted + .sector &,
+    .sector.separated + .sector &,
+    .sector.blank + .sector & { padding-top: $block-margin; }
+
+    // Resets block's margin
     .sector .layout-rebase & { padding-top: $block-margin; }
 
     // 1B. ... and all block-containers
-    .sector .block-container &:not(:first-child) {
-        padding-top: 0;
-    }
+    .sector .block-container &:not(:first-child) { padding-top: 0; }
+    .block + .block-container &:first-child { padding-top: 0; }
 }
 
 
@@ -94,6 +93,8 @@ $block-margin: $base-margin;
         &.btns-holder {
             text-align: center;
             vertical-align: middle;
+
+            ul, ol { text-align: left; }
         }
 
         @include media( $desktop-and-bigger) {

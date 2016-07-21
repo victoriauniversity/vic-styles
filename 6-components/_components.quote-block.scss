@@ -11,7 +11,7 @@ $bg-color: $grey-gallery;
     }
 }
 
-.person-block {
+.block__person {
     padding-bottom: 2em;
 
     .quote-text {
@@ -19,13 +19,13 @@ $bg-color: $grey-gallery;
             float: right;
         }
     }
+
     .block {
-        padding-bottom: .8em;
     }
 }
 
 .block__quote,
-.person-block {
+.block__person {
     .quote-wrap {
         @include outer-container;
         margin-right: auto;
@@ -34,7 +34,6 @@ $bg-color: $grey-gallery;
         .quote-image {
             float: left;
             margin: 0 5em 1em 0;
-
 
             @include media ( $tablet ) {
                 margin-right: 2em;
@@ -115,11 +114,5 @@ $bg-color: $grey-gallery;
     @include media ( $mobile-large-and-smaller) {
         .holder { overflow: inherit; }
         header { margin-top: 1em;  }
-    }
-}
-
-.separated {
-    .separated {
-        border-bottom: 0;
     }
 }

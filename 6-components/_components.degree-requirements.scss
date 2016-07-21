@@ -1,33 +1,15 @@
-/*===============================
-=    ENTRY REQUIEMENTS BLOCK   =
-===============================*/
+/*================================
+=    ENTRY REQUIREMENTS BLOCK    =
+================================*/
 
 .entry-req-container {
-    padding-bottom: 1.5em;
-    @include outer-container;
 
-    // TODO: Refactor!
-    > .block:first-child {
-        margin-bottom: -2em;
-    }
-
-    > .block-container {
-        .block {
-            padding-bottom: 0;
-        }
-
-        .block:last-child {
-            padding-bottom: $base-padding;
-        }
-    }
-
-    .form {
-        margin-bottom: $base-margin;
-    }
+    .form { margin-bottom: $base-margin; }
 
     .degree-req {
         @include fill-parent();
-        @include row(table);
+        @include row( table );
+        padding: 0;
 
         .req-wrap {
             @include media ($tablet-and-bigger) {
@@ -54,7 +36,7 @@
 
 
 /*===============================
-=    DEGREE REQUIEMENTS BLOCK   =
+=    DEGREE REQUIREMENTS BLOCK  =
 ===============================*/
 
 .req-container {
