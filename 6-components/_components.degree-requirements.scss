@@ -2,23 +2,22 @@
 =    ENTRY REQUIREMENTS BLOCK    =
 ================================*/
 
-.entry-req-container {
-
-    .form { margin-bottom: $base-margin; }
+.entry-requirements {
+    .form { margin-bottom: .7em; }
+    .control-group .link-action { margin-left: .35em; }
 
     .degree-req {
         @include fill-parent();
         @include row( table );
-        padding: 0;
 
         .req-wrap {
-            @include media ($tablet-and-bigger) {
+            @include media ( $tablet-and-bigger ) {
                 @include span-columns(12);
             }
         }
 
         .btn-wrap {
-            @include media ($tablet-and-bigger) {
+            @include media ( $tablet-and-bigger ) {
 
                 @include span-columns(4);
                 @include reset-display;
@@ -26,9 +25,7 @@
             .btn {
                 white-space: nowrap;
 
-                @include media ($tablet-and-bigger) {
-                    margin: 0;
-                }
+                @include media ( $tablet-and-bigger ) { margin: 0; }
             }
         }
     }
@@ -39,73 +36,91 @@
 =    DEGREE REQUIREMENTS BLOCK  =
 ===============================*/
 
-.req-container {
-    padding-bottom: 1.5em;
-}
+.requirements {
+    .collapsed .semitransparent + .collapsible__control {
+        &:before {
+            background: linear-gradient( transparent 0%, $grey-gallery 100% );
+        }
+    }
 
-.degree-req {
-    padding: 0;
-    @include media ($tablet-and-bigger) {
-        padding: 0 1.5em;
+    .collapsible__control {
+        margin: .9em 0 0;
+        font-size: 90%;
     }
 }
 
-.req-header {
-    padding: 0.5em;
-    @include media ($tablet-and-bigger) {
-        padding: 1.2em;
-    }
+.requirements-list {
+    padding: .5em;
     background-color: $grey-gallery;
-    border-left: 6px solid $grey-alto;
-    margin-bottom: 0.2em;
-    h3 {
-        font-size: 1.2em;
-        margin-bottom: 0;
-        // padding-top: 0.3em;
+    border-left: .3em solid $grey-alto;
+    margin-bottom: .2em;
+
+    @include media ( $tablet-and-bigger ) {
+        padding: 1.1em;
     }
+
     h3, h4, h5 {
+        margin-bottom: 0;
         color: $grey-mine-shaft;
     }
-    p {
-        font-size: 0.9em;
-    }
-    .greenify {
-        color: $green-victoria;
-        // font-size: 1.2em;
-    }
-    .req-child {
-        padding: 0.5em 0;
-        h5 {
-            padding: 0.5em;
-            background-color: $grey-alto;
-            margin-bottom: 0;
-            margin-top: 0.4em;
+
+    h3 {
+        font-size: 120%;
+
+        > em {
+            color: $green-victoria;
+            font-style: inherit;
         }
-        .grand-child {
-            padding: 0.5em;
-            @include media ($tablet-and-bigger) {
-                padding: 0.1em 1.2em 0.5em 1.2em;
-            }
+    }
+
+    // 2nd level
+    .sublist {
+        margin-top: .7em;
+
+        h4 {
+            font-size: 110%;
+        }
+
+        > .list-item {
+            margin-bottom: .2em;
+            padding: .7em 1em;
             background-color: $grey-alto;
-            // margin-top: 0.3em;
-            p {
-                margin-top: 0.4em;
-                padding: 0.5em;
-                background-color: $grey-gallery;
-                border-left: 6px solid $grey-silver;
-            }
-            .great-grand-child {
-                padding: 0.4em 0 0 0;
-                border-left: 6px solid $grey-silver;
-                p {
-                    background-color: $grey-silver;
-                    font-size: 0.8em;
-                    margin-top: 0.4em;
-                    padding: 0.5em 0.5em 0.5em 1.2em;
-                    // color: $grey-mine-shaft;
-                }
-                // border-left: 3px solid $grey-silver;
-            }
+        }
+
+        &:last-child h4 { margin-bottom: 0; }
+    }
+
+    // 3rd level
+    .sub-sublist {
+        margin-top: .2em;
+        padding: 0 .5em;
+
+        @include media ( $tablet-and-bigger ) {
+            padding: 0 1.2em;
+        }
+
+        h5 { font-weight: $weight-normal; }
+
+        > .list-item {
+            border-bottom: 1px solid #C7C7C7;
+            padding: .5em .15em;
+
+            &:last-child{ border-bottom: none;  }
+        }
+    }
+
+    // 4th level
+    .sub-sub-sublist {
+        margin: .3em .35em 0;
+
+        @include media ( $tablet-and-bigger ) {
+            margin: .5em .8em 0 .8em;
+        }
+
+        > .list-item {
+            font-size: 90%;
+
+            > p { display: inline; }
         }
     }
 }

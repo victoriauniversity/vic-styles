@@ -120,3 +120,6 @@ $toggle-bg-colour:       #1d2624;
         }
     }
 }
+
+/** Wrapper around 2 (or more) elements that must be visually grouped together. */
+.control-group { white-space: nowrap; }
