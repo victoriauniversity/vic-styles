@@ -6,27 +6,22 @@
     .form { margin-bottom: .7em; }
     .control-group .link-action { margin-left: .35em; }
 
-    .degree-req {
-        @include fill-parent();
-        @include row( table );
+    .requirements-list {
+        overflow: hidden;
+    }
 
-        .req-wrap {
-            @include media ( $tablet-and-bigger ) {
-                @include span-columns(12);
-            }
+    .btn-holder {
+        @include media ( $tablet-and-bigger ) {
+            float: right;
+            margin-left: 2em;
+
+            + header { margin-top: .25em; margin-bottom: .25em; }
         }
 
-        .btn-wrap {
-            @include media ( $tablet-and-bigger ) {
+        .btn {
+            white-space: nowrap;
 
-                @include span-columns(4);
-                @include reset-display;
-            }
-            .btn {
-                white-space: nowrap;
-
-                @include media ( $tablet-and-bigger ) { margin: 0; }
-            }
+            @include media ( $tablet-and-bigger ) { margin: 0; }
         }
     }
 }
@@ -125,46 +120,30 @@
     }
 }
 
-// Major block inside Degree requirements page
-// TODO: Refactor (after re-factoring in the app!
+// Major block inside majors list
 .majors-requirements {
-    .block-container > .block {
-        padding-top: 0;
-        padding-bottom: 1.5em;
-
-        &:first-child { padding-top: 1.5em; }
-    }
-
-    .form { margin-bottom: 1em; }
 
     .majors-list {
-        margin: 1em 0 .5em 0;
+        padding-bottom: $base-margin;
 
-        .study-intro, .req-container { margin-bottom: 0; padding-bottom: 0 }
+        .heading {
+            padding-top: 0;
+            padding-bottom: .3em;
+        }
     }
 
     .container-opened {
-        margin-bottom: 1.5em;
-        padding-bottom: 1em;
-        margin-left: -1.5em;
-        margin-right: -1.5em;
         border-bottom: 1px solid $grey-gallery;
+        margin-bottom: $base-margin;
     }
 
     .major {
-        margin-bottom: 1.2em;
-
         .toggle-header {
-            padding: .45em 0;
+            padding: .5em $base-margin;
+
+            & + .block-container .block:first-child { padding-top: 0; }
         }
 
-        &:first-child{ margin-top: 1.1em; }
-        &:last-child {
-            .container-opened {
-                border-bottom: 0;
-                margin-bottom: 0;
-                padding-bottom: 0;
-            }
-        }
+        &:last-child .container-opened { border-bottom: 0; margin-bottom: 0; }
     }
 }
