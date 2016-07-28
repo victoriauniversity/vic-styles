@@ -4,6 +4,8 @@
 
 // TODO: Refactor!
 .facts-block {
+    @include clearfix;
+
     .facts-wrap {
 
         .intro-fact {

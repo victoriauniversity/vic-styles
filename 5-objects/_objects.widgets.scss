@@ -228,3 +228,8 @@ $collapsible-transparency-height: 2.5em;
     .expanded > & {
     }
 }
+
+/** Contact card(s). */
+.contact-cards {
+    @include clearfix;
+}
