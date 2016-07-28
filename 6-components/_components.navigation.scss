@@ -2,7 +2,6 @@
 =            NAVIGATION TABS            =
 =======================================*/
 
-
 /* ===== NAVIGATION MENU - TABS ============================================= */
 
 // Tabed menu - general
@@ -25,7 +24,6 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
     width: 100%;
     text-align: center;
 
-
     // 1st level menu items
     & > li {
         position: relative;
@@ -36,9 +34,11 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
         vertical-align: middle;
         outline: 0;
 
-        .ico:before {
-            vertical-align: top;
-            margin-right: .5em;
+        .ico:before { vertical-align: top; }
+
+        .label {
+            display: inline;
+            margin-left: .5em;
         }
 
         // Selected or activated tab
@@ -48,6 +48,7 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
 
             & > a {
                 color: inherit;
+
                 @include hoverify {
                     background-color: inherit;
                     color: inherit;
@@ -63,7 +64,7 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
                 @include triangle( $menu-tabbed-item-triangle-width $menu-tabbed-item-triangle-height, $menu-tabbed-item-active-bg-colour, down);
             }
         }
-        & > a {
+        > a {
             display: inline-block;
             width: 100%;
             font-size: 1.1em;
@@ -120,6 +121,7 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
         &.sector {
             z-index: $z-index-top;
             @include position( fixed, null 0 0 0);
+
             &.highlighted {
                 border-top: 1px solid $block-highlight-border;
             }
@@ -133,6 +135,23 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
                 top: 0;
                 margin-top: -$menu-tabbed-item-triangle-height;
                 border-bottom: $menu-tabbed-item-triangle-height solid $menu-tabbed-item-active-bg-colour;
+            }
+
+            > a {
+                padding: .6em .4em .4em .4em;
+            }
+
+            .label {
+                display: inline-block;
+                font-size: 85%;
+                margin: .4em 0 0;
+                width: 100%;
+                text-overflow: ellipsis;
+                line-height: 1;
+
+                /* Required for text-overflow to do anything */
+                white-space: nowrap;
+                overflow: hidden;
             }
         }
     }
