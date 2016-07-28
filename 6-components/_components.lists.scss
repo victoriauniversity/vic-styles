@@ -91,3 +91,30 @@ $grid-area-active-bg: $green-victoria !default;
         }
     }
 }
+
+/* ===== TAG LIST ========================================================== */
+
+// settings
+$tag-bg-color: $blue-humming-bird;
+// ---------------------
+
+//use for a heading before the inline list
+.tag-list-title {
+    float: left;
+    padding-right: 0.5em;
+}
+
+.tag-list {
+    li.tag {
+        display: inline;
+        background-color: $tag-bg-color;
+        padding: 0.3em 0.6em;
+        margin: 0.2em;
+        a.active {
+            &:after {
+                padding-left: 0.4em;
+                @include iconify( $ico-code: $ico-code-ok);
+            }
+        }
+    }
+}
