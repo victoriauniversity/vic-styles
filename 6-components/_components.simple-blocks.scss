@@ -186,7 +186,8 @@ $nm-bg-color: $grey-gallery;
 }
 
 .related-degree,
-.major {
+.major,
+.nested-section {
     .collapsible {
         max-height: 20000px;
         transition: .5s ease all;

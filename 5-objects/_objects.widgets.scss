@@ -229,7 +229,78 @@ $collapsible-transparency-height: 2.5em;
     }
 }
 
-/** Contact card(s). */
-.contact-cards {
+/** Generic listing with cards placed in two columns. */
+
+.cards-listing {
     @include clearfix;
 }
+
+
+
+/** Contact card(s). */
+
+$contact-portrait-size: 150px;
+
+.contact-card {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    margin: .45em 0;
+
+    // 2 columns-layout -> Make all even cards margined from the odd cards
+    &:nth-child(even) { margin-left: 2%; }
+
+    .portrait-wrap {
+        position: relative;
+        overflow: hidden;
+        float:left;
+        height: $contact-portrait-size;
+        width: $contact-portrait-size;
+        margin-right: 1.5em;
+        border-radius: 50%;
+    }
+
+    // Centering trick with dynamic right & left positioning
+    .portrait {
+        display: inline-block;
+        position: relative; right: -50%;
+
+        > img {
+            display: inline-block;
+            position: relative; left: -50%;
+            height: $contact-portrait-size;
+            width: auto;
+        }
+    }
+
+    .contacts {}
+
+    // Card's body
+    .card-info {
+        overflow: hidden;
+    }
+
+    @include media ( $tablet-and-smaller ) {
+        margin-left: 0;
+        width: 100%;
+        &:nth-child(even) { margin-left: 0; }
+    }
+
+    @include media ( $mobile-large-and-smaller ) {
+        text-align: center;
+
+        &:not(:last-child){
+            border-bottom: 1px solid #EEE;
+            margin-bottom: .8em;
+            padding-bottom: .8em;
+        }
+
+        .portrait-wrap {
+            float: none;
+            margin-bottom: .5em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+

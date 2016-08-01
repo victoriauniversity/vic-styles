@@ -147,3 +147,12 @@
         &:last-child .container-opened { border-bottom: 0; margin-bottom: 0; }
     }
 }
+
+// Qualification list
+.qualifications {
+    .heading {
+        .block { padding-bottom: 0; }
+    }
+
+    .sector.nested-section:last-child { border-bottom: 0; }
+}
