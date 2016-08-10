@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example with helperDirs</title>
+	<!-- <link rel="stylesheet" href="http://stage.victoria.ac.nz/explore/assets/styles/vendor.c5fa3e82.css"> -->
+	<!-- <link rel="stylesheet" href="http://stage.victoria.ac.nz/explore/assets/styles/app.51fb0098.css"> -->
+	<script type="text/javascript" src="bundle.js"></script>
+	<link rel="stylesheet" href="css/styles.css" >
+</head>
+<body>
+
+
+
+</body>
+
+<script id="index" type="text/x-handlebars-template">
+	{{>vuw-header}}
+</script>
+
+<script id="vuw-header" type="text/x-handlebars-template">
+
+<header class="vuw-header">
+<div class="vuw-column-container">
+<div class="vuw-column vuw-column__span-3-of-12">
+	<a href="http://www.victoria.ac.nz" class="vuw-logo">Victoria University of Wellington</a>
+</div>
+<div class="vuw-column vuw-column__span-9-of-12">
+
+	{{>vuw-secondary-nav}}
+
+	{{>vuw-primary-nav}}
+
+</div>
+</div>
+</header>
+
+
+{{#>vuw-hero
+img="http://www.victoria.ac.nz/knowyourmind/images/storys/hagen-banner.jpg"
+title="&ldquo;Victoria is a great place to study an arts degree."
+subtitle="Wellington is the heart of government and a cauldron of bubbling creativity and culture.&rdquo;"
+}}
+
+	{{>vuw-menu-nav}}
+
+{{/vuw-hero}}
+
+
+
+
+<div class="vuw-column-container">
+	<div class="vuw-column vuw-column__span-8-of-12">
+
+	<section class="vuw-card">
+		<h1>Faculty of Humanities and Social Sciences</h1>
+		<p>is student-focused and offers a diverse range of courses and qualifications across the spectrum of Humanities and Social Science disciplines.</p>
+		<p>Teaching in all subjects is informed by the research undertaken by Faculty academic staff. The Faculty takes advantage of its capital city location through its links that include Government, the National Museum of New Zealand Te Papa, Archives New Zealand, the National Library and numerous theatres and art galleries.</p>
+		<a href="javascript:void(0);" class="vuw-button vuw-button__primary">Learn more about the Faculty of Humanities and Social Sciences</a>
+		</section>
+
+
+
+	</div>
+
+	<div class="vuw-column vuw-column__span-4-of-12">
+
+{{#>vuw-card
+title="Faculty Office Staff"
+class="vuw-card__info"
+}}
+<p>View the Faculty office staff list</p>
+{{/vuw-card}}
+
+{{#>vuw-card
+title="Victoria links"
+class="vuw-card__secondary"
+}}
+<p>Why is this a thing?</p>
+{{/vuw-card}}
+</div>
+</div>
+
+
+
+<div class="vuw-column-container">
+<div class="vuw-column vuw-column__span-4-of-12">
+
+
+
+
+{{#>vuw-card
+img="http://www.victoria.ac.nz/__data/assets/image/0011/268706/you-tube-lead-in.jpg"
+class="vuw-card__info"
+title='<img src="http://www.victoria.ac.nz/__data/assets/image/0007/267595/jennifer-windsor-small.jpg" style="float:left; margin: 0 .5em 0 0"/> Welcome'
+}}
+<p>See what our students say about their studies and experiences in the Faculty of Humanities and Social Sciences <a href="javascript:void(0);" class="vuw-link">on YouTube</a> (1:11min.)</p>
+{{/vuw-card}}
+
+
+{{#>vuw-card
+img="http://www.victoria.ac.nz/__data/assets/image/0011/268706/you-tube-lead-in.jpg"
+class="vuw-card__info"
+title="Research"
+}}
+<p>The Faculty of Humanities and Social Sciences is known for achieving excellence in research in many disciplinary areas and is the home of many internationally acclaimed researchers. <a href="javascript:void(0);" class="vuw-link">Read more</a></p>
+{{/vuw-card}}
+
+
+{{#>vuw-card
+img="http://www.victoria.ac.nz/__data/assets/image/0011/268706/you-tube-lead-in.jpg"
+class="vuw-card__info"
+title='<img src="http://www.victoria.ac.nz/__data/assets/image/0011/268706/you-tube-lead-in.jpg" style="width:100%;"/>'
+}}
+<p>See what our students say about their studies and experiences in the Faculty of Humanities and Social Sciences <a href="javascript:void(0);" class="vuw-link">on YouTube</a> (1:11min.)</p>
+{{/vuw-card}}
+
+
+
+{{#>vuw-card
+img="http://www.victoria.ac.nz/__data/assets/image/0011/268706/you-tube-lead-in.jpg"
+class="vuw-card__info"
+title="Need advice on your programme of study?"
+}}
+<p>The Staff in the Faculty Student and Academic Services Office are here to assist you. <a href="javascript:void(0);" class="vuw-link">Read more about Student and Academic Services</a></p>
+{{/vuw-card}}
+
+
+{{#>vuw-card
+img="http://www.victoria.ac.nz/__data/assets/image/0011/268706/you-tube-lead-in.jpg"
+class="vuw-card__info"
+title='<img src="http://www.victoria.ac.nz/__data/assets/image/0004/287248/victoria-university-222x125px.jpg" style="width:100%;"/> Arts students learning from the best'
+}}
+<p>See what our students say about their studies and experiences in the Faculty of Humanities and Social Sciences <a href="javascript:void(0);" class="vuw-link">on YouTube</a> (1:11min.)</p>
+{{/vuw-card}}
+
+</div>
+
+	<div class="vuw-column vuw-column__span-4-of-12">
+
+
+{{#>vuw-card
+date="10 August"
+tag="Seminars"
+title="Careers in focus: Humanities and Social Sciences"
+}}
+<p>
+Careers in focus: Humanities and Social Sciences<br/>
+Date: 10 August 2016 <br/>
+Time: 5.30 pm<br/>
+Venue: KK303 and Kirk Foyer<br/>
+Discover your employability potential with Humanities and Social Sciences<br/>
+<a href="javascript:void(0);" class="vuw-link">Read more</a></p>
+{{/vuw-card}}
+
+
+{{#>vuw-card
+date="10 August"
+title="Careers in focus: Humanities and Social Sciences"
+}}
+<p>
+Careers in focus: Humanities and Social Sciences<br/>
+Date: 10 August 2016 <br/>
+Time: 5.30 pm<br/>
+Venue: KK303 and Kirk Foyer<br/>
+Discover your employability potential with Humanities and Social Sciences<br/>
+<a href="javascript:void(0);" class="vuw-link">Read more</a></p>
+{{/vuw-card}}
+
+
+
+
+	</div>
+
+	<div class="vuw-column vuw-column__span-4-of-12">
+
+
+{{#>vuw-card
+date="2 August 2016"
+title="Mayor walks the talk with Chinese language lessons"
+}}
+<p>Wellington Mayor Celia Wade-Brown is the highest profile of a growing number of public servants and other professionals taking Mandarin lessons with the Confucius Institute at Victoria University of Wellington to better prepare them for their dealings with China and its people. <a href="javascript:void(0);" class="vuw-link">Read more</a></p>
+{{/vuw-card}}
+
+{{#>vuw-card
+date="28 July 2016"
+title="The Value of the Humanities"
+}}
+<p>The following commentary is provided by Professor Lydia Wevers, director of the Stout Research Centre at Victoria University of Wellington, and responds to an article published in the Dominion Post on Monday 25 July. <a href="javascript:void(0);" class="vuw-link">Read more</a></p>
+{{/vuw-card}}
+
+{{#>vuw-card
+date="26 July 2016"
+title="Maurice Goldsmith Lecture: Aesthetic Responsibility"
+}}
+<p>The attitudes and judgments we make of artists based on their artworks were discussed at this year's Maurice Goldsmith Public Lecture by a top visiting philosophy scholar from the United States. <a href="javascript:void(0);" class="vuw-link">Read more</a></p>
+{{/vuw-card}}
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+</script>
+
+
+<script id="vuw-card" type="text/x-handlebars-template">
+
+		<div class="vuw-card {{class}}">
+			<span class="promo highlight highlight--link" style="color:inherit;">
+				{{#if date}}
+				<blink>{{date}}</blink>
+				{{/if}}
+
+				{{#if tag}}
+				<span style="
+				    padding: 0.2em 0.4em;
+				    margin: 0 0.3em;
+				    background: #e4f3fb;
+				    /* font-size: 1.07143em; */
+				    display: inline-block;
+				    color: #146999;
+				">{{tag}}</span>
+				{{/if}}
+
+				<h2>{{{title}}}</h2>
+
+{{> @partial-block}}
+			</span>
+		</div>
+</script>
+
+
+<script id="vuw-secondary-nav" type="text/x-handlebars-template">
+	<nav class="vuw-secondary-nav">
+		{{#each secondary-nav}}
+		<a href="javascript:void(0);" class="vuw-secondary-nav--item">{{this}}</a>
+		{{/each}}
+	</nav>
+</script>
+
+
+<script id="vuw-primary-nav" type="text/x-handlebars-template">
+	<nav class="vuw-primary-nav">
+		{{#each primary-nav}}
+		<a href="javascript:void(0);" class="vuw-primary-nav--item">{{this}}</a>
+		{{/each}}
+	</nav>
+</script>
+
+
+<script id="vuw-hero" type="text/x-handlebars-template">
+<div class="vuw-column-container" >
+	<a href="javascript:void(0);" class="vuw-hero--image-container" style="
+	    /* margin-left: -100%; */
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	">
+		<img src="{{img}}" class="vuw-hero--image">
+
+	</a>
+	<div class="vuw-column vuw-column__span-3-of-12">
+
+
+{{> @partial-block}}
+
+	</div>
+	<div class="vuw-column vuw-column__span-3-of-12">
+	&nbsp;
+	</div>
+	<div class="vuw-column vuw-column__span-6-of-12" style="margin-top: 20em;">
+
+			<a href="javascript:void(0);" class="-vuw-hero--image-container">
+				<div class="vuw-hero--title" style="
+		    margin-right: -30em;
+		    padding-right: 30em;
+		    position:static;
+		    width:auto;
+				">
+					<h1 class="kym" style="
+		    text-transform: uppercase;
+				">{{{title}}}</h1>
+					<h3>{{{subtitle}}}</h3>
+				</div>
+			</a>
+
+	</div>
+</div>
+
+</script>
+
+
+<script id="vuw-menu-nav" type="text/x-handlebars-template">
+
+		<nav class="vuw-navigation-menu" style="position:static;">
+			{{#each menu-nav}}
+				<a href="javascript:void(0);" class="vuw-navigation-menu--item vuw-navigation-menu--link {{#if this.selected}}vuw-navigation-menu--link__selected{{/if}}">{{this.title}}</a>
+			{{/each}}
+		</nav>
+
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+
+<script>
+//register all text/x-handlebars-template as partials
+$('script[type="text/x-handlebars-template"]').each(function(){
+	var source = $(this).html();
+	var name = $(this).attr('id');
+	Handlebars.registerPartial(name, source);
+});
+
+//var _html = Handlebars.partials['index']()
+
+var hbsIndex   = Handlebars.partials['index'];
+var tplIndex = Handlebars.compile(hbsIndex);
+var _html    = tplIndex({
+	"secondary-nav": [
+		"Future students",
+		"International students",
+		"Current students",
+		"Research",
+		"Learning & teaching"
+	],
+	"primary-nav" : [
+		"Home",
+		"About Us",
+		"Study and Careers",
+		"Student and Academic Services",
+		"Research",
+		"Schools",
+		"Centres and Institutes"
+	],
+
+// INFORMATION ABOUT
+// Faculty Handbook
+// Undergraduate Study
+// Postgraduate Study
+// Course Outlines
+// Dates and Deadlines
+// Academic Integrity and Plagiarism
+// Academic Policy Publications
+// University Policy
+// Student Advisers
+// FAQs
+	"menu-nav" : [
+		{title: "Faculty Handbook"},
+		{title: "Undergraduate Study", selected: true},
+		{title: "Postgraduate Study"},
+		{title: "Course Outlines"},
+		{title: "Dates and Deadlines"},
+		{title: "Academic Integrity and Plagiarism"},
+		{title: "Academic Policy Publications"},
+		{title: "University Policy"},
+		{title: "Student Advisers"},
+		{title: "FAQs"}
+	]
+});
+
+$('body').html(_html);
+</script>
+
+
+</html>

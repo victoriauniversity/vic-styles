@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example with helperDirs</title>
+	<!-- <link rel="stylesheet" href="http://stage.victoria.ac.nz/explore/assets/styles/vendor.c5fa3e82.css"> -->
+	<!-- <link rel="stylesheet" href="http://stage.victoria.ac.nz/explore/assets/styles/app.51fb0098.css"> -->
+	<script type="text/javascript" src="bundle.js"></script>
+	<link rel="stylesheet" href="css/styles.css" >
+</head>
+<body>
+
+
+
+</body>
+
+<script id="index" type="text/x-handlebars-template">
+	{{>vuw-header}}
+</script>
+
+<script id="vuw-header" type="text/x-handlebars-template">
+
+<header class="vuw-header">
+<div class="vuw-column-container">
+<div class="vuw-column vuw-column__span-3-of-12">
+	<a href="http://www.victoria.ac.nz" class="vuw-logo">Victoria University of Wellington</a>
+	<h2 style="
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-left: 1rem;
+    display: none;
+">Faculty of humanities and social sciences</h2>
+</div>
+<div class="vuw-column vuw-column__span-9-of-12">
+
+	{{>vuw-secondary-nav}}
+
+	{{>vuw-primary-nav}}
+
+</div>
+</div>
+</header>
+
+
+{{#>vuw-hero
+img="http://www.victoria.ac.nz/__data/assets/image/0008/358613/scholarships-2000x800px.jpg"
+title="Apply for a school leaver scholarship"
+subtitle="Applications for our Victoria Excellence or Victoria Achiever Scholarships close 15 September 2016."
+}}
+
+	{{>vuw-menu-nav}}
+	
+{{/vuw-hero}}
+
+</script>
+
+
+<script id="vuw-secondary-nav" type="text/x-handlebars-template">
+	<nav class="vuw-secondary-nav">
+		{{#each secondary-nav}}
+		<a href="javascript:void(0);" class="vuw-secondary-nav--item">{{this}}</a>
+		{{/each}}
+	</nav>
+</script>
+
+
+<script id="vuw-primary-nav" type="text/x-handlebars-template">
+	<nav class="vuw-primary-nav">
+		{{#each primary-nav}}
+		<a href="javascript:void(0);" class="vuw-primary-nav--item">{{this}}</a>
+		{{/each}}
+	</nav>
+</script>
+
+
+<script id="vuw-hero" type="text/x-handlebars-template">
+<div class="vuw-column-container" >
+	<a href="javascript:void(0);" class="vuw-hero--image-container" style="
+	    /* margin-left: -100%; */
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	">
+		<img src="{{img}}" class="vuw-hero--image">
+
+	</a>
+	<div class="vuw-column vuw-column__span-3-of-12">
+
+
+{{> @partial-block}}
+
+	</div>
+	<div class="vuw-column vuw-column__span-3-of-12">
+	&nbsp;
+	</div>
+	<div class="vuw-column vuw-column__span-6-of-12" style="margin-top: 20em;">
+
+			<a href="javascript:void(0);" class="vuw-hero--image-container">
+				<div class="vuw-hero--title" style="
+		    margin-right: -30em;
+		    padding-right: 30em;
+		    position:static;
+		    width:auto;
+				">
+					<h1 class="kym" style="
+		    text-transform: uppercase;
+				">{{title}}</h1>
+					<h3>{{subtitle}}</h3>
+				</div>
+			</a>
+
+	</div>
+</div>
+
+</script>
+
+
+<script id="vuw-menu-nav" type="text/x-handlebars-template">
+
+		<nav class="vuw-navigation-menu" style="position:static;">
+			<a href="javascript:void(0);" class="vuw-navigation-menu--item -vuw-navigation-menu--item__selected vuw-navigation-menu--title">Study at Victoria</a>
+			{{#each menu-nav}}
+				<a href="javascript:void(0);" class="vuw-navigation-menu--item vuw-navigation-menu--link {{#if this.selected}}vuw-navigation-menu--item__selected{{/if}}">{{this.title}}</a>
+			{{/each}}
+		</nav>
+
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+
+<script>
+//register all text/x-handlebars-template as partials
+$('script[type="text/x-handlebars-template"]').each(function(){
+	var source = $(this).html();
+	var name = $(this).attr('id');
+	Handlebars.registerPartial(name, source);
+});
+
+//var _html = Handlebars.partials['index']()
+
+var hbsIndex   = Handlebars.partials['index'];
+var tplIndex = Handlebars.compile(hbsIndex);
+var _html    = tplIndex({
+	"primary-nav": [
+		"Future students",
+		"International students",
+		"Current students",
+		"Research",
+		"Learning & teaching"
+	],
+	"secondary-nav" : [
+		"About Victoria",
+		"Staff",
+		"Library",
+		"MyVictoria",
+		"Blackboard",
+		"Maps"
+	],
+	"menu-nav" : [
+		{title: "Why choose Victoria"},
+		{title: "Programmes and courses", selected: true},
+		{title: "Plan your courses and career"},
+		{title: "Apply to enrol"},
+		{title: "Financing your study"},
+		{title: "Preparing for university"},
+		{title: "Events, open days and visits"}
+	]
+});
+
+$('body').html(_html);
+</script>
+
+
+</html>
