@@ -199,18 +199,35 @@ h1, h2, h3 , h4{
     // background-position: 0 22px;
 }
 
+// .vuw-logo {
+//     text-indent: -9999em;
+//     display: block;
+//     height: 48px;
+//     width: 192px;
+//     background-image: url('http://www.victoria.ac.nz/assets/images/logo_desktop.png');
+//     background-size: 192px 48px;
+//     background-position: 0 50%;
+//     background-repeat: no-repeat;
+//     margin: 1.5em 0 0 1em;
+// }
 .vuw-logo {
     text-indent: -9999em;
     display: block;
     height: 48px;
     width: 192px;
-    background-image: url('http://www.victoria.ac.nz/assets/images/logo_desktop.png');
-    background-size: 192px 48px;
+    background-image: url("http://www.victoria.ac.nz/assets/images/logo_desktop.png");
+    background-size: 94%;
+    /* background-size: contain; */
     background-position: 0 50%;
     background-repeat: no-repeat;
-    margin: 1.5em 0 0 1em;
+    margin: 0 3em 0 1em;
+    width: 95%;
+    height: 8em;
+    border-right: 1px solid #39403f;
+    padding-right: 1em;
+    /* display: none; */
+    /* visibility: hidden; */
 }
-
 
 
 h1 {
@@ -220,6 +237,7 @@ h1 {
     line-height: 0.93;
     letter-spacing: -0.03em;
     //margin-bottom: 0.47em;
+    text-indent: -0.05em;
 }
 h2 {
     font-family: "National","Segoe WP Semibold","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
@@ -247,12 +265,49 @@ h3 {
     //margin-top: 1.5em;
 }
 
+.vuw-global-header {
+    background: #1f4130;
+    /* height: 2em; */
+    color: #fff;
+    font-weight: 300;
+
+    &--item {
+        padding: .7em 1.5em;
+        float: left;
+        opacity: .8;
+
+        &+& {
+            border-left: 1px solid rgba(0,0,0,.5);
+        }
+    }
+
+}
+
 
 .vuw-header {
 	background: #1d2624;
-	border-bottom: 6px solid #64a659;
+	// border-bottom: 6px solid #64a659;
     padding-top: .6em;
     padding-bottom: .6em;
+    color: #fff;
+
+    &-title {
+        font-size: 4.5em;
+        font-weight: normal;
+        // margin-top: 0;
+        line-height: 0.8;
+        letter-spacing: -.03em;
+
+        &__fitted {
+            font-size: 1.8em;
+            margin-bottom: 0;
+        }
+    }
+
+    &-subtitle {
+        font-weight: normal;
+        opacity: .5;
+    }
 }
 
 .vuw-secondary-nav {
@@ -350,9 +405,11 @@ h3 {
 .vuw-navigation-menu {
 
     background-color: #549349;
+    background: #0d4d2e;
 
     position:absolute;
     z-index: 1;
+    margin-bottom: 2em;
 
     &--container {
 
@@ -371,6 +428,8 @@ h3 {
 	    display: block;
 	    padding: 0.35em 0.5rem 0.4em 1.5rem;
 
+        border-bottom: 1px solid rgba(0,0,0,.5);
+        border-bottom: 1px solid rgba(255,255,255,0.15);
 
 	}
 
@@ -384,6 +443,9 @@ h3 {
             background: rgba(255,255,255, .1);
             background: rgba(0,0,0, .1);
 
+        }
+
+        &__selected {
 
             &:after {
                 content: "";
@@ -395,6 +457,10 @@ h3 {
                 width: 4px;
                 border: 1px solid #ccc;
                 background: #fff;
+
+                left: 4px;
+                top: 4px;
+                bottom: 4px;
             }
         }
 
@@ -426,28 +492,39 @@ h3 {
 	    max-width: 100%;
 	    height: auto;
 
+        -webkit-filter: contrast(0.9) brightness(1.2);
+        width: 100%;
+
         &-container {
             position: absolute;
             top:0;
             left:0;
             bottom:0;
             overflow: hidden;
+
+
+    left: -10rem;
+    right: -10rem;
         }
 	}
 
 	&--title {
-	    position: absolute;
+	    // position: absolute;
 	    bottom: -1px;
 	    right: 0;
 	    padding: 1em 1em 0.75em 1em;
 	    color: #fff;
 	    min-width: 8.5em;
-	    width: 30%;
-	    max-height: 100%;
+
 	    overflow: hidden;
 	    text-overflow: ellipsis;
 
     	background-color: rgba(68,159,55,0.7);
+        background: rgba(13, 77, 46, .7);
+
+
+        margin-right: -12rem;
+        padding-right: 12rem;
 
     	&__center {
 		    display: inline-block;
@@ -463,11 +540,7 @@ h3 {
 
 .vuw-button {
     cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
     border-radius: 2px;
     font-weight: bold;
     text-decoration: none !important;
@@ -479,13 +552,7 @@ h3 {
     margin-right: 0.28571em;
     margin-top: .5em;
     display: inline-block;
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
     box-sizing: content-box;
-
-    -moz-transition: background-color 100ms ease-in-out;
-    -o-transition: background-color 100ms ease-in-out;
-    -webkit-transition: background-color 100ms ease-in-out;
     transition: background-color 100ms ease-in-out;
 
 	&, &__primary {
@@ -594,20 +661,14 @@ h3 {
     }
 
     &-container {
-    	position:relative;
+    	// position:relative;
     	// overflow: hidden;
 
         max-width: 105em;
         margin: 0 auto;
 
-        &:before,
-        &:after {
-            content:"";
-            display:table;
-        }
-        &:after {
-            clear:both;
-        }
+        @include clearfix();
+
 	    &__new-context {
 	    	//same as __span-12-of-12
 	    	width: 100%;
@@ -619,6 +680,11 @@ h3 {
             //margin: 0 0 0 1.6%;
             position: relative;
 	    }
+
+        &-wrapper {
+            position: relative;
+            overflow-x: hidden;
+        }
     }
     
 
