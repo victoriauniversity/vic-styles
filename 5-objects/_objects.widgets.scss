@@ -307,15 +307,14 @@ $contact-portrait-size: 150px;
 /** General fixed popup. */
 
 $popup-width:    290px;
-$popup-z-index:  9999;
 $popup-border:   #fff;
 
 /* Pop-up box. */
 .popup-positioner {
     display: none;
-    z-index: $popup-z-index;
+    z-index: $z-index-max;
     position: fixed; bottom: 0;
-    margin: 0 0 0 5%;
+    margin: 0 0 2.5em 5%;
     width: $popup-width;
 
     &.show { display: block; }
@@ -342,11 +341,9 @@ $popup-border:   #fff;
             float: right;
             margin-left: .5em;
             font-size: 170%;
-            line-height: 1.3;
+            line-height: 1.1;
 
-            @include hoverify {
-                opacity: 1;
-            }
+            @include hoverify { opacity: 1; }
         }
     }
 
