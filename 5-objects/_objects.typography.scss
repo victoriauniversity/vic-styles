@@ -25,6 +25,15 @@
             line-height: $base-line-height;
             margin-bottom: .35em;
             margin-top: .35em;
+
+            // Nested sublist
+            ul,
+            ol {
+                &:last-child, & {
+                    margin-bottom: .6em;
+                    padding-left: 1.85em;
+                }
+            }
         }
     }
 
@@ -40,18 +49,6 @@
             @include make-list-square-bullet( $list-bullet-size ) {
                 position: relative; top: -.1em;
                 margin-right: .9em;
-            }
-        }
-
-        .tags {
-            margin-left: .35em;
-            line-height: 1;
-            white-space: nowrap;
-
-            &,
-            &.ico:before,
-            .tag {
-                display: inline;
             }
         }
     }
