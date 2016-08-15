@@ -36,17 +36,15 @@ $ico-margin:       .9em;
         color: $btn-label-colour;
     }
 
-    @include media ($mobile) {
-        //white-space: pre-line;
-    }
-
     // Sizing (normal size by default)
     &.large {
         font-size: 100%;
     }
+
     &.small {
         font-size: 60%;
     }
+
     // Standard icon styles
     .ico {
         margin-left: $ico-margin;

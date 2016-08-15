@@ -148,8 +148,8 @@ $tile-bg:      #f0f0f0;
         -moz-column-count: 1; /* Firefox */
         column-count: 1;
     }
-    .tile {
 
+    .tile {
         &:nth-child(odd),
         &:nth-child(even) {
             margin-left: 0;
@@ -357,6 +357,8 @@ $popup-border:   #fff;
 @include media ( $mobile-large-and-smaller ) {
     .popup-positioner {
         margin: 0;
+        bottom: auto;
+        top: 0;
         width: 100%
     }
 

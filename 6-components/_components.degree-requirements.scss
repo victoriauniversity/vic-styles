@@ -5,17 +5,17 @@
 .entry-requirements {
     .form { margin-bottom: .7em; }
     .control-group .link-action { margin-left: .35em; }
-
-    .requirements-list {
-        overflow: hidden;
-    }
+    .requirements-list { overflow: hidden; }
 
     .btn-holder {
         @include media ( $tablet-and-bigger ) {
             float: right;
             margin-left: 2em;
 
-            + header { margin-top: .25em; margin-bottom: .25em; }
+            + header {
+                margin-top: .25em;
+                margin-bottom: .25em;
+            }
         }
 
         .btn {
@@ -34,7 +34,7 @@
 .requirements {
     .collapsed .semitransparent + .collapsible__control {
         &:before {
-            background: linear-gradient( transparent 0%, $grey-gallery 100% );
+            background: linear-gradient( rgba( 255, 255, 255, 0 ), $grey-gallery 100% );
         }
     }
 
@@ -46,9 +46,9 @@
 
 .requirements-list {
     padding: .5em;
+    margin-bottom: .2em;
     background-color: $grey-gallery;
     border-left: .3em solid $grey-alto;
-    margin-bottom: .2em;
 
     @include media ( $tablet-and-bigger ) {
         padding: 1.1em;
@@ -72,9 +72,7 @@
     .sublist {
         margin-top: .7em;
 
-        h4 {
-            font-size: 110%;
-        }
+        h4 { font-size: 110%; }
 
         > .list-item {
             margin-bottom: .2em;
@@ -109,7 +107,7 @@
         margin: .3em .35em 0;
 
         @include media ( $tablet-and-bigger ) {
-            margin: .5em .8em 0 .8em;
+            margin: .5em .8em 0;
         }
 
         > .list-item {

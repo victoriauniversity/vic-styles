@@ -138,6 +138,7 @@ $nm-bg-color: $grey-gallery;
 
         a {
             text-decoration: none;
+            display: flex; // Safari (OS X) fix to ignore spacing on the end of the title
 
             .ico {
                 display: block;
