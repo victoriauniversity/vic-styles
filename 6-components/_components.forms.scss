@@ -7,30 +7,36 @@
 //This shloud probably be in base
 input,
 select[multiple=multiple] {
-  background-color: $base-bg-colour;
-  border: $text-input-border;
-  box-sizing: border-box;
-  font-family: $base-font-family;
-  font-size: $em-browser-default;
-  margin-bottom: 1em;
-  padding: $base-padding / 3;
-  width: 100%;
-
-  &:hover {
-    border-color: $grey-dusty-gray;
-  }
-
-  &:focus {
-    border-color: $blue-endeavoura;
-    outline: none;
-  }
-
-  &:disabled {
-    background-color: $grey-mercury;
-    cursor: not-allowed;
-
+    background-color: $base-bg-colour;
+    border: $text-input-border;
+    box-sizing: border-box;
+    font-family: $base-font-family;
+    font-size: $em-browser-default;
+    margin-bottom: 1em;
+    padding: $base-padding / 3;
+    width: 100%;
     &:hover {
-      border: $base-border;
+        border-color: $grey-dusty-gray;
     }
-  }
+    &:focus {
+        border-color: $blue-endeavoura;
+        outline: none;
+    }
+    &:disabled {
+        background-color: $grey-mercury;
+        cursor: not-allowed;
+        &:hover {
+            border: $base-border;
+        }
+    }
+    &.validation-error {
+        border-style: solid;
+        border-width: 2px;
+        border-color: $red-medium-violet;
+    }
+}
+
+
+p.alert-error {
+    color: $red-medium-violet;
 }

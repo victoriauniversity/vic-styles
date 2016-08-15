@@ -1,0 +1,27 @@
+/*===============================
+=       ALERTS                 =
+===============================*/
+
+//tools 
+@mixin alert-colors ($color) {
+    border-left: 2px solid mix(darken($color, 25%),desaturate($color, 25%),50%);
+    background-color: $color;
+    color: mix(darken($color, 70%), saturate($color, 50%), 90%);
+}
+.alert {
+    padding: 1.5em;
+    margin: 0.5em 0;
+    &.warning {
+        @include alert-colors($yellow-pearl-lusta);
+    }
+    &.success {
+        @include alert-colors($green-tara);
+    }
+    &.info {
+        @include alert-colors($blue-humming-bird);
+    }
+    &.danger,
+    &.error {
+        @include alert-colors($red-oyster-pink);
+    }
+}

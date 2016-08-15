@@ -1,0 +1,95 @@
+/*===============================
+=           SIDE NAV            =
+===============================*/
+
+// -----------------------------------
+// PROPERTIES
+// -----------------------------------
+$menu-color: $green-hippie;
+%menu-li {
+    &:hover {
+        background: rgba(0, 0, 0, .30);
+        // color: shade($white, 10%);
+    }
+}
+
+%menu-border {
+    border-bottom: 1px solid shade($menu-color, 25%);
+}
+
+%menu-font {
+    color: $white;
+    font-weight: 600;
+    font-family: $heading-font-family;
+    display: block;
+    padding: 0.3em 0.75em;
+}
+
+.vuw-navigation-menu {
+    background-color: $menu-color;
+    z-index: 1;
+    h2 {
+        margin-bottom: 0;
+        font-size: 1.25em;
+        a {
+            @extend %menu-border;
+            @extend %menu-font;
+            @extend %menu-li;
+        }
+    }
+    .top-level {
+        li {
+            .vuw-menu-item {
+                @extend %menu-li;
+                @extend %menu-font;
+            }
+        }
+        & > li {
+            @extend %menu-border;
+        }
+        & > li.parent-selected-level {
+            background-color: shade($menu-color, 15%);
+            & ul > li {
+                // //scale down the sizing
+                font-size: 0.9em;
+                @extend %menu-border;
+            }
+            & li.selected-level {
+                background-color: shade($menu-color, 25%);
+                & ul > li {
+                    .vuw-menu-item {
+                        font-weight: normal;
+                        padding-left: 1em;
+                        &::before {
+                            content: "\2014";
+                            color: $white;
+                            width: 0.6em;
+                            opacity: 0.6;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------
+//  ------- MENU LAYOUT - inlcudes space for widget on right
+// -----------------------------------
+.side-menu-layout {
+    @include media ($desktop-and-bigger) {
+        @include make-table-grid();
+        & .top-col {
+            vertical-align: baseline;
+            &:first-child {
+                vertical-align: top;
+                @include make-table-column(0.22);
+            }
+            // Right column
+            &:last-child {
+                @include make-table-column(0.25);
+                padding: 0;
+            }
+        }
+    }
+}

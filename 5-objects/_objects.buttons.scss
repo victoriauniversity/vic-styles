@@ -23,6 +23,7 @@ $ico-margin:       .9em;
     margin: 1em;
     line-height: 1.2;
     border-radius: $btn-corners;
+    border: 0;
     background-color: $btn-bg;
     font-family: $caption-font-family;
     font-size: 100%;
@@ -34,6 +35,7 @@ $ico-margin:       .9em;
     @include hoverify() {
         background-color: $btn-hover-bg;
         color: $btn-label-colour;
+        outline: 0;
     }
 
     @include media ($mobile) {

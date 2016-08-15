@@ -4,40 +4,43 @@
 
 $block-margin: $base-margin;
 
+// % of left column's width (2-column layout)
+$two-col-layout-left-ratio:  .65 !default;
+// % of right column's width (2-column layout)
+$two-col-layout-right-ratio: ( 1 - $two-col-layout-left-ratio ) !default;
+
+
 /* ===== SECTORS ============================================================ */
 
 // To divide page into independent sectors.
-.sector, .sector-container {
+.sector,
+.sector-container {
     @include clearfix();
-
     // Adds highlight
     &.highlighted {
         background-color: $block-highlight-colour; // TODO: Deprecated!
     }
-
     // Adds line separator to the end of the sector
     &.separated {
         border-bottom: $delim-border; // TODO: Deprecated!
     }
 }
 
-    // Adds highlight
-    .sector--highlight {
-        display: block;
-        background-color: $block-highlight-colour;
-    }
+// Adds highlight
+.sector--highlight {
+    display: block;
+    background-color: $block-highlight-colour;
+}
 
-    // Separates sector with a line
-    .sector--separated {
-        display: block;
-        border-bottom: $delim-border;
-    }
+// Separates sector with a line
+.sector--separated {
+    display: block;
+    border-bottom: $delim-border;
+}
 
+.layout-rebase {}
 
-
-.layout-rebase {} // Layout normaliser => Reset previous layouting rules
-
-
+// Layout normaliser => Reset previous layouting rules
 
 /* ===== BLOCKS ============================================================= */
 
@@ -46,106 +49,109 @@ $block-margin: $base-margin;
     display: block;
     vertical-align: top;
     padding: $block-margin;
-
     // 1. Collapse space in all siblings (default)...
-    .sector + .sector & { padding-top: 0; }
-
-
+    .sector + .sector & {
+        padding-top: 0;
+    }
     // 2. Enable in some cases
-    .sector + .sector.sector--highlight & { padding-top: $block-margin; }
+    .sector + .sector.sector--highlight & {
+        padding-top: $block-margin;
+    }
     .sector--highlight + .sector &,
-    .sector.separated + .sector & { padding-top: $block-margin; }
-
+    .sector.separated + .sector & {
+        padding-top: $block-margin;
+    }
     // Reset
-    .sector .layout-rebase & { padding-top: $block-margin; }
-
+    .sector .layout-rebase & {
+        padding-top: $block-margin;
+    }
     // 1B. ... and all block-containers
     .sector .block-container &:not(:first-child) {
         padding-top: 0;
     }
 }
 
-
 // Makes content aligned to the center if the width of the
 // viewport surpasses $base-width.
 .centraliser {
     @include outer-container();
+    .block-header {
+        padding: 1.5em 1.5em 0;
+    }
 }
 
 .short-col-wide {
-    @include media( $desktop-large ) {
+    @include media( $desktop-large) {
         @include span-columns(12)
     }
 }
 
-/* Two-column grid layout. */
-.sector .two-col-layout {
 
+/* Two-column grid layout. */
+
+.sector .two-col-layout {
     // Outter container
     &.block-container {
         @include make-table-grid();
     }
-
     // Column; makes two cols - 65% and 35% width
     .block {
         // Right column
-        &:last-child { padding-top: 0; }
-
+        &:last-child {
+            padding-top: 0;
+        }
         &.btns-holder {
             text-align: center;
             vertical-align: middle;
         }
-
         @include media( $desktop-and-bigger) {
-
             // Left column
             &:first-child {
                 @include make-table-column( $two-col-layout-left-ratio);
             }
-
             // Right column
             &:last-child {
                 @include make-table-column( $two-col-layout-right-ratio);
                 padding-top: $block-margin;
             }
-
+            //@at-root - shit is whack yo
+            //http://alwaystwisted.com/articles/2014-03-08-using-sass-33s-at-root-for-piece-of-mind
+            @at-root .cols-equal#{&} {
+                @include make-table-column( 0.5 );
+                &:last-child {
+                    padding-top: $block-margin;
+                }
+            }
             &.btns-holder {
                 text-align: right;
                 @include make-table-column( $two-col-layout-right-ratio);
             }
         }
     }
-
     &.swap-columns {
-
         // Swap column blocks - 35% left and 65% right
         .block {
             @include media( $desktop-and-bigger) {
-
                 // Left column
                 &:first-child {
-                    @include make-table-column( $two-col-layout-right-ratio );
+                    @include make-table-column( $two-col-layout-right-ratio);
                 }
-
                 // Right column
                 &:last-child {
-                    @include make-table-column( $two-col-layout-left-ratio );
+                    @include make-table-column( $two-col-layout-left-ratio);
                 }
             }
         }
     }
-
     // Adds line separators to divide blocks
     &.separated {
         .block {
-
             // Right column
             &:last-child {
                 padding-top: $block-margin;
                 border-left: none;
                 border-top: $delim-border;
             }
-
             @include media( $desktop-and-bigger) {
                 &:last-child {
                     border-left: $delim-border;

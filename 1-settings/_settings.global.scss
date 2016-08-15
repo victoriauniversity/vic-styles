@@ -23,13 +23,9 @@ $em-base:               14px;
 $base-width-px:            1280px;
 $base-width:               em( $base-width-px );
 
-// % of left column's width (2-column layout)
-$two-col-layout-left-ratio:  .65 !default;
-// % of right column's width (2-column layout)
-$two-col-layout-right-ratio: ( 1 - $two-col-layout-left-ratio ) !default;
 
 
-//tow button layout
+//two button layout
 $two-btn-layout:  .5 !default;
 
 // Typography

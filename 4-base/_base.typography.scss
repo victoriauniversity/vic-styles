@@ -7,7 +7,7 @@
 
 $heading-font-family:   $caption-font-family;
 $heading-line-height:   $caption-line-height;
-$heading-colour:        $green-victoria;
+$heading-color:         $green-victoria-study;
 $heading-weight:        $weight-semibold;
 
 
@@ -35,7 +35,7 @@ $heading-weight:        $weight-semibold;
 // Then call it with the rules/styles you want wherever you want (As long as the file/include has access to the above function of course).
 #{headings( 1, 6 )} {
     margin-bottom: .4em;
-    color: $green-victoria;
+    color: $heading-color;
     font-family: $heading-font-family;
     font-weight: $heading-weight;
     line-height: $heading-line-height;

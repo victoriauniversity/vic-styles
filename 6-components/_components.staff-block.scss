@@ -1,0 +1,40 @@
+/*===============================
+=       STAFF BLOCK            =
+===============================*/
+
+.staff-block {
+    display: flex;
+    .staff-image {
+        width: 20%;
+        margin-right: 1.5em;
+        @include media ($mobile) {
+            display: none;
+        }
+        img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .staff-detail {
+        .contact-detail {
+
+            li {
+                float: left;
+                margin-bottom: 1em;
+                &:first-child {
+                    margin-right: 0.5em;
+                }
+                &:last-child {
+                    clear: left;
+                }
+
+                a {
+                    color: $green-victoria;
+                    background-color: $green-chrome-white;
+                    padding: 0.5em;
+                }
+            }
+        }
+    }
+}

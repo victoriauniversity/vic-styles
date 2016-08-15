@@ -11,7 +11,7 @@
 @include font-face( $font-victoria, "#{$path-font-victoria}-Extrabold", $weight-extrabold, $file-formats: eot woff ttf );
 
 // Oxygen
-@import url( "#{$path-font-oxygen}" );
+//@import url( "#{$path-font-oxygen}" );
 
 // Font icons
 @include font-face( $font-victoria-icons, "#{$path-fonticon-victoria}", $file-formats: eot woff ttf svg );

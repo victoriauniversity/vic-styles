@@ -14,6 +14,16 @@
 //    or make one.
 // 3) Assign colour to the variable as following: ${base_color}-{unique_name}.
 
+// =========================
+// -----*-WARNING-*----- 
+// -------------------------
+// DO NOT change the colour code of the variables
+//
+// EG: $green-victoria: #115737; to $green-victoria: #64a659;
+// Change where the variable is used.
+// EG: $banner-color: $green-victoria; to $banner-color: $black-victoria;
+
+
 
 /* ===== BASIC ============================================================== */
 
@@ -22,17 +32,29 @@ $black:                #000;
 
 
 /* ===== BRANDED & ORIGINAL ============================================================ */
-
-// TODO: Refactor all the greens!
-$green-victoria:       #64a659;
-$green-victoria-old:   #449F37;
-$black-victoria:       #1d2624;
-$green-victoria-study: #549349;
-
-
-//Vic Green variations
+// --------------------------------
+//KEY BRAND COLOR
+//-- VIC GREEN
+$green-victoria:       #115737;
+//-- Vic Green variations
+// - Menus, shades, highlights.
 $green-bottle-green:   #0D4B2F;
 $green-bottle-darker:  #093521;
+
+// --------------------------------
+//SUB BRAND COLORS
+// --------------------------------
+//-- VIC BLACK
+$black-victoria:       #1d2624;
+//-- STUDY GREEN
+$green-victoria-study: #64a659;
+//-- Study green variations 
+// - Menus, shades, highlights.
+$green-hippie: #549349;
+
+
+
+
 
 //Buttons
 $blue-azure:           #3468B0;
@@ -67,12 +89,26 @@ $grey-mine-shaft:      #333;
 $black-tundora:        #444;
 
 
-
+//===================
 // Other Highlights
+//===================
+
+//Input[text] Error
+$red-medium-violet: #CC328E;
+
+
+
+//Promo & Info alert
 $blue-humming-bird: #E4F3FB;
+//alert warning
+$yellow-pearl-lusta: #FCF8E3;
+//alert danger, error
+$red-oyster-pink: #ECCDCD;
+//alert success - excel doc tag
+$green-tara: #E2F7E2;
 
-
-
+//green highlight
+$green-chrome-white: #E7F0D4;
 
 //===================
 
@@ -81,7 +117,7 @@ $grey-mercury:		#e8e8e8; //should remove this, use grey-gallery instead
 
 //===================
 
-//NEW OTHER - unsure on these
+//NEW OTHER - unsure on these -irwinna
 
 $green-fern:           #63B960;
 $blue-curious:         #1483EB;
@@ -95,10 +131,9 @@ $blue-grey-tower:      #A7BBC1;
 
 $green-mako:           $grey-mako;
 $grey-tower:           $blue-grey-tower;
-
 $vic-green:            $green-victoria;
 $vic-black:            $black-victoria;
-
+$green-finlandia:      $green-victoria-study;
 //===================
 
 /* ===== UI HELPERS ========================================================= */
@@ -116,7 +151,6 @@ $text-fade-colour:     $grey-tower;
 $blue-congress-blue:   #004f8c;
 $blue-lochmara:        #007BD8;
 
-$green-finlandia:      #5F6B5F;
 
 $light_grey:           $grey-alto;
 $blue_action:          $blue-endeavoura;

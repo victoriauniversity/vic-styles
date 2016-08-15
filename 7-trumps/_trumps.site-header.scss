@@ -1,6 +1,8 @@
 /*=============================================
 =            OLD SITE NAVIGATION            =
 =============================================*/
+$bar-color: $green-victoria-study;
+
 
 .print-only {
     display: none;
@@ -11,7 +13,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
 #site-header {
     position: relative;
     background-color: $black-victoria;
-    border-bottom: 6px solid $green-victoria;
+    border-bottom: 6px solid $bar-color;
     padding-top: 1.5em;
     @include media ($desktop-and-bigger) {
         // @include outer-container;

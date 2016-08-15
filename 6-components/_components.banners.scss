@@ -8,6 +8,7 @@
 $banner-cover-max-width:    1200px;
 $banner-cover-text-colour:  $white;
 $banner-cover-max-height:   620px;
+$banner-color: $green-victoria-study;
 
 .banner-with-cover {
     position: relative;
@@ -59,13 +60,13 @@ $banner-cover-max-height:   620px;
         margin-top: .3em;
         margin-bottom: .5em;
         color: $banner-cover-text-colour;
-        background-color: rgba( $green-victoria-old, .75 );
+        background-color: rgba( $banner-color, .75 );
     }
 
     .abstract {
         color: $white;
         padding: .6em .9em;
-        background-color: rgba( $green-victoria-old, .75 );
+        background-color: rgba( $banner-color, .75 );
     }
 
     /** International/domestic switcher */
