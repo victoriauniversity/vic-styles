@@ -3,8 +3,7 @@
 ===============================*/
 
 $bg-color: $grey-gallery;
-.quote-block {
-    background-color: $bg-color;
+.block__quote {
     header {
         @include media ($mobile-large-and-smaller) {
             float: right;
@@ -12,30 +11,29 @@ $bg-color: $grey-gallery;
     }
 }
 
-.person-block {
+.block__person {
     padding-bottom: 2em;
+
     .quote-text {
         @include media ($mobile-large-and-smaller) {
             float: right;
         }
     }
+
     .block {
-        padding-bottom: 0.8em;
     }
 }
 
-.quote-block,
-.person-block {
+.block__quote,
+.block__person {
     .quote-wrap {
         @include outer-container;
-        padding: $base-margin;
         margin-right: auto;
         margin-left: auto;
 
         .quote-image {
             float: left;
             margin: 0 5em 1em 0;
-
 
             @include media ( $tablet ) {
                 margin-right: 2em;
@@ -112,24 +110,9 @@ $bg-color: $grey-gallery;
     }
 }
 
-.quote-block .quote-wrap .quote-body {
+.block__quote .quote-wrap .quote-body {
     @include media ( $mobile-large-and-smaller) {
         .holder { overflow: inherit; }
         header { margin-top: 1em;  }
     }
-}
-
-.separated {
-    .separated {
-        border-bottom: 0;
-    }
-}
-
-// TODO: Refactor!
-.image-promo-block {
-    .promo-body .promo-action {
-        margin-top: 0;
-    }
-
-    padding-left: $base-margin; padding-right: $base-margin;
 }

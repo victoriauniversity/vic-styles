@@ -1,0 +1,156 @@
+/*================================
+=    ENTRY REQUIREMENTS BLOCK    =
+================================*/
+
+.entry-requirements {
+    .form { margin-bottom: .7em; }
+    .control-group .link-action { margin-left: .35em; }
+    .requirements-list { overflow: hidden; }
+
+    .btn-holder {
+        @include media ( $tablet-and-bigger ) {
+            float: right;
+            margin-left: 2em;
+
+            + header {
+                margin-top: .25em;
+                margin-bottom: .25em;
+            }
+        }
+
+        .btn {
+            white-space: nowrap;
+
+            @include media ( $tablet-and-bigger ) { margin: 0; }
+        }
+    }
+}
+
+
+/*===============================
+=    DEGREE REQUIREMENTS BLOCK  =
+===============================*/
+
+.requirements {
+    .collapsed .semitransparent + .collapsible__control {
+        &:before {
+            background: linear-gradient( rgba( 255, 255, 255, 0 ), $grey-gallery 100% );
+        }
+    }
+
+    .collapsible__control {
+        margin: .9em 0 0;
+        font-size: 90%;
+    }
+}
+
+.requirements-list {
+    padding: .5em;
+    margin-bottom: .2em;
+    background-color: $grey-gallery;
+    border-left: .3em solid $grey-alto;
+
+    @include media ( $tablet-and-bigger ) {
+        padding: 1.1em;
+    }
+
+    h3, h4, h5 {
+        margin-bottom: 0;
+        color: $grey-mine-shaft;
+    }
+
+    h3 {
+        font-size: 120%;
+
+        > em {
+            color: $green-victoria;
+            font-style: inherit;
+        }
+    }
+
+    // 2nd level
+    .sublist {
+        margin-top: .7em;
+
+        h4 { font-size: 110%; }
+
+        > .list-item {
+            margin-bottom: .2em;
+            padding: .7em 1em;
+            background-color: $grey-alto;
+        }
+
+        &:last-child h4 { margin-bottom: 0; }
+    }
+
+    // 3rd level
+    .sub-sublist {
+        margin-top: .2em;
+        padding: 0 .5em;
+
+        @include media ( $tablet-and-bigger ) {
+            padding: 0 1.2em;
+        }
+
+        h5 { font-weight: $weight-normal; }
+
+        > .list-item {
+            border-bottom: 1px solid #C7C7C7;
+            padding: .5em .15em;
+
+            &:last-child{ border-bottom: none;  }
+        }
+    }
+
+    // 4th level
+    .sub-sub-sublist {
+        margin: .3em .35em 0;
+
+        @include media ( $tablet-and-bigger ) {
+            margin: .5em .8em 0;
+        }
+
+        > .list-item {
+            font-size: 90%;
+
+            > p { display: inline; }
+        }
+    }
+}
+
+// Major block inside majors list
+.majors-requirements {
+
+    .majors-list {
+        padding-bottom: $base-margin;
+
+        .heading {
+            padding-top: 0;
+            padding-bottom: .3em;
+        }
+    }
+
+    .container-opened {
+        border-bottom: 1px solid $grey-gallery;
+        margin-bottom: $base-margin;
+    }
+
+    .major {
+        .toggle-header {
+            padding: .5em $base-margin;
+
+            & + .block-container .block:first-child { padding-top: 0; }
+        }
+
+        &:last-child .container-opened { border-bottom: 0; margin-bottom: 0; }
+    }
+}
+
+// Qualification list
+.qualifications {
+    .heading {
+        .block { padding-bottom: 0; }
+    }
+
+    .sector.nested-section:last-child { border-bottom: 0; }
+}

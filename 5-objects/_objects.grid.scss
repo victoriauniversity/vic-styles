@@ -2,33 +2,68 @@
 =            GRID-BASED LAYOUT ELEMENTS            =
 ==================================================*/
 
+$block-margin: $base-margin;
+
 
 /* ===== SECTORS ============================================================ */
 
 // To divide page into independent sectors.
-.sector {
+.sector, .sector-container {
     @include clearfix();
 
-    // Highlights sector
+    // Adds highlight
     &.highlighted {
+        display: block;
         background-color: $block-highlight-colour;
     }
 
     // Adds line separator to the end of the sector
     &.separated {
+        display: block;
         border-bottom: $delim-border;
+    }
+
+    // Empty sector, hide it's visibility
+    &.blank {
+        &.separated { border: none; }
+        &.highlighted { background: none; }
     }
 }
 
 
+.layout-rebase {} // Layout normaliser => Reset previous layouting rules
+
+
+
+
+
 /* ===== BLOCKS ============================================================= */
 
-$block-margin: $base-margin;
 // Standard block container
 .block {
+    display: block;
     padding: $block-margin;
     vertical-align: top;
+
+    // 1. Collapse space in all siblings (default)...
+    .sector + .sector & { padding-top: 0; }
+
+
+    // 2. Enable in some cases
+    .sector + .sector.highlighted & { padding-top: $block-margin; }
+
+    .sector.highlighted + .sector &,
+    .sector.separated + .sector &,
+    .sector.blank + .sector & { padding-top: $block-margin; }
+
+    // Resets block's margin
+    .sector .layout-rebase & { padding-top: $block-margin; }
+
+    // 1B. ... and all block-containers
+    .sector .block-container &:not(:first-child) { padding-top: 0; }
+    .block + .block-container &:first-child { padding-top: 0; }
 }
+
 
 // Makes content aligned to the center if the width of the
 // viewport surpasses $base-width.
@@ -43,39 +78,41 @@ $block-margin: $base-margin;
 }
 
 /* Two-column grid layout. */
-.two-col-layout {
+.sector .two-col-layout {
 
     // Outter container
     &.block-container {
         @include make-table-grid();
+    }
 
-        // Column; makes two cols - 65% and 35% width
-        .block {
-            // Right column
-            &:last-child { padding-top: 0; }
+    // Column; makes two cols - 65% and 35% width
+    .block {
+        // Right column
+        &:last-child { padding-top: 0; }
 
-            &.btns-holder {
-                text-align: center;
-                vertical-align: middle;
+        &.btns-holder {
+            text-align: center;
+            vertical-align: middle;
+
+            ul, ol { text-align: left; }
+        }
+
+        @include media( $desktop-and-bigger) {
+
+            // Left column
+            &:first-child {
+                @include make-table-column( $two-col-layout-left-ratio);
             }
 
-            @include media( $desktop-and-bigger) {
+            // Right column
+            &:last-child {
+                @include make-table-column( $two-col-layout-right-ratio);
+                padding-top: $block-margin;
+            }
 
-                // Left column
-                &:first-child {
-                    @include make-table-column( $two-col-layout-left-ratio);
-                }
-
-                // Right column
-                &:last-child {
-                    @include make-table-column( $two-col-layout-right-ratio);
-                    padding-top: $block-margin;
-                }
-
-                &.btns-holder {
-                    text-align: left;
-                    @include make-table-column( $two-col-layout-right-ratio);
-                }
+            &.btns-holder {
+                text-align: right;
+                @include make-table-column( $two-col-layout-right-ratio);
             }
         }
     }
@@ -84,9 +121,6 @@ $block-margin: $base-margin;
 
         // Swap column blocks - 35% left and 65% right
         .block {
-            // Right column
-            &:last-child { padding-top: 0; }
-
             @include media( $desktop-and-bigger) {
 
                 // Left column
@@ -97,7 +131,6 @@ $block-margin: $base-margin;
                 // Right column
                 &:last-child {
                     @include make-table-column( $two-col-layout-left-ratio );
-                    padding-top: $block-margin;
                 }
             }
         }
@@ -106,21 +139,19 @@ $block-margin: $base-margin;
     // Adds line separators to divide blocks
     &.separated {
         .block {
+
             // Right column
             &:last-child {
                 padding-top: $block-margin;
                 border-left: none;
                 border-top: $delim-border;
             }
+
             @include media( $desktop-and-bigger) {
                 &:last-child {
                     border-left: $delim-border;
                     border-top: none;
                 }
-            }
-
-            @include media( $mobile-large-and-smaller ) {
-                padding: 1em;
             }
         }
     }

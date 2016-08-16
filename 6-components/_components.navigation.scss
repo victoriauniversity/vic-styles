@@ -2,21 +2,20 @@
 =            NAVIGATION TABS            =
 =======================================*/
 
-
 /* ===== NAVIGATION MENU - TABS ============================================= */
 
 // Tabed menu - general
-$menu-tabbed-padding-horiz: .7em !default;
-$menu-tabbed-padding-vertic: .9em !default;
+$menu-tabbed-padding-horiz:            .7em !default;
+$menu-tabbed-padding-vertic:           .9em !default;
 // Single tab (~ menu item)
-$menu-tabbed-item-max-width: $base-width / 4 !default; // accommodates up to 4 items
-$menu-tabbed-item-triangle-width: 1.5em !default;
-$menu-tabbed-item-triangle-height: ( $menu-tabbed-item-triangle-width / 3) !default;
-$menu-tabbed-item-label-colour: $grey-stack !default;
-$menu-tabbed-item-hover-label-colour: $blue-curious-blue !default;
-$menu-tabbed-item-hover-bg-colour: $grey-alto !default;
+$menu-tabbed-item-max-width:           $base-width / 4 !default; // accommodates up to 4 items
+$menu-tabbed-item-triangle-width:      1.5em !default;
+$menu-tabbed-item-triangle-height:     ( $menu-tabbed-item-triangle-width / 3 ) !default;
+$menu-tabbed-item-label-colour:        $grey-stack !default;
+$menu-tabbed-item-hover-label-colour:  $blue-curious-blue !default;
+$menu-tabbed-item-hover-bg-colour:     $grey-alto !default;
 $menu-tabbed-item-active-label-colour: $white !default;
-$menu-tabbed-item-active-bg-colour: $green-victoria !default;
+$menu-tabbed-item-active-bg-colour:    $green-victoria !default;
 
 /* Menu or submenu using tab-like layout of its items. */
 .menu-tabbed {
@@ -35,9 +34,11 @@ $menu-tabbed-item-active-bg-colour: $green-victoria !default;
         vertical-align: middle;
         outline: 0;
 
-        .ico:before {
-            vertical-align: top;
-            margin-right: .5em;
+        .ico:before { vertical-align: top; }
+
+        .label {
+            display: inline;
+            margin-left: .5em;
         }
 
         // Selected or activated tab
@@ -47,6 +48,7 @@ $menu-tabbed-item-active-bg-colour: $green-victoria !default;
 
             & > a {
                 color: inherit;
+
                 @include hoverify {
                     background-color: inherit;
                     color: inherit;
@@ -62,7 +64,7 @@ $menu-tabbed-item-active-bg-colour: $green-victoria !default;
                 @include triangle( $menu-tabbed-item-triangle-width $menu-tabbed-item-triangle-height, $menu-tabbed-item-active-bg-colour, down);
             }
         }
-        & > a {
+        > a {
             display: inline-block;
             width: 100%;
             font-size: 1.1em;
@@ -84,24 +86,73 @@ $menu-tabbed-item-active-bg-colour: $green-victoria !default;
 
 // Makes two col button container with one button left & one right
 .two-btn-nav {
-    @include make-table-column($two-btn-layout);
-    vertical-align: top;
-    padding: 1.5em 0.5em;
+    @include make-table-column( $two-btn-layout );
 
     p {
         font-size: 80%;
         color: $grey-stack;
     }
-    .btn {
-        margin: 0;
+
+    .btn { margin: 0; }
+
+    &:first-child {
+        padding-right: .5em;
     }
+
     &:last-child {
+        padding-left: .5em;
+
         .two-btn-wrap {
             float: right;
             text-align: right;
         }
     }
-    @include media ($tablet-and-bigger) {
-        padding: 1.5em;
+}
+
+.two-col-layout {
+    .two-btn-nav.block:last-child { padding-top: $block-margin; }
+}
+
+// Sticks panels to the bottom
+.mobile-sticky-down {
+    box-shadow: rgba(#000, .12) 0 -1px 10px;
+
+    @include media( $mobile-large-and-smaller ) {
+        &.sector {
+            z-index: $z-index-top;
+            @include position( fixed, null 0 0 0);
+
+            &.highlighted {
+                border-top: 1px solid $block-highlight-border;
+            }
+        }
+        .menu-tabbed {
+            // Switch caret from bottom to top
+            .active:after {
+                bottom: auto;
+                margin-bottom: 0;
+                border-top: none;
+                top: 0;
+                margin-top: -$menu-tabbed-item-triangle-height;
+                border-bottom: $menu-tabbed-item-triangle-height solid $menu-tabbed-item-active-bg-colour;
+            }
+
+            > a {
+                padding: .6em .4em .4em .4em;
+            }
+
+            .label {
+                display: inline-block;
+                font-size: 85%;
+                margin: .4em 0 0;
+                width: 100%;
+                text-overflow: ellipsis;
+                line-height: 1;
+
+                /* Required for text-overflow to do anything */
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
     }
 }

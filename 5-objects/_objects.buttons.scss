@@ -19,7 +19,7 @@ $ico-margin:       .9em;
 
 .btn {
     display: inline-block;
-    padding: 0.6em 1.1em;
+    padding: .6em 1.1em;
     margin: 1em;
     line-height: 1.2;
     border-radius: $btn-corners;
@@ -36,22 +36,24 @@ $ico-margin:       .9em;
         color: $btn-label-colour;
     }
 
-    @include media ($mobile) {
-        //white-space: pre-line;
-    }
-
     // Sizing (normal size by default)
     &.large {
         font-size: 100%;
     }
+
     &.small {
         font-size: 60%;
     }
+
     // Standard icon styles
     .ico {
         margin-left: $ico-margin;
         line-height: 0;
         vertical-align: middle;
+        display: inline;
+        transition: none;
+
+        &:before { display: inline; }
 
         // Positioning (right position by default)
         &.left {
@@ -63,8 +65,9 @@ $ico-margin:       .9em;
     &.secondary {
         background-color: $sec-bg;
         color: $grey-mako;
-        padding: 0.6em 1em;
+        padding: .6em 1em;
         line-height: 1;
+
         @include hoverify() {
             background-color: $sec-hover-bg;
             // color: $grey-dusty-gray;
@@ -80,4 +83,9 @@ $ico-margin:       .9em;
 
 
 
+
 /* ===== LINKS ============================================================== */
+
+// .link {}
+
+

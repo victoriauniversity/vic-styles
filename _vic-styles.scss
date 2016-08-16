@@ -2,43 +2,41 @@
 =            VICTORIA UNIVERSITY OF WELLINGTON STYLES            =
 ================================================================*/
 
-
-/* IMPORT LIBRARIES */
-@import 'libs/bourbon/app/assets/stylesheets/bourbon.scss';
-@import 'libs/neat/app/assets/stylesheets/neat.scss';
-
+/**
+ * Include this partial in your project's SCSS *BEFORE* any of your
+ * project-specific styles.
+ */
 
 /*----------  1) SETTINGS  ---------------------------------------------------*/
 
-@import 'settings/settings.base.scss';
+@import '1-settings/settings.base.scss';
 
 
 /*----------  2) TOOLS  ------------------------------------------------------*/
 
-@import 'tools/tools.base.scss';
+@import '2-tools/tools.base.scss';
 
 
 /*----------  3) GENERIC  ----------------------------------------------------*/
 
-@import 'generic/generic.base.scss';
+@import '3-generic/generic.base.scss';
 
 
 /*----------  4) BASE  -------------------------------------------------------*/
 
-@import 'base/base.base.scss';
+@import '4-base/base.base.scss';
 
 
 /*----------  5) OBJECTS  ----------------------------------------------------*/
 
-@import 'objects/objects.base.scss';
+@import '5-objects/objects.base.scss';
 
 
 /*----------  6) COMPONENTS  -------------------------------------------------*/
 
-@import 'components/components.base.scss';
+@import '6-components/components.base.scss';
 
 
 /*----------  7) TRUMPS  -----------------------------------------------------*/
 
-@import 'trumps/trumps.base.scss';
-
+@import '7-trumps/trumps.base.scss';

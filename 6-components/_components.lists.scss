@@ -12,6 +12,8 @@ $grid-area-hover-title-colour: $white !default;
 $grid-area-bg: $grey-mercury !default;
 $grid-area-hover-bg: $grey-alto !default;
 $grid-area-active-bg: $green-victoria !default;
+
+
 // Standard grid list containing areas and their previews
 .area {
     padding: $grid-area-margin;
@@ -25,7 +27,9 @@ $grid-area-active-bg: $green-victoria !default;
         text-align: center;
         color: $grid-area-title-colour;
 
-        .ico { margin-left: .7em; }
+        .ico {
+            margin-left: .7em;
+        }
 
         > a {
             display: table-cell;
@@ -47,6 +51,7 @@ $grid-area-active-bg: $green-victoria !default;
         left: 0;
         margin: $grid-area-margin;
         background: $grid-area-bg;
+
         > .block:last-child {
             padding-top: $base-padding / 3;
         }
@@ -64,11 +69,6 @@ $grid-area-active-bg: $green-victoria !default;
                 margin-left: .4em;
             }
 
-            .ico.caret:before {
-                margin-bottom: -0.3em;
-                @include triangle( $ico-caret-width $ico-caret-height, $white, down);
-            }
-
             > a {
                 background-color: $grid-area-active-bg;
 
@@ -77,20 +77,11 @@ $grid-area-active-bg: $green-victoria !default;
                 }
             }
         }
+
         // Show preview!
         .preview {
             display: block;
             width: 100%;
-        }
-    }
-}
-
-.content-simple {
-    .ext-links {
-        text-align: left;
-        @include media( $desktop-and-bigger) {
-            margin-top: 2.2em;
-
         }
     }
 }

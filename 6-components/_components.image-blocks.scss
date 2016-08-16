@@ -2,16 +2,20 @@
 =   WELLINGTON PROMO BLOCK      =
 ===============================*/
 
-$top-promo-color: rgba( $green-victoria, 0.9 );
+$top-promo-color:    rgba( $green-victoria, 0.9 );
 $action-promo-color: rgba( darken( $green-victoria, 8% ), 0.75 );
 $action-promo-hover: darken( $green-victoria, 11% );
 
 
-.image-promo-block {
+.block__image-promo {
     position: relative;
     overflow: hidden;
     height: auto;
-    padding: 1.5em 0;
+    padding: 1.5em $base-margin;
+
+    .promo-body .promo-action {
+        margin-top: 0;
+    }
 
     .cover-holder {
         img {
@@ -41,7 +45,7 @@ $action-promo-hover: darken( $green-victoria, 11% );
         .promo-action {
             width: 100%;
             background-color: $action-promo-color;
-            margin-top: 1em;
+
             a {
                 padding: 1em;
                 display: block;
@@ -57,21 +61,41 @@ $action-promo-hover: darken( $green-victoria, 11% );
     }
 }
 
-.images-block {
 
-    $tc-logo-height:    120px;
-    $tc-logo-width:     150px;
+/** Set of images laid next to/behind each other. */
+.block__images {
+    text-align: center;
 
-    // Triple-crown logos (usually laid next to each other)
-    .logo-triplecrown {
-        vertical-align: middle;
-        margin: .5em 1em;
-        border: none;
-        width: auto;
+    img {
+        display: block;
+        margin: 0 .7em .7em .7em;
+
+        &.stretched {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+
+/** Logos laid next to each other in the available column */
+.block__logos {
+
+    // `Triple-crown`-type logo size
+    $tc-logo-height: 120px;
+    $tc-logo-width:  150px;
+
+    // Default logo - sizing based on `Triple Crown`-type logos.
+    > img {
+        margin:     .5em 1em;
+        width:      auto;
         max-height: $tc-logo-height;
-        max-width: $tc-logo-width;
+        max-width:  $tc-logo-width;
 
-        //TODO: Overriding other rules with same specificity - make it collision free.
-        @include hoverify() { border: none; }
+        vertical-align: middle;
+        border:         none;
+
+        // &.logo--type {} to override default behavior
     }
 }

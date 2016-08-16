@@ -4,19 +4,18 @@
 
 $bg-color: $grey-gallery;
 
-.video-block {
-    .block {
-        padding: 1em 0;
-        position: relative;
-    }
-    .block:last-child {
+.block__video {
+    position: relative;
+
+    &:last-child {
+        margin-right: auto; margin-left: auto; // Center
         max-width: 970px;
-        margin-right: auto;
-        margin-left: auto;
+
         @include media ($tablet-and-smaller) {
             padding: 1em;
         }
     }
+
     .cover-text-overlay {
          @include media ($tablet-and-bigger) {
             position: absolute;
@@ -64,8 +63,8 @@ $bg-color: $grey-gallery;
     .video-body {
         position: relative;
         padding: 0;
-        margin-right: auto;
-        margin-left: auto;
+        margin: 0 auto;
+
         @include media ($desktop-and-bigger) {
             max-width: 970px;
             min-height: 546px;
@@ -127,7 +126,8 @@ $bg-color: $grey-gallery;
 }
 
 .video__description {
-    margin: .5em 0;
+    text-align: center;
+    margin-top: .5em;
 }
 
 // TODO: refactor

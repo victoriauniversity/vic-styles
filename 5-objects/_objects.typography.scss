@@ -2,7 +2,6 @@
 =            CONTENT WRAPPER                  =
 =============================================*/
 
-
 /* Standard content with only basic formatting options. */
 
 .content-simple {
@@ -12,7 +11,7 @@
     p {
         margin-bottom: 1.2em;
 
-        &:last-child { margin: 0; }
+        &:last-child { margin-bottom: 0; }
     }
 
     // Unordered list with own square bullet
@@ -20,21 +19,45 @@
     $list-bullet-indent-left:   .5em;
     $list-bullet-indent-right:  1.15em;
 
+    ul, ol {
+        > li {
+            line-height: $base-line-height;
+            margin-bottom: .35em;
+            margin-top: .35em;
+
+            // Nested sublist
+            ul,
+            ol {
+                &:last-child, & {
+                    margin-bottom: .6em;
+                    padding-left: 1.85em;
+                }
+            }
+        }
+    }
+
     ul {
         margin-left: 0;
         padding-left: $list-bullet-indent-left + $list-bullet-indent-right + $list-bullet-size;
         text-indent: -( $list-bullet-indent-right + $list-bullet-size );
+        list-style-position: outside;
 
         > li {
-            margin: .3em 0;
             line-height: $base-line-height;
 
             @include make-list-square-bullet( $list-bullet-size ) {
-                position: relative; top: -0.1em;
-                margin-right: $list-bullet-indent-right;
+                position: relative; top: -.1em;
+                margin-right: .9em;
             }
+        }
+    }
 
+    ol {
+        list-style: decimal;
 
+        > li {
+            margin-left: $base-margin;
+            padding-left: $list-bullet-indent-right - $list-bullet-size;
         }
     }
 }
@@ -55,7 +78,7 @@
 .tooltip-inline,
 .tooltip-icon {
     cursor: default;
-    }
+}
 
 /** Inline hint (~ tooltip). */
 $hint-inline-colour:            $base-font-colour;
@@ -74,12 +97,15 @@ $hint-inline-active-colour:     black;
 
 /** Icon for the tooltip. */
 .tooltip-icon {
+    display: inline;
     cursor: pointer;
-    margin: 0 .2em;
+    margin: 0 .35em;
     vertical-align: middle;
     font-size: 90%;
     color: $grey-stack;
     opacity: .6;
+
+    &:before { display: inline; }
 
     @include hoverify() { opacity: 1; }
 }
@@ -91,6 +117,10 @@ $hint-inline-active-colour:     black;
     white-space: nowrap;
 }
 
+.link--external {
+    display: inline;
+}
+
 // Inline block that might be or might not be used inside a dynamic content.
 .inliner {
     margin-right: .3em;
@@ -99,3 +129,15 @@ $hint-inline-active-colour:     black;
         margin-left: 0;
     }
 }
+
+// Adds short delimiting line AFTER actual item
+.item-separated {
+    &:after {
+        display: block;
+        @include size( 2em 2px );
+        content: "";
+        background-color: $grey-alto;
+        margin: .6em 0;
+    }
+}
+

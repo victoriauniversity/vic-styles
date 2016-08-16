@@ -11,10 +11,9 @@ $grid-list-border:          1px solid $darker-border-colour;
 $grid-list-items-per-row:   3;
 
 .grid-list {
-
     position: relative;
     @include clearfix();
-    margin: $base-margin 0;
+    margin: 0;
     width: 100%;
 
     // Item / Cell

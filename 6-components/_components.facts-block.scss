@@ -4,6 +4,8 @@
 
 // TODO: Refactor!
 .facts-block {
+    @include clearfix;
+
     .facts-wrap {
 
         .intro-fact {
@@ -37,7 +39,8 @@
             position: relative; top: -.05em;
         }
 
-    .fees-fact {
+        .fees-fact {
+            display: block;
             width: 80%;
             clear: both;
 
@@ -75,16 +78,47 @@
             @include media( $tablet-and-bigger ) {
                 @include make-table-column ( .5 );
             }
+
+            .appendix {
+                margin: .5em 0 .3em;
+                line-height: 1.2;
+            }
         }
-    }
 
-    .fact__list {
+        .fact__list {
 
-        .tag {
-            font-size: 90%;
-            margin: 0 .2em;
-            color: $grey-dusty-gray;
-            font-weight: $weight-light;
+            .tags {
+                margin-left: .7em;
+                &.ico:before {
+                    font-size: 100%;
+                    margin-right: 0;
+                }
+            }
+
+            .collapsible__control {
+                font-size: 90%;
+                padding-top: 0;
+
+                @include media( $desktop-and-bigger ) {
+                    text-align: left;
+
+                    & > a { padding-left: 0; }
+                }
+            }
+        }
+
+        .fact__row {
+            display: block;
+
+            // TODO: Refactor
+            .title, .note {
+                display: inline-block;
+                padding-top: 0;
+                vertical-align: top;
+            }
+
+            .note { padding-top: .1em;}
+            .title { margin-right: .4em; }
         }
     }
 }

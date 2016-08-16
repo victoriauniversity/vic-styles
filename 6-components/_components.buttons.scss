@@ -35,11 +35,13 @@ $bubble-size: 2.5em;
 
     @include media( $desktop-and-smaller ) {
         margin: 1em;
-        right: auto; bottom: auto;
-        top: 0; left: 0;
+        right: auto;
+        bottom: auto;
+        top: 0;
+        left: 0;
     }
 
     @include media( $mobile-large-and-smaller ) {
-        margin-top: 3.8em;
+        margin-top: 2.7em;
     }
 }

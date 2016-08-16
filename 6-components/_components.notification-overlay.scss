@@ -1,0 +1,48 @@
+/*===============================
+=       NOTIFICATION OVERLAY    =
+===============================*/
+
+.notification-overlay {
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: $z-index-max;
+    @include position( fixed, 0 );
+    background-color: rgba( $white, .98 );
+    text-align: center;
+
+    h1 { margin: 0; }
+
+    .logo.large { margin: 3em 0 1.5em; }
+
+    @include media( $mobile-large-and-smaller ) {
+        .logo.large { margin: 2em 0 .7em; }
+
+        h1, h2 { line-height: 1.2; }
+
+        h1 { font-size: 1.7em; }
+        h2 {
+            font-size: 1.4em;
+            margin-bottom: .2em;
+        }
+    }
+
+    /* Notification types */
+
+    // Error
+    .err {}
+
+    // Progress
+    .loading {
+        h1 {
+            color: $green-bottle-green;
+            font-weight: $weight-semibold;
+        }
+
+        .ico.spin
+        {
+            vertical-align: middle;
+            margin: .2em;
+        }
+    }
+}
+
