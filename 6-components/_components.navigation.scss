@@ -137,7 +137,7 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
                 border-bottom: $menu-tabbed-item-triangle-height solid $menu-tabbed-item-active-bg-colour;
             }
 
-            > a {
+            > li > a {
                 padding: .6em .4em .4em .4em;
             }
 

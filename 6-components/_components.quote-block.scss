@@ -71,6 +71,7 @@ $bg-color: $grey-gallery;
             h4 {
                 margin-bottom: 0;
             }
+
             .quote-text {
                 color: $grey-mako;
                 text-indent: 0;
@@ -110,9 +111,27 @@ $bg-color: $grey-gallery;
     }
 }
 
-.block__quote .quote-wrap .quote-body {
+.block__quote .quote-wrap {
+
     @include media ( $mobile-large-and-smaller) {
-        .holder { overflow: inherit; }
-        header { margin-top: 1em;  }
+        .quote-body {
+            > header { margin-top: 1em; }
+            .holder { overflow: inherit; }
+        }
+    }
+
+    @include media ( $mobile ) {
+        .quote-body {
+            @include display( flex );
+            @include align-items( stretch );
+            @include flex-direction( column-reverse );
+
+            text-align: center;
+        }
+
+        .quote-image {
+            float: none;
+            text-align: center;
+        }
     }
 }
