@@ -21,7 +21,6 @@ $menu-color: $green-hippie;
     color: $white;
     font-weight: 600;
     font-family: $heading-font-family;
-    display: block;
     padding: 0.3em 0.75em;
 }
 
@@ -31,17 +30,46 @@ $menu-color: $green-hippie;
     h2 {
         margin-bottom: 0;
         font-size: 1.25em;
+        display: block;
+        padding: 0.3em 0;
+        @extend %menu-border;
         a {
-            @extend %menu-border;
             @extend %menu-font;
-            @extend %menu-li;
+            &:before {}
+        }
+        .ico {
+            cursor: pointer;
+            float: right;
+            margin-right: 1.2em;
+            color: $white;
+            font-size: 1.25em;
+            vertical-align: baseline;
+            &.cancel {
+                font-size: 1em;
+            }
+            @include media($desktop-and-bigger) {
+                display: none;
+            }
         }
     }
     .top-level {
+        transition: .7s ease all;
+        max-height: 900px;
+        &.ng-hide {
+            max-height: 0;
+            opacity: 0;
+            @include media($desktop-and-bigger) {
+                display: block !important;
+                max-height: none;
+                opacity: 1;
+            }
+        }
+        &.ng-show {}
         li {
             .vuw-menu-item {
                 @extend %menu-li;
                 @extend %menu-font;
+                display: block;
             }
         }
         & > li {

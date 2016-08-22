@@ -15,20 +15,17 @@ $grid-area-active-bg: $green-victoria !default;
 // Standard grid list containing areas and their previews
 .area {
     padding: $grid-area-margin;
-
     .title {
         display: table;
         margin: 0;
-        @include size( 100% 3.3em );
+        @include size( 100% 3.3em);
         font-weight: $weight-light;
         line-height: 1.3;
         text-align: center;
         color: $grid-area-title-colour;
-
         .ico {
             margin-left: .7em;
         }
-
         > a {
             display: table-cell;
             padding: .5em 1em;
@@ -53,22 +50,18 @@ $grid-area-active-bg: $green-victoria !default;
             padding-top: $base-padding / 3;
         }
     }
-
     // Active area showing 'preview'
     .expanded & {
         .title {
             position: relative;
             top: .1em;
             color: $grid-area-hover-title-colour;
-
             // Flick the caret!
             .ico {
                 margin-left: .4em;
             }
-
             > a {
                 background-color: $grid-area-active-bg;
-
                 @include hoverify() {
                     color: inherit;
                 }
@@ -87,17 +80,16 @@ $grid-area-active-bg: $green-victoria !default;
         text-align: left;
         @include media( $desktop-and-bigger) {
             margin-top: 2.2em;
-
         }
     }
 }
+
 
 /* ===== TAG LIST ========================================================== */
 
 // settings
 $tag-bg-color: $blue-humming-bird;
 // ---------------------
-
 //use for a heading before the inline list
 .tag-list-title {
     float: left;
@@ -111,9 +103,14 @@ $tag-bg-color: $blue-humming-bird;
         padding: 0.3em 0.6em;
         margin: 0.2em;
         a.active {
+            padding-right: 24px;
             &:after {
                 padding-left: 0.4em;
-                @include iconify( $ico-code: $ico-code-ok);
+                // display:;
+
+                margin-right: -24px;
+                @include iconify( $ico-code: $ico-code-ok)
+                display: inline;
             }
         }
     }
