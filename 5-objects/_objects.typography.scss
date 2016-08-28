@@ -15,9 +15,8 @@
     }
 
     // Unordered list with own square bullet
-    $list-bullet-size:          .5em;
-    $list-bullet-indent-left:   .5em;
-    $list-bullet-indent-right:  1.15em;
+    $list-bullet-indent-left:   .6em;
+    $list-bullet-indent-right:  1.5em;
 
     ul, ol {
         > li {
@@ -38,17 +37,15 @@
 
     ul {
         margin-left: 0;
-        padding-left: $list-bullet-indent-left + $list-bullet-indent-right + $list-bullet-size;
-        text-indent: -( $list-bullet-indent-right + $list-bullet-size );
-        list-style-position: outside;
+        padding-left: $list-bullet-indent-left + $list-bullet-indent-right;
+        text-indent: -1 * $list-bullet-indent-right;
+        list-style: none;
 
         > li {
-            line-height: $base-line-height;
+            @include make-list-square-bullet( $list-bullet-indent-right );
 
-            @include make-list-square-bullet( $list-bullet-size ) {
-                position: relative; top: -.1em;
-                margin-right: .9em;
-            }
+            // Turn the indentation off for some basic elements
+            a, span, div { text-indent: 0; }
         }
     }
 
@@ -57,7 +54,7 @@
 
         > li {
             margin-left: $base-margin;
-            padding-left: $list-bullet-indent-right - $list-bullet-size;
+            padding-left: $list-bullet-indent-left;
         }
     }
 }
@@ -73,7 +70,6 @@
 
     a { font-size: 1.2em; }
 }
-
 
 .tooltip-inline,
 .tooltip-icon {
