@@ -367,3 +367,25 @@ $popup-border:   #fff;
 
     // Feedback popup
     .feedback {}
+
+/** Warning block. */
+.warning-strip {
+
+    .block {
+        background-color: $yellow-spring-wood;
+
+        @include media ( $tablet-and-bigger ) {
+            margin: $base-margin;
+        }
+    }
+
+    // Implies it *MUST BE* used as a block rather than a strip (~nested element)
+    &.block-container {
+        .block {
+            margin-top: 0;
+            margin-bottom: $base-margin;
+        }
+
+        .content-simple { padding-top: $base-margin;}
+    }
+}
