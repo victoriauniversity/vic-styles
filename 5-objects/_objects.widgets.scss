@@ -71,20 +71,66 @@ $tile-bg:      #f0f0f0;
         color: $grey-dusty-gray;
     }
 
-    &:nth-child(odd){
-        margin-left: 0;
-    }
+    &:nth-child(odd){ margin-left: 0; }
+    &:nth-child(even){ margin-right: 0; }
 
-    &:nth-child(even){
-        margin-right: 0;
+    .quals-listing & {
+        clear: both;
+
+        &:first-child { margin-top: .75em; }
+
+        .tile__header { margin: 1em $tile-padding; }
+
+        .code {
+            display: inline-block;
+            float: none;
+            font-size: inherit;
+            margin: 0;
+        }
+
+        .btn-holder {
+            float: right;
+            text-align: right;
+            min-width: 15em;
+            margin: .5em 0 1.5em 1.5em;
+
+            .btn { margin: 0; }
+        }
+
+        .label .ico {
+            display: inline-block;
+            width: 1em;
+        }
+
+        .tile__list {
+            margin: 0 0 .8em;
+
+            > li {
+                display: inline-block;
+                margin-right: 1.5em;
+            }
+
+            .tooltip-icon { margin-left: 0; }
+        }
+
+        .description { display: block; max-width: 40em; }
+
+        /** Tiles' responsivity */
+        @include media ( $mobile-large-and-smaller ) {
+            .btn-holder {
+                float: none;
+                text-align: center;
+            }
+        }
     }
 }
 
 .tile__header { margin: $tile-padding; }
 
-.tile__list {
-    margin: 0 $tile-padding 1em $tile-padding;
+.tile__body,
+.tile__list { margin: 0 $tile-padding 1em; }
 
+.tile__list {
     > li {
         margin-bottom: .3em;
 
@@ -180,6 +226,8 @@ $tile-bg:      #f0f0f0;
         .value { display: block; }
     }
 }
+
+/** Cards */
 
 
 /** Collapsible/Expandable block. */

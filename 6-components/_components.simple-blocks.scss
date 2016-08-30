@@ -1,3 +1,5 @@
+
+
 /*===============================
 =           FUN FACT BLOCK      =
 ===============================*/
@@ -39,7 +41,6 @@ $fun-fact-bg-color: $grey-gallery;
     }
 
 }
-
 
 
 
@@ -209,14 +210,36 @@ $nm-bg-color: $grey-gallery;
 
 $mar-bot: .3em;
 
+
+/** Related study options . */
+
 .block__study-options {
+
+    h2 { margin-bottom: 0; }
 
     .degree-block {
         padding: .4em 1em;
     }
-
 }
 
+    // List of tile-like qualifications
+    .quals-listing {
+        margin-top: .5em;
+
+        .abstract { margin-bottom: .7em; }
+    }
+
+
+/** Collapsible control is LEFT inside smaller of the two column block. */
+@include media ( $desktop-and-bigger ) {
+    .two-col-layout .block:last-child .collapsible__control {
+        text-align: left;
+    }
+}
+
+
+//TODO: Remove after it's removed from the app.
+// DEPRECATED! Use tiles instead.
 .degree-block {
     @include outer-container;
     border-left: 6px solid $grey-alto;
