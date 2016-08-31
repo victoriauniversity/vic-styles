@@ -311,6 +311,13 @@ $mar-bot: .3em;
     }
 }
 
+/** Example courses block (based on `related-areas`) */
+.example-courses {
+    .grid-list { font-size: 85%; }
+    .title { height: 3em; }
+}
+
+
 
 /*===============================
 =     IMAGES BLOCK             =
@@ -321,7 +328,8 @@ $mar-bot: .3em;
         width: 100%;
         max-width: 500px;
         border-bottom: 2px solid transparent;
-        @include hoverify () {
+
+        @include hoverify() {
             border-bottom: 2px solid $blue-endeavoura;
         }
     }

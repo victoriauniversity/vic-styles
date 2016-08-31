@@ -74,6 +74,7 @@ $tile-bg:      #f0f0f0;
     &:nth-child(odd){ margin-left: 0; }
     &:nth-child(even){ margin-right: 0; }
 
+    /** Tile inside related qualifications listing. */
     .quals-listing & {
         clear: both;
 
@@ -84,15 +85,17 @@ $tile-bg:      #f0f0f0;
         .code {
             display: inline-block;
             float: none;
-            font-size: inherit;
             margin: 0;
+            font-size: inherit;
         }
+
+        .title { font-size: 1.25em; }
 
         .btn-holder {
             float: right;
             text-align: right;
             min-width: 15em;
-            margin: .5em 0 1.5em 1.5em;
+            margin: .2em 0 1.5em 1.5em;
 
             .btn { margin: 0; }
         }
@@ -113,11 +116,19 @@ $tile-bg:      #f0f0f0;
             .tooltip-icon { margin-left: 0; }
         }
 
-        .description { display: block; max-width: 40em; }
+        .description {
+            display: block;
+            max-width: 40em;
+        }
 
-        /** Tiles' responsivity */
+        /** Tiles' responsivity. */
+        @include media ( $tablet-and-smaller ) {
+            .tile__list > li { display: block; }
+        }
+
         @include media ( $mobile-large-and-smaller ) {
             .btn-holder {
+                margin-top: 1.2em;
                 float: none;
                 text-align: center;
             }
@@ -191,14 +202,14 @@ $tile-bg:      #f0f0f0;
 @include media ( $tablet-and-smaller ) {
     .tiles {
         -webkit-column-count: 1; /* Chrome, Safari, Opera */
-        -moz-column-count: 1; /* Firefox */
-        column-count: 1;
+           -moz-column-count: 1; /* Firefox */
+                column-count: 1;
     }
 
     .tile {
         &:nth-child(odd),
         &:nth-child(even) {
-            margin-left: 0;
+            margin-left:  0;
             margin-right: 0;
         }
     }
@@ -273,8 +284,7 @@ $collapsible-transparency-height: 2.5em;
         }
     }
 
-    .expanded > & {
-    }
+    .expanded > & {}
 }
 
 /** Generic listing with cards placed in two columns. */
