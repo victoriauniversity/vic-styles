@@ -37,13 +37,8 @@ $ico-margin:       .9em;
     }
 
     // Sizing (normal size by default)
-    &.large {
-        font-size: 100%;
-    }
-
-    &.small {
-        font-size: 60%;
-    }
+    &.large { font-size: 100%; }
+    &.small { font-size: 60%; }
 
     // Standard icon styles
     .ico {
@@ -63,24 +58,28 @@ $ico-margin:       .9em;
     }
 
     &.secondary {
-        background-color: $sec-bg;
-        color: $grey-mako;
         padding: .6em 1em;
         line-height: 1;
+        background-color: $sec-bg;
+        color: $grey-mako;
 
-        @include hoverify() {
-            background-color: $sec-hover-bg;
-            // color: $grey-dusty-gray;
-        }
+        @include hoverify() { background-color: $sec-hover-bg; }
     }
 
     &.disabled {
         background-color: #BBB;
         cursor: no-drop;
     }
+
+    // Sub-label
+    > small {
+        display: block;
+        text-align: left;
+        font-size: 85%;
+        font-weight: $weight-light;
+        color: $grey-alto;
+    }
 }
-
-
 
 
 

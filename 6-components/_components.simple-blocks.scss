@@ -1,3 +1,5 @@
+
+
 /*===============================
 =           FUN FACT BLOCK      =
 ===============================*/
@@ -39,7 +41,6 @@ $fun-fact-bg-color: $grey-gallery;
     }
 
 }
-
 
 
 
@@ -139,7 +140,6 @@ $nm-bg-color: $grey-gallery;
 
         a {
             text-decoration: none;
-            display: flex; // Safari (OS X) fix to ignore spacing on the end of the title
 
             .ico {
                 display: block;
@@ -185,6 +185,8 @@ $nm-bg-color: $grey-gallery;
             }
         }
     }
+
+    ul & { margin-left: .3em; }
 }
 
 .related-degree,
@@ -208,14 +210,36 @@ $nm-bg-color: $grey-gallery;
 
 $mar-bot: .3em;
 
+
+/** Related study options . */
+
 .block__study-options {
+
+    h2 { margin-bottom: 0; }
 
     .degree-block {
         padding: .4em 1em;
     }
-
 }
 
+    // List of tile-like qualifications
+    .quals-listing {
+        margin-top: .5em;
+
+        .abstract { margin-bottom: .7em; }
+    }
+
+
+/** Collapsible control is LEFT inside smaller of the two column block. */
+@include media ( $desktop-and-bigger ) {
+    .two-col-layout .block:last-child .collapsible__control {
+        text-align: left;
+    }
+}
+
+
+//TODO: Remove after it's removed from the app.
+// DEPRECATED! Use tiles instead.
 .degree-block {
     @include outer-container;
     border-left: 6px solid $grey-alto;
@@ -287,6 +311,13 @@ $mar-bot: .3em;
     }
 }
 
+/** Example courses block (based on `related-areas`) */
+.example-courses {
+    .grid-list { font-size: 85%; }
+    .title { height: 3em; }
+}
+
+
 
 /*===============================
 =     IMAGES BLOCK             =
@@ -297,7 +328,8 @@ $mar-bot: .3em;
         width: 100%;
         max-width: 500px;
         border-bottom: 2px solid transparent;
-        @include hoverify () {
+
+        @include hoverify() {
             border-bottom: 2px solid $blue-endeavoura;
         }
     }

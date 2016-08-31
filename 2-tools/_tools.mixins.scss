@@ -47,11 +47,13 @@
  * @size            - Size of the square.
  * @colour          - Colour of the bullet.
  */
-@mixin make-list-square-bullet( $size, $colour: $text-fade-colour ) {
+@mixin make-list-square-bullet( $indent-right, $colour: $text-fade-colour ) {
     &:before {
-        @include objectify( inline-block, $position: static );
-        @include size( $size );
-        background-color: $colour;
+        @include objectify( block, "\25A0" );
+        top: -.1em;
+        float: left;
+        width: $indent-right;
+        color: $colour;
 
         @content;
     }

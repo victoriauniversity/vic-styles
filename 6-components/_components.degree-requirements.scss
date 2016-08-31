@@ -140,6 +140,10 @@
             padding: .5em $base-margin;
 
             & + .block-container .block:first-child { padding-top: 0; }
+
+            & > a {
+                display: flex; // Safari (OS X) fix to ignore spacing on the end of the title
+            }
         }
 
         &:last-child .container-opened { border-bottom: 0; margin-bottom: 0; }
