@@ -13,9 +13,7 @@ $action-promo-hover: darken( $green-victoria, 11% );
     height: auto;
     padding: 1.5em $base-margin;
 
-    .promo-body .promo-action {
-        margin-top: 0;
-    }
+    .promo-body .promo-action { margin-top: 0; }
 
     .cover-holder {
         img {
@@ -57,26 +55,36 @@ $action-promo-hover: darken( $green-victoria, 11% );
                 }
             }
         }
-
     }
 }
 
 
 /** Set of images laid next to/behind each other. */
-.block__images {
-    text-align: center;
+//TODO: Redesign and inherit/share styles with other media types
+.block__images { text-align: center; }
 
-    img {
-        display: block;
-        margin: 0 .7em .7em .7em;
+    .image__wrap {
+        margin: .7em;
 
+        img { display: block; }
+
+        // Full size
+        &.stretched  { width: 100%; }
+
+        // Narrowed down
+        &.narrow { max-width: 970px; }
+
+        &.narrow,
         &.stretched {
-            width: 100%;
-            margin-left: 0;
-            margin-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+
+            &:last-child { margin-bottom: 0; }
+            img { width: 100%; }
         }
+
+        .caption { margin-top: .5em; }
     }
-}
 
 
 /** Logos laid next to each other in the available column */
