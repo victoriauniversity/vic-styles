@@ -447,3 +447,9 @@ $popup-border:   #fff;
         .content-simple { padding-top: $base-margin;}
     }
 }
+
+/** Simple warning wrapper. */
+.warning {
+    background-color: $yellow-spring-wood;
+    padding: 1em;
+}
