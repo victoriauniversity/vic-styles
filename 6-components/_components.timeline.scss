@@ -1,0 +1,71 @@
+/*===============================
+=       DL Timeline   =
+===============================*/
+
+$timeline-color: $grey-silver;
+dl.timeline {
+    position: relative;
+    margin-top: 2em;
+    &::before {
+        height: 20px;
+        top: 0;
+        width: 20px;
+        background-color: $white;
+        content: '';
+        left: 50%;
+        position: absolute;
+        z-index: 2;
+    }
+    dt,
+    dd {
+        float: left;
+        width: 50%;
+    }
+    dt {
+        text-align: right;
+        clear: left;
+        padding-right: 2em;
+        padding-bottom: 1.5em;
+
+        &:last-child, &:first-child {
+             strong {
+                font-size: 1.1em;
+                line-height: 1.2;
+                padding-left: 1.5em;
+            }
+        }
+    }
+    dd {
+        text-align: left;
+        position: relative;
+        border-left: 2px solid $timeline-color;
+        padding-bottom: 2.5em;
+        &:last-child {
+            border-left: 2px solid transparent;
+
+        }
+        & p,
+        strong {
+            padding-left: 2em;
+        }
+        &::before {
+            height: 30px;
+            left: -16px;
+            width: 30px;
+            background-color: $timeline-color;
+            border-radius: 50%;
+            content: '';
+            display: block;
+            position: absolute;
+            top: 1px;
+            z-index: 2;
+        }
+    }
+    .title {
+        font-size: 1.2em;
+        line-height: 1.2;
+        padding-left: 1.5em;
+    }
+}
+
+

@@ -1,75 +1,84 @@
-/*===============================
+    /*===============================
 =    NESTED HIGHLIGT LIST       =
 ===============================*/
-
-.highlight-list {
-    padding: 0;
-    @include media ($tablet-and-bigger) {
-        padding: 0 1.5em;
-    }
-    li.level-one {
-        padding: 0.5em;
+    
+    .highlight-list {
+        padding: 0;
         @include media ($tablet-and-bigger) {
-            padding: 1.2em;
+            padding: 0;
         }
-        background-color: $grey-gallery;
-        border-left: 6px solid $grey-alto;
-        margin-bottom: 0.2em;
-        // &.inline {
-        //     display: -webkit-flex;
-        //     display: flex;
-        // }
-        h3 {
-            font-size: 1.2em;
-            margin-bottom: 0;
-            // padding-top: 0.3em;
-        }
-        h3,
-        h4,
-        h5 {
-            color: $grey-mine-shaft;
-        }
-        p {
-            font-size: 0.9em;
-        }
-        .greenify {
-            color: $green-victoria;
-            // font-size: 1.2em;
-        }
-        .level-two {
-            padding: 0.5em 0;
-            h5 {
-                padding: 0.5em;
-                background-color: $grey-alto;
-                margin-bottom: 0;
-                margin-top: 0.4em;
+        li.level-one {
+            padding: 0.5em;
+            @include media ($tablet-and-bigger) {
+                padding: 1em;
             }
-            .level-three {
-                padding: 0.5em;
-                @include media ($tablet-and-bigger) {
-                    padding: 0.1em 1.2em 0.5em 1.2em;
-                }
+            background-color: $grey-gallery;
+            border-left: 6px solid $grey-alto;
+            margin-bottom: 0.2em;
+            // &.inline {
+            //     display: -webkit-flex;
+            //     display: flex;
+            // }
+            h3 {
+                font-size: 1.2em;
+                margin-bottom: 0;
+                // padding-top: 0.3em;
+            }
+            h3,
+            h4,
+            h5 {
+                color: $grey-mine-shaft;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            .greenify {
+                color: $green-victoria;
+                // font-size: 1.2em;
+            }
+            .level-two {
+                padding: 0;
                 background-color: $grey-alto;
-                // margin-top: 0.3em;
-                p {
-                    margin-top: 0.4em;
+                h5 {
                     padding: 0.5em;
-                    background-color: $grey-gallery;
-                    border-left: 6px solid $grey-silver;
+                    margin-bottom: 0;
                 }
-                .level-four {
-                    padding: 0.4em 0 0 0;
-                    border-left: 6px solid $grey-silver;
-                    p {
-                        background-color: $grey-silver;
-                        font-size: 0.8em;
-                        margin-top: 0.4em;
-                        padding: 0.5em 0.5em 0.5em 1.2em;
-                        // color: $grey-mine-shaft;
+                .sub-list {
+                    padding: 0 1.2em;
+                    li {
+                        border-bottom: 1px solid #C7C7C7;
+                        padding: .5em .15em;
+                        &:last-child {
+                            border-bottom: none;
+                        }
                     }
-                    // border-left: 3px solid $grey-silver;
+                }
+                .level-three {
+                    padding: 0.5em;
+                    @include media ($tablet-and-bigger) {
+                        padding: 0.1em 1.2em 0.5em 1.2em;
+                    }
+                    background-color: $grey-alto;
+                    // margin-top: 0.3em;
+                    p {
+                        margin-top: 0.4em;
+                        padding: 0.5em;
+                        background-color: $grey-gallery;
+                        border-left: 6px solid $grey-silver;
+                    }
+                    .level-four {
+                        padding: 0.4em 0 0 0;
+                        border-left: 6px solid $grey-silver;
+                        p {
+                            background-color: $grey-silver;
+                            font-size: 0.8em;
+                            margin-top: 0.4em;
+                            padding: 0.5em 0.5em 0.5em 1.2em;
+                            // color: $grey-mine-shaft;
+                        }
+                        // border-left: 3px solid $grey-silver;
+                    }
                 }
             }
         }
     }
-}

@@ -111,11 +111,11 @@ $menu-color: $green-hippie;
             vertical-align: baseline;
             &:first-child {
                 vertical-align: top;
-                @include make-table-column(0.22);
+                @include make-table-column(0.20);
             }
             // Right column
             &:last-child {
-                @include make-table-column(0.25);
+                @include make-table-column(0.23);
                 padding: 0;
             }
         }

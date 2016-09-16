@@ -78,13 +78,17 @@
     }
     // Hide stuff we don't need to print
     #site-header,
-    .cover-holder,
-    .cover-overlay,
+    .vuw-navigation-menu,
     .menu-tabbed,
-    .need-more-block,
-    .block__video,
+    .need-more,
+    .fees-est,
+    .course-offerings,
+    .victoria-contact,
+    static-info,
+    .tag-list li a, 
+
     .slide-show-block,
-    .banner-with-cover .btn,
+
     .block .btn,
     .two-btn-nav,
     .btn {
@@ -92,6 +96,9 @@
     }
     .menu-tabbed .active, .print-only {
         display: block!important;
+    }
+    .tag-list li a.active {
+        display: inline !important;
     }
     .banner-with-cover .intro,
     .victoria-contact .centraliser,
