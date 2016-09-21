@@ -334,9 +334,7 @@ $contact-portrait-size: 150px;
     .contacts {}
 
     // Card's body
-    .card-info {
-        overflow: hidden;
-    }
+    .card-info { overflow: hidden; }
 
     @include media ( $tablet-and-smaller ) {
         margin-left: 0;
@@ -345,7 +343,7 @@ $contact-portrait-size: 150px;
     }
 
     @include media ( $mobile-large-and-smaller ) {
-        text-align: center;
+        text-align: left;
 
         &:not(:last-child){
             border-bottom: 1px solid #EEE;
@@ -446,4 +444,10 @@ $popup-border:   #fff;
 
         .content-simple { padding-top: $base-margin;}
     }
+}
+
+/** Simple warning wrapper. */
+.warning {
+    background-color: $yellow-spring-wood;
+    padding: 1em;
 }
