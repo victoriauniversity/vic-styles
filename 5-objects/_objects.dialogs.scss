@@ -64,9 +64,9 @@ $dialog-padding:   1em;
 
 
 .dialog {
+    overflow-y: scroll;
+
     font-size: 1.2em;
-    padding-bottom: 160px;
-    padding-top: 160px;
 
     h1 {
         margin-top: 0;
@@ -79,19 +79,13 @@ $dialog-padding:   1em;
     @include media( $desktop-and-bigger ) {
 
         .two-col-layout.block-container .block {
-            &:first-child, &:last-child{
-                width: 50%
-            }
+            &:first-child,
+            &:last-child { width: 50%; }
         }
     };
 
-    .sector.separated {
-        border-color: #DDD;
-    }
-
-    .abstract {
-        width: 70%;
-    }
+    .sector.separated { border-color: #DDD; }
+    .abstract { width: 70%; }
 
     .content-simple .note {
         margin-top: .75em;
@@ -107,9 +101,7 @@ $dialog-padding:   1em;
         > label { margin-right: .3em; }
     }
 
-    .form__select {
-        width: 40%;
-    }
+    .form__select { width: 40%; }
 
 
     &.ngdialog-closing .ngdialog-content {
@@ -118,15 +110,16 @@ $dialog-padding:   1em;
     }
 
     .ngdialog-content {
-      -webkit-animation: ngdialog-flyin .5s;
-      animation: ngdialog-flyin .5s;
-      background: #f0f0f0;
-      border-radius: 5px;
-      color: #444;
-      margin: 0 auto;
-      position: relative;
-      width: 85%;
-      max-width: $dialog-max-width;
+        -webkit-overflow-scrolling: touch;
+        -webkit-animation: ngdialog-flyin .5s;
+        animation: ngdialog-flyin .5s;
+        background: #f0f0f0;
+        border-radius: 5px;
+        color: #444;
+        margin: 160px auto;
+        position: relative;
+        width: 85%;
+        max-width: $dialog-max-width;
     }
 
     // x button
@@ -147,27 +140,20 @@ $dialog-padding:   1em;
       }
 
       @include hoverify() {
-          &:before {
-              color: #777;
-          }
+          &:before { color: #777; }
       }
     }
 
-    .ngdialog-message {
-        margin-bottom: .5em;
-    }
-
-    .ngdialog-input {
-        margin-bottom: 1em;
-    }
+    .ngdialog-message {  margin-bottom: .5em; }
+    .ngdialog-input { margin-bottom: 1em; }
 
     .ngdialog-input textarea:focus,
     .ngdialog-input input[type="text"]:focus,
     .ngdialog-input input[type="password"]:focus,
     .ngdialog-input input[type="email"]:focus,
     .ngdialog-input input[type="url"]:focus {
-      box-shadow: inset 0 0 0 2px #8dbdf1;
-      outline: none;
+        box-shadow: inset 0 0 0 2px #8dbdf1;
+        outline: none;
     }
 
     .ngdialog-buttons {
@@ -192,35 +178,34 @@ $dialog-padding:   1em;
       text-transform: uppercase;
     }
 
-    .ngdialog-open .app { position: fixed;  } // Stops Safari on iOS from scrolling
-
     @media (max-width: 568px) {
-      .ngdialog-button:focus {
-        -webkit-animation: none;
-        animation: none;
-      }
+        .ngdialog-button:focus {
+            -webkit-animation: none;
+            animation: none;
+        }
     }
 
     @include media( $tablet-and-smaller ) {
-        padding: 1em;
 
-        .abstract {
-            width: 100%;
-        }
-
-        .form__select {
-            width: auto;
-        }
-
+        .abstract { width: 100%; }
+        .form__select { width: auto; }
         .ngdialog-content {
             width: auto;
+            margin: 1em;
         }
+
     }
 
     @include media( $mobile ) {
-        .form__select {
-            width: 90%;
-        }
+        .form__select { width: 90%; }
     }
 }
 
+
+// Stops Safari on iOS from background scrolling
+.ngdialog-open {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
