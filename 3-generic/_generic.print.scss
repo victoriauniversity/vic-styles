@@ -2,9 +2,7 @@
 =            PRINT STYLES            =
 ====================================*/
 
-
 // TODO: Requires extensive redesign!
-
 // _print.scss
 // -------------------------------------------------------------
 @media print {
@@ -57,9 +55,15 @@
     h3 {
         page-break-after: avoid;
     }
+    ul, ol, .clos {
+        page-break-inside: avoid;
+    }
     #{headings( 1, 6 )} {
         margin-left: 0 !important;
         margin-right: 0 !important;
+    }
+    .view-large {
+        font-size: 1em !important;
     }
     h1 {
         font-size: 1.8em !important;
@@ -76,6 +80,9 @@
     h5 {
         // font-size: 1em !important;
     }
+    ul {
+        list-style-type: square !important;
+    }
     // Hide stuff we don't need to print
     #site-header,
     .vuw-navigation-menu,
@@ -85,16 +92,15 @@
     .course-offerings,
     .victoria-contact,
     static-info,
-    .tag-list li a, 
-
+    .tag-list li a,
     .slide-show-block,
-
     .block .btn,
     .two-btn-nav,
-    .btn {
+    .btn, course-offerings {
         display: none !important;
     }
-    .menu-tabbed .active, .print-only {
+    .menu-tabbed .active,
+    .print-only {
         display: block!important;
     }
     .tag-list li a.active {
@@ -108,7 +114,8 @@
         text-align: left !important;
     }
     .banner-with-cover .intro,
-    .degree-req, .block {
+    .degree-req,
+    .block {
         padding: 0.5em 1.5em !important;
     }
     .banner-with-cover .intro,
@@ -146,29 +153,25 @@
         padding-top: 0 !important;
         padding-bottom: 0 !important;
     }
-
     /** Content switcher - show label only + toggle's Yes/No. */
     .content-switcher {
         .group-toggle {
-            input[type=checkbox]{
+            input[type=checkbox] {
                 & + label {
                     width: auto;
-
-                    > span:after{
+                    > span:after {
                         content: "No";
                         font-weight: $weight-bold;
                     }
                 }
-
                 &:checked + label {
-                    > span:after{
+                    > span:after {
                         content: "Yes";
                     }
                 }
             }
         }
     }
-
     /** Attribution bubble - Don't show. */
     .bubble-attribution {
         display: none !important;
