@@ -1,9 +1,8 @@
 /*=============================================
 =            OLD SITE NAVIGATION            =
 =============================================*/
+
 $bar-color: $green-victoria-study;
-
-
 .print-only {
     display: none;
 }
@@ -34,16 +33,15 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
         display: block;
         margin-left: auto;
         margin-right: auto;
-        background-image: url( "#{$path-imgs}/vic-logo-mobile.png" ); // Tablet and smaller
+        background-image: url("#{$path-imgs}/vic-logo-mobile.png"); // Tablet and smaller
         background-size: 100%;
-
         @include media ($mobile) {
             margin-left: 1em;
             background-size: 90%;
             background-position: 0 5%;
         }
         @include media ($desktop-and-bigger) {
-            background-image: url( "#{$path-imgs}/logo_desktop-2x.png" ); // Desktop and bigger
+            background-image: url("#{$path-imgs}/logo_desktop-2x.png"); // Desktop and bigger
             float: left;
             height: 88px;
             width: 22.5%;
@@ -66,7 +64,6 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
         }
         max-height: 1000px;
         transition: .7s ease all;
-
         &.ng-hide {
             @include media ($tablet-and-smaller) {
                 max-height: 0;
@@ -159,73 +156,6 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                 }
             }
         }
-        .search-wrap {
-            @include media ($desktop-and-bigger) {
-                // width: 70%;
-                clear: both;
-                display: block;
-                // float: left;
-                width: 100%;
-                max-height: 160px;
-                transition: .2s ease all;
-                opacity: 1;
-
-                &.ng-hide {
-                    transition: .7s ease all;
-                    max-height: 0;
-                    opacity: 0;
-                    padding: 0;
-                }
-            }
-            .search-form {
-                margin-top: 1em;
-                background-color: $grey-alto;
-                padding: 1em;
-                border-radius: $base-border-radius;
-                @include media ($desktop-and-bigger) {
-                    // display: none;
-                    margin-top: 0;
-                    margin-bottom: 1em;
-                    // float: left;
-                    margin-right: auto;
-                    margin-left: auto;
-                    width: 70%;
-                    max-height: 160px;
-                    transition: .7s ease all;
-                    opacity: 1;
-                    input[type=text] {
-                        // float: left;
-                        width: 79%;
-                        margin-bottom: 0;
-                        margin-right: 2%;
-                        max-height: 160px;
-                        transition: .7s ease all;
-                        opacity: 1;
-                        &.ng-hide {
-                            max-height: 0;
-                            opacity: 0;
-                            padding: 0;
-                        }
-                    }
-                    input.btn {
-                        width: 18%;
-                        margin: 1px 0;
-                    }
-                    &.ng-hide {
-                        max-height: 0;
-                        opacity: 0;
-                        padding: 0;
-                    }
-                }
-                input.btn {
-                    margin: 0;
-                    outline: 0;
-                    border: 0;
-                    font-size: 1.3em;
-                    max-height: 40px;
-                }
-            }
-        }
     }
     .secondary-nav {
         display: none;
@@ -258,9 +188,77 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
         }
     }
     .lines-button {
-        @include position (absolute, 0 0 null null);
+        @include position (absolute,
+        0 0 null null);
         margin-right: .5em;
         margin-top: .28em;
+    }
+}
+
+.search-wrap {
+    @include media ($desktop-and-bigger) {
+        // width: 70%;
+        clear: both;
+        display: block;
+        // float: left;
+        width: 100%;
+        max-height: 160px;
+        transition: .2s ease all;
+        opacity: 1;
+        &.ng-hide {
+            transition: .7s ease all;
+            max-height: 0;
+            opacity: 0;
+            padding: 0;
+        }
+    }
+    .search-form {
+        margin-top: 1em;
+        background-color: $grey-alto;
+        padding: 1em;
+        border-radius: $base-border-radius;
+        @include media ($desktop-and-bigger) {
+            // display: none;
+            margin-top: 0;
+            margin-bottom: 1em;
+            // float: left;
+            margin-right: auto;
+            margin-left: auto;
+            width: 70%;
+            max-height: 160px;
+            transition: .7s ease all;
+            opacity: 1;
+            input[type=text] {
+                // float: left;
+                width: 79%;
+                margin-bottom: 0;
+                margin-right: 2%;
+                max-height: 160px;
+                transition: .7s ease all;
+                opacity: 1;
+                &.ng-hide {
+                    max-height: 0;
+                    opacity: 0;
+                    padding: 0;
+                }
+            }
+            input.btn {
+                width: 18%;
+                margin: 1px 0;
+            }
+            &.ng-hide {
+                max-height: 0;
+                opacity: 0;
+                padding: 0;
+            }
+        }
+        input.btn {
+            margin: 0;
+            outline: 0;
+            border: 0;
+            font-size: 1.3em;
+            max-height: 40px;
+        }
     }
 }
 
@@ -358,7 +356,9 @@ $transition: .3s; // increase this to see the transformations in slow-motion
 }
 
 .testlink {
-    font-size: 70%; opacity: .4; margin: 1em;
+    font-size: 70%;
+    opacity: .4;
+    margin: 1em;
     @include hoverify() {
         opacity: 1;
     }
