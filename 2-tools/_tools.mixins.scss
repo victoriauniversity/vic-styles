@@ -49,11 +49,12 @@
  */
 @mixin make-list-square-bullet( $indent-right, $colour: $text-fade-colour ) {
     &:before {
-        @include objectify( block, "\25A0" );
+        @include objectify( block, "\25A0" ); // Square character
         top: -.1em;
         float: left;
         width: $indent-right;
         color: $colour;
+        pointer-events: none; // Removes the interference if the bullet point covers links
 
         @content;
     }
