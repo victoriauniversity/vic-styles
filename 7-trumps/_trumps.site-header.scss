@@ -1,92 +1,101 @@
 /*=============================================
-=            OLD SITE NAVIGATION            =
+=                 SITE HEADER                 =
 =============================================*/
 
-.print-only {
-    display: none;
-}
+
+.print-only { display: none; }
 
 //Special media break
 $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $tablet-grid-columns);
-#site-header {
+
+$logo-mobile-width: 11rem;
+$logo-tablet-height: 5.7rem;
+
+
+.site-header {
     position: relative;
     background-color: $black-victoria;
     border-bottom: 6px solid $green-victoria;
-    padding-top: 1.5em;
-    @include media ($desktop-and-bigger) {
-        // @include outer-container;
-        min-height: 110px;
+
+    @include media ($tablet-and-bigger) {
         padding-top: .6em;
         padding-bottom: .6em;
     }
-    // padding: 0 3em 3em;
-    a {
-        color: $white;
-    }
-    .vic-logo {
-        text-indent: -666em;
-        background-color: transparent;
-        background-repeat: no-repeat;
-        height: 50px;
-        width: 200px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        background-image: url( "#{$path-imgs}/vic-logo-mobile.png" ); // Tablet and smaller
-        background-size: 100%;
 
-        @include media ($mobile) {
-            margin-left: 1em;
-            background-size: 90%;
-            background-position: 0 5%;
+    a { color: $white; }
+
+    // Logo container
+    .logo {
+        display: block;
+
+        > a {
+            @include hoverify() { opacity: .7; }
         }
-        @include media ($desktop-and-bigger) {
-            background-image: url( "#{$path-imgs}/logo_desktop-2x.png" ); // Desktop and bigger
+
+        @include media( $tablet-and-bigger ) {
             float: left;
-            height: 88px;
-            width: 22.5%;
-            margin: .5em 0 0 .5%;
-            background-size: 192px 48px;
-            background-position: 0 47%;
-            max-width: 250px;
+            padding: 0 3em 0 .5em;
+            margin: 1.45em 0 .75em;
+            @include size( 27% auto );
+            text-align: center;
+        }
+
+        @include media( $tablet ) {
+            padding-right: 1.8em;
+            width: auto;
+
+            img { height: $logo-tablet-height; }
+        }
+
+        @include media( $desktop ) {
+            margin-top: 1.8em;
+            padding-right: 1.75em;
+            width: 23%;
+        }
+
+        @include media( $mobile-large-and-smaller ) {
+            margin: 0 .75em;
+            padding: 1.5em 0 1em;
+
+            img { width: $logo-mobile-width; }
         }
     }
+
     .main-nav {
         padding: 1em;
-        @include media ($mobile-large-and-bigger) {
-            padding: 3em;
-        }
-        @include media ($desktop-and-bigger) {
-            padding: 0;
-        }
-        @include media ($tablet-and-smaller) {
-            background-color: $black;
-        }
         max-height: 1000px;
         transition: .7s ease all;
 
+        @include media ($mobile-large-and-bigger) {
+            padding: 2em;
+        }
+
+        @include media ($tablet-and-bigger) {
+            padding: 0;
+        }
+        @include media ($mobile-large-and-smaller) {
+            background-color: $black;
+        }
+
         &.ng-hide {
-            @include media ($tablet-and-smaller) {
+            @include media ($mobile-large-and-smaller) {
                 max-height: 0;
                 opacity: 0;
                 padding: 0;
             }
         }
         &.ng-hide:not(.ng-hide-animate) {
-            @include media ($desktop-and-bigger) {
+            @include media ($tablet-and-bigger) {
                 display: block !important;
             }
         }
         ul {
             // padding: 2em;
-            @include media ($desktop-and-bigger) {
-                float: left;
-            }
             li {
                 width: 100%;
                 position: relative;
                 box-sizing: border-box;
-                @include media ($desktop-and-bigger) {
+                @include media ($tablet-and-bigger) {
                     display: block;
                     width: auto;
                     float: left;
@@ -95,7 +104,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                     a {
                         border-top: 0;
                         border-radius: 3px 3px 0 0;
-                        @include media ($desktop-and-bigger) {
+                        @include media ($tablet-and-bigger) {
                             border-radius: 0;
                             &:before {
                                 content: "";
@@ -107,7 +116,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                 &:nth-child(6) {
                     a {
                         border-radius: 0 0 3px 3px;
-                        @include media ($desktop-and-bigger) {
+                        @include media ($tablet-and-bigger) {
                             border-radius: 0;
                         }
                     }
@@ -121,12 +130,12 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                     padding: 10px 20px;
                     border-top: 2px solid rgba(250, 250, 250, .14902);
                     transition: all .3s linear;
-                    @include media ($tablet-and-smaller) {
+                    @include media ($mobile-large-and-smaller) {
                         @include hoverify () {
                             background-color: $grey-stack;
                         }
                     }
-                    @include media ($desktop-and-bigger) {
+                    @include media ($tablet-and-bigger) {
                         border: 0;
                         padding: 0 .3em 0 0;
                         font-family: "Nimbus Roman No 9 L", "FreeSerif", "Georgia", serif;
@@ -149,20 +158,17 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
             }
             .search-btn {
                 display: none;
-                @include media ($desktop-and-bigger) {
+
+                @include media ( $tablet-and-bigger ) {
                     display: block;
-                    .ico {
-                        padding: 0 .5em;
-                    }
                 }
             }
         }
-        .search-wrap {
-            @include media ($desktop-and-bigger) {
-                // width: 70%;
+
+        .search-bar {
+            @include media ($tablet-and-bigger) {
                 clear: both;
                 display: block;
-                // float: left;
                 width: 100%;
                 max-height: 160px;
                 transition: .2s ease all;
@@ -175,16 +181,15 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                     padding: 0;
                 }
             }
+
             .search-form {
                 margin-top: 1em;
                 background-color: $grey-alto;
                 padding: 1em;
                 border-radius: $base-border-radius;
-                @include media ($desktop-and-bigger) {
-                    // display: none;
+                @include media ($tablet-and-bigger) {
                     margin-top: 0;
                     margin-bottom: 1em;
-                    // float: left;
                     margin-right: auto;
                     margin-left: auto;
                     width: 70%;
@@ -192,7 +197,6 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                     transition: .7s ease all;
                     opacity: 1;
                     input[type=text] {
-                        // float: left;
                         width: 79%;
                         margin-bottom: 0;
                         margin-right: 2%;
@@ -227,9 +231,11 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
     }
     .secondary-nav {
         display: none;
-        @include media ($desktop-and-bigger) {
+        @include media ($tablet-and-bigger) {
             display: block !important;
             ul {
+                overflow: hidden;
+                clear: right;
                 padding-top: 1.3em;
                 li {
                     float: left;
@@ -248,17 +254,10 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                 }
             }
         }
-    }
-    .main-nav,
-    .secondary-nav {
-        li {
-            // display: inline;
+
+        @include media( $tablet ) {
+            ul { margin-bottom: .35em; }
         }
-    }
-    .lines-button {
-        @include position (absolute, 0 0 null null);
-        margin-right: .5em;
-        margin-top: .28em;
     }
 }
 
@@ -268,96 +267,83 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
 =============================================*/
 
 $button-size: 2.5em;
-$transition: .3s; // increase this to see the transformations in slow-motion
+$menu-button-transition: .3s; // increase this to see the transformations in slow-motion
+
+
+// Hamburger menu <-> Cross icon made with pure CSS
 .lines-button {
-    @include media ($desktop-and-bigger) {
+    @include media ($tablet-and-bigger) {
         display: none;
     }
-    display: inline-block;
-    padding: $button-size/2 $button-size/4;
-    transition: .3s;
-    cursor: pointer;
-    user-select: none;
-    border: 0;
+
+    position: absolute; top: 0; right: 0;
+    display: block;
+    transition: $menu-button-transition;
     background-color: transparent;
+    margin: 1.5em 1em;
+    cursor: pointer;
+
     &:hover {
         opacity: 1;
-    }
-    &:active {
-        transition: 0;
-    }
-    &:focus {
-        outline: 0;
-    }
-}
 
-@mixin line {
-    display: inline-block;
-    width: $button-size;
-    height: $button-size/7;
-    background: $white;
-    border-radius: $button-size/14;
-    transition: $transition;
-}
-
-.lines {
-    //create middle line
-    @include line;
-    position: relative;
-    /*create the upper and lower lines as pseudo-elements of the middle line*/
-    &:before,
-    &:after {
-        @include line;
-        position: absolute;
-        left: 0;
-        content: "";
-        transform-origin: $button-size/14 center;
-    }
-    &:before {
-        top: $button-size/4;
-    }
-    &:after {
-        top: -$button-size/4;
-    }
-}
-
-.lines-button:hover {
-    opacity: 1;
-    .lines {
-        background-color: $grey-silver;
-        &:before {
-            top: $button-size/3.5;
+        .lines {
             background-color: $grey-silver;
+
+            &:before {
+                top: $button-size/3.5;
+                background-color: $grey-silver;
+            }
+            &:after {
+                top: -$button-size/3.5;
+                background-color: $grey-silver;
+            }
         }
+    }
+
+    &:active { transition: 0; }
+
+    &.x.close .lines {
+        background: transparent; // Hide the middle line
+
+        /*overlay the lines by setting both their top values to 0*/
+        &:before,
         &:after {
-            top: -$button-size/3.5;
-            background-color: $grey-silver;
+            transform-origin: 50% 50%;
+            top: 0;
+            width: $button-size;
         }
+
+        // rotate the lines to form the 'x' shape
+        &:before { transform: rotate3d(0, 0, 1, 45deg); }
+        &:after { transform: rotate3d(0, 0, 1, -45deg); }
     }
 }
 
-.lines-button.x.close .lines {
-    /*hide the middle line*/
-    background: transparent;
-    /*overlay the lines by setting both their top values to 0*/
-    &:before,
-    &:after {
-        transform-origin: 50% 50%;
-        top: 0;
-        width: $button-size;
-    }
-    // rotate the lines to form the x shape
-    &:before {
-        transform: rotate3d(0, 0, 1, 45deg);
-    }
-    &:after {
-        transform: rotate3d(0, 0, 1, -45deg);
-    }
-}
+    // Lines making the icon
+    .lines {
+        position: relative;
 
-.testlink {
-    font-size: 70%; opacity: .4; margin: 1em;
-    @include hoverify() {
-        opacity: 1;
+        //create middle line
+        &,
+        &:before,
+        &:after {
+            display: inline-block;
+            @include size( $button-size $button-size/7 );
+            background: $white;
+            border-radius: $button-size/14;
+            transition: $menu-button-transition;
+        }
+
+        /*create the upper and lower lines as pseudo-elements of the middle line*/
+
+        &:before,
+        &:after {
+            position: absolute;
+            left: 0;
+            content: "";
+            transform-origin: $button-size/14 center;
+        }
+
+        &:before { top: $button-size/4; }
+        &:after { top: -$button-size/4; }
     }
-}

@@ -3,9 +3,6 @@
 =============================================*/
 
 
-
-
-
 #nav_search {
     margin: 30px 0;
     padding: 10px;
@@ -59,12 +56,13 @@
         clear: right;
         li {
             display: inline;
-            width: 33.33%;
+
             a {
                 color: $light-grey;
                 font-size: 0.9em;
                 padding: 10px;
-               @include hoverify {
+
+                @include hoverify {
 
                     color: white;
                     text-decoration: underline;

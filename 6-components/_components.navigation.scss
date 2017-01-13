@@ -80,6 +80,10 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
                 color: $menu-tabbed-item-hover-label-colour;
                 outline: 0;
             }
+
+            &:focus {
+                outline: $base-outline;
+            }
         }
     }
 }

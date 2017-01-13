@@ -20,10 +20,10 @@ $tablet-max-width:          em( 989px, $em-browser-default );
 
 $desktop-grid-columns:      12;
 $desktop-min-width:         em( 990px, $em-browser-default ); //This should be bigger (1024px) to accomadate tablet portait.
-$desktop-max-width:         em( $base-width-px - 1 );
+$desktop-max-width:         em( $base-width-px - 1, $em-browser-default );
 
 $desktop-large-grid-columns: 16;
-$desktop-large-min-width:   em( $base-width-px );
+$desktop-large-min-width:   em( $base-width-px, $em-browser-default );
 
 
 // Create reusable breakpoints
@@ -37,11 +37,11 @@ $mobile-large-and-bigger:   new-breakpoint( min-width $mobile-large-min-width $m
 $tablet:                    new-breakpoint( min-width $tablet-min-width
                                             max-width $tablet-max-width $tablet-grid-columns );
 $tablet-and-smaller:        new-breakpoint( max-width $tablet-max-width $tablet-grid-columns );
-$tablet-and-bigger:         new-breakpoint( min-width $tablet-min-width $tablet-grid-columns );	
+$tablet-and-bigger:         new-breakpoint( min-width $tablet-min-width $tablet-grid-columns );
 
 
 $desktop:                   new-breakpoint( min-width $desktop-min-width
-                                            max-width $desktop-min-width $desktop-grid-columns );
+                                            max-width $desktop-max-width $desktop-grid-columns );
 $desktop-and-smaller:       new-breakpoint( max-width $desktop-max-width $desktop-grid-columns );
 $desktop-and-bigger:        new-breakpoint( min-width $desktop-min-width $desktop-grid-columns );
 
