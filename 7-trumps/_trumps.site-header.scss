@@ -89,8 +89,8 @@ $logo-tablet-height: 5.7rem;
                 display: block !important;
             }
         }
+
         ul {
-            // padding: 2em;
             li {
                 width: 100%;
                 position: relative;
@@ -196,7 +196,8 @@ $logo-tablet-height: 5.7rem;
                     max-height: 160px;
                     transition: .7s ease all;
                     opacity: 1;
-                    input[type=text] {
+                    input[type=text],
+                    input[type=search] {
                         width: 79%;
                         margin-bottom: 0;
                         margin-right: 2%;
