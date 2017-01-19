@@ -20,9 +20,9 @@
 
     ul, ol {
         > li {
-            line-height: $base-line-height;
             margin-bottom: .35em;
             margin-top: .35em;
+            line-height: $base-line-height;
 
             // Nested sublist
             ul,
@@ -45,7 +45,9 @@
             @include make-list-square-bullet( $list-bullet-indent-right );
 
             // Turn the indentation off for some basic elements
-            a, span, div { text-indent: 0; }
+            a,
+            span,
+            div { text-indent: 0; }
         }
     }
 
@@ -130,10 +132,9 @@ $hint-inline-active-colour:     black;
 .item-separated {
     &:after {
         display: block;
+        margin: .6em 0;
         @include size( 2em 2px );
         content: "";
         background-color: $grey-alto;
-        margin: .6em 0;
     }
 }
-

@@ -83,8 +83,8 @@ $tile-bg:      #f0f0f0;
         .tile__header { margin: 1em $tile-padding; }
 
         .code {
-            display: inline-block;
             float: none;
+            display: inline-block;
             margin: 0;
             font-size: inherit;
         }
@@ -190,7 +190,7 @@ $tile-bg:      #f0f0f0;
 
         /** Content-based breakpoints. */
         @media screen and ( max-width: em( 400px, $em-browser-default ) ) {
-            > li {
+            & > li {
                 width: 100%;
                 margin-bottom: .7em;
             }
@@ -257,7 +257,7 @@ $collapsible-transparency-height: 2.5em;
         > a { padding: .5em; }
     }
 
-    .collapsed {}
+    //.collapsed {}
 
     // Adds semi-transparent overlay to see part of the collapsed block
     &.collapsed .semitransparent + .collapsible__control {
@@ -278,13 +278,13 @@ $collapsible-transparency-height: 2.5em;
     overflow: hidden;
 
     // Default state
-    .collapsed > & {
-        .collapsible__control {
+    //.collapsed > & {
+        //.collapsible__control {
             //@include linear-gradient( rgba($tile-bg, 0) 0%, $tile-bg 25%, $tile-bg 100%);
-        }
-    }
+        //}
+    //}
 
-    .expanded > & {}
+    //.expanded > & {}
 }
 
 /** Generic listing with cards placed in two columns. */
@@ -331,7 +331,7 @@ $contact-portrait-size: 150px;
         }
     }
 
-    .contacts {}
+    //.contacts {}
 
     // Card's body
     .card-info { overflow: hidden; }
@@ -386,7 +386,7 @@ $popup-border:   #fff;
     {
         font-size: 90%;
 
-        .caption {}
+        //.caption {}
 
         // 'x' button
         .btn-close
@@ -422,7 +422,7 @@ $popup-border:   #fff;
 }
 
     // Feedback popup
-    .feedback {}
+    //.feedback {}
 
 /** Warning block. */
 .warning-strip {
