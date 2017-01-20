@@ -90,3 +90,9 @@ a > *:after,
 .tooltip-icon  {
     @include transitionise();
 }
+
+// Fixes the issue with double-animation of icons within links.
+a .ico:before,
+a .ico:after {
+    transition: none;
+}

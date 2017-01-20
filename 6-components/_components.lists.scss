@@ -37,6 +37,7 @@ $grid-area-active-bg: $green-victoria !default;
             font-size: 75%;
             background-color: $grid-area-bg;
             text-decoration: none;
+
             @include hoverify() {
                 background-color: $grid-area-hover-bg;
                 color: $link-colour;
@@ -48,7 +49,7 @@ $grid-area-active-bg: $green-victoria !default;
         display: none; // Hide preview by default
         position: absolute;
         left: 0;
-        margin: $grid-area-margin;
+        margin: $grid-area-margin 0;
         background: $grid-area-bg;
     }
 
