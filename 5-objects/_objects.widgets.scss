@@ -45,6 +45,8 @@ $tile-bg:      #f0f0f0;
     vertical-align: top;
     width: 100%;
 
+    .collapsible-wrapper .collapsible__control { margin-top: 0; }
+
     .title { line-height: 1.2; }
 
     .tag {
