@@ -14,3 +14,12 @@
 
     /** Hides elements that are used for accessibility reasons *ONLY* */
     .aria-only { display: none; }
+
+
+    /** 'Browser happy' message */
+    .browsehappy {
+        padding: .5em;
+        text-align: center;
+        background-color: #FCF8E3;
+        color: #705602;
+    }
