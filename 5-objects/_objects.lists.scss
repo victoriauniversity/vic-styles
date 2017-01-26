@@ -18,23 +18,37 @@ $grid-list-items-per-row:   3;
 
     // Item / Cell
     > li {
+        // Desktop (~ 3 column)
         float: left;
         display: block;
-        width: 100% / $grid-list-items-per-row;
 
-        &:nth-child(3n+1) { clear: left; }
+        @include media( $desktop-and-bigger ) {
+            width: 100% / $grid-list-items-per-row;
+            &:nth-child(3n+1) { clear: left; }
 
-        // Tablet
-        @include media( $tablet ) {
-            width: 50%;
-            &:nth-child(3n+1) { clear: none; }
-            &:nth-child(2n+1) { clear: left; }
+            &:nth-child(3n+0) > * { padding-right: 0 }  // Disable padding on the edges
+            &:nth-child(3n-2) > * { padding-left: 0 }   // Disable padding on the edges
         }
 
-        // Mobile
+        // Tablet (~ 2 column)
+        @include media( $tablet ) {
+            width: 100% / ( $grid-list-items-per-row - 1 );
+            &:nth-child(2n+1) { clear: left; }
+
+            &:nth-child(2n+0) > *{ padding-right: 0; }  // Disable padding on the edges
+            &:nth-child(2n-1) > *{ padding-left: 0; }   // Disable padding on the edges
+        }
+
+        // Mobile (~ 1 column)
         @include media( $mobile-large-and-smaller ) {
             width: 100%;
             clear: left;
+
+            > * {
+                padding-left: 0;
+                padding-right: 0;
+            }
         }
     }
 }
+

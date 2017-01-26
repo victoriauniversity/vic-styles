@@ -67,21 +67,32 @@ h5 {
 }
 
 
-q:before {
-    content: '';
+q {
+    &:before,
+    &:after {
+        content: '';
+    }
 }
-q:after {
-    content: '';
+
+@mixin linkify() {
+    color: $link-colour;
+    @include hoverify { color: $blue-curious-blue; }
 }
 
 a {
-    color: $link-colour;
+    @include linkify;
     text-decoration: none;
-    @include hoverify { color: $blue-curious-blue }
 }
 
-a, a > *:before, a > *:after, .tooltip-icon  {
+a,
+a > *:before,
+a > *:after,
+.tooltip-icon  {
     @include transitionise();
 }
 
-/* Lists */
+// Fixes the issue with double-animation of icons within links.
+a .ico:before,
+a .ico:after {
+    transition: none;
+}

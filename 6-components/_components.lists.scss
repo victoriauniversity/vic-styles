@@ -27,9 +27,7 @@ $grid-area-active-bg: $green-victoria !default;
         text-align: center;
         color: $grid-area-title-colour;
 
-        .ico {
-            margin-left: .7em;
-        }
+        .ico { margin-left: .7em; }
 
         > a {
             display: table-cell;
@@ -39,23 +37,27 @@ $grid-area-active-bg: $green-victoria !default;
             font-size: 75%;
             background-color: $grid-area-bg;
             text-decoration: none;
+
             @include hoverify() {
                 background-color: $grid-area-hover-bg;
                 color: $link-colour;
             }
         }
     }
+
     .preview {
         display: none; // Hide preview by default
         position: absolute;
         left: 0;
-        margin: $grid-area-margin;
+        margin: $grid-area-margin 0;
         background: $grid-area-bg;
-
-        > .block:last-child {
-            padding-top: $base-padding / 3;
-        }
     }
+
+        .btns-holder {
+            text-align: center;
+
+            > a { margin-top: .3em; }
+        }
 
     // Active area showing 'preview'
     .expanded & {
@@ -65,16 +67,12 @@ $grid-area-active-bg: $green-victoria !default;
             color: $grid-area-hover-title-colour;
 
             // Flick the caret!
-            .ico {
-                margin-left: .4em;
-            }
+            .ico { margin-left: .4em;  }
 
             > a {
                 background-color: $grid-area-active-bg;
 
-                @include hoverify() {
-                    color: inherit;
-                }
+                @include hoverify() { color: inherit; }
             }
         }
 

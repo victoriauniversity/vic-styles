@@ -78,7 +78,6 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
             @include hoverify {
                 background-color: $menu-tabbed-item-hover-bg-colour;
                 color: $menu-tabbed-item-hover-label-colour;
-                outline: 0;
             }
         }
     }
