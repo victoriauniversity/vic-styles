@@ -2,16 +2,22 @@
 =            LAYOUT             =
 ===============================*/
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
 html {
+    height: 100%; // Sticky footer
     font-size: inherit;
     -webkit-font-smoothing: antialiased;
 }
 
 body {
+    @include flex-direction( column );  // Sticky footer
+    @include display( flex );           // Sticky footer
+    min-height: 100%;                   // Sticky footer
     font-size: $base-font-size;
     font-family: $base-font-family;
     line-height: $base-line-height;
@@ -23,8 +29,14 @@ body {
         @include media( $mobile-large) {
             padding-bottom: 4.5em;
         }
+
         @include media( $mobile) {
             padding-bottom: 5.5em;
         }
     }
 }
+
+    // Sticky footer
+    .app {
+        @include flex( 1 1 auto );
+    }
