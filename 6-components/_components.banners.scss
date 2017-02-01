@@ -37,6 +37,7 @@ $banner-cover-max-height:   620px;
             margin-left: -$banner-cover-max-width / 2;
         }
     }
+
     .intro {
         @include outer-container( 990px );
         @include position( relative);
@@ -53,13 +54,46 @@ $banner-cover-max-height:   620px;
             display: block;
         }
     }
+
     .title {
         display: inline-block;
-        padding: .35em .75em;
-        margin-top: .3em;
-        margin-bottom: .5em;
+        padding: .75em 1.5em;
+        margin-top: .75em;
+        margin-bottom: 1.2em;
         color: $banner-cover-text-colour;
         background-color: rgba( $green-victoria-old, .75 );
+
+        h1,
+        h2 {
+            margin: 0;
+            color: inherit;
+        }
+    }
+
+    // Smaller page's subtitle placed under the main page title.
+    .subtitle {
+        font-size: 1.35em;
+        line-height: 1.2;
+
+        strong {
+            display: inline-block;
+            padding: .05em .35em;
+            margin-bottom: .2em;
+            background: rgba( #000, .25 );
+            font-weight: inherit;
+        }
+
+        a {
+            margin-left: .35em;
+            font-size: 85%;
+            color: inherit;
+
+            @include hoverify() {
+                > span { text-decoration: none; }
+            }
+
+            > span { text-decoration: underline; }
+        }
     }
 
     .abstract {
@@ -83,16 +117,25 @@ $banner-cover-max-height:   620px;
 
     @include media( $tablet-and-smaller ){
         .intro{ padding: 1.6em; }
-        .title{ font-size: 2em; }
+        .title{ font-size: 95%; }
         .abstract{ font-size: 1.3em; }
     }
 
     @include media( $mobile-large-and-smaller ){
         .intro{ padding: 1em; }
-        .title{ margin: 0 0 .5em; }
-        .abstract{ margin: 0; font-size: 1.3em; }
 
-        .content-switcher{ 
+        .title{
+            margin: 0 0 .5em;
+
+            .subtitle { margin-top: .5em; }
+        }
+
+        .abstract{
+            margin: 0;
+            font-size: 1.3em;
+        }
+
+        .content-switcher{
             float: none;
             margin: 0 0 .5em;
         }
