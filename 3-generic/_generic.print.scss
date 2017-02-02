@@ -8,6 +8,7 @@
 // _print.scss
 // -------------------------------------------------------------
 @media print {
+
     * {
         background: transparent !important;
         color: black !important;
@@ -64,20 +65,9 @@
     h1 {
         font-size: 1.8em !important;
     }
-    h2 {
-        // font-size: 1.6em !important;
-    }
-    h3 {
-        // font-size: 1.2em !important;
-    }
-    h4 {
-        // font-size: 1.2em !important;
-    }
-    h5 {
-        // font-size: 1em !important;
-    }
+
     // Hide stuff we don't need to print
-    #site-header,
+    .site-header,
     .cover-holder,
     .cover-overlay,
     .menu-tabbed,
@@ -90,9 +80,19 @@
     .btn {
         display: none !important;
     }
+
+    .sector { margin: 0; max-width: 100%; display: inline; }
+
+    .content-switcher { position: absolute !important; top: 0; right: 0; }
+
+    // Logo
+    img.print-only { margin: 1em 1em 0; }
+
+
     .menu-tabbed .active, .print-only {
         display: block!important;
     }
+
     .banner-with-cover .intro,
     .victoria-contact .centraliser,
     .victoria-contact h4,
