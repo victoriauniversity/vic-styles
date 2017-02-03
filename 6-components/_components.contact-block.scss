@@ -12,35 +12,29 @@ $ico-margin:    0.9em;
         color: $grey-dusty-gray;
         text-align: center;
 
-        a,
-        p {
-            font-size: .9em;
+        p { font-size: .8rem; }
+
+        .minilinks {
+            margin-bottom: .3em;
+            font-size: .85rem;
         }
+    }
 
-        ul {
-            float: left;
+    .minilinks {
+        a {
+            display: inline-block;
+            padding: 0 .25em;
+            color: inherit;
+            text-decoration: underline;
 
-            li {
-                display: inline-block;
-                padding: 0 .25em;
-
-                a {
-                    color: $grey-dusty-gray;
-                    @include hoverify () {
-                        color: $white;
-                    }
-                }
-            }
+            @include hoverify () { color: $white; }
         }
-
-        .version { margin: .25em; }
     }
 }
 
 .victoria-contact {
     background-color: $contact-bg-color;
     padding: 1.75em .5em;
-
     border-bottom: 1px solid #333;
 
     h4 {
