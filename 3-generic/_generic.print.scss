@@ -5,7 +5,210 @@
 // TODO: Requires extensive redesign!
 // _print.scss
 // -------------------------------------------------------------
+// @media print {
+//     * {
+//         background: transparent !important;
+//         color: black !important;
+//         box-shadow: none !important;
+//         text-shadow: none !important;
+//         filter: none !important;
+//         -ms-filter: none !important;
+//     } // Black prints faster: h5bp.com/s
+//     a,
+//     a:visited {
+//         text-decoration: none;
+//     }
+//     %faux-link {
+//         border: none !important;
+//         color: red !important;
+//     }
+//     abbr[title]:after {
+//         content: " (" attr(title) ")";
+//     }
+//     .ir a:after,
+//     a[href^="javascript:"]:after,
+//     a[href^="#"]:after {
+//         content: "";
+//     } // Don't show links for images, or javascript/internal links
+//     pre,
+//     blockquote {
+//         // border: 1px solid #999;
+//         page-break-inside: avoid;
+//     }
+//     thead {
+//         display: table-header-group;
+//     } // h5bp.com/t
+//     tr,
+//     img {
+//         page-break-inside: avoid;
+//     }
+//     @page {
+//         margin: 1cm;
+//     }
+//     p,
+//     h2,
+//     h3 {
+//         orphans: 3;
+//         widows: 3;
+//     }
+//     h2,
+//     h3 {
+//         page-break-after: avoid;
+//     }
+//     ul, ol, .clos {
+//         page-break-inside: avoid;
+//     }
+//     #{headings( 1, 6 )} {
+//         margin-left: 0 !important;
+//         margin-right: 0 !important;
+//     }
+//     .view-large {
+//         font-size: 1em !important;
+//     }
+//     h1 {
+//         font-size: 1.8em !important;
+//     }
+//     h2 {
+//         // font-size: 1.6em !important;
+//     }
+//     h3 {
+//         // font-size: 1.2em !important;
+//     }
+//     h4 {
+//         // font-size: 1.2em !important;
+//     }
+//     h5 {
+//         // font-size: 1em !important;
+//     }
+//     ul {
+//         list-style-type: square !important;
+//     }
+//     // Hide stuff we don't need to print
+//     #site-header,
+//     .vuw-navigation-menu,
+//     .menu-tabbed,
+//     .need-more,
+//     .fees-est,
+//     .course-offerings,
+//     .victoria-contact,
+//     static-info,
+//     .tag-list li a,
+//     .slide-show-block,
+//     .block .btn,
+//     .two-btn-nav,
+//     .btn, course-offerings {
+//         display: none !important;
+//     }
+//     .menu-tabbed .active,
+//     .print-only {
+//         display: block!important;
+//     }
+//     .tag-list li a.active {
+//         display: inline !important;
+//     }
+//     .banner-with-cover .intro,
+//     .victoria-contact .centraliser,
+//     .victoria-contact h4,
+//     .victoria-contact .contact-wrap,
+//     .centered {
+//         text-align: left !important;
+//     }
+//     .banner-with-cover .intro,
+//     .degree-req,
+//     .block {
+//         padding: 0.5em 1.5em !important;
+//     }
+//     .banner-with-cover .intro,
+//     .victoria-contact .block {
+//         margin: 0 !important;
+//     }
+//     .victoria-contact .block {
+//         width: auto !important;
+//         text-align: left !important;
+//     }
+//     .banner-with-cover {
+//         & h1,
+//         & h3 {
+//             margin: 0 !important;
+//             padding-left: 0 !important;
+//             padding-right: 0 !important;
+//         }
+//     }
+//     .grid-list {
+//         list-style: disc !important;
+//         .area .title {
+//             height: auto !important;
+//             text-align: left !important;
+//         }
+//         & > li {
+//             float: none !important;
+//         }
+//     }
+//     .degree-req .req-header .req-child h5 {
+//         font-size: 80% !important;
+//     }
+//     .degree-req,
+//     .degree-req .req-header .req-child,
+//     .degree-req .req-header .req-child h5 {
+//         padding-top: 0 !important;
+//         padding-bottom: 0 !important;
+//     }
+//     /** Content switcher - show label only + toggle's Yes/No. */
+//     .content-switcher {
+//         .group-toggle {
+//             input[type=checkbox] {
+//                 & + label {
+//                     width: auto;
+//                     > span:after {
+//                         content: "No";
+//                         font-weight: $weight-bold;
+//                     }
+//                 }
+//                 &:checked + label {
+//                     > span:after {
+//                         content: "Yes";
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     /** Attribution bubble - Don't show. */
+//     .bubble-attribution {
+//         display: none !important;
+//     }
+// }
+
+
+/*====================================
+=            PRINT STYLES            =
+====================================*/
+
+$print-margin-vertical:     0.5em;
+$print-margin-horizontal:   0;
+$print-margin:              $print-margin-vertical $print-margin-horizontal;
+
+$print-logo-width:          300px;
+
+
 @media print {
+
+    /** HELPERS */
+
+    %hide {
+        display: none !important;
+    }
+
+    %show {
+        display: block !important;
+    }
+
+    %inline {
+        display: inline !important;
+    }
+
+
+    /** General */
+
     * {
         background: transparent !important;
         color: black !important;
@@ -14,98 +217,387 @@
         filter: none !important;
         -ms-filter: none !important;
     } // Black prints faster: h5bp.com/s
-    a,
-    a:visited {
-        text-decoration: none;
-    }
-    %faux-link {
-        border: none !important;
-        color: red !important;
-    }
+
+    @page { margin: 1cm; }
+
+
+    /** Typography */
+
     abbr[title]:after {
         content: " (" attr(title) ")";
     }
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    } // Don't show links for images, or javascript/internal links
+
     pre,
     blockquote {
         // border: 1px solid #999;
         page-break-inside: avoid;
     }
+
     thead {
         display: table-header-group;
     } // h5bp.com/t
+
     tr,
     img {
         page-break-inside: avoid;
     }
-    @page {
-        margin: 1cm;
-    }
+
     p,
     h2,
-    h3 {
+    h3,
+    h4, 
+    h5,
+    li {
         orphans: 3;
         widows: 3;
+        font-size: 0.75em !important;
     }
+
     h2,
     h3 {
         page-break-after: avoid;
     }
-    ul, ol, .clos {
-        page-break-inside: avoid;
-    }
+
     #{headings( 1, 6 )} {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
-    .view-large {
-        font-size: 1em !important;
+
+    h1 { font-size: 1.25em !important; }
+
+
+    // Links
+    a,
+    a:visited {
+        text-decoration: underline !important;
     }
-    h1 {
-        font-size: 1.8em !important;
+
+    a[href]:after {
+        margin-left: .25em;
+        font-size: 90%;
+        display: inline-block;
+        font-style: italic !important;
+        font-weight: $weight-normal;
+        content: "<" attr(href) ">"; // <http://example.com/page>
+        text-decoration: none !important;
     }
-    h2 {
-        // font-size: 1.6em !important;
-    }
-    h3 {
-        // font-size: 1.2em !important;
-    }
-    h4 {
-        // font-size: 1.2em !important;
-    }
-    h5 {
-        // font-size: 1em !important;
-    }
-    ul {
-        list-style-type: square !important;
-    }
+
+    .tooltip-inline { text-decoration: none !important; }
+
+    a[href^="jav"]:after, // javascript:;
+    a[href^="#"]:after, {
+        @extend %hide;
+    } // Don't show links for images, or javascript/internal links
+
+
+    /** Layout */
+
     // Hide stuff we don't need to print
-    #site-header,
-    .vuw-navigation-menu,
-    .menu-tabbed,
+    .site-header,
+    .cover-holder,
+    .cover-overlay,
     .need-more,
-    .fees-est,
-    .course-offerings,
-    .victoria-contact,
-    static-info,
-    .tag-list li a,
     .slide-show-block,
-    .block .btn,
-    .two-btn-nav,
-    .btn, course-offerings {
-        display: none !important;
+    .intro .subtitle,
+    .two-btn-nav {
+        @extend %hide;
     }
+
+    .block,
+    .intro {
+        padding: $print-margin !important;
+    }
+
+    .footer p { font-size: 100% !important; }
+
+
+    // Avoids breaking of section between different printed pages
+    //.sector { page-break-inside: avoid; }
+
+
+    /** Header */
+
+    // Switcher panel
+    .content-switcher {
+        position: absolute !important; top: 0; right: 0;
+        margin: $print-margin;
+        padding: 0 !important;
+
+        a:after { @extend %hide; }
+    }
+
+    // Logo
+    .logo {
+        width:  $print-logo-width;
+        margin: $print-margin;
+    }
+
+    // Banner
+    .banner-with-cover {
+        position: static !important;
+    }
+
+    // Tabbed menu
+    .menu-tabbed li {
+        @extend %hide;
+
+        max-width: initial !important;
+        min-width: initial !important;
+
+        &:after,
+        a:after {
+            @extend %hide;
+        }
+
+        a {
+            font-weight: $weight-semibold !important;
+            font-size: 1.85rem !important;
+            padding: .35em 0 !important;
+            text-align: left !important;
+            text-decoration: none !important;
+        }
+
+        .label { margin-left: .25em !important; }
+    }
+
+    select { @extend %hide; }
+
+    .menu-tabbed .active {
+        width: 100% !important;
+    }
+
     .menu-tabbed .active,
     .print-only {
-        display: block!important;
+        display: block !important;
     }
-    .tag-list li a.active {
-        display: inline !important;
+
+
+    /** Small UI elements */
+
+    .link-action { @extend %hide; }
+
+    .centraliser,
+    .intro-fact {
+        @extend %inline;
+        max-width: 100% !important;
     }
+
+    // 'Need help' block's subnavigation
+    .victoria-contact { padding-left: 0 !important; }
+    .reg-block {
+        padding-bottom: 0 !important;
+    }
+
+    // Button
+    .btn {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        .ico { display: none !important; }
+    }
+
+    .btns-holder,
+    .btn-holder {
+        text-align: left !important;
+        padding-top: 0 !important;
+    }
+
+    /** Content blocks */
+
+    .facts-block .block { padding: 0 !important; margin: 0 !important; }
+
+    // Degree overview
+    .facts-wrap > *,
+    .intro-fact .fact {
+        margin-bottom: .9em !important;
+    }
+
+
+    /** Requirements */
+
+    .entry-requirements,
+    .requirements {
+        ul { margin-left: .35em !important; }
+
+        ul ul {
+            list-style: square;
+            padding-left: 0 !important;
+
+            > li {
+                margin-left: 1.2em !important;
+                padding: .2em 0 !important;
+            }
+        }
+
+        .requirements-list { margin-bottom: .4em; }
+    }
+
+    .requirements-list a:after { @extend %hide; }
+
+
+    /** Widgets */
+
+    .content-anchors-container { @extend %hide; }
+
+    #tooltip, .tooltip-icon { @extend %hide; }
+
+    .intro .title {
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    // Collapsible panels (should be open)
+    .collapsible {
+        height: 100% !important;
+        overflow: initial !important;
+    }
+
+    .collapsible__control {
+        @extend %hide;
+    }
+
+    .toggle-header {
+        padding-left: .35em !important;
+        padding-right: 0 !important;
+
+        a { text-decoration: none !important; }
+        a:after { @extend %hide; }
+    }
+
+    .quals-listing {
+        .btn-holder {
+            float: none !important;
+            margin-left: 0 !important;
+            margin-bottom: .5em !important;
+
+            .note,
+            a > small { @extend %hide; }
+        }
+
+
+        .tile__header,
+        .tile__body { margin-left: .4em !important; }
+
+        .tile__body,
+        .tile__list { margin-bottom: 0 !important;}
+    }
+
+    .related-degree .toggle-header {
+        padding-top: .75em !important;
+        padding-bottom: .75em !important;
+    }
+
+    // Quote
+    .quote-image {
+        margin-right: 1em !important;
+    }
+
+    .block__quote .btn { @extend %hide; }
+
+    // Fun fact
+    .fact__title {
+        display: block !important;
+        text-align: center !important;
+        font-size: 1.6em !important;
+    }
+
+    .fact__content { text-align: center !important; }
+
+    // Wellington promo
+    .promo-body {
+        margin: 0 !important;
+
+        header { padding: 0 !important;}
+    }
+
+    .fact__content { padding-top: 0 !important; }
+
+    // SlideShow
+    .slide-show__wrap {
+        counter-reset: heading;
+        padding-top: 0 !important;
+
+        .nav-wrap { @extend %hide;}
+
+        .slide-show__slide {
+            padding-bottom: 0 !important;
+
+            img { @extend %show; }
+        }
+
+        .slide-show__description {
+            @extend %show;
+            &:before {
+                display: static;
+                counter-increment: heading;
+                content: counter( heading ) ". ";
+            }
+        }
+    }
+
+    // Video
+    .cover-text-overlay {
+        @extend %hide;
+    }
+
+    .video-body {
+        .cover-overlay {
+            @extend %show;
+        }
+    }
+
+    .video__description[title]:after {
+        @include objectify();
+        font-style: italic !important;
+        font-size: 90% !important;
+        content: "Play YouTube video at: <" attr(title) ">";
+    }
+
+    // Intro - subject/quals listing
+    .subject-listing {
+        a:after { @extend %hide; }
+    }
+
+    // Areas
+    .area {
+        padding: 0 !important;
+
+        a {
+            padding-left: .45em !important;
+            font-size: 1.35rem !important;
+            text-decoration: none !important;
+        }
+    }
+
+    // Feedback
+    .feedback { @extend %hide; }
+
+
+    // Tiles
+    .tiles {
+        @include columns( 1 );
+        column-count: 1 !important;
+
+        .tile { margin-bottom: 0 !important;}
+
+        .tile__header,
+        .tile__list { margin-left: 0 !important; margin-right: 0 !important;  }
+    }
+
+    // Contacts
+    .contact-card {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    // Warning
+    .warning,
+    .warning-strip .block { background: #e8e8e8 !important; }
+
+    .warning-strip .block { padding-top: 0 !important; }
+
+
     .banner-with-cover .intro,
     .victoria-contact .centraliser,
     .victoria-contact h4,
@@ -113,11 +605,7 @@
     .centered {
         text-align: left !important;
     }
-    .banner-with-cover .intro,
-    .degree-req,
-    .block {
-        padding: 0.5em 1.5em !important;
-    }
+
     .banner-with-cover .intro,
     .victoria-contact .block {
         margin: 0 !important;
@@ -153,27 +641,100 @@
         padding-top: 0 !important;
         padding-bottom: 0 !important;
     }
+
     /** Content switcher - show label only + toggle's Yes/No. */
     .content-switcher {
         .group-toggle {
-            input[type=checkbox] {
+            input[type=checkbox]{
                 & + label {
                     width: auto;
-                    > span:after {
+
+                    > span:after{
                         content: "No";
                         font-weight: $weight-bold;
                     }
                 }
+
                 &:checked + label {
-                    > span:after {
+                    > span:after{
                         content: "Yes";
                     }
                 }
             }
         }
     }
+
     /** Attribution bubble - Don't show. */
     .bubble-attribution {
         display: none !important;
     }
+
+    //Course outlines
+
+    .number-list {
+        margin-left: 0 !important;
+    }
+    .number-list > li {
+        margin: 0 0 0 1.5em !important;
+    }
+    .course-overview > div {
+        padding: 0 !important;
+    }
+    .course-id-block li a {
+        display: none !important;
+    }
+    .course-id-block li  {
+        margin: 0!important;
+        padding: 0 !important;
+    }
+    .course-id-block li a.active {
+        display: block !important;
+    }
+    .vuw-navigation-menu {
+        display: none !important;
+    }
+    .offering-block > div, .offering-block > header, .offering-block > header > div {
+        padding: 0 !important;
+    }
+    .ext-links li a[href]:after {
+            margin-left: 2.25em;
+    }
+    .schedule.ng-hide {
+         display: block !important;
+    }
+    .highlight-list li.level-one .level-two h5 {
+        padding: 0 !important;
+    }
+    .fees-est {
+        display: none !important; 
+    }
+    .course-id-block .course-id {
+        font-size: 2em !important;
+    }
+
+    .course-id-block .block-container.two-col-layout .block {
+        display: block !important;
+        padding: 0.5em !important;
+    }
+    #site-header {
+        display: none !important;
+    }
+    dl.timeline dd {
+        padding-bottom: 1.5em !important;
+    }
+    dl.timeline dt {
+        padding-bottom: 0 !important;
+    }
+    .menu-tabbed li a {
+        font-size: 1.25em !important;
+    }
+    dl.timeline dt:last-child strong, dl.timeline dt:first-child strong,
+    dl.timeline dd:last-child strong, dl.timeline dd:first-child strong {
+        font-size: 0.75em !important;
+    }
+    dl.timeline .title {
+        font-size: 0.75em !important;
+    }
+
+    
 }
