@@ -703,8 +703,11 @@ $print-logo-width:          300px;
     .ext-links li a[href]:after {
             margin-left: 2.25em;
     }
-    .schedule.ng-hide {
+    .people.ng-hide, .schedule.ng-hide {
          display: block !important;
+    }
+    .people.menu-tabbed, .schedule.menu-tabbed {
+        display: none !important;
     }
     .highlight-list li.level-one .level-two h5 {
         padding: 0 !important;
