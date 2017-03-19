@@ -287,7 +287,10 @@ $print-logo-width:          300px;
     .tooltip-inline { text-decoration: none !important; }
 
     a[href^="jav"]:after, // javascript:;
-    a[href^="#"]:after, {
+    a[href^="#"]:after, 
+    a[href^="mailto:"]:after, 
+    a[href^="tel:"]:after, 
+    a[href*="/search?q="]:after {
         @extend %hide;
     } // Don't show links for images, or javascript/internal links
 
