@@ -218,6 +218,14 @@ $print-logo-width:          300px;
         -ms-filter: none !important;
     } // Black prints faster: h5bp.com/s
 
+    *, *::before, *::after {
+        -webkit-transition: none !important; 
+        -moz-transition: none !important; 
+        -o-transition: none !important; 
+        -ms-transition: none !important; 
+        transition: none !important; 
+    }
+
     html {
         font-size: 8pt !important;
         -webkit-print-color-adjust: exact;
@@ -710,6 +718,9 @@ $print-logo-width:          300px;
     }
     .people.ng-hide, .schedule.ng-hide {
          display: block !important;
+    }
+    .staff-block {
+        font-size: 1.1rem;
     }
     .people.menu-tabbed, .schedule.menu-tabbed {
         display: none !important;
