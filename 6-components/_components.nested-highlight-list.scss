@@ -19,6 +19,11 @@
             //     display: -webkit-flex;
             //     display: flex;
             // }
+            h2 {
+                @media print {
+                    font-size: 1.2em;
+                }
+            }
             h3 {
                 font-size: 1.2em;
                 margin-bottom: 0;
@@ -28,9 +33,6 @@
             h4,
             h5 {
                 color: $grey-mine-shaft;
-            }
-            p {
-                font-size: 0.9em;
             }
             .greenify {
                 color: $green-victoria;
