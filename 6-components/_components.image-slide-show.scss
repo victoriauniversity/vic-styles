@@ -31,23 +31,23 @@
 .slide-show__slide {
     @include media ($desktop-and-bigger) {
         max-width: 970px;
-        min-height: 546px;
+        min-height: 500px;
     }
 
     @include media ($tablet-and-smaller) {
         min-width: 100%;
-        min-height: 360px;
+        min-height: 300px;
     }
 
     @include media ($mobile-large-and-smaller) {
         max-width: 480px;
-        min-height: 270px;
+        min-height: 200px;
     }
 
     position: relative;
     border: 1px solid $grey-silver;
     background-color: $vic-black;
-    padding-bottom: 2em;
+    //padding-bottom: 2em;
     margin-left: auto;
     margin-right: auto;
 
