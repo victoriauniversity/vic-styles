@@ -123,6 +123,11 @@ $dialog-padding:   1em;
     }
 
     // x button
+    button.ngdialog-close {
+        border: none;
+        background: none;
+    }
+
     .ngdialog-close {
       position: absolute; right: 0; top: 0;
       margin: 1em $base-margin;
