@@ -218,6 +218,19 @@ $print-logo-width:          300px;
         -ms-filter: none !important;
     } // Black prints faster: h5bp.com/s
 
+    *, *::before, *::after {
+        -webkit-transition: none !important; 
+        -moz-transition: none !important; 
+        -o-transition: none !important; 
+        -ms-transition: none !important; 
+        transition: none !important; 
+    }
+
+    html {
+        font-size: 8pt !important;
+        -webkit-print-color-adjust: exact;
+    }
+
     @page { margin: 1cm; }
 
 
@@ -250,7 +263,6 @@ $print-logo-width:          300px;
     li {
         orphans: 3;
         widows: 3;
-        font-size: 0.75em !important;
     }
 
     h2,
@@ -262,8 +274,6 @@ $print-logo-width:          300px;
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
-
-    h1 { font-size: 1.25em !important; }
 
 
     // Links
@@ -285,7 +295,10 @@ $print-logo-width:          300px;
     .tooltip-inline { text-decoration: none !important; }
 
     a[href^="jav"]:after, // javascript:;
-    a[href^="#"]:after, {
+    a[href^="#"]:after, 
+    a[href^="mailto:"]:after, 
+    a[href^="tel:"]:after, 
+    a[href*="/search?q="]:after {
         @extend %hide;
     } // Don't show links for images, or javascript/internal links
 
@@ -371,6 +384,10 @@ $print-logo-width:          300px;
         display: block !important;
     }
 
+    .screen-only {
+        display: none !important;
+    }
+    
 
     /** Small UI elements */
 
@@ -699,8 +716,11 @@ $print-logo-width:          300px;
     .ext-links li a[href]:after {
             margin-left: 2.25em;
     }
-    .schedule.ng-hide {
+    .people.ng-hide, .schedule.ng-hide {
          display: block !important;
+    }
+    .people.menu-tabbed, .schedule.menu-tabbed {
+        display: none !important;
     }
     .highlight-list li.level-one .level-two h5 {
         padding: 0 !important;
@@ -727,13 +747,6 @@ $print-logo-width:          300px;
     }
     .menu-tabbed li a {
         font-size: 1.25em !important;
-    }
-    dl.timeline dt:last-child strong, dl.timeline dt:first-child strong,
-    dl.timeline dd:last-child strong, dl.timeline dd:first-child strong {
-        font-size: 0.75em !important;
-    }
-    dl.timeline .title {
-        font-size: 0.75em !important;
     }
 
     
