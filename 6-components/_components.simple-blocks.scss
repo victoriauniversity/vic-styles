@@ -281,3 +281,15 @@ $mar-bot: .3em;
         ul { margin-left: 0.5em; }
     }
 }
+
+
+/*===============================
+= CUSTOM NOT FOUND (404) BLOCK  =
+===============================*/
+
+.not-found {
+    .btn {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

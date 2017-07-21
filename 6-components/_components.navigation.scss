@@ -22,6 +22,7 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
     display: table;
     table-layout: fixed;
     width: 100%;
+    height: 1px;
     text-align: center;
 
     // 1st level menu items
@@ -64,16 +65,23 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
                 @include triangle( $menu-tabbed-item-triangle-width $menu-tabbed-item-triangle-height, $menu-tabbed-item-active-bg-colour, down);
             }
         }
+
         > a {
-            display: inline-block;
+            display: table;
             width: 100%;
-            font-size: 1.1em;
+            height: 100%;
             padding: $menu-tabbed-padding-vertic $menu-tabbed-padding-horiz;
+            font-size: 1.1em;
             font-family: $caption-font-family;
             font-weight: $weight-light;
             line-height: 1;
             color: $grey-stack;
             text-decoration: none;
+
+            > div {
+                display: table-cell;
+                vertical-align: middle;
+            }
 
             @include hoverify {
                 background-color: $menu-tabbed-item-hover-bg-colour;
@@ -85,9 +93,10 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
 
 // Makes two col button container with one button left & one right
 .two-btn-nav {
-    @include make-table-column( $two-btn-layout );
+    font-size: 115%; // Large buttons sizing - propagete into its own class
 
     p {
+        margin-bottom: .35em;
         font-size: 80%;
         color: $grey-stack;
     }
@@ -106,11 +115,25 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
             text-align: right;
         }
     }
+
+    @include media( $tablet-and-bigger ) {
+        &:first-child {
+            .two-btn-wrap { padding-left: 20%; }
+        }
+
+        &:last-child {
+            .two-btn-wrap { padding-right: 20%; }
+        }
+    }
 }
 
-.two-col-layout {
-    .two-btn-nav.block:last-child { padding-top: $block-margin; }
-}
+    .sector .two-col-layout .two-btn-nav.block {
+        display: table-cell;
+        width: 100% * $two-btn-layout; // Makes `two button columns` same width
+
+        &:last-child { padding-top: $block-margin; } // Locks top padding for mobile views
+    }
+
 
 // Sticks panels to the bottom
 .mobile-sticky-down {
@@ -137,7 +160,10 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
             }
 
             > li > a {
+                display: block; // Override to enable label's ellipsis
                 padding: .6em .4em .4em .4em;
+
+                > div { display: inline; } // Override to enable label's ellipsis
             }
 
             .label {

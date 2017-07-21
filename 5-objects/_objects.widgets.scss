@@ -63,6 +63,10 @@ $tile-bg:      #f0f0f0;
         text-align: center;
     }
 
+    .sub-title {
+        color: $grey-dusty-gray;
+        font-weight: $weight-normal;
+    }
     .code {
         display: block;
         float: right;
@@ -72,6 +76,8 @@ $tile-bg:      #f0f0f0;
         font-weight: $weight-normal;
         color: $grey-dusty-gray;
     }
+
+
 
     &:nth-child(odd){ margin-left: 0; }
     &:nth-child(even){ margin-right: 0; }
@@ -306,7 +312,6 @@ $collapsible-transparency-height: 2.5em;
         display: block;
         margin: 1em 0;
         text-align: center;
-
 
         > a { padding: .5em; }
     }

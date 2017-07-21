@@ -45,12 +45,14 @@ $action-promo-hover: darken( $green-victoria, 11% );
             background-color: $action-promo-color;
 
             a {
-                padding: 1em;
                 display: block;
                 width: 100%;
+                padding: 1em;
+                text-decoration: underline;
+
                 @include hoverify () {
                     color: #FFF;
-                    text-decoration: underline;
+                    text-decoration: none;
                     background-color: $action-promo-hover;
                 }
             }
