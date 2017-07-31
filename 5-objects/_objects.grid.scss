@@ -2,13 +2,16 @@
 =            GRID-BASED LAYOUT ELEMENTS            =
 ==================================================*/
 
-$block-margin: $base-margin;
+$block-margin:              $base-margin;
+$block-mobile-large-margin: $base-margin / 1.25;
+$block-mobile-margin:       $base-margin / 1.5;
 
 
 /* ===== SECTORS ============================================================ */
 
 // To divide page into independent sectors.
-.sector, .sector-container {
+.sector,
+.sector-container {
     @include clearfix();
 
     // Adds highlight
@@ -31,6 +34,17 @@ $block-margin: $base-margin;
 }
 
 
+
+// The only way to cover horizontal separator of the previous block is to shift
+// current block slightly upwards and re-draw it with separator of the
+// background colour.
+.separated + .separated.no-lines {
+    position:   relative; top: -1 * $base-border-width;
+    border:     none;
+    border-top: $base-border-width solid $base-bg-colour;
+}
+
+
 //.layout-rebase {} // Layout normaliser => Reset previous layouting rules
 
 
@@ -43,11 +57,10 @@ $block-margin: $base-margin;
 .block {
     display: block;
     padding: $block-margin;
-    vertical-align: top;
+    vertical-align: top; // used when `display: block` is converted into `display: table`
 
     // 1. Collapse space in all siblings (default)...
     .sector + .sector & { padding-top: 0; }
-
 
     // 2. Enable in some cases
     .sector + .sector.highlighted & { padding-top: $block-margin; }
@@ -63,6 +76,18 @@ $block-margin: $base-margin;
     .sector .block-container &:not(:first-child) { padding-top: 0; }
     .block + .block-container &:first-child { padding-top: 0; }
     .block + .block-container.two-col-layout &:last-child { padding-top: 0; }
+
+
+    // 2) Responsiveness
+    @include media( $mobile ) {
+        padding-left: $block-mobile-margin;
+        padding-right: $block-mobile-margin;
+    }
+
+    @include media( $mobile-large ) {
+        padding-left: $block-mobile-large-margin;
+        padding-right: $block-mobile-large-margin;
+    }
 }
 
 
@@ -74,7 +99,7 @@ $block-margin: $base-margin;
 
 .short-col-wide {
     @include media( $desktop-large ) {
-        @include span-columns(12)
+        @include span-columns( 12 )
     }
 }
 
@@ -98,7 +123,7 @@ $block-margin: $base-margin;
             ul, ol { text-align: left; }
         }
 
-        @include media( $desktop-and-bigger) {
+        @include media( $desktop-and-bigger ) {
 
             // Left column
             &:first-child {
@@ -122,7 +147,7 @@ $block-margin: $base-margin;
 
         // Swap column blocks - 35% left and 65% right
         .block {
-            @include media( $desktop-and-bigger) {
+            @include media( $desktop-and-bigger ) {
 
                 // Left column
                 &:first-child {
@@ -157,3 +182,49 @@ $block-margin: $base-margin;
         }
     }
 }
+
+
+
+
+
+/* ===== SUB-BLOCKS ========================================================= */
+
+
+/**
+* A block with children that are placed next to each other
+* into flexible columns.
+*/
+.flexi-columns {
+    display: flex;
+    flex-wrap: nowrap;
+
+    //.column{}
+
+    @include media( $mobile-large-and-smaller ) {
+        display: block;
+    }
+}
+
+
+/**
+* Grid with blocks that can flexibly stretched and
+* floated based on their content dynamic.
+*/
+.flexi-grid {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+    .flexi-block {
+        width: auto;
+        margin-bottom: 1em;
+        padding-right: 8%;
+
+        &:last-child { margin-bottom: 0; }
+
+        &.stretch {
+            width: 100%;
+            padding-right: 0;
+        }
+    }

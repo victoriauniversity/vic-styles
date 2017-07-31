@@ -52,3 +52,17 @@ $grid-list-items-per-row:   3;
     }
 }
 
+
+.flexi-list {
+    overflow: hidden;
+    display: flex;
+    flex-flow: column wrap;
+
+    &.columns3 {
+        > li { width: 33.33%; }
+
+        @include media( $mobile-large-and-smaller ) {
+            > li { width: 50%; }
+        }
+    }
+}

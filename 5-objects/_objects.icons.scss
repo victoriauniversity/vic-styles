@@ -86,6 +86,10 @@ $ico-code-tick:            '\e81e';
 $ico-code-calendar:        '\e81f';
 $ico-code-flag:            '\e820';
 
+$ico-code-globe:           '\e821';
+$ico-code-money:           '\e822';
+$ico-code-exchange:          '\e823';
+
 
 /* ===== ENTITY CODES ======================================================= */
 
@@ -152,6 +156,10 @@ $code-triangle-down:  '\25be';
     @include define-icon( tick, $ico-code-tick );
     @include define-icon( calendar, $ico-code-calendar );
     @include define-icon( flag, $ico-code-flag );
+
+    @include define-icon( globe, $ico-code-globe );
+    @include define-icon( money, $ico-code-money );
+    @include define-icon( exchange, $ico-code-exchange );
 
 
     /* CSS only icons. */

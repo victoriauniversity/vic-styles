@@ -8,6 +8,9 @@
 // start of active development!
 
 
+
+
+
 /* ===== BOX MODEL ========================================================== */
 
 /*******************************************************************************
@@ -24,6 +27,37 @@
 }
 
 
+/*******************************************************************************
+ * Basic most commonly used skeleton for :after pseudo-class that turns it into
+ * stylable element.
+ *
+ * @content - :after's additional attributes.
+ */
+@mixin after( $display: inline-block, $text: "", $position: static ){
+    &:after {
+        @include objectify( $display, $text, $position );
+        @content;
+    }
+}
+
+
+/*******************************************************************************
+ * Basic most commonly used skeleton for :before pseudo-class that turns it into
+ * stylable element.
+ *
+ * @content - :before's additional attributes.
+ */
+@mixin before( $display: inline-block, $text: "", $position: static ){
+    &:before {
+        @include objectify( $display, $text, $position );
+        @content;
+    }
+}
+
+
+
+
+
 /* ===== TYPOGRAPHY ========================================================= */
 
 /*******************************************************************************
@@ -38,6 +72,15 @@
         @content;
     }
 }
+
+    /***************************************************************************
+    * Underlined decoration to non-underlined on hover.
+    */
+    @mixin hoverify-underline() {
+        text-decoration: underline;
+
+        @include hoverify() { text-decoration: none; }
+    }
 
 
 /*******************************************************************************
@@ -124,5 +167,3 @@
     @include transition-timing-function( $timing-function );
     @include transition-delay( 0 );
 }
-
-

@@ -1,0 +1,128 @@
+/*=============================================================================\
+=                             DETAIL OVERVIEW                                  =
+\==============================================================================/
+* Can be used as a highlight, summary or table of contents inside a page,
+* article or bigger section.
+*
+* Recommended usage is along with `<aside>` element.
+*/
+
+$detail-overview-bg: $grey-gallery !default;
+
+$detail-overview-text-size: .9em;
+
+
+.detail-overview {
+    background-color: $detail-overview-bg;
+
+    // Inside a collapsible panel
+    .collapsible & {
+        background-color: inherit;
+    }
+
+
+    // Angular-specific - remove if necessary
+    collapsible{
+        display: block;
+        padding-top: .35em;
+
+        &:not(.collapsible) .flexi-list.columns3 > li {
+            width: auto; // Stretch to maximum if `collapsible` is not in place
+        }
+    }
+
+    .flexi-block:last-child{ margin-bottom: 0; }
+
+    h3 {
+        margin-bottom:  .6em;
+        font-weight:    $weight-semibold;
+        font-size:      1.1em;
+
+        &.ico:before {
+            font-weight: $weight-normal;
+            top: .05em;
+            margin-right: .4em;
+        }
+    }
+
+    .highlight {
+        font-size:      1.2em;
+        line-height:    1.3;
+
+        small { font-size: 75%; }
+
+        .note {
+            display: block;
+            margin-top: .35em;
+            margin-bottom: 0;
+        }
+    }
+
+    p,
+    ul {
+        margin-bottom: .5em;
+        font-size: $detail-overview-text-size;
+    }
+
+    ul {
+        .highlight { margin-bottom: .75em; }
+        .tooltip-icon { vertical-align: baseline; line-height: 0; }
+    }
+
+    .content {
+        a {
+            display: inline-block;
+            @include hoverify-underline();
+            white-space: nowrap;
+        }
+    }
+
+    .flexi-columns { margin-bottom: .25em; }
+
+    // Show less/more
+    .collapsible-wrapper .semitransparent + .collapsible__control {
+        margin-top: 0; margin-bottom: 0;
+        padding-top: .75em;
+        font-size: $detail-overview-text-size;
+
+        @include media( $tablet-and-bigger ) {
+            text-align: left;
+
+            > a { padding: 0; }
+        }
+
+        > a { text-decoration: none; }
+
+        &:before {
+            background: linear-gradient( rgba(#000, 0) 25%, $grey-gallery 100% );
+        }
+    }
+
+    .flexi-list {
+        max-width: 60em;
+
+        > li {
+            // Don't use margins, otherwise collapsifying calculation won't
+            // work properly.
+            padding-right: .35em;
+            padding-bottom: .45em;
+            line-height: 1.2;
+        }
+    }
+
+    .flexi-block { margin-bottom: 1.3em; }
+
+    // Key information for students block
+    .kis {
+        padding-right: 0;
+        order: 2;
+
+        // Makes the block after flexible which makes KIS float right
+        &.flexi-block + .flexi-block {
+            width: 1%;
+            flex-grow: 2;
+        }
+    }
+}
+
+

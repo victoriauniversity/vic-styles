@@ -90,6 +90,13 @@
         &:last-child h4 { margin-bottom: 0; }
     }
 
+        // Move `margin-top` to the `collapsible` block to avoid animation issues
+        .collapsible {
+            margin-top: .7em;
+
+            .sublist { margin-top: 0; }
+        }
+
     // 3rd level
     .sub-sublist {
         margin-top: .2em;
