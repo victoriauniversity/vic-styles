@@ -26,3 +26,5 @@
             padding: .25em;
         }
     }
+
+    .select2-container--open { z-index: #{$z-index-max}9; }

@@ -80,21 +80,26 @@ $detail-overview-text-size: .9em;
     .flexi-columns { margin-bottom: .25em; }
 
     // Show less/more
-    .collapsible-wrapper .semitransparent + .collapsible__control {
-        margin-top: 0; margin-bottom: 0;
-        padding-top: .75em;
-        font-size: $detail-overview-text-size;
+    .collapsible-wrapper {
+        .semitransparent + .collapsible__control {
+            padding-top: .75em;
 
-        @include media( $tablet-and-bigger ) {
-            text-align: left;
-
-            > a { padding: 0; }
+            &:before {
+                background: linear-gradient( rgba(#000, 0) 25%, $grey-gallery 100% );
+            }
         }
 
-        > a { text-decoration: none; }
+        .collapsible__control {
+            margin-top: 0; margin-bottom: 0;
+            font-size: $detail-overview-text-size;
 
-        &:before {
-            background: linear-gradient( rgba(#000, 0) 25%, $grey-gallery 100% );
+            @include media( $tablet-and-bigger ) {
+                text-align: left;
+
+                > a { padding: 0; }
+            }
+
+            > a { text-decoration: none; }
         }
     }
 
