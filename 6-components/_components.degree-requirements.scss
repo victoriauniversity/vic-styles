@@ -160,7 +160,10 @@
             }
         }
 
-        &:last-child .container-opened { border-bottom: 0; margin-bottom: 0; }
+        &:last-child .container-opened {
+            margin-bottom: 0;
+            border-bottom: 0;
+        }
     }
 }
 
@@ -170,5 +173,8 @@
         .block { padding-bottom: 0; }
     }
 
-    .sector.nested-section:last-child { border-bottom: 0; }
+    .sector.nested-section {
+         .toggle-header { padding-top: $base-margin; }
+         &:last-child   { border-bottom: 0; }
+    }
 }

@@ -164,15 +164,15 @@ $tile-bg:      #f0f0f0;
         margin-bottom: .3em;
 
         > .ico:before {
-            color: #666;
             width: 1em;
             margin-right: .1em;
+            color: $grey-dove;
         }
     }
 
     .label {
         margin-right: .5em;
-        color: #666;
+        color: $grey-dove;
         font-weight: $weight-semibold;
         font-size: 90%;
     }
