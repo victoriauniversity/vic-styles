@@ -4,6 +4,10 @@
 
 
     /** Select2 custom selector:  https://github.com/select2/select2 */
+    .select2 {
+        .fees & { width: auto !important; }
+    }
+
     //.select2-container {}
     .select2-selection__arrow {
         top: 50% !important;
@@ -22,8 +26,8 @@
         font-weight: $weight-bold;
 
         .select2-selection--single {
-            height: auto;
             padding: .25em;
+            height: auto;
         }
     }
 
