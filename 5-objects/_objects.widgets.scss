@@ -98,6 +98,7 @@ $tile-bg:      #f0f0f0;
 
         .btn-holder {
             float: right;
+            flex-grow: 1;
             text-align: right;
             min-width: 15em;
             margin: 0 0 1.5em 1.5em;
