@@ -65,6 +65,17 @@ $detail-overview-text-size: .9em;
     ul {
         .highlight { margin-bottom: .75em; }
         .tooltip-icon { vertical-align: baseline; line-height: 0; }
+
+        li {
+            padding-right: .35em;
+            padding-bottom: .45em;
+
+            // Don't use margins, otherwise collapsifying calculation won't
+            // work properly.
+            line-height: 1.2;
+
+            &.highlight { padding-bottom: 0; }
+        }
     }
 
     .content {
@@ -103,14 +114,6 @@ $detail-overview-text-size: .9em;
 
     .flexi-list {
         max-width: 60em;
-
-        > li {
-            // Don't use margins, otherwise collapsifying calculation won't
-            // work properly.
-            padding-right: .35em;
-            padding-bottom: .45em;
-            line-height: 1.2;
-        }
     }
 
     .flexi-block { margin-bottom: 1.3em; }
