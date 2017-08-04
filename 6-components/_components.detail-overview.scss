@@ -7,8 +7,7 @@
 * Recommended usage is along with `<aside>` element.
 */
 
-$detail-overview-bg: $grey-gallery !default;
-
+$detail-overview-bg:        $grey-gallery !default;
 $detail-overview-text-size: .9em;
 
 
@@ -19,7 +18,6 @@ $detail-overview-text-size: .9em;
     .collapsible & {
         background-color: inherit;
     }
-
 
     // Angular-specific - remove if necessary
     collapsible{
@@ -39,9 +37,9 @@ $detail-overview-text-size: .9em;
         font-size:      1.1em;
 
         &.ico:before {
-            font-weight: $weight-normal;
             top: .05em;
             margin-right: .4em;
+            font-weight: $weight-normal;
         }
     }
 
@@ -126,6 +124,15 @@ $detail-overview-text-size: .9em;
         &.flexi-block + .flexi-block {
             width: 1%;
             flex-grow: 2;
+        }
+
+        @include media( $mobile-large-and-smaller ) {
+            margin-bottom: 0;
+
+            &.flexi-block + .flexi-block {
+                width: 100%;
+                margin-bottom: 1.3em;
+            }
         }
     }
 }

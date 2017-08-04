@@ -145,10 +145,14 @@ $tile-bg:      #f0f0f0;
         }
 
         @include media ( $mobile-large-and-smaller ) {
+            .tile__body{ flex-wrap: wrap; }
             .btn-holder {
-                margin-top: 1.2em;
+                margin: 1.2em 0 0;
+                width: 100%;
                 float: none;
                 text-align: center;
+
+                .note { text-align: inherit; }
             }
         }
     }
@@ -158,6 +162,8 @@ $tile-bg:      #f0f0f0;
 
 .tile__body,
 .tile__list { margin: 0 $tile-padding 1em; }
+
+.tile__body { display: flex; }
 
 .tile__list {
     > li {

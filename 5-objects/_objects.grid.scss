@@ -88,6 +88,8 @@ $block-mobile-margin:       $base-margin / 1.5;
         padding-left: $block-mobile-large-margin;
         padding-right: $block-mobile-large-margin;
     }
+
+    &.no-bg { background: inherit; } // Eliminates background
 }
 
 
