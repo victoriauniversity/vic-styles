@@ -31,11 +31,13 @@ $green-bottle-darker:  #093521;
 
 //Buttons
 $blue-azure:           #3468B0;
+
 //Hover button
 $blue-st-tropaz:       #285189;
 
 //Link text
 $blue-endeavoura:      #005ea5;
+
 //Link hover
 $blue-curious-blue:    #2B8CC4;
 
@@ -50,6 +52,7 @@ $blue-curious-blue:    #2B8CC4;
 $grey-gallery:         #EEE;
 $grey-alto:            #DDD;
 $grey-silver:          #CCC;
+$grey-chalice:         #AAA;
 
 // NEW GREYS
 $grey-silver-chalice:  #bfbfbf;
@@ -57,6 +60,7 @@ $grey-dusty-gray:      #999;
 $grey-stack:           #808080;
 $grey-mako:            #475153;
 $grey-mine-shaft:      #333;
+$grey-dove:            #666;
 
 $yellow-spring-wood:   #f4f4e9;
 
@@ -113,65 +117,6 @@ $light_grey:           $grey-alto;
 $blue_action:          $blue-endeavoura;
 $blue_action_darker:   $blue-congress-blue;
 $blue_action_lighter:  $blue-lochmara;
-
-// ========================
-
-
-
-// ==============================
-		// COLOR TESTING
-		// [ROOT]/test
-// ==============================
-@mixin theme($name, $color) {
-  $primary: $color;
-
-  .#{$name} {
-    &.test-block {
-      background-color: $primary;
-      span {
-      	background-color: #fff;
-      	color: #000;
-      	padding: 0.51em;
-
-      	&:before {content: '#{$name}';}
-      }
-    }
-
-  }
-}
-$themes: (
-grey-gallery: #EEE, //old
-grey-alto: #DDD, //old
-grey-silver: #CCC, //old
-grey-silver-chalice: #bfbfbf, //new
-
-grey-mercury: #e8e8e8, //new
-grey-dusty-gray: #999, //new
-grey-stack: #808080, //new
-
-
-grey-mako: #475153,
-grey-mine-shaft: #333, //new
-green-fern: #63B960,
-blue-curious: #1483EB,
-blue-picton: #3C90E6,
-grey-tower: #A7BBC1 //new
-) !default;
-
-
-
-@each $theme, $color in $themes {
-  @include theme($theme, $color);
-}
-
-.test-block {
-	@include size( 200px );
-	@include span-columns (1);
-	@include omega();
-}
-
-// =================================
-
 
 
 

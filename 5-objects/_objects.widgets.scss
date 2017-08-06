@@ -45,7 +45,7 @@ $tile-bg:      #f0f0f0;
     vertical-align: top;
     width: 100%;
 
-    .collapsible-wrapper .collapsible__control { margin-top: 0; }
+    &.collapsible-wrapper .collapsible__control { margin-top: 0; }
 
     .title { line-height: 1.2; }
 
@@ -77,8 +77,6 @@ $tile-bg:      #f0f0f0;
         color: $grey-dusty-gray;
     }
 
-
-
     &:nth-child(odd){ margin-left: 0; }
     &:nth-child(even){ margin-right: 0; }
 
@@ -100,6 +98,7 @@ $tile-bg:      #f0f0f0;
 
         .btn-holder {
             float: right;
+            flex-grow: 1;
             text-align: right;
             min-width: 15em;
             margin: 0 0 1.5em 1.5em;
@@ -147,10 +146,14 @@ $tile-bg:      #f0f0f0;
         }
 
         @include media ( $mobile-large-and-smaller ) {
+            .tile__body{ flex-wrap: wrap; }
             .btn-holder {
-                margin-top: 1.2em;
+                margin: 1.2em 0 0;
+                width: 100%;
                 float: none;
                 text-align: center;
+
+                .note { text-align: inherit; }
             }
         }
     }
@@ -161,20 +164,22 @@ $tile-bg:      #f0f0f0;
 .tile__body,
 .tile__list { margin: 0 $tile-padding 1em; }
 
+.tile__body { display: flex; }
+
 .tile__list {
     > li {
         margin-bottom: .3em;
 
         > .ico:before {
-            color: #666;
             width: 1em;
             margin-right: .1em;
+            color: $grey-dove;
         }
     }
 
     .label {
         margin-right: .5em;
-        color: #666;
+        color: $grey-dove;
         font-weight: $weight-semibold;
         font-size: 90%;
     }
@@ -303,7 +308,7 @@ $tile-bg:      #f0f0f0;
 
 /** Collapsible/Expandable block. */
 
-$collapsible-transparency-height: 2.5em;
+$collapsible-transparency-height: 4em;
 
 .collapsible-wrapper {
 
@@ -320,30 +325,25 @@ $collapsible-transparency-height: 2.5em;
 
     // Adds semi-transparent overlay to see part of the collapsed block
     &.collapsed .semitransparent + .collapsible__control {
-        &:before {
-            position: absolute;
+        @include before( block, $position: absolute ) {
+            pointer-events: none;
             top: -$collapsible-transparency-height;
-            display: block;
             @include size( 100% $collapsible-transparency-height );
-            background: linear-gradient( rgba( 255, 255, 255, 0 ) 0%, white 100% );
-            content: "";
+            background: linear-gradient( rgba( #000, 0 ) 0%, white 100% );
         }
     }
 }
 
+    .block .collapsible__control:last-child {
+        margin-bottom: 0;
+    }
+
+
 .collapsible {
     display: block;
-    height: auto;
     overflow: hidden;
-
-    // Default state
-    //.collapsed > & {
-        //.collapsible__control {
-            //@include linear-gradient( rgba($tile-bg, 0) 0%, $tile-bg 25%, $tile-bg 100%);
-        //}
-    //}
-
-    //.expanded > & {}
+    height: auto;
+    transition: all .3s ease;
 }
 
 /** Generic listing with cards placed in two columns. */
@@ -441,20 +441,18 @@ $popup-border:   #fff;
     background-color: $grey-gallery;
     box-shadow: 0 0 7px rgba( #000, .35 );
 
-    & > header
-    {
+    & > header {
         font-size: 90%;
 
         //.caption {}
 
         // 'x' button
-        .btn-close
-        {
-            color: $grey-mako;
+        .btn-close {
             opacity: .4;
             display: block;
             float: right;
             margin-left: .5em;
+            color: $grey-mako;
             font-size: 170%;
             line-height: 1.1;
 
@@ -472,8 +470,7 @@ $popup-border:   #fff;
 @include media ( $mobile-large-and-smaller ) {
     .popup-positioner {
         margin: 0;
-        bottom: auto;
-        top: 0;
+        bottom: auto; top: 0;
         width: 100%
     }
 
@@ -507,6 +504,6 @@ $popup-border:   #fff;
 
 /** Simple warning wrapper. */
 .warning {
-    background-color: $yellow-spring-wood;
     padding: 1em;
+    background-color: $yellow-spring-wood;
 }

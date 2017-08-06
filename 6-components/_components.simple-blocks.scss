@@ -211,8 +211,6 @@ $nm-bg-color: $grey-gallery;
 =     DEGREES BLOCK      =
 ===============================*/
 
-$mar-bot: .3em;
-
 
 /** Related study options . */
 
@@ -267,18 +265,36 @@ $mar-bot: .3em;
 
 .explore-page {
     @include outer-container;
-    // @include media ($mobile-large-and-bigger) {
     .block {
         @include media ($tablet-and-bigger) {
             @include span-columns (4);
         }
     }
-    // }
 }
 
 .explore-areas-page {
     .block {
         ul { margin-left: 0.5em; }
+    }
+}
+
+
+/*===============================
+=           FEES                =
+===============================*/
+
+.fees {
+    .ico.exchange {
+        margin: 0 1em;
+        color: $grey-dusty-gray;
+
+        @include media( $mobile-large-and-smaller ) {
+            margin-left: 0;
+
+            &:before {
+                transform: rotate( 90deg );
+            }
+        }
     }
 }
 

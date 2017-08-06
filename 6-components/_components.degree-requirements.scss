@@ -26,9 +26,11 @@
     }
 }
 
-.kis-requirements {
-    display: inline-block;
-}
+.kis-requirements { display: inline-block; }
+
+
+
+
 
 /*===============================
 =    DEGREE REQUIREMENTS BLOCK  =
@@ -37,7 +39,7 @@
 .requirements {
     .collapsed .semitransparent + .collapsible__control {
         &:before {
-            background: linear-gradient( rgba( 255, 255, 255, 0 ), $grey-gallery 100% );
+            background: linear-gradient( rgba( $grey-gallery, 0 ), $grey-gallery 100% );
         }
     }
 
@@ -89,6 +91,13 @@
 
         &:last-child h4 { margin-bottom: 0; }
     }
+
+        // Move `margin-top` to the `collapsible` block to avoid animation issues
+        .collapsible {
+            margin-top: .7em;
+
+            .sublist { margin-top: 0; }
+        }
 
     // 3rd level
     .sub-sublist {
@@ -153,7 +162,10 @@
             }
         }
 
-        &:last-child .container-opened { border-bottom: 0; margin-bottom: 0; }
+        &:last-child .container-opened {
+            margin-bottom: 0;
+            border-bottom: 0;
+        }
     }
 }
 
@@ -163,5 +175,8 @@
         .block { padding-bottom: 0; }
     }
 
-    .sector.nested-section:last-child { border-bottom: 0; }
+    .sector.nested-section {
+         .toggle-header { padding-top: $base-margin; }
+         &:last-child   { border-bottom: 0; }
+    }
 }

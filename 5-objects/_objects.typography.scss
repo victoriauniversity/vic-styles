@@ -21,7 +21,6 @@
     ul, ol {
         > li {
             margin-bottom: .35em;
-            margin-top: .35em;
             line-height: $base-line-height;
 
             // Nested sublist
@@ -73,40 +72,57 @@
     a { font-size: 1.2em; }
 }
 
-.tooltip-inline,
-.tooltip-icon {
-    cursor: default;
-}
 
 /** Inline hint (~ tooltip). */
+
 $hint-inline-colour:            $base-font-colour;
 $hint-inline-underline-colour:  $grey-dusty-gray;
 $hint-inline-active-colour:     black;
 
+$hint-inline-heading-underline-colour: darken( $heading-colour, 20 );
+
+
 .tooltip-inline {
+    cursor: default;
     color: $hint-inline-colour;
     border-bottom: 1px dashed $hint-inline-underline-colour;
+    text-decoration: none !important;
 
     @include hoverify() {
         color: $hint-inline-active-colour;
         border-bottom-color: $hint-inline-active-colour;
     };
+
+    // Hint inside headings
+    h2 &,
+    h3 &,
+    h4 & {
+        color: inherit;
+        border-color: $heading-colour;
+
+        @include hoverify() {
+            color: $hint-inline-heading-underline-colour;
+            border-color: $hint-inline-heading-underline-colour;
+        }
+    }
 }
 
+
 /** Icon for the tooltip. */
+
 .tooltip-icon {
     display: inline;
     cursor: pointer;
     margin: 0 .35em;
     vertical-align: middle;
     font-size: 90%;
-    color: $grey-stack;
-    opacity: .6;
+    color: $grey-chalice;
 
     &:before { display: inline; }
 
-    @include hoverify() { opacity: 1; }
+    @include hoverify() { color: $grey-stack; }
 }
+
 
 // Generic inline action link of lower importance
 .link-action {
@@ -115,26 +131,34 @@ $hint-inline-active-colour:     black;
     white-space: nowrap;
 }
 
-.link--external {
-    display: inline;
-}
+.link--external { display: inline; }
+
 
 // Inline block that might be or might not be used inside a dynamic content.
 .inliner {
     margin-right: .3em;
 
-    & + .link-action {
-        margin-left: 0;
-    }
+    & + .link-action { margin-left: 0; }
 }
 
 // Adds short delimiting line AFTER actual item
 .item-separated {
-    &:after {
-        display: block;
+    @include after( block ){
         margin: .6em 0;
         @include size( 2em 2px );
-        content: "";
         background-color: $grey-alto;
+    }
+}
+
+// Adds additional space behind a given element, if it is not *last*
+//
+// Tip: Can be useful if an element needs spacing, but only
+//      under certain conditions that cannot be captured through
+//      CSS selectors - e.g. if the second element is a link and
+//      appending the spacing to the link's element would cause
+//      unwanted spacing on line breaks.
+.append-space:not(:last-child) {
+    @include after() {
+        margin-right: .5em;
     }
 }
