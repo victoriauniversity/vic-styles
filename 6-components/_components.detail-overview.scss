@@ -94,7 +94,7 @@ $detail-overview-text-size: .9em;
             padding-top: .75em;
 
             &:before {
-                background: linear-gradient( rgba(#000, 0) 25%, $grey-gallery 100% );
+                @include background( linear-gradient( rgba($grey-gallery, 0) 25%, $grey-gallery 100% ));
             }
         }
 
@@ -112,11 +112,8 @@ $detail-overview-text-size: .9em;
         }
     }
 
-    .flexi-list {
-        max-width: 60em;
-    }
-
-    .flexi-block { margin-bottom: 1.3em; }
+    .flexi-list     { max-width: 60em; }
+    .flexi-block    { margin-bottom: 1.3em; }
 
     // Key information for students block
     .kis {
