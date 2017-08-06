@@ -26,9 +26,11 @@
     }
 }
 
-.kis-requirements {
-    display: inline-block;
-}
+.kis-requirements { display: inline-block; }
+
+
+
+
 
 /*===============================
 =    DEGREE REQUIREMENTS BLOCK  =
@@ -37,7 +39,7 @@
 .requirements {
     .collapsed .semitransparent + .collapsible__control {
         &:before {
-            background: linear-gradient( rgba( 255, 255, 255, 0 ), $grey-gallery 100% );
+            background: linear-gradient( rgba( $grey-gallery, 0 ), $grey-gallery 100% );
         }
     }
 
