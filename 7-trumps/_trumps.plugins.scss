@@ -18,9 +18,12 @@
         .select2-container {
             position: relative; top: -.1em;
             margin-left: .3em;
+            margin-right: .05em;
             font-weight: $weight-bold;
         }
     }
+
+    .select2-container { margin-right: .15em; }
 
     .form__select + .select2 {
         font-weight: $weight-bold;
