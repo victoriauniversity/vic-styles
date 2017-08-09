@@ -12,7 +12,7 @@ $detail-overview-text-size: .9em;
 
 
 .detail-overview {
-    background-color: $detail-overview-bg;
+    &.highlighted { background-color: $detail-overview-bg; }
 
     // Inside a collapsible panel
     .collapsible & {

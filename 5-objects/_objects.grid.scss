@@ -129,20 +129,22 @@ $block-mobile-margin:       $base-margin / 1.5;
 
             // Left column
             &:first-child {
-                @include make-table-column( $two-col-layout-left-ratio);
+                @include make-table-column( $two-col-layout-left-ratio );
             }
 
             // Right column
             &:last-child {
-                @include make-table-column( $two-col-layout-right-ratio);
+                @include make-table-column( $two-col-layout-right-ratio );
                 padding-top: $block-margin;
             }
 
             &.btns-holder {
                 text-align: right;
-                @include make-table-column( $two-col-layout-right-ratio);
+                @include make-table-column( $two-col-layout-right-ratio );
             }
         }
+
+        &.stretch { width: 100%; }
     }
 
     &.swap-columns {
@@ -181,6 +183,8 @@ $block-mobile-margin:       $base-margin / 1.5;
                     border-top: none;
                 }
             }
+
+            &.stretch { border-left: 0; }
         }
     }
 }

@@ -134,8 +134,9 @@ $code-triangle-down:  '\25be';
     // Default tooltip
     @include define-icon( tooltip-icon, $ico-code-help );
 
-        // Extensions
-        &.tooltip-icon.warn { content: $ico-code-warning; }
+        // Tooltips variations
+        &.tooltip-icon.warn:before { content: $ico-code-warning; }
+
 
     @include define-icon( clock, $ico-code-clock );
     @include define-icon( clock-back, $ico-clock-back );
