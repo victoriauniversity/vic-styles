@@ -225,12 +225,12 @@ $block-mobile-margin:       $base-margin / 1.5;
     .flexi-block {
         width: auto;
         margin-bottom: 1em;
-        padding-right: 8%;
+        margin-right: 8%;
 
         &:last-child { margin-bottom: 0; }
 
         &.stretch {
             width: 100%;
-            padding-right: 0;
+            margin-right: 0;
         }
     }
