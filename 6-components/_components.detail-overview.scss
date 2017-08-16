@@ -91,7 +91,7 @@ $detail-overview-text-size: .9em;
         }
     }
 
-    .flexi-block > p { font-size: inherit; }
+    .flexi-block > p:first-child { font-size: inherit; }
 
     .flexi-columns { margin-bottom: .25em; }
 
