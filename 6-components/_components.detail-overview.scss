@@ -55,14 +55,21 @@ $detail-overview-text-size: .9em;
     }
 
     p,
+    ul > li {
+        font-size: $detail-overview-text-size;
+    }
+
+    p,
     ul {
         margin-bottom: .5em;
-        font-size: $detail-overview-text-size;
     }
 
     ul {
         .highlight { margin-bottom: .75em; }
-        .tooltip-icon { vertical-align: baseline; line-height: 0; }
+        .tooltip-icon {
+            vertical-align: baseline;
+            line-height: 0;
+        }
 
         li {
             padding-right: .35em;
@@ -83,6 +90,8 @@ $detail-overview-text-size: .9em;
             white-space: nowrap;
         }
     }
+
+    .flexi-block > p:first-child { font-size: inherit; }
 
     .flexi-columns { margin-bottom: .25em; }
 
