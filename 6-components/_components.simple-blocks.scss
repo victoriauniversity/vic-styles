@@ -169,18 +169,18 @@ $nm-bg-color: $grey-gallery;
     color: $grey-stack;
 
     &.ico:before {
-        margin-right: .3em;
+        margin-right: .25em;
         font-size: 110%;
     }
+
+    &.small { font-size: 90%; }
 
     .tag {
         display: inline-block;
         font-size: 90%;
         font-weight: $weight-normal;
 
-        &:after {
-            display: inline-block;
-            content: "/";
+        @include after( $text: '/' ) {
             padding: 0 .15em;
         }
 
@@ -190,6 +190,13 @@ $nm-bg-color: $grey-gallery;
     }
 
     ul & { margin-left: .3em; }
+
+    .content-simple ul & {
+        margin-left: 0;
+        cursor: default;
+
+        &:after { padding: 0; }
+    }
 }
 
 .related-degree,

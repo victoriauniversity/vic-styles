@@ -77,7 +77,6 @@ $dialog-padding:   1em;
 
 
     @include media( $desktop-and-bigger ) {
-
         .two-col-layout.block-container .block {
             &:first-child,
             &:last-child { width: 50%; }

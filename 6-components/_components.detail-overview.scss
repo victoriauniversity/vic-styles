@@ -12,12 +12,10 @@ $detail-overview-text-size: .9em;
 
 
 .detail-overview {
-    background-color: $detail-overview-bg;
+    &.highlighted { background-color: $detail-overview-bg; }
 
     // Inside a collapsible panel
-    .collapsible & {
-        background-color: inherit;
-    }
+    .collapsible & { background-color: inherit; }
 
     // Angular-specific - remove if necessary
     collapsible{
@@ -57,14 +55,21 @@ $detail-overview-text-size: .9em;
     }
 
     p,
+    ul > li {
+        font-size: $detail-overview-text-size;
+    }
+
+    p,
     ul {
         margin-bottom: .5em;
-        font-size: $detail-overview-text-size;
     }
 
     ul {
         .highlight { margin-bottom: .75em; }
-        .tooltip-icon { vertical-align: baseline; line-height: 0; }
+        .tooltip-icon {
+            vertical-align: baseline;
+            line-height: 0;
+        }
 
         li {
             padding-right: .35em;
@@ -86,6 +91,8 @@ $detail-overview-text-size: .9em;
         }
     }
 
+    .flexi-block > p:first-child { font-size: inherit; }
+
     .flexi-columns { margin-bottom: .25em; }
 
     // Show less/more
@@ -99,7 +106,8 @@ $detail-overview-text-size: .9em;
         }
 
         .collapsible__control {
-            margin-top: 0; margin-bottom: 0;
+            margin-top: 0;
+            margin-bottom: 0;
             font-size: $detail-overview-text-size;
 
             @include media( $tablet-and-bigger ) {
@@ -117,7 +125,7 @@ $detail-overview-text-size: .9em;
 
     // Key information for students block
     .kis {
-        padding-right: 0;
+        margin-right: 0;
         order: 2;
 
         // Makes the block after flexible which makes KIS float right
