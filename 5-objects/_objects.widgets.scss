@@ -144,6 +144,7 @@ $tile-bg:      #f0f0f0;
 
         @include media ( $mobile-large-and-smaller ) {
             .tile__body{ flex-wrap: wrap; }
+            .tile__list{ flex: inherit; }
             .btn-holder {
                 order: 2;
                 margin: 1.2em 0 0;
