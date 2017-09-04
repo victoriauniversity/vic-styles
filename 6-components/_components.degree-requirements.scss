@@ -145,7 +145,7 @@
             padding-bottom: .3em;
         }
 
-        .collapsible__control {
+        > .collapsible__control {
             padding: 0 1.5em;
             text-align: left;
             font-size: 110%;
@@ -157,7 +157,7 @@
         }
 
         &.collapsed {
-            .collapsible__control { margin-top: 0; }
+            > .collapsible__control { margin-top: 0; }
         }
     }
 
