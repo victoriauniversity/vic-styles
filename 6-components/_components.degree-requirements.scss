@@ -144,7 +144,24 @@
             padding-top: 0;
             padding-bottom: .3em;
         }
+
+        > .collapsible__control {
+            padding: 0 1.5em;
+            text-align: left;
+            font-size: 110%;
+
+            > a {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        &.collapsed {
+            > .collapsible__control { margin-top: 0; }
+        }
     }
+
+
 
     .container-opened {
         border-bottom: 1px solid $grey-gallery;
