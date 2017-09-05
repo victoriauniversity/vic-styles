@@ -135,7 +135,10 @@ $tile-bg:      #f0f0f0;
             .tooltip-icon { margin-left: 0; }
         }
 
-        .description { display: block; }
+        .description {
+            display: block;
+            width: 100%;
+        }
 
         /** Tiles' responsivity. */
         @include media ( $tablet-and-smaller ) {
