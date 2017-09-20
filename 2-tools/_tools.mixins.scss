@@ -148,23 +148,5 @@
 @mixin make-table-grid() {
     @include fill-parent();
     @include row();
-    @include display( table );
-}
-
-
-/* ===== ANIMATIONS ========================================================= */
-
-/*******************************************************************************
- * Creates transition between element's original and future state.
- *
- * @duration        - How long should the element trasition between original and
- *                    final state.
- * @timing-function - Function defining the progress of the transition.
- */
-@mixin transitionise( $duration: $base-transition-duration, $timing-function: $base-transition-function )
-{
-    @include transition-property( all );
-    @include transition-duration( $duration );
-    @include transition-timing-function( $timing-function );
-    @include transition-delay( 0 );
+    display: table;
 }

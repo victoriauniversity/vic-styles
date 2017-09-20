@@ -1,15 +1,16 @@
-/*===============================
-=            BANNERS            =
-===============================*/
+/*=============================================================================
+=                                     BANNERS                                 =
+==============================================================================*/
 
-
-/**TODO: Redesign */
 
 /* Banner with background cover */
+
+$banner-overlay-bg: #449F37;
 
 $banner-cover-max-width:    1200px;
 $banner-cover-text-colour:  $white;
 $banner-cover-max-height:   620px;
+
 
 .banner-with-cover {
     position: relative;
@@ -18,7 +19,7 @@ $banner-cover-max-height:   620px;
 
     .cover-overlay {
         @include position( absolute, 0 0 0 0);
-        @include size( 100% 100%);
+        @include size( 100% 100% );
     }
 
     .cover-holder {
@@ -41,6 +42,7 @@ $banner-cover-max-height:   620px;
     }
 
     .intro {
+        z-index: $z-index-lower;
         @include outer-container( 990px );
         @include position( relative);
         margin-top: 0;
@@ -48,7 +50,6 @@ $banner-cover-max-height:   620px;
         padding: 2.2em $base-padding * 1.6;
         color: $banner-cover-text-colour;
         text-align: center;
-        z-index: $z-index-lower;
 
         .banner-link {
             color: $white;
@@ -63,7 +64,7 @@ $banner-cover-max-height:   620px;
         margin-top: .75em;
         margin-bottom: 1.2em;
         color: $banner-cover-text-colour;
-        background-color: rgba( $green-victoria-old, .75 );
+        background-color: rgba( $banner-overlay-bg, .75 );
 
         h1,
         h2 {
@@ -101,29 +102,29 @@ $banner-cover-max-height:   620px;
     .abstract {
         color: $white;
         padding: .6em .9em;
-        background-color: rgba( $green-victoria-old, .75 );
+        background-color: rgba( $banner-overlay-bg, .75 );
     }
 
-    /** International/domestic switcher */
-    .content-switcher {
-        position: relative;
-        display: block;
-        float: right;
-        color: #FFF;
-        text-align: center;
+        /** International/domestic switcher */
+        .content-switcher {
+            position: relative;
+            display: block;
+            float: right;
+            color: #FFF;
+            text-align: center;
 
-        background-color: rgba( #000, .65 );
-        padding: .5em .75em;
-        margin: 1em;
-    }
+            background-color: rgba( #000, .65 );
+            padding: .5em .75em;
+            margin: 1em;
+        }
 
-    @include media( $tablet-and-smaller ){
+    @include breakpoint( $tablet-and-smaller ){
         .intro{ padding: 1.6em; }
         .title{ font-size: 95%; }
         .abstract{ font-size: 1.3em; }
     }
 
-    @include media( $mobile-large-and-smaller ){
+    @include breakpoint( $mobile-large-and-smaller ){
         .intro{ padding: 1em; }
 
         .title{
@@ -137,9 +138,32 @@ $banner-cover-max-height:   620px;
             font-size: 1.3em;
         }
 
-        .content-switcher{
+        .content-switcher {
             float: none;
             margin: 0 0 .5em;
+        }
+    }
+}
+
+
+/** Banner with an overview (~imageless) */
+
+$banner-bg:                 $block-highlight-colour !default;
+$banner-separator-colour:   $delim-highlight-bg-colour !default;
+
+
+.banner-overview {
+    background-color: $banner-bg;
+    border-bottom: 1px solid $banner-separator-colour;
+    text-align: center;
+
+    .pane-controls {
+        font-size: 1.2em;
+        font-weight: $weight-bold;
+
+        .control-group {
+            display: inline-block;
+            margin-right: .75em;
         }
     }
 }

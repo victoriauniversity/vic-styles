@@ -1,128 +1,86 @@
-/*==========================================
-=            COLOUR DEFINITIONS            =
-==========================================*/
+/*=============================================================================
+=                              COLOUR DEFINITIONS                             =
+==============================================================================*/
 
 // *IMPORTANT* - Colour naming convention
 //
 // 1) Read why https://davidwalsh.name/sass-color-variables-dont-suck
 // 2) Get unique name for the color using http://chir.ag/projects/name-that-color/#005EA5
-//    or make one.
+//    (or make one).
 // 3) Assign colour to the variable as following: ${base_color}-{unique_name}.
 
 
 /* ===== BASIC ============================================================== */
 
+
 $white:                #FFF;
 $black:                #000;
 
 
-/* ===== BRANDED & ORIGINAL ============================================================ */
 
-// TODO: Refactor all the greens!
-$green-victoria:       #64a659;
-$green-victoria-old:   #449F37;
+
+
+/* ===== BRANDED ============================================================ */
+
+
+$green-victoria:       #115737;
+$green-light-victoria: #64a659;
 $black-victoria:       #1d2624;
-$green-victoria-study: #549349;
 
 
-//Vic Green variations
-$green-bottle-green:   #0D4B2F;
-$green-bottle-darker:  #093521;
 
-//Buttons
-$blue-azure:           #3468B0;
-
-//Hover button
-$blue-st-tropaz:       #285189;
-
-//Link text
-$blue-endeavoura:      #005ea5;
-
-//Link hover
-$blue-curious-blue:    #2B8CC4;
 
 
 /* ===== NAMED PALETTE ====================================================== */
 
-//===================
 
-//IN ORDER LIGHT > DARK
-
-// ORINGINAL GREYS
+// Greys
 $grey-gallery:         #EEE;
 $grey-alto:            #DDD;
 $grey-silver:          #CCC;
+$grey-silver-chalice:  #BFBFBF;
 $grey-chalice:         #AAA;
-
-// NEW GREYS
-$grey-silver-chalice:  #bfbfbf;
-$grey-dusty-gray:      #999;
+$grey-dusty:           #999;
 $grey-stack:           #808080;
-$grey-mako:            #475153;
-$grey-mine-shaft:      #333;
 $grey-dove:            #666;
-
-$yellow-spring-wood:   #f4f4e9;
-
-// ORINGINAL BLACK FOR TEXT
-$black-tundora:        #444;
+$grey-mako:            #475153;
+$black-tundora:        #424242;
+$grey-mine-shaft:      #333;
 
 
+// Buttons
+$blue-azure:           #3363B3; // Button
+$blue-st-tropaz:       #285189; // Button's hover
 
-//===================
 
-// NEW GREYS
-$grey-mercury:		#e8e8e8; //should remove this, use grey-gallery instead
+// Links
+$blue-endeavoura:   #005ea5; // Link
+$blue-curious:      #2B8CC4; // Link's hover text
 
-//===================
+// Accessiblity
+$blue-accessibility:#2E8ACA;
 
-//NEW OTHER - unsure on these
 
-$green-fern:           #63B960;
-$blue-curious:         #1483EB;
-$blue-picton:          #3C90E6;
+
+// Others
 $blue-grey-tower:      #A7BBC1;
-
-//===================
-
-
-// NAME FIXES - refactor
-
-$green-mako:           $grey-mako;
-$grey-tower:           $blue-grey-tower;
-
-$vic-green:            $green-victoria;
-$vic-black:            $black-victoria;
-
-//===================
-
-/* ===== UI HELPERS ========================================================= */
-
-// Typography
-$text-fade-colour:     $grey-tower;
+$yellow-spring-wood:   #F4F4E9; // Used for important highlights
 
 
-/* ===== OLD =========================================================== */
+/** Not used anywhere yet - uncomment & move to start using any of those. */
+// $green-chrome-white:   #E7F0D4; // green highlight
 
+//$yellow-pearl-lusta:   #FCF8E3; // Alert highlight
+//$yellow-cinamon:       #705602; // Dark yellow for warning text
 
-//TODO:                REFACTOR & REMOVE!
+//$blue-humming-bird:    #E4F3FB; // Alert Promo & Info
+//$blue-callypso:        #255C79; // Dark blue for Promo & Info text
 
+//$green-tara:           #E2F7E2; // Alert success
+//$green-killarney:      #2C6B2C; // Dark green for success text
 
-$blue-congress-blue:   #004f8c;
-$blue-lochmara:        #007BD8;
-
-$green-finlandia:      #5F6B5F;
-
-$light_grey:           $grey-alto;
-$blue_action:          $blue-endeavoura;
-$blue_action_darker:   $blue-congress-blue;
-$blue_action_lighter:  $blue-lochmara;
-
-
-
-
-
-
+// $red-medium-violet:    #CC328E; // Input[text] Error
+// $red-oyster-pink:      #ECCDCD; // Danger/Error lighter highlight
 
 
 

@@ -5,10 +5,14 @@
 
 /* ===== DEFINE & IMPORT FONTS ============================================== */
 
+
 // Victoria's
+
 @include font-face( $font-victoria, "#{$path-font-victoria}-Regular", $weight-normal, $file-formats: ttf woff woff2 );
 @include font-face( $font-victoria, "#{$path-font-victoria}-Semibold", $weight-semibold, $file-formats: ttf woff woff2 );
 @include font-face( $font-victoria, "#{$path-font-victoria}-Extrabold", $weight-extrabold, $file-formats: ttf woff woff2 );
 
+
 // Font icons
+
 @include font-face( $font-victoria-icons, "#{$path-fonticon-victoria}", $file-formats: woff2 woff ttf );

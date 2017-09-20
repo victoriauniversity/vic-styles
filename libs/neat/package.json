@@ -1,9 +1,8 @@
 {
   "name": "bourbon-neat",
-  "version": "1.7.2",
-  "description": "A lightweight, semantic grid framework built with Bourbon",
+  "version": "2.1.0",
+  "description": "A lightweight, semantic grid framework",
   "keywords": [
-    "bourbon",
     "columns",
     "grid",
     "layout",
@@ -13,7 +12,8 @@
     "queries",
     "sass",
     "scss",
-    "semantic"
+    "semantic",
+    "eyeglass-module"
   ],
   "homepage": "http://neat.bourbon.io",
   "bugs": {
@@ -24,12 +24,25 @@
     "name": "thoughtbot",
     "url": "http://thoughtbot.com"
   },
-  "main": "app/assets/stylesheets/_neat.scss",
+  "main": "index.js",
+  "style": "core/_neat.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/thoughtbot/neat.git"
   },
   "scripts": {
-    "test": "echo \"No test specified\""
+    "contrib": "gulp",
+    "test": "bundle exec rake"
+  },
+  "devDependencies": {
+    "gulp": "^3.9",
+    "gulp-autoprefixer": "^3.1",
+    "gulp-connect": "^5.0",
+    "gulp-sass": "^3.1"
+  },
+  "eyeglass": {
+    "name": "neat",
+    "needs": "*",
+    "exports": "eyeglass-exports.js"
   }
 }

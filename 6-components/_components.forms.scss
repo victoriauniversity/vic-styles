@@ -11,13 +11,12 @@ select[multiple=multiple] {
   border: $text-input-border;
   box-sizing: border-box;
   font-family: $base-font-family;
-  font-size: $em-browser-default;
   margin-bottom: 1em;
   padding: $base-padding / 3;
   width: 100%;
 
   &:hover {
-    border-color: $grey-dusty-gray;
+    border-color: $grey-dusty;
   }
 
   &:focus {
@@ -26,7 +25,7 @@ select[multiple=multiple] {
   }
 
   &:disabled {
-    background-color: $grey-mercury;
+    background-color: $grey-gallery;
     cursor: not-allowed;
 
     &:hover {

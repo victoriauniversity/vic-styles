@@ -9,14 +9,14 @@ $ico-margin:    0.9em;
     background-color: $contact-bg-color;
 
     .fine-print {
-        color: $grey-dusty-gray;
+        color: $grey-dusty;
         text-align: center;
 
-        p { font-size: .8rem; }
+        p { font-size: .8em; }
 
         .minilinks {
             margin-bottom: .3em;
-            font-size: .85rem;
+            font-size: .85em;
         }
     }
 
@@ -48,28 +48,27 @@ $ico-margin:    0.9em;
         text-decoration: underline;
         font-size: 1.1em;
         @include hoverify () {
-            color: $grey-dusty-gray;
+            color: $grey-dusty;
         }
     }
-    p {
-        color: $grey-dusty-gray;
-    }
+
+    p { color: $grey-dusty; }
 
     .contact-wrap {
-        min-height: 6em;
         display: block;
+        min-height: 6em;
         text-align: center;
     }
 
     .block {
         padding: 0.5em;
-        min-width: 220px;
-        width: 33.33%;
         margin-right: auto;
         margin-left: auto;
+        min-width: 220px;
+        width: 33.33%;
         text-align: center;
 
-        @include media( $tablet-and-smaller ) {
+        @include breakpoint( $tablet-and-smaller ) {
             width: auto;
         }
     }
@@ -124,7 +123,7 @@ $ico-margin:    0.9em;
         }
     }
 
-    @include media( $desktop-and-bigger) {
+    @include breakpoint( $desktop-and-bigger) {
         padding: 1.75em 0;
 
         .contact-wrap {

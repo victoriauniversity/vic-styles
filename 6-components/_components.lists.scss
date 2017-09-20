@@ -5,13 +5,13 @@
 
 /* ===== TOPICS & PROGRAMMES ================================================ */
 
-$grid-area-margin: .15em !default;
-$grid-area-title-colour: $green-mako !default;
+$grid-area-margin:              .15em !default;
+$grid-area-title-colour:        $grey-mako !default;
 $grid-area-title-caret-colour: #AAA !default;
-$grid-area-hover-title-colour: $white !default;
-$grid-area-bg: $grey-mercury !default;
-$grid-area-hover-bg: $grey-alto !default;
-$grid-area-active-bg: $green-victoria !default;
+$grid-area-hover-title-colour:  $white !default;
+$grid-area-bg:                  $grey-gallery !default;
+$grid-area-hover-bg:            $grey-alto !default;
+$grid-area-active-bg:           $green-light-victoria !default;
 
 
 // Standard grid list containing areas and their previews
@@ -47,8 +47,7 @@ $grid-area-active-bg: $green-victoria !default;
 
     .preview {
         display: none; // Hide preview by default
-        position: absolute;
-        left: 0;
+        position: absolute; left: 0;
         margin: $grid-area-margin 0;
         background: $grid-area-bg;
     }
@@ -62,8 +61,7 @@ $grid-area-active-bg: $green-victoria !default;
     // Active area showing 'preview'
     .expanded & {
         .title {
-            position: relative;
-            top: .1em;
+            position: relative; top: .1em;
             color: $grid-area-hover-title-colour;
 
             // Flick the caret!

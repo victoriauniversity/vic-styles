@@ -391,13 +391,16 @@ $print-logo-width:          300px;
 
     // Tiles
     .tiles {
-        @include columns( 1 );
+        columns: 1;
         column-count: 1 !important;
 
         .tile { margin-bottom: 0 !important;}
 
         .tile__header,
-        .tile__list { margin-left: 0 !important; margin-right: 0 !important;  }
+        .tile__list {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
     }
 
     // Contacts

@@ -1,18 +1,25 @@
 /*====================================
-=            STYLE RESETS            =
+=               RESETS               =
 ====================================*/
-
 
 * {
     margin: 0;
     padding: 0;
 }
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 
-address{
+address {
     font-style: inherit;
     display: inline;
+}
+
+q {
+    &:before,
+    &:after {
+        content: '';
+    }
 }

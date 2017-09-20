@@ -66,8 +66,6 @@ $dialog-padding:   1em;
 .dialog {
     overflow-y: scroll;
 
-    font-size: 1.2em;
-
     h1 {
         margin-top: 0;
         margin-right: 1em;
@@ -76,7 +74,7 @@ $dialog-padding:   1em;
     h1, h2, h3 { line-height: 1.05; }
 
 
-    @include media( $desktop-and-bigger ) {
+    @include breakpoint( $desktop-and-bigger ) {
         .two-col-layout.block-container .block {
             &:first-child,
             &:last-child { width: 50%; }
@@ -189,7 +187,7 @@ $dialog-padding:   1em;
         }
     }
 
-    @include media( $tablet-and-smaller ) {
+    @include breakpoint( $tablet-and-smaller ) {
 
         .abstract { width: 100%; }
         .form__select { width: auto; }
@@ -200,7 +198,7 @@ $dialog-padding:   1em;
 
     }
 
-    @include media( $mobile ) {
+    @include breakpoint( $mobile ) {
         .form__select { width: 90%; }
     }
 }

@@ -13,8 +13,8 @@ $fun-fact-bg-color: $grey-gallery;
 
 .fact__title {
     margin-bottom: 0;
-    font-size: 3.2em;
     line-height: 1;
+    font-size: $h2-size * 1.5;
     color: $grey-mako;
     text-align: right;
 }
@@ -26,7 +26,7 @@ $fun-fact-bg-color: $grey-gallery;
 }
 
 
-@include media( $tablet-and-smaller ) {
+@include breakpoint( $tablet-and-smaller ) {
 
     .fact__heading.block { padding-bottom: 0; }
 
@@ -36,8 +36,8 @@ $fun-fact-bg-color: $grey-gallery;
     }
 
     .fact__title {
-        margin-bottom: .2em;
-        font-size: 3em;
+        margin-bottom: .5em;
+        font-size: $h2-size * 1.35;
     }
 
 }
@@ -66,7 +66,7 @@ $nm-bg-color: $grey-gallery;
                 white-space: nowrap;
             }
         }
-        @include media ( $desktop-and-bigger) {
+        @include breakpoint ( $desktop-and-bigger) {
             width: 100%;
             max-width: 850px;
             margin-right: auto;
@@ -96,7 +96,7 @@ $nm-bg-color: $grey-gallery;
 .intro-about-block {
     .intro-about {
         padding: 1.5em;
-        @include media( $tablet-and-bigger) {
+        @include breakpoint( $tablet-and-bigger) {
             float: left;
             @include make-table-column( $two-col-layout-left-ratio);
         }
@@ -105,7 +105,7 @@ $nm-bg-color: $grey-gallery;
         padding: 1.5em;
         border-bottom: 1px solid $grey-alto;
 
-        @include media( $tablet-and-bigger) {
+        @include breakpoint( $tablet-and-bigger) {
             float: right;
             @include make-table-column( $two-col-layout-right-ratio);
             border-left: 1px solid $grey-alto;
@@ -239,7 +239,7 @@ $nm-bg-color: $grey-gallery;
 
 
 /** Collapsible control is LEFT inside smaller of the two column block. */
-@include media ( $desktop-and-bigger ) {
+@include breakpoint ( $desktop-and-bigger ) {
     .two-col-layout .block:last-child .collapsible__control {
         text-align: left;
     }
@@ -273,7 +273,7 @@ $nm-bg-color: $grey-gallery;
 .explore-page {
     @include outer-container;
     .block {
-        @include media ($tablet-and-bigger) {
+        @include breakpoint ($tablet-and-bigger) {
             @include span-columns (4);
         }
     }
@@ -293,9 +293,9 @@ $nm-bg-color: $grey-gallery;
 .fees {
     .ico.exchange {
         margin: 0 1em;
-        color: $grey-dusty-gray;
+        color: $grey-dusty;
 
-        @include media( $mobile-large-and-smaller ) {
+        @include breakpoint( $mobile-large-and-smaller ) {
             margin-left: 0;
 
             &:before {

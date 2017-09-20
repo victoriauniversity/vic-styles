@@ -1,5 +1,8 @@
-// 1. Import of base libraries
+/*=============================================================================
+=                             IMPORT DEPENDENCIES                             =
+==============================================================================*/
+
+// *Note*: This file includes dependencies and *MUST BE* included as a first file in the entire UI framework.
 
 @import '../libs/bourbon/app/assets/stylesheets/bourbon.scss';
-@import '../libs/neat/app/assets/stylesheets/neat.scss';
-
+@import '../libs/neat/core/_neat.scss';

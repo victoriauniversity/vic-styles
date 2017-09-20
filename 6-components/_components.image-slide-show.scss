@@ -15,50 +15,50 @@
     text-align: center;
     margin: .8em auto 0;
 
-    @include media ($desktop-and-bigger) {
+    @include breakpoint ($desktop-and-bigger) {
         max-width: 970px;
     }
 
-    @include media ($tablet-and-smaller) {
+    @include breakpoint ($tablet-and-smaller) {
         min-width: 100%;
     }
 
-    @include media ($mobile-large-and-smaller) {
+    @include breakpoint ($mobile-large-and-smaller) {
         max-width: 480px;
     }
 }
 
 .slide-show__slide {
-    @include media ($desktop-and-bigger) {
+    @include breakpoint ($desktop-and-bigger) {
         max-width: 970px;
         min-height: 500px;
     }
 
-    @include media ($tablet-and-smaller) {
+    @include breakpoint ($tablet-and-smaller) {
         min-width: 100%;
         min-height: 300px;
     }
 
-    @include media ($mobile-large-and-smaller) {
+    @include breakpoint ($mobile-large-and-smaller) {
         max-width: 480px;
         min-height: 200px;
     }
 
     position: relative;
     border: 1px solid $grey-silver;
-    background-color: $vic-black;
+    background-color: $black-victoria;
     //padding-bottom: 2em;
     margin-left: auto;
     margin-right: auto;
 
     img {
         vertical-align: middle;
+        margin: auto;
         max-width: 100%;
         max-height: 100%;
         height: auto;
         display: block;
-        margin: auto;
-        @include media ($desktop-and-bigger) {
+        @include breakpoint ($desktop-and-bigger) {
             position: absolute;
             top: 0;
             left: 0;

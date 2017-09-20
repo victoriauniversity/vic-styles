@@ -165,7 +165,7 @@ $code-triangle-down:  '\25be';
 
     @include define-icon( spin, $ico-code-spin ){
         display: inline-block;
-        @include animation( spin 2s infinite linear );
+        animation: spin 2s infinite linear;
     };
     @include define-icon( search, $ico-code-search );
     @include define-icon( person, $ico-code-person );
@@ -188,8 +188,8 @@ $code-triangle-down:  '\25be';
 
     // Text-based triangle
     @include define-icon( triangle, $code-triangle-right ) {
-        display: inline;
         transition: none;
+        display: inline;
 
         .expanded & {
             content: $code-triangle-down

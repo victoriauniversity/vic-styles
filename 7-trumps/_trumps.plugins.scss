@@ -1,11 +1,55 @@
+/*=============================================================================
+=                              3RD PARTY PLUGINS                              =
+==============================================================================*/
 
 
-    /* ===== PLUGIN SPECIFIC =============================================== */
+/** Select2 custom selector: https://github.com/select2/select2 */
+
+$select2-dropdown-border-colour: $grey-chalice;
 
 
-    /** Select2 custom selector:  https://github.com/select2/select2 */
-    .select2 {
-        .fees & { width: auto !important; }
+.select2 {
+    .fees &,
+    .pane-controls & {
+        width: auto !important;
+    }
+
+    /** Selector as a standard link with a caret */
+    .pane-controls & {
+        vertical-align: inherit;
+
+        .select2-selection--single {
+            position: relative;     // Resetting caret's vertical position
+            height: auto;
+            margin-bottom: .35em;   // Push dropdown down
+            border: 0;
+            background-color: transparent;
+        }
+
+        .select2-selection__rendered {
+            overflow: initial;
+            padding-left: .1em;
+            line-height: 1;
+            color: $link-colour;
+        }
+
+        // Caret triangles
+        .select2-selection__arrow {
+            margin-top: 0;  // Resetting caret's vertical position
+            height: auto;   // Resetting caret's vertical position
+
+            b {
+                margin-top: 0; top: auto;   // Resetting caret's vertical position
+                border-top-color: $link-colour;
+            }
+        }
+
+        &.select2-container--open  .select2-selection__arrow b { border-bottom-color: $link-colour; }
+    }
+}
+
+    .select2-container--open .select2-dropdown--below {
+        border-top: 1px solid $select2-dropdown-border-colour;
     }
 
     //.select2-container {}

@@ -2,10 +2,12 @@
 =       QUOTE BLOCK             =
 ===============================*/
 
+
 $bg-color: $grey-gallery;
+
 .block__quote {
     header {
-        @include media ($mobile-large-and-smaller) {
+        @include breakpoint ($mobile-large-and-smaller) {
             float: right;
         }
     }
@@ -15,13 +17,12 @@ $bg-color: $grey-gallery;
     padding-bottom: 2em;
 
     .quote-text {
-        @include media ($mobile-large-and-smaller) {
+        @include breakpoint ($mobile-large-and-smaller) {
             float: right;
         }
     }
 
-    .block {
-    }
+    //.block {}
 }
 
 .block__quote,
@@ -35,24 +36,24 @@ $bg-color: $grey-gallery;
             float: left;
             margin: 0 5em 1em 0;
 
-            @include media ( $tablet ) {
+            @include breakpoint ( $tablet ) {
                 margin-right: 2em;
             }
 
-            @include media ( $mobile-large) {
+            @include breakpoint ( $mobile-large) {
                 margin-right: 1.5em;
             }
-            @include media ( $mobile) {
+            @include breakpoint ( $mobile) {
                 margin-right: 1em;
                 margin-bottom: .5em;
             }
 
             img {
-                @include size ( 180px);
                 margin-left: auto;
                 margin-right: auto;
+                @include size ( 180px);
                 border-radius: 50%;
-                @include media ( $mobile-large-and-smaller) {
+                @include breakpoint ( $mobile-large-and-smaller) {
                     @include size (120px);
                 }
             }
@@ -62,7 +63,7 @@ $bg-color: $grey-gallery;
 
             header {
                 padding-bottom: 1em;
-                @include media ( $desktop-and-bigger) {
+                @include breakpoint ( $desktop-and-bigger) {
                     float: none;
                 }
             }
@@ -76,11 +77,11 @@ $bg-color: $grey-gallery;
                 color: $grey-mako;
                 text-indent: 0;
 
-                @include media ( $desktop-and-bigger) {
+                @include breakpoint ( $desktop-and-bigger) {
                     text-indent: -1.45em;
                 }
 
-                @include media ( $tablet-and-smaller) {
+                @include breakpoint ( $tablet-and-smaller) {
                     .ico.quote-start { padding-left: .6em; }
                 }
             }
@@ -113,19 +114,18 @@ $bg-color: $grey-gallery;
 
 .block__quote .quote-wrap {
 
-    @include media ( $mobile-large-and-smaller) {
+    @include breakpoint ( $mobile-large-and-smaller) {
         .quote-body {
             > header { margin-top: 1em; }
             .holder { overflow: inherit; }
         }
     }
 
-    @include media ( $mobile ) {
+    @include breakpoint ( $mobile ) {
         .quote-body {
-            @include display( flex );
-            @include align-items( stretch );
-            @include flex-direction( column-reverse );
-
+            display: flex;
+            align-items: stretch;
+            flex-direction: column-reverse;
             text-align: center;
         }
 

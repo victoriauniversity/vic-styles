@@ -3,46 +3,71 @@
 =========================================================*/
 
 
-// Constants
-$mobile-grid-columns:       4;
-$mobile-max-width:          em( 479px, $em-browser-default );
-
-$mobile-large-grid-columns: 6;
-$mobile-large-min-width:    em( 480px, $em-browser-default );
-$mobile-large-max-width:    em( 759px, $em-browser-default );
-
-$tablet-grid-columns:       8;
-$tablet-min-width:          em( 760px, $em-browser-default );
-$tablet-max-width:          em( 989px, $em-browser-default );
-
-// $tablet-portrait-max-width: 	em( 1024px, $em-browser-default );
-// $tablet-portrait-max-height: 	em( 768px, $em-browser-default );
-
-$desktop-grid-columns:      12;
-$desktop-min-width:         em( 990px, $em-browser-default ); //This should be bigger (1024px) to accomadate tablet portait.
-$desktop-max-width:         em( $base-width-px - 1, $em-browser-default );
-
-$desktop-large-grid-columns: 16;
-$desktop-large-min-width:   em( $base-width-px, $em-browser-default );
+/* ===== PROPERTIES ========================================================= */
 
 
-// Create reusable breakpoints
-$mobile:                    new-breakpoint( max-width $mobile-max-width $mobile-grid-columns );
-
-$mobile-large:              new-breakpoint( min-width $mobile-large-min-width
-                                            max-width $mobile-large-max-width $mobile-large-grid-columns );
-$mobile-large-and-smaller:  new-breakpoint( max-width $mobile-large-max-width $mobile-large-grid-columns );
-$mobile-large-and-bigger:   new-breakpoint( min-width $mobile-large-min-width $mobile-large-grid-columns );
-
-$tablet:                    new-breakpoint( min-width $tablet-min-width
-                                            max-width $tablet-max-width $tablet-grid-columns );
-$tablet-and-smaller:        new-breakpoint( max-width $tablet-max-width $tablet-grid-columns );
-$tablet-and-bigger:         new-breakpoint( min-width $tablet-min-width $tablet-grid-columns );
+/**
+ * IMPORTANT: Whenever the following boundary values change, they
+ * also need to be MANUALLY updated within HTML templates (e.g.
+ * within responsive <picture> elements).
+ */
 
 
-$desktop:                   new-breakpoint( min-width $desktop-min-width
-                                            max-width $desktop-max-width $desktop-grid-columns );
-$desktop-and-smaller:       new-breakpoint( max-width $desktop-max-width $desktop-grid-columns );
-$desktop-and-bigger:        new-breakpoint( min-width $desktop-min-width $desktop-grid-columns );
+$mobile-max-width:          30rem;
+$mobile-layout-ratio:       .85;
 
-$desktop-large:             new-breakpoint( min-width $desktop-large-min-width $desktop-large-grid-columns );
+$mobile-large-min-width:    30rem;
+$mobile-large-max-width:    45rem;
+$mobile-large-layout-ratio: .9;
+
+$tablet-min-width:          45rem;
+$tablet-max-width:          60rem;
+$tablet-layout-ratio:       .95;
+
+$desktop-min-width:         60rem;
+$desktop-max-width:         $base-width;
+
+$desktop-large-min-width:   $base-width;
+
+
+
+
+
+/* ===== BREAKPOINTS ======================================================== */
+
+
+// Small-screen mobile devices
+
+$mobile:                    'screen and ( max-width: $mobile-max-width )';
+
+
+// Medium-size to large mobile devices
+
+$mobile-large:              'screen and ( max-width: $mobile-large-max-width ) and ( min-width: $mobile-large-min-width )';
+$mobile-large-and-smaller:  'screen and ( max-width: $mobile-large-max-width )';
+$mobile-large-and-bigger:   'screen and ( min-width: $mobile-large-min-width )';
+
+
+// Tablet devices
+
+$tablet:                    'screen and ( max-width: $tablet-max-width ) and ( min-width: $tablet-min-width )';
+$tablet-and-smaller:        'screen and ( max-width: $tablet-max-width)';
+$tablet-and-bigger:         'screen and ( min-width: $tablet-min-width)';
+
+
+// Smaller desktop devices
+
+$desktop:                   'screen and ( max-width: $desktop-max-width ) and ( min-width: $desktop-min-width )';
+$desktop-and-smaller:       'screen and ( max-width: $desktop-max-width )';
+$desktop-and-bigger:        'screen and ( min-width: $desktop-min-width )';
+
+
+// Large desktop devices
+
+$desktop-large:             'screen and ( min-width: $desktop-large-min-width )';
+
+@mixin breakpoint( $devices-range ) {
+    @media #{$devices-range} {
+        @content;
+    }
+}

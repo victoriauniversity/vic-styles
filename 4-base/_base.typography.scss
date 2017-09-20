@@ -1,98 +1,85 @@
-/*==================================
-=            TYPOGRAPHY            =
-==================================*/
+/*=============================================================================
+=                                     TYPOGRAPHY                              =
+==============================================================================*/
+
+
+/* ===== LOCAL MIXINS ======================================================= */
+
+
+// see https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_modular-scale.scss for more
+$modular-scale-ratio: $minor-third;
+
+
+
 
 
 /* ===== PROPERTIES ========================================================= */
 
-$heading-font-family:   $caption-font-family;
-$heading-line-height:   $caption-line-height;
-$heading-colour:        $green-victoria;
-$heading-weight:        $weight-semibold;
+
+$heading-font-family:   $caption-font-family !default;
+$heading-line-height:   $caption-line-height !default;
+$heading-colour:        $green-light-victoria !default;
+$heading-weight:        $weight-semibold !default;
+
+$h1-size: modular-scale( 4 ) !default;
+$h2-size: modular-scale( 3 ) !default;
+$h3-size: modular-scale( 2 ) !default;
+$h4-size: modular-scale( 1 ) !default;
+$h5-size: modular-scale( 1 ) - ( modular-scale( 1 ) - modular-scale( 0 ) ) / 2 !default;
 
 
 
-/* ===== HELPERS ============================================================ */
-
-/* Heading's selectors generator. */
-@function headings( $from:1, $to:5 ) {
-    @if $from==$to {
-        @return 'h#{$from}';
-    }
-    @else {
-        @return 'h#{$from},' + headings($from+1, $to);
-    }
-}
 
 
 /* ===== GLOBAL ============================================================= */
 
 
-
-
-
-/* Headings */
-// Then call it with the rules/styles you want wherever you want (As long as the file/include has access to the above function of course).
-#{headings( 1, 6 )} {
-    margin-bottom: .4em;
-    color: $green-victoria;
-    font-family: $heading-font-family;
-    font-weight: $heading-weight;
-    line-height: $heading-line-height;
-}
+/* LAYOUT */
 
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
-    font-size: 2.1em;
-}
 
-h2 {
-    font-size: 1.6em;
-}
+/* HEADINGS */
 
-h3 {
-    font-size: 1.4em;
-}
-
-h4 {
-    font-size: 1.2em;
-}
-
+h1,
+h2,
+h3,
+h4,
 h5 {
-    font-size: 1.1em;
+    margin-bottom: .4em;
+    color: $green-light-victoria;
+    font-family: $heading-font-family;
+    font-weight: $heading-weight;
+    line-height: $heading-line-height;
 }
 
+h1 { font-size: $h1-size; }
+h2 { font-size: $h2-size; }
+h3 { font-size: $h3-size; }
+h4 { font-size: $h4-size; }
+h5 { font-size: $h5-size; }
 
-q {
-    &:before,
-    &:after {
-        content: '';
-    }
-}
+
+/* LINKS */
 
 @mixin linkify() {
     color: $link-colour;
-    @include hoverify { color: $blue-curious-blue; }
+    @include hoverify { color: $blue-curious; }
 }
 
 a {
     @include linkify;
     text-decoration: none;
-}
+    transition: $base-transition;
 
-a,
-a > *:before,
-a > *:after,
-.tooltip-icon  {
-    @include transitionise();
-}
-
-// Fixes the issue with double-animation of icons within links.
-a .ico:before,
-a .ico:after {
-    transition: none;
+    // Fixes the issue with double-animation of icons within links.
+    .ico {
+        &:before,
+        &:after {
+            transition: none;
+        }
+    }
 }

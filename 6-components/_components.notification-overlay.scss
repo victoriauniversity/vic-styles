@@ -14,7 +14,7 @@
 
     .logo.large { margin: 3em 0 1.5em; }
 
-    @include media( $mobile-large-and-smaller ) {
+    @include breakpoint( $mobile-large-and-smaller ) {
         .logo.large { margin: 2em 0 .7em; }
 
         h1, h2 { line-height: 1.2; }
@@ -34,7 +34,7 @@
     // Progress
     .loading {
         h1 {
-            color: $green-bottle-green;
+            color: $green-victoria;
             font-weight: $weight-semibold;
         }
 

@@ -12,10 +12,10 @@ $menu-tabbed-item-max-width:           $base-width / 4 !default; // accommodates
 $menu-tabbed-item-triangle-width:      1.5em !default;
 $menu-tabbed-item-triangle-height:     ( $menu-tabbed-item-triangle-width / 3 ) !default;
 $menu-tabbed-item-label-colour:        $grey-stack !default;
-$menu-tabbed-item-hover-label-colour:  $blue-curious-blue !default;
+$menu-tabbed-item-hover-label-colour:  $blue-curious !default;
 $menu-tabbed-item-hover-bg-colour:     $grey-alto !default;
 $menu-tabbed-item-active-label-colour: $white !default;
-$menu-tabbed-item-active-bg-colour:    $green-victoria !default;
+$menu-tabbed-item-active-bg-colour:    $green-light-victoria !default;
 
 /* Menu or submenu using tab-like layout of its items. */
 .menu-tabbed {
@@ -112,7 +112,7 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
         }
     }
 
-    @include media( $tablet-and-bigger ) {
+    @include breakpoint( $tablet-and-bigger ) {
         &:first-child {
             .two-btn-wrap { padding-left: 20%; }
         }
@@ -137,7 +137,7 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
 
 // Sticks panels to the bottom (Mobile only)
 .mobile-sticky-down {
-    @include media( $mobile-large-and-smaller ) {
+    @include breakpoint( $mobile-large-and-smaller ) {
         box-shadow: rgba(#000, .12) 0 -1px 10px;
 
         &.sector {

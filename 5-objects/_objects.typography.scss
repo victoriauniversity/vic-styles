@@ -76,7 +76,7 @@
 /** Inline hint (~ tooltip). */
 
 $hint-inline-colour:            $base-font-colour;
-$hint-inline-underline-colour:  $grey-dusty-gray;
+$hint-inline-underline-colour:  $grey-dusty;
 $hint-inline-active-colour:     black;
 
 $hint-inline-heading-underline-colour: darken( $heading-colour, 20 );
@@ -126,7 +126,6 @@ $hint-inline-heading-underline-colour: darken( $heading-colour, 20 );
 
 // Generic inline action link of lower importance
 .link-action {
-    transition: none;
     font-size: 90%;
     white-space: nowrap;
 }
