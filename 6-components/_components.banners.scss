@@ -43,11 +43,11 @@ $banner-cover-max-height:   620px;
 
     .intro {
         z-index: $z-index-lower;
-        @include outer-container( 990px );
+        @include centralise( 990px );
         @include position( relative);
         margin-top: 0;
         margin-bottom: 0.25em;
-        padding: 2.2em $base-padding * 1.6;
+        padding: 1.8em $base-padding * 1.6;
         color: $banner-cover-text-colour;
         text-align: center;
 

@@ -37,8 +37,8 @@ $logo-tablet-height: 5.7rem;
 
         @include breakpoint( $tablet-and-bigger ) {
             float: left;
-            padding: 0 3em 0 .5em;
-            margin: 1.45em 0 .75em;
+            padding: 0 2em 0 .5em;
+            margin: 1.35em 0 .75em;
             @include size( 27% auto );
             text-align: center;
         }
@@ -231,9 +231,11 @@ $logo-tablet-height: 5.7rem;
             }
         }
     }
+
     .secondary-nav {
         display: none;
         @include breakpoint ($tablet-and-bigger) {
+            margin-bottom: .2em;
             display: block !important;
             ul {
                 overflow: hidden;
@@ -243,11 +245,12 @@ $logo-tablet-height: 5.7rem;
                 li {
                     float: left;
                     padding-right: 1em;
+
                     a {
                         text-transform: uppercase;
                         color: $grey-silver-chalice;
                         letter-spacing: 2px;
-                        font-size: 70%;
+                        font-size: 65%;
                         font-weight: bold;
                         font-family: "Nimbus Roman No 9 L", "FreeSerif", "Georgia", serif;
                         @include hoverify () {

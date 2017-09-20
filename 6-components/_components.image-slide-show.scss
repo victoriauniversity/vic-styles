@@ -80,7 +80,9 @@
             height: 100%;
             width: 49.7%;
             padding: 0 0.5em;
-            @include span-columns (6) a {
+            @include grid-column(6);
+
+            a {
                 padding: 0 50%;
                 @include position(absolute, 0);
                 @include hoverify() {

@@ -9,8 +9,8 @@ $tooltip-caret-size:    20px;
     position: absolute;
     font-size: .9rem;
     z-index: $z-index-middle;
-    padding: 1em;
-    max-width: 35em;
+    padding: $base-margin / 2;
+    max-width: $base-width * .45;
     text-align: center;
     color: $white;
     background: $tooltip-bg;
@@ -42,7 +42,7 @@ $tooltip-caret-size:    20px;
     &.top {
         &:after {
             @include triangle( $tooltip-caret-size $tooltip-caret-size/2, $tooltip-bg transparent, up );
-            top: -1/2*($tooltip-caret-size);
+            top: -1 / 2*($tooltip-caret-size);
             bottom: auto;
         }
     }

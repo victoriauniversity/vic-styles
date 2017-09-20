@@ -135,18 +135,14 @@
  * { @content }        - Allows to extend dynamic behavior of the cell in views
  *                       equal or bigger than a tablet view.
  */
-@mixin make-table-column( $width-ratio: .5, $grid-columns-count: $grid-columns ){
-    @include span-columns( $grid-columns-count * $width-ratio, table );
-
+@mixin make-table-column( $width-ratio: .5, $grid-columns-count: 12 ){
+    @include grid-column( $grid-columns-count * $width-ratio );
     @content;
 }
 
-/*******************************************************************************
- * Transforms standard block element into grid with behavior similar to tables.
- * *MUST* include elements transformed to table-cells (see `make-table-column` mixin).
- */
-@mixin make-table-grid() {
-    @include fill-parent();
-    @include row();
-    display: table;
+
+@mixin centralise( $max-width: $base-width ) {
+    max-width: $max-width;
+    @include grid-container;
+    margin-left: auto; margin-right: auto;
 }

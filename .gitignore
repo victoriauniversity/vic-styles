@@ -105,7 +105,7 @@ nb-configuration.xml
 # --------------------
 .nodemonignore
 npm-debug.log
-package.log
+package-lock.json
 node_modules/
 
 

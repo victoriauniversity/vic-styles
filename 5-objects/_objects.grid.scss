@@ -103,21 +103,17 @@ $block-mobile-margin:       $base-margin / 2;
 // Makes content aligned to the center if the width of the
 // viewport surpasses $base-width.
 .centraliser {
-    @include grid-container();
-}
-
-.short-col-wide {
-    @include breakpoint( $desktop-large ) {
-        @include span-columns( 12 );
-    }
+    @include centralise;
 }
 
 /* Two-column grid layout. */
 .sector .two-col-layout {
 
     // Outter container
+    //TODO: Refactor and turn into new grid
     &.block-container {
-        @include make-table-grid();
+        display: table;
+        width: 100%;
     }
 
     // Column; makes two cols - 65% and 35% width

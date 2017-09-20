@@ -28,7 +28,7 @@ $bg-color: $grey-gallery;
 .block__quote,
 .block__person {
     .quote-wrap {
-        @include outer-container;
+        @include centralise;
         margin-right: auto;
         margin-left: auto;
 
