@@ -1,14 +1,14 @@
-/*================================
-=            SETTINGS            =
-================================*/
+/*=============================================================================
+=                             SETTINGS - IMPORTS                              =
+==============================================================================*/
 
 /* Configs, brand colors, spacing units, paths and more, defined as variables. */
 
 // *Note*: Imports are order sensitive!
-@import 'settings._imports.scss'; /** IMPORTANT: MUST BE included first */
-@import 'settings.paths.scss';
+@import 'settings._imports.scss';    /** IMPORTANT: MUST BE included 1st */
+@import 'settings.paths.scss';       /** IMPORTANT: MUST BE included 2nd */
+@import 'settings.overrides.scss';
 @import 'settings.fonts.scss';
 @import 'settings.colours.scss';
 @import 'settings.global.scss';
 @import 'settings.responsive.scss';
-@import 'settings.libs-overrides.scss';

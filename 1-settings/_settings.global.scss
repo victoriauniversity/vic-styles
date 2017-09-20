@@ -6,12 +6,24 @@
 /* ===== CONSTANTS ========================================================== */
 
 
-// Z-index positioning
+/** Placement on the Z-axis */
+
 $z-index-max:       9999 !default;
 $z-index-top:       10 !default;
 $z-index-middle:    5 !default;
 $z-index-lower:     1 !default;
 $z-index-default:   0 !default;
+
+
+/** Available weights */
+
+$weight-thin:      200;
+$weight-light:     300;
+$weight-normal:    400;
+$weight-medium:    500; // *DO NOT* use for headings
+$weight-semibold:  600;
+$weight-bold:      700; // *DO NOT* use for headings
+$weight-extrabold: 800;
 
 
 
