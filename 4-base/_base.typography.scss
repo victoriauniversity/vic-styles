@@ -50,7 +50,7 @@ h2,
 h3,
 h4,
 h5 {
-    margin-bottom: .4em;
+    margin-bottom: .6em;
     color: $green-light-victoria;
     font-family: $heading-font-family;
     font-weight: $heading-weight;
@@ -68,13 +68,16 @@ h5 { font-size: $h5-size; }
 
 @mixin linkify() {
     color: $link-colour;
-    @include hoverify { color: $blue-curious; }
+
+    @include hoverify {
+        color: $blue-curious;
+    }
 }
 
 a {
     @include linkify;
-    text-decoration: none;
     transition: $base-transition;
+    text-decoration: none;
 
     // Fixes the issue with double-animation of icons within links.
     .ico {

@@ -11,7 +11,7 @@ $bg-color: $grey-gallery;
         margin-right: auto; margin-left: auto; // Center
         max-width: 970px;
 
-        @include breakpoint ($tablet-and-smaller) {
+        @include breakpoint ( $tablet-and-smaller ) {
             padding: 1em;
         }
     }
@@ -26,14 +26,11 @@ $bg-color: $grey-gallery;
         @include hoverify (){
             background-color: rgba( $green-light-victoria, 1 );
             cursor: pointer;
-        }
 
-        @include breakpoint( $tablet-and-bigger ) {
-            z-index: $z-index-middle;
-            position: absolute; top: 0;
-            margin: 2em 1em 1em;
-            width: 50%;
-            background-color: rgba( $green-light-victoria, .9 );
+            + .cover-image-holder img {
+                filter: none;
+                transition: all ease-out .75s;
+            }
         }
 
         > header,
@@ -45,9 +42,8 @@ $bg-color: $grey-gallery;
             vertical-align: middle;
 
             h2,
-            h3,
-            h4 {
-                margin: .35em 0;
+            h3 {
+                margin: 0;
                 color: $white;
             }
         }
@@ -63,80 +59,30 @@ $bg-color: $grey-gallery;
             }
         }
     }
-    .video-body {
-        position: relative;
-        padding: 0;
-        margin: 0 auto;
 
-        @include breakpoint ($desktop-and-bigger) {
-            max-width: 970px;
-            min-height: 546px;
-        }
-        @include breakpoint ($tablet-and-smaller) {
-            min-width: 100%;
-            min-height: 360px;
-        }
-        @include breakpoint ($mobile-large-and-smaller) {
-            max-width: 480px;
-            min-height: 270px;
+    .cover-image-holder > img {
+        @include size ( 100% auto );
+    }
+
+    @include breakpoint( $tablet-and-bigger ) {
+        .cover-text-overlay {
+            z-index: $z-index-middle;
+            position: absolute; top: 0;
+            margin: 1.5em 1em 1em;
+            width: 50%;
+            background-color: rgba( $green-light-victoria, .9 );
         }
 
-        .cover-overlay {
-            z-index: $z-index-lower;
-            @include position( absolute, 0);
-            @include breakpoint ($tablet-and-bigger) {}
-            @include size ( 100%);
-
-            .cover-image-holder {
-                @include position( absolute, 0);
-                overflow: hidden;
-
-                img {
-                    filter: grayscale( 35% );
-                    @include position( absolute, 0);
-                    @include size ( auto 100%);
-
-                    @include breakpoint ($mobile-large-and-bigger) {
-                        @include size ( 100% auto)
-                    }
-
-                    @include breakpoint ($mobile ) {
-                        left: 50%;
-                        margin-left: -240px;
-                    }
-
-
-                    @include breakpoint ($desktop-and-bigger) {
-                        @include size (auto 100%)
-                    }
-                }
-            }
-        }
-
-        .close {
-            @include position( absolute, null 0 null null);
-            z-index: $z-index-top;
-            margin: 0.3em;
-            padding: 0 1em;
-            color: $white;
-            background-color: rgba($green-light-victoria, .5);
-            font-size: 2em;
-        }
-
-        .video-wrap {
-            position: relative;
-        }
-
-        .video-frame-wrap {
-            @include size( 100% );
-            @include position( absolute, 0 );
+        .cover-image-holder > img {
+            filter: grayscale( 35% );
         }
     }
 }
 
-section.cover-text-overlay:hover + .cover-overlay .cover-image-holder img {
-    filter: none;
-    transition: all ease-out .75s;
+.video__body {
+    position: relative;
+    padding: 0;
+    margin: 0 auto;
 }
 
 .video__description {

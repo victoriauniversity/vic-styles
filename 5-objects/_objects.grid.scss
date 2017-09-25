@@ -192,6 +192,8 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
                 align-items: center;
                 text-align: right;
                 @include make-table-column( $two-col-layout-right-ratio );
+
+                .btn { margin-top: 0; margin-bottom: 0; }
             }
         }
 

@@ -3,13 +3,13 @@
 =============================================*/
 
 /* Standard content with only basic formatting options. */
-
 .content-simple {
 
     /* Collections with shared attributes. */
     ul,
     ol,
     p {
+        //max-width: 45em;
         margin-bottom: 1.2em;
 
         &:last-child { margin-bottom: 0; }
@@ -57,6 +57,12 @@
         > li {
             margin-left: $base-margin;
             padding-left: $list-bullet-indent-left;
+        }
+    }
+
+    a:not(.btn) {
+        @include hoverify {
+            text-decoration: underline;
         }
     }
 }
