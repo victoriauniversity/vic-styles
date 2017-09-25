@@ -29,7 +29,7 @@ $bg-color: $grey-gallery;
         }
 
         @include breakpoint( $tablet-and-bigger ) {
-            z-index: $z-index-lower;
+            z-index: $z-index-middle;
             position: absolute; top: 0;
             margin: 2em 1em 1em;
             width: 50%;
@@ -92,6 +92,7 @@ $bg-color: $grey-gallery;
                 overflow: hidden;
 
                 img {
+                    filter: grayscale( 35% );
                     @include position( absolute, 0);
                     @include size ( auto 100%);
 
@@ -118,7 +119,7 @@ $bg-color: $grey-gallery;
             margin: 0.3em;
             padding: 0 1em;
             color: $white;
-            background-color: rgba($green-light-victoria, 0.5);
+            background-color: rgba($green-light-victoria, .5);
             font-size: 2em;
         }
 
@@ -131,6 +132,11 @@ $bg-color: $grey-gallery;
             @include position( absolute, 0 );
         }
     }
+}
+
+section.cover-text-overlay:hover + .cover-overlay .cover-image-holder img {
+    filter: none;
+    transition: all ease-out .75s;
 }
 
 .video__description {

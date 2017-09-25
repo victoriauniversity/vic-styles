@@ -12,6 +12,12 @@
         display: none !important;
     }
 
+    // To avoid transitioning when items are being disabled through Angular.js
+    a.ng-hide-add,
+    .ng-hide-add a {
+        transition: none !important;
+    }
+
     /** Hides elements that are used for accessibility reasons *ONLY* */
     .aria-only { display: none; }
 

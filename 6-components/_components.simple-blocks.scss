@@ -17,10 +17,27 @@ $fun-fact-bg-color: $grey-gallery;
     text-align: right;
 }
 
+.fact__content,
+.fact__title {
+    width: 100%;
+}
 
-.fact__heading,
 .fact__content {
-    vertical-align: middle;
+    flex-wrap: wrap;
+
+    > p { width: 100%; }
+    .note { font-size: 90%; }
+}
+
+
+@include breakpoint( $desktop-and-bigger ) {
+
+    .fact__heading,
+    .fact__content {
+        display: flex;
+        align-items: center;
+    }
+
 }
 
 
@@ -270,16 +287,8 @@ $nm-bg-color: $grey-gallery;
 .explore-page {
     @include centralise;
 
-    .block {
-        @include breakpoint ($tablet-and-bigger) {
-            @include grid-container (4);
-        }
-    }
-}
-
-.explore-areas-page {
-    .block {
-        ul { margin-left: 0.5em; }
+    @include breakpoint ( $tablet-and-bigger ) {
+        .block-container .block { @include grid-column( 6 ); }
     }
 }
 

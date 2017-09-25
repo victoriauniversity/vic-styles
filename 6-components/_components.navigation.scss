@@ -89,6 +89,7 @@ $menu-tabbed-item-active-bg-colour:    $green-light-victoria !default;
 
 // Makes two col button container with one button left & one right
 .two-btn-nav {
+    display: flex;
     font-size: 115%; // Large buttons sizing - propagete into its own class
 
     p {
@@ -97,37 +98,48 @@ $menu-tabbed-item-active-bg-colour:    $green-light-victoria !default;
         color: $grey-stack;
     }
 
-    .btn { margin: 0; }
+    .block {
+        width: 50%;
 
-    &:first-child {
-        padding-right: .5em;
-    }
-
-    &:last-child {
-        padding-left: .5em;
-
-        .two-btn-wrap {
-            float: right;
-            text-align: right;
-        }
-    }
-
-    @include breakpoint( $tablet-and-bigger ) {
-        &:first-child {
-            .two-btn-wrap { padding-left: 20%; }
-        }
+        &:first-child { padding-right: .5em; }
 
         &:last-child {
-            .two-btn-wrap { padding-right: 20%; }
+            padding-left: .5em;
+
+            .two-btn-wrap {
+                float: right;
+                text-align: right;
+            }
+        }
+
+        @include breakpoint( $tablet-and-bigger ) {
+            &:first-child {
+                .two-btn-wrap { padding-left: 20%; }
+            }
+
+            &:last-child {
+                .two-btn-wrap { padding-right: 20%; }
+            }
         }
     }
+
+    .btn { margin: 0; }
 }
 
-    .sector .two-col-layout .two-btn-nav.block {
-        display: table-cell;
+    .sector .two-col-layout.two-btn-nav .block {
         width: 100% * $two-btn-layout; // Makes `two button columns` same width
 
-        &:last-child { padding-top: $block-margin; } // Locks top padding for mobile views
+        &:last-child { // Locks top padding for mobile views
+            padding-top: $block-margin-vertical;
+
+            @include breakpoint( $mobile ) {
+                padding-top: $block-mobile-margin-vertical;
+            }
+
+            @include breakpoint( $mobile-large ) {
+                padding-top: $block-mobile-large-margin-vertical;
+            }
+        }
     }
 
 .sticky-top {

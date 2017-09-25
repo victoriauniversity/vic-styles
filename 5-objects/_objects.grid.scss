@@ -6,9 +6,14 @@
 /* ===== PROPERTIES ========================================================= */
 
 
-$block-margin:              $base-margin;
-$block-mobile-large-margin: $base-margin / 1.66;
-$block-mobile-margin:       $base-margin / 2;
+
+$block-margin-horizontal:   $base-margin;
+$block-mobile-large-margin-horizontal: $block-margin-horizontal / 1.66;
+$block-mobile-margin-horizontal:       $block-margin-horizontal / 2;
+
+$block-margin-vertical:     $base-margin * 1.2;
+$block-mobile-large-margin-vertical: $block-margin-vertical / 1.25;
+$block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
 
 
 
@@ -60,24 +65,55 @@ $block-mobile-margin:       $base-margin / 2;
 
 /* ===== BLOCKS ============================================================= */
 
+
 // Standard block container
 .block {
     display: block;
-    padding: $block-margin;
-    vertical-align: top; // used when `display: block` is converted into `display: table`
+    padding: $block-margin-vertical $block-margin-horizontal;
+    //    vertical-align: top;  used when `display: block` is converted into `display: table`
 
     // 1. Collapse space in all siblings (default)...
     .sector + .sector & { padding-top: 0; }
 
     // 2. Enable in some cases
-    .sector + .sector.highlighted & { padding-top: $block-margin; }
+    .sector + .sector.highlighted & {
+        padding-top: $block-margin-vertical;
+
+        @include breakpoint( $mobile ) {
+            padding-top: $block-mobile-margin-vertical;
+        }
+
+        @include breakpoint( $mobile-large ) {
+            padding-top: $block-mobile-large-margin-vertical;
+        }
+    }
 
     .sector.highlighted + .sector &,
     .sector.separated + .sector &,
-    .sector.blank + .sector & { padding-top: $block-margin; }
+    .sector.blank + .sector & {
+        padding-top: $block-margin-vertical;
+
+        @include breakpoint( $mobile ) {
+            padding-top: $block-mobile-margin-vertical;
+        }
+
+        @include breakpoint( $mobile-large ) {
+            padding-top: $block-mobile-large-margin-vertical;
+        }
+    }
 
     // Resets block's margin
-    .sector .layout-rebase & { padding-top: $block-margin; }
+    .sector .layout-rebase & {
+        padding-top: $block-margin-vertical;
+
+        @include breakpoint( $mobile ) {
+            padding-top: $block-mobile-margin-vertical;
+        }
+
+        @include breakpoint( $mobile-large ) {
+            padding-top: $block-mobile-large-margin-vertical;
+        }
+    }
 
     // 1B. ... and all block-containers
     .sector .block-container &:not(:first-child) { padding-top: 0; }
@@ -87,13 +123,11 @@ $block-mobile-margin:       $base-margin / 2;
 
     // 2) Responsiveness
     @include breakpoint( $mobile ) {
-        padding-left: $block-mobile-margin;
-        padding-right: $block-mobile-margin;
+        padding: $block-mobile-margin-vertical $block-mobile-margin-horizontal;
     }
 
     @include breakpoint( $mobile-large ) {
-        padding-left: $block-mobile-large-margin;
-        padding-right: $block-mobile-large-margin;
+        padding: $block-mobile-large-margin-vertical $block-mobile-large-margin-horizontal;
     }
 
     &.no-bg { background: inherit; } // Eliminates background
@@ -111,9 +145,11 @@ $block-mobile-margin:       $base-margin / 2;
 
     // Outter container
     //TODO: Refactor and turn into new grid
-    &.block-container {
-        display: table;
-        width: 100%;
+    &.block-container { width: 100%; }
+
+    @include breakpoint( $desktop-and-bigger ) {
+        display: flex;
+        align-items: stretch;
     }
 
     // Column; makes two cols - 65% and 35% width
@@ -123,7 +159,6 @@ $block-mobile-margin:       $base-margin / 2;
 
         &.btns-holder {
             text-align: center;
-            vertical-align: middle;
 
             ul,
             ol {
@@ -132,7 +167,6 @@ $block-mobile-margin:       $base-margin / 2;
         }
 
         @include breakpoint( $desktop-and-bigger ) {
-
             // Left column
             &:first-child {
                 @include make-table-column( $two-col-layout-left-ratio );
@@ -141,10 +175,21 @@ $block-mobile-margin:       $base-margin / 2;
             // Right column
             &:last-child {
                 @include make-table-column( $two-col-layout-right-ratio );
-                padding-top: $block-margin;
+                padding-top: $block-margin-vertical;
+
+                @include breakpoint( $mobile ) {
+                    padding-top: $block-mobile-margin-vertical;
+                }
+
+                @include breakpoint( $mobile-large ) {
+                    padding-top: $block-mobile-large-margin-vertical;
+                }
             }
 
             &.btns-holder {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
                 text-align: right;
                 @include make-table-column( $two-col-layout-right-ratio );
             }
@@ -178,7 +223,7 @@ $block-mobile-margin:       $base-margin / 2;
 
             // Right column
             &:last-child {
-                padding-top: $block-margin;
+                padding-top: $block-margin-vertical;
                 border-left: none;
                 border-top: $delim-border;
             }
@@ -229,9 +274,9 @@ $block-mobile-margin:       $base-margin / 2;
 }
 
     .flexi-block {
-        width: auto;
         margin-bottom: 1em;
         margin-right: 8%;
+        width: auto;
 
         &:last-child { margin-bottom: 0; }
 

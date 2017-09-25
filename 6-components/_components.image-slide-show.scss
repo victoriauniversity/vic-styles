@@ -77,17 +77,15 @@
         .slide-nav {
             position: relative;
             display: inline-block;
+            @include grid-column( 6 );
             height: 100%;
-            width: 49.7%;
-            padding: 0 0.5em;
-            @include grid-column(6);
+            padding: 0 .5em;
 
             a {
                 padding: 0 50%;
                 @include position(absolute, 0);
                 @include hoverify() {
-                    color: $grey-stack;
-                    background-color: rgba($grey-stack, 0.4);
+                    background-color: rgba( $grey-stack, .35 );
                     cursor: pointer;
                 }
                 z-index: $z-index-middle;

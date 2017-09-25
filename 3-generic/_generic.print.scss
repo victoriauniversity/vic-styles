@@ -317,7 +317,10 @@ $print-logo-width:          300px;
         font-size: 1.6em !important;
     }
 
-    .fact__content { text-align: center !important; }
+    .fact__content {
+        padding-top: 0 !important;
+        text-align: center !important;
+    }
 
     // Wellington promo
     .promo-body {
@@ -325,8 +328,6 @@ $print-logo-width:          300px;
 
         header { padding: 0 !important;}
     }
-
-    .fact__content { padding-top: 0 !important; }
 
     // SlideShow
     .slide-show__wrap {

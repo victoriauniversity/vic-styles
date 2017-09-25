@@ -29,19 +29,20 @@
     /* Notification types */
 
     // Error
-    .err {}
+    //.err {}
 
     // Progress
     .loading {
         h1 {
             color: $green-victoria;
+            font-size: $h2-size;
             font-weight: $weight-semibold;
         }
 
         .ico.spin
         {
-            vertical-align: middle;
             margin: .2em;
+            vertical-align: middle;
         }
     }
 }

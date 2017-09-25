@@ -60,7 +60,8 @@ $select2-dropdown-border-colour: $grey-chalice;
 
     .detail-overview {
         .select2-container {
-            position: relative; top: -.1em;
+            vertical-align: top;
+            position: relative; top: -.3em;
             margin-left: .3em;
             margin-right: .05em;
             font-weight: $weight-bold;
@@ -75,6 +76,10 @@ $select2-dropdown-border-colour: $grey-chalice;
         .select2-selection--single {
             padding: .25em;
             height: auto;
+
+            @include breakpoint( $mobile-large-and-smaller ) {
+                padding: 0;
+            }
         }
     }
 

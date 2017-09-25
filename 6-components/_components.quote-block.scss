@@ -80,10 +80,6 @@ $bg-color: $grey-gallery;
                 @include breakpoint ( $desktop-and-bigger) {
                     text-indent: -1.45em;
                 }
-
-                @include breakpoint ( $tablet-and-smaller) {
-                    .ico.quote-start { padding-left: .6em; }
-                }
             }
 
             .ico {

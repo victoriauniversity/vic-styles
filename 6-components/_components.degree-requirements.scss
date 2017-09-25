@@ -85,7 +85,7 @@
 
         > .list-item {
             margin-bottom: .2em;
-            padding: .7em 1em;
+            padding: 1em;
             background-color: $grey-alto;
         }
 
@@ -112,7 +112,7 @@
 
         > .list-item {
             border-bottom: 1px solid #C7C7C7;
-            padding: .5em .15em;
+            padding: .75em .15em;
 
             &:last-child{ border-bottom: none;  }
         }
@@ -145,19 +145,21 @@
             padding-bottom: .3em;
         }
 
-        > .collapsible__control {
-            padding: 0 1.5em;
-            text-align: left;
-            font-size: 110%;
+        > .collapsible-wrapper {
+            > .collapsible__control {
+                padding: 0 1.3em;
+                text-align: left;
+                font-size: 110%;
 
-            > a {
-                padding-left: 0;
-                padding-right: 0;
+                > a {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
             }
-        }
 
-        &.collapsed {
-            > .collapsible__control { margin-top: 0; }
+            &.collapsed {
+                > .collapsible__control { margin-top: 0; }
+            }
         }
     }
 
