@@ -9,13 +9,15 @@ $menu-tabbed-padding-horiz:            .7em !default;
 $menu-tabbed-padding-vertic:           .9em !default;
 // Single tab (~ menu item)
 $menu-tabbed-item-max-width:           $base-width / 4 !default; // accommodates up to 4 items
-$menu-tabbed-item-triangle-width:      1.5em !default;
+$menu-tabbed-item-triangle-width:      1.25em !default;
 $menu-tabbed-item-triangle-height:     ( $menu-tabbed-item-triangle-width / 3 ) !default;
 $menu-tabbed-item-label-colour:        $grey-stack !default;
 $menu-tabbed-item-hover-label-colour:  $blue-curious !default;
 $menu-tabbed-item-hover-bg-colour:     $grey-alto !default;
-$menu-tabbed-item-active-label-colour: $white !default;
+$menu-tabbed-item-active-label-colour: $grey-mine-shaft !default;
 $menu-tabbed-item-active-bg-colour:    $green-light-victoria !default;
+$menu-tabbed-underline-size:           4px;
+
 
 /* Menu or submenu using tab-like layout of its items. */
 .menu-tabbed {
@@ -43,23 +45,25 @@ $menu-tabbed-item-active-bg-colour:    $green-light-victoria !default;
 
         // Selected or activated tab
         &.active {
-            color: $white;
-            background-color: $menu-tabbed-item-active-bg-colour;
+            color: $menu-tabbed-item-active-label-colour;
 
             & > a {
                 color: inherit;
 
-                @include hoverify {
-                    background-color: inherit;
+
+                @include hoverify() {
                     color: inherit;
+                    background-color: inherit;
                 }
+
+                &:focus{ outline: 0; }
             }
+
             @include after( $position: absolute ) {
-                left: 50%;
+                @include size( 100% $menu-tabbed-underline-size );
+                background-color: $menu-tabbed-item-active-bg-colour;
                 bottom: 0;
-                margin-left: -$menu-tabbed-item-triangle-width / 2;
-                margin-bottom: -$menu-tabbed-item-triangle-height;
-                @include triangle( $menu-tabbed-item-triangle-width $menu-tabbed-item-triangle-height, $menu-tabbed-item-active-bg-colour, down);
+                left: 0;
             }
         }
 
@@ -69,9 +73,9 @@ $menu-tabbed-item-active-bg-colour:    $green-light-victoria !default;
             padding: $menu-tabbed-padding-vertic $menu-tabbed-padding-horiz;
             font-size: 1.1em;
             font-family: $caption-font-family;
-            font-weight: $weight-light;
-            line-height: 1;
-            color: $grey-stack;
+            font-weight: $weight-extrabold;
+            line-height: 1.2;
+            color: $menu-tabbed-item-label-colour;
             text-decoration: none;
 
             > div {
@@ -150,26 +154,17 @@ $menu-tabbed-item-active-bg-colour:    $green-light-victoria !default;
 // Sticks panels to the bottom (Mobile only)
 .mobile-sticky-down {
     @include breakpoint( $mobile-large-and-smaller ) {
-        box-shadow: rgba(#000, .12) 0 -1px 10px;
 
         &.sector {
             z-index: $z-index-top;
-            @include position( fixed, null 0 0 0);
+            //@include position( fixed, 0 0 null 0 );
 
             &.highlighted {
-                border-top: 1px solid $block-highlight-border;
+                //border-bottom: 1px solid $block-highlight-border;
             }
         }
+
         .menu-tabbed {
-            // Switch caret from bottom to top
-            .active:after {
-                bottom: auto;
-                margin-bottom: 0;
-                border-top: none;
-                top: 0;
-                margin-top: -$menu-tabbed-item-triangle-height;
-                border-bottom: $menu-tabbed-item-triangle-height solid $menu-tabbed-item-active-bg-colour;
-            }
 
             > li > a {
                 display: block; // Override to enable label's ellipsis
@@ -180,9 +175,9 @@ $menu-tabbed-item-active-bg-colour:    $green-light-victoria !default;
 
             .label {
                 display: inline-block;
-                font-size: 85%;
                 margin: .4em 0 0;
                 width: 100%;
+                font-size: 90%;
                 text-overflow: ellipsis;
                 line-height: 1;
 

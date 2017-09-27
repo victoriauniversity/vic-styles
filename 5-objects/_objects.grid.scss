@@ -193,7 +193,10 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
                 text-align: right;
                 @include make-table-column( $two-col-layout-right-ratio );
 
-                .btn { margin-top: 0; margin-bottom: 0; }
+                .btn {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
             }
         }
 
@@ -228,6 +231,14 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
                 padding-top: $block-margin-vertical;
                 border-left: none;
                 border-top: $delim-border;
+
+                @include breakpoint( $mobile ) {
+                    padding-top: $block-mobile-margin-vertical;
+                }
+
+                @include breakpoint( $mobile-large ) {
+                    padding-top: $block-mobile-large-margin-vertical;
+                }
             }
 
             @include breakpoint( $desktop-and-bigger) {

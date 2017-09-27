@@ -38,10 +38,10 @@
     }
 
     li {
-        border-left: 1px solid $block-highlight-border;
+        //border-left: 1px solid $block-highlight-border;
 
         &:last-child {
-            border-right: 1px solid $block-highlight-border;
+            //border-right: 1px solid $block-highlight-border;
         }
     }
 }

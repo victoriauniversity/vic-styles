@@ -21,13 +21,14 @@
 
     ul, ol {
         > li {
-            margin-bottom: .35em;
+            margin-bottom: .5em;
             line-height: $base-line-height;
 
             // Nested sublist
             ul,
             ol {
-                &:last-child, & {
+                &:last-child,
+                & {
                     margin-bottom: .6em;
                     padding-left: 1.85em;
                 }
