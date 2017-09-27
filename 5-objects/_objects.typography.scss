@@ -130,6 +130,12 @@ $hint-inline-heading-underline-colour: darken( $heading-colour, 20 );
     @include hoverify() { color: $grey-stack; }
 }
 
+.tooltip-block {
+    cursor: default;
+
+    > span { pointer-events: none; }
+}
+
 
 // Generic inline action link of lower importance
 .link-action {
@@ -145,6 +151,15 @@ $hint-inline-heading-underline-colour: darken( $heading-colour, 20 );
     margin-right: .3em;
 
     & + .link-action { margin-left: 0; }
+}
+
+.list-inline {
+    > li {
+        display: inline-block;
+        margin-right: 1.6em;
+
+        .ico { margin-right: .2em; }
+    }
 }
 
 // Adds short delimiting line AFTER actual item

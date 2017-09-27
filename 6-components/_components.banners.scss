@@ -161,9 +161,37 @@ $banner-separator-colour:   $delim-highlight-bg-colour !default;
         font-size: 1.2em;
         font-weight: $weight-bold;
 
+        &:not(:last-child) {
+            padding-bottom: 0;
+
+            // Separator
+            @include after( block ) {
+                margin: 1.1em auto 0;
+                max-width: 25em;
+                height: 1px;
+                background: $grey-alto;
+            }
+        }
+
         .control-group {
             display: inline-block;
             margin-right: .75em;
         }
+    }
+
+    .list-inline > li {
+        margin-bottom: .5em;
+        white-space: nowrap;
+    }
+
+    .btns-holder {
+        margin-bottom: $base-margin;
+
+        .btn {
+            &:last-child { margin-left: 0; }
+            > .ico { margin-left: .7em; }
+        }
+
+        .ico.phone { font-size: 85%; }
     }
 }
