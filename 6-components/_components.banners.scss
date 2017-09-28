@@ -175,7 +175,10 @@ $banner-separator-colour:   $delim-highlight-bg-colour !default;
 
         .control-group {
             display: inline-block;
-            margin-right: .75em;
+
+            &:not(:last-child) {
+                margin-right: .5em;
+            }
         }
     }
 
@@ -185,10 +188,10 @@ $banner-separator-colour:   $delim-highlight-bg-colour !default;
     }
 
     .btns-holder {
-        margin-bottom: $base-margin;
+        margin-bottom: $base-margin * 1.15;
 
         .btn {
-            &:last-child { margin-left: 0; }
+            margin: .35em .5em;
             > .ico { margin-left: .7em; }
         }
 

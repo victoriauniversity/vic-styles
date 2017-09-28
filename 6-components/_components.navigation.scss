@@ -2,6 +2,91 @@
 =            NAVIGATION TABS            =
 =======================================*/
 
+
+
+/* ===== MAIN HEADER ======================================================== */
+
+
+.site-header {
+
+    .pane {
+        display: flex;
+        margin-bottom: 1em;
+        padding: 0 .5em;
+
+        // For compatibility reasons *only* - remove after removing the old header
+        + .main-nav {
+            .search-bar {
+                padding-top: 0;
+            }
+        }
+    }
+
+    .breadcrumbs {
+        > li {
+            color: $grey-silver;
+            font-family: $caption-font-family;
+            display: inline-block;
+            font-weight: $weight-semibold;
+
+            > a {
+                color: inherit;
+
+                @include hoverify {
+                    text-decoration: underline;
+                    color: $white;
+                }
+            }
+
+            @include after( $text: $code-triangle-right ){
+                color: $grey-dusty;
+                font-size: 75%;
+                margin: 0 .75em;
+            }
+
+            &:last-child::after { content: none; }
+        }
+    }
+
+    /** Quick menu panel with icon-like controls. */
+    .quick-menu {
+        flex-grow: 1;
+        text-align: right;
+
+        > a {
+            color: $grey-dusty;
+
+            @include hoverify { color: $white; }
+        }
+    }
+}
+
+.site-intro {
+    //border-left: 1px solid rgba( $white, .15 );
+
+    h1 {
+        margin: 0;
+        font-size: 230%;
+        color: $white;
+
+        // Smaller text before the main information
+        .preline {
+            display: block;
+            line-height: 1;
+            font-size: 60%;
+        }
+
+        .code {
+            font-weight: $weight-normal;
+            color: $grey-silver;
+        }
+    }
+}
+
+
+
+
+
 /* ===== NAVIGATION MENU - TABS ============================================= */
 
 // Tabed menu - general

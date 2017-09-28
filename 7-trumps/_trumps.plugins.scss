@@ -24,13 +24,20 @@ $select2-dropdown-border-colour: $grey-chalice;
             margin-bottom: .35em;   // Push dropdown down
             border: 0;
             background-color: transparent;
+            color: $link-colour;
+
+            @include hoverify() {
+                color: $link-hover-colour;
+
+                .select2-selection__arrow b { border-top-color: $link-hover-colour; }
+            }
         }
 
         .select2-selection__rendered {
             overflow: initial;
             padding-left: .1em;
             line-height: 1;
-            color: $link-colour;
+            color: inherit;
         }
 
         // Caret triangles
@@ -39,7 +46,8 @@ $select2-dropdown-border-colour: $grey-chalice;
             height: auto;   // Resetting caret's vertical position
 
             b {
-                margin-top: 0; top: auto;   // Resetting caret's vertical position
+                top: auto;   // Resetting caret's vertical position
+                margin-top: 0;
                 border-top-color: $link-colour;
             }
         }
