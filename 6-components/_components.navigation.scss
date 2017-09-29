@@ -9,9 +9,7 @@
 
 .site-header {
     // For compatibility reasons *only* - remove after removing the old header
-    &.new {
-        padding: 0;
-    }
+    &.new { padding: 0; }
 
     // Containers for the header elements
     .pane {
@@ -23,14 +21,10 @@
         &:last-child { margin-bottom: 0; }
 
         + .main-nav {
-            .search-bar {
-                padding-top: 0;
-            }
+            .search-bar { padding-top: 0; }
         }
 
-        .logo {
-            padding: .75em 1.5em 0 0;
-        }
+        .logo { padding: .75em 1.5em 0 0; }
 
         .lines-button {
             position: relative;
@@ -40,9 +34,9 @@
 
         .breadcrumbs {
             > li {
+                display: inline-block;
                 color: $grey-silver;
                 font-family: $caption-font-family;
-                display: inline-block;
                 font-weight: $weight-semibold;
 
                 > a {
@@ -73,6 +67,10 @@
                 color: $grey-dusty;
 
                 @include hoverify { color: $white; }
+            }
+
+            a[role=search] {
+                font-size: 110%;
             }
         }
 

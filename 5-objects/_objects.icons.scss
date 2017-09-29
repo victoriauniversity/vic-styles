@@ -77,7 +77,7 @@ $ico-code-ok:              '\e81b';
 $ico-code-youtube-play:    '\e81c';
 
 $ico-code-spin:            '\e81d';
-$ico-code-search:          '\e81e';
+$ico-code-search:          '\e802';
 $ico-code-person:          '\e81f';
 $ico-code-list:            '\e808';
 
@@ -93,6 +93,9 @@ $ico-code-group:           '\e826';
 $ico-code-globe:           '\e827';
 $ico-code-money:           '\e828';
 $ico-code-exchange:        '\e829';
+$ico-code-world:           '\e80a';
+$ico-code-vcard:           '\e819';
+
 
 
 
@@ -183,6 +186,8 @@ $code-arrow-expand-down:'\2304';
     @include define-icon( warning-triangle, $ico-code-warning );
     @include define-icon( gauge, $ico-code-gauge );
     @include define-icon( group, $ico-code-group );
+    @include define-icon( vcard, $ico-code-vcard );
+    @include define-icon( world, $ico-code-world );
 
 
     /* CSS only icons. */
