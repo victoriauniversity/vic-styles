@@ -8,73 +8,185 @@
 
 
 .site-header {
+    // For compatibility reasons *only* - remove after removing the old header
+    &.new {
+        padding: 0;
+    }
 
+    // Containers for the header elements
     .pane {
         display: flex;
-        margin-bottom: 1em;
-        padding: 0 .5em;
+        align-items: center;
+        padding: .65em 1em;
 
         // For compatibility reasons *only* - remove after removing the old header
+        &:last-child { margin-bottom: 0; }
+
         + .main-nav {
             .search-bar {
                 padding-top: 0;
             }
         }
+
+        .logo {
+            padding: .75em 1.5em 0 0;
+        }
+
+        .lines-button {
+            position: relative;
+            margin: 0;
+        }
     }
 
-    .breadcrumbs {
-        > li {
-            color: $grey-silver;
-            font-family: $caption-font-family;
-            display: inline-block;
-            font-weight: $weight-semibold;
+        .breadcrumbs {
+            > li {
+                color: $grey-silver;
+                font-family: $caption-font-family;
+                display: inline-block;
+                font-weight: $weight-semibold;
+
+                > a {
+                    color: inherit;
+
+                    @include hoverify {
+                        text-decoration: underline;
+                        color: $white;
+                    }
+                }
+
+                @include after( $text: $code-triangle-right ){
+                    color: $grey-dusty;
+                    font-size: 75%;
+                    margin: 0 .75em;
+                }
+
+                &:last-child::after { content: none; }
+            }
+        }
+
+        /** Quick menu panel with icon-like controls. */
+        .quick-menu {
+            flex-grow: 1;
+            text-align: right;
 
             > a {
-                color: inherit;
+                color: $grey-dusty;
 
-                @include hoverify {
-                    text-decoration: underline;
-                    color: $white;
+                @include hoverify { color: $white; }
+            }
+        }
+
+
+    @include breakpoint( $mobile-large-and-smaller ) {
+        .breadcrumbs,
+        .pane:last-child .logo,
+        .quick-menu a[role=search] {
+            display: none;
+        }
+
+        // Top part of the strip
+        .pane:first-child .logo {
+            margin: 0;
+        }
+
+            .quick-menu[ role='search' ] { display: none; }
+
+        // Bottom part of the strip
+        .pane:last-child {
+            border-top: 1px solid rgba( $white, .15 );
+        }
+
+            .site-intro {
+                flex-wrap: wrap;
+
+                h1 {
+                    margin: .35em 0;
+                    font-size: 180%;
+                }
+
+                .btns-holder {
+                    margin: .75em;
+                    margin-top: .5em;
+                    text-align: center;
+                    width: 100%;
+                    font-size: 115%;
+                }
+
+                h1,
+                .btns-holder {
+                    text-align: center;
                 }
             }
 
-            @include after( $text: $code-triangle-right ){
-                color: $grey-dusty;
-                font-size: 75%;
-                margin: 0 .75em;
-            }
-
-            &:last-child::after { content: none; }
-        }
     }
 
-    /** Quick menu panel with icon-like controls. */
-    .quick-menu {
-        flex-grow: 1;
-        text-align: right;
-
-        > a {
-            color: $grey-dusty;
-
-            @include hoverify { color: $white; }
+    @include breakpoint( $tablet-and-bigger ) {
+        .pane:first-child .logo,
+        .main-menu,
+        .main-nav .secondary-nav {
+            display: none;
         }
+
+        .pane:last-child { padding-bottom: 1em; }
+
+            .site-intro {
+                padding: 0 0 0 1.5em;
+                border-left: 1px solid rgba( $white, .15 );
+
+                h1 {
+                    font-size: 2.3rem;
+
+                    &.compact { font-size: 1.9rem; }
+
+                    // Smaller text before the main information
+                    .preline {
+                        display: block;
+                        line-height: 1.3;
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .btns-holder { margin-left: 2em; }
+            }
     }
 }
 
+
+.btn-header {
+    display: inline-block;
+    padding: .35em .8em;
+    font-size: 90%;
+    border-radius: 4px;
+    border: 1px solid $grey-dove;
+    white-space: nowrap;
+
+    @include hoverify {
+        border-color: $white;
+        background-color: $grey-mine-shaft;
+    }
+
+    .label {
+        @include after( $text: $code-arrow-expand-down ){
+            margin-left: .25em;
+            position: relative; top: 1px;
+            font-size: 150%;
+            line-height: 0;
+        }
+    }
+
+    .ico { margin-right: .35em; }
+}
+
 .site-intro {
-    //border-left: 1px solid rgba( $white, .15 );
+    display: flex;
+    flex: 1 1;
+    align-items: center;
 
     h1 {
+        line-height: 1.1;
+        flex: 1 1 auto;
         margin: 0;
-        font-size: 230%;
         color: $white;
-
-        // Smaller text before the main information
-        .preline {
-            display: block;
-            line-height: 1;
-            font-size: 60%;
-        }
 
         .code {
             font-weight: $weight-normal;
@@ -88,6 +200,7 @@
 
 
 /* ===== NAVIGATION MENU - TABS ============================================= */
+
 
 // Tabed menu - general
 $menu-tabbed-padding-horiz:            .7em !default;
@@ -253,7 +366,7 @@ $menu-tabbed-underline-size:           4px;
 
             > li > a {
                 display: block; // Override to enable label's ellipsis
-                padding: .6em .4em .4em .4em;
+                padding: .6em .4em .4em;
 
                 > div { display: inline; } // Override to enable label's ellipsis
             }

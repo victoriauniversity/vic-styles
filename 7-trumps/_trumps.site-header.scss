@@ -52,7 +52,6 @@ $logo-tablet-height: 5.7rem;
         @include breakpoint( $desktop ) {
             padding-right: 1.7em;
             margin-bottom: .25em;
-            width: 23%;
         }
 
         @include breakpoint( $mobile-large-and-smaller ) {
