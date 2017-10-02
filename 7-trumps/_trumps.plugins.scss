@@ -9,10 +9,16 @@ $select2-dropdown-border-colour: $grey-chalice;
 
 
 .select2 {
+    margin-left: .3em;
+    margin-right: .3em;
+
     .fees &,
     .pane-controls & {
         width: auto !important;
     }
+
+    .fees & { margin-left: .7em; }
+
 
     /** Selector as a standard link with a caret */
     .pane-controls & {
@@ -70,13 +76,9 @@ $select2-dropdown-border-colour: $grey-chalice;
         .select2-container {
             vertical-align: top;
             position: relative; top: -.3em;
-            margin-left: .3em;
-            margin-right: .05em;
             font-weight: $weight-bold;
         }
     }
-
-    .select2-container { margin-right: .15em; }
 
     .form__select + .select2 {
         font-weight: $weight-bold;

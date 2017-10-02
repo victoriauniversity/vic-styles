@@ -134,6 +134,27 @@
     }
 }
 
+
+.majors-requirements .majors-list,
+.qualifications > div {
+    > .collapsible-wrapper {
+        > .collapsible__control {
+            padding: 0 1.3em;
+            text-align: left;
+            font-size: 110%;
+
+            > a {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        &.collapsed {
+            > .collapsible__control { margin-top: 0; }
+        }
+    }
+}
+
 // Major block inside majors list
 .majors-requirements {
 
@@ -144,26 +165,7 @@
             padding-top: 0;
             padding-bottom: .3em;
         }
-
-        > .collapsible-wrapper {
-            > .collapsible__control {
-                padding: 0 1.3em;
-                text-align: left;
-                font-size: 110%;
-
-                > a {
-                    padding-left: 0;
-                    padding-right: 0;
-                }
-            }
-
-            &.collapsed {
-                > .collapsible__control { margin-top: 0; }
-            }
-        }
     }
-
-
 
     .container-opened {
         border-bottom: 1px solid $grey-gallery;

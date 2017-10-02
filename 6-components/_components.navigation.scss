@@ -163,16 +163,8 @@
         background-color: $grey-mine-shaft;
     }
 
-    .label {
-        @include after( $text: $code-arrow-expand-down ){
-            margin-left: .25em;
-            position: relative; top: 1px;
-            font-size: 150%;
-            line-height: 0;
-        }
-    }
-
-    .ico { margin-right: .35em; }
+    .ico:first-child { margin-right: .35em; }
+    .ico:last-child { margin-left: .35em; }
 }
 
 .site-intro {
