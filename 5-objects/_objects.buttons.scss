@@ -25,7 +25,6 @@ $ico-margin:       .9em;
     border-radius: $btn-corners;
     background-color: $btn-bg;
     font-family: $caption-font-family;
-    //font-size: 100%;
     font-weight: $weight-semibold;
     text-decoration: none;
     color: $btn-label-colour;
@@ -37,15 +36,19 @@ $ico-margin:       .9em;
     }
 
     // Sizing (normal size by default)
-    &.large { font-size: 115%; border-radius: 4px; }
+    &.large {
+        font-size: 115%;
+        border-radius: 4px;
+    }
+
     &.small { font-size: 60%; }
 
     // Standard icon styles
     .ico {
+        display: inline;
         margin-left: $ico-margin;
         line-height: 0;
         vertical-align: middle;
-        display: inline;
         transition: none;
 
         &:before { display: inline; }

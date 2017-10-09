@@ -10,37 +10,13 @@
     }
 }
 
-/** Loading spinner animation */
-@-webkit-keyframes spin {
-    0%   {
-        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-        -ms-transform: rotate(0deg);  /* IE 9 */
-        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
-    }
-    100% {
-        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-        -ms-transform: rotate(360deg);  /* IE 9 */
-        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
-    }
-}
-
-@keyframes spin {
-    0%   {
-        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-        -ms-transform: rotate(0deg);  /* IE 9 */
-        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
-    }
-    100% {
-        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-        -ms-transform: rotate(360deg);  /* IE 9 */
-        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
-    }
-}
-
 
 $ico-caret-width:  .7em;
 $ico-caret-height: .35em;
 $ico-margin:       .9em;
+
+
+
 
 
 /* ===== FONT ICON'S CODES ================================================== */
@@ -95,7 +71,7 @@ $ico-code-money:           '\e828';
 $ico-code-exchange:        '\e829';
 $ico-code-world:           '\e80a';
 $ico-code-vcard:           '\e819';
-
+$ico-code-house:           '\e81e';
 
 
 
@@ -165,11 +141,6 @@ $code-triangle-down:    '\25be';
     @include define-icon( ext-link, $ico-code-ext-link );
     @include define-icon( ok, $ico-code-ok );
     @include define-icon( youtube-play, $ico-code-youtube-play );
-
-    @include define-icon( spin, $ico-code-spin ){
-        display: inline-block;
-        animation: spin 2s infinite linear;
-    };
     @include define-icon( search, $ico-code-search );
     @include define-icon( person, $ico-code-person );
 
@@ -187,6 +158,7 @@ $code-triangle-down:    '\25be';
     @include define-icon( group, $ico-code-group );
     @include define-icon( vcard, $ico-code-vcard );
     @include define-icon( world, $ico-code-world );
+    @include define-icon( house, $ico-code-house );
 
 
     /* CSS only icons. */
@@ -211,11 +183,12 @@ $code-triangle-down:    '\25be';
     }
 }
 
+
 /** Link outside of the site with `ico ext-link`. */
 .link--external {
     &:after {
         @include iconify( inline, $ico-code-ext-link );
-        text-decoration: none; // IE11+ fix to remove underline from icons
         margin-left: .35em;
+        text-decoration: none; // IE11+ fix to remove underline from icons
     }
 }

@@ -2,25 +2,6 @@
 =      STANDALONE UI WIDGETS          =
 =====================================*/
 
-$vic-large-logo-width: 480px;
-
-.logo.large {
-    width: $vic-large-logo-width;
-
-    @include breakpoint( $desktop-and-smaller ) {
-        width: $vic-large-logo-width * 0.8;
-    }
-
-    @include breakpoint( $mobile-large-and-smaller ) {
-        width: $vic-large-logo-width * 0.7;
-    }
-
-    @include breakpoint( $mobile ) {
-        width: 95%;
-        max-width: $vic-large-logo-width * 0.6;
-    }
-}
-
 .overlaid { overflow: hidden; }
 
 

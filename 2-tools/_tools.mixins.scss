@@ -9,7 +9,10 @@
 
 
 
+
+
 /* ===== BOX MODEL ========================================================== */
+
 
 /*******************************************************************************
  * Transforms non-object element (eg. pseudo-elements) into object one.
@@ -53,10 +56,16 @@
 }
 
 
+@mixin add-border-inset( $border-color, $border-width ) {
+    box-shadow: inset 0 0 0 $border-width $border-color;
+}
+
+
 
 
 
 /* ===== TYPOGRAPHY ========================================================= */
+
 
 /*******************************************************************************
  * Shorter definition of all active states of an element.
@@ -72,12 +81,12 @@
 }
 
     /***************************************************************************
-    * Underlined decoration to non-underlined on hover.
+    * Non-underlined decoration to underlined on hover.
     */
     @mixin hoverify-underline() {
-        text-decoration: underline;
+        text-decoration: none;
 
-        @include hoverify() { text-decoration: none; }
+        @include hoverify() { text-decoration: underline; }
     }
 
 
@@ -102,7 +111,11 @@
 }
 
 
+
+
+
 /* ===== IMAGES & ICONS ===================================================== */
+
 
 /*******************************************************************************
  * Turns potentially non-object element into a font icon container.
@@ -122,7 +135,10 @@
 
 
 
+
+
 /* ===== LAYOUT & GRID ====================================================== */
+
 
 /*******************************************************************************
  * Transforms standard block element into table-cell and makes it responsive.

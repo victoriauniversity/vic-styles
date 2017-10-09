@@ -1,0 +1,16 @@
+/*=============================================================================
+=                                   LAYOUT                                    =
+==============================================================================*/
+
+
+.footer {
+    padding: 1.75em .5em;
+
+    @include breakpoint( $mobile-large) {
+        padding-bottom: 4.5em;
+    }
+
+    @include breakpoint( $mobile) {
+        padding-bottom: 5.5em;
+    }
+}

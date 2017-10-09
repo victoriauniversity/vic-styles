@@ -161,8 +161,7 @@ $hint-inline-heading-underline-colour: darken( $heading-colour, 20 );
 .list-inline {
     > li {
         display: inline-block;
-        margin-right: .8em;
-        margin-left: .8em;
+        margin-right: 1.2em;
 
         .ico { margin-right: .2em; }
     }

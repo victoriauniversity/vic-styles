@@ -37,7 +37,14 @@
                 display: inline-block;
                 color: $grey-silver;
                 font-family: $caption-font-family;
-                font-weight: $weight-semibold;
+                font-weight: $weight-normal;
+
+                // Link to the homepage
+                &:first-child:before {
+                    @include iconify( inline, $ico-code-house );
+                    margin-right: .35em;
+                    font-size: 90%;
+                }
 
                 > a {
                     color: inherit;
@@ -69,9 +76,7 @@
                 @include hoverify { color: $white; }
             }
 
-            a[role=search] {
-                font-size: 110%;
-            }
+            a[role=search] { font-size: 110%; }
         }
 
 
@@ -171,6 +176,7 @@
     display: flex;
     flex: 1 1;
     align-items: center;
+    align-self: stretch;
 
     h1 {
         line-height: 1.1;

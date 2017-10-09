@@ -70,28 +70,36 @@ $nm-bg-color: $grey-gallery;
     background-color: $nm-bg-color;
     padding: 1em;
     text-align: center;
+
     .need-more-block {
         padding-top: 1em;
+
         li {
-            padding: 0.5em 0;
+            padding: .5em 0;
+
             a {
                 cursor: pointer;
                 text-decoration: underline;
                 white-space: nowrap;
             }
         }
+
         @include breakpoint ( $desktop-and-bigger) {
             width: 100%;
             max-width: 850px;
             margin-right: auto;
             margin-left: auto;
-            h4 {
+
+            h3 {
+                font-size: $h4-size;
                 float: left;
                 margin-bottom: 0.8em;
             }
+
             ul {
                 clear: right;
             }
+
             li {
                 padding: 0.5em 0.75em;
                 display: inline;

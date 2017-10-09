@@ -166,9 +166,7 @@ $banner-separator-colour:   $delim-highlight-bg-colour !default;
 
             // Separator
             @include after( block ) {
-                margin: 1.1em auto 0;
-                max-width: 25em;
-                height: 1px;
+                max-width: 4em;
                 background: $grey-alto;
             }
         }
@@ -182,19 +180,53 @@ $banner-separator-colour:   $delim-highlight-bg-colour !default;
         }
     }
 
-    .list-inline > li {
-        margin-bottom: .5em;
-        white-space: nowrap;
+    .block:not(:last-child) {
+        padding-bottom: 0;
+    }
+
+    .list-inline {
+        margin: 0 .2em;
+
+        > li {
+            margin-bottom: .25em;
+            margin-top: .25em;
+            white-space: nowrap;
+
+            &:last-child { margin-right: 0; }
+        }
     }
 
     .btns-holder {
-        margin-bottom: $base-margin * 1.15;
+        text-align: center;
 
         .btn {
-            margin: .35em .5em;
+            margin: .25em 0;
+
+            &:first-child { margin-right: .65em;}
             > .ico { margin-left: .7em; }
         }
 
         .ico.phone { font-size: 85%; }
+    }
+
+    @include breakpoint( $tablet-and-bigger ){
+        text-align: left;
+
+        .flexed {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .btns-holder {
+            flex: 0 0 auto;
+            text-align: right;
+        }
+    }
+
+    @include breakpoint( $mobile-large-and-smaller ){
+        .btns-holder {
+            margin-top: 1em;
+        }
     }
 }

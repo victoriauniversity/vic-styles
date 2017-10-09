@@ -3,7 +3,6 @@
 ===============================*/
 
 $top-promo-color:    rgba( $green-light-victoria, 0.9 );
-$action-promo-color: rgba( darken( $green-light-victoria, 8% ), 0.75 );
 $action-promo-hover: darken( $green-light-victoria, 11% );
 
 
@@ -39,21 +38,15 @@ $action-promo-hover: darken( $green-light-victoria, 11% );
 
         header { padding: $base-margin * 1.5 $base-margin; }
 
-        .promo-action {
+        .btns-holder {
+            display: block;
+            padding: 0 0 1.5em;
             width: 100%;
-            background-color: $action-promo-color;
 
-            a {
-                display: block;
-                width: 100%;
-                padding: 1em;
-                text-decoration: underline;
-
-                @include hoverify () {
-                    color: #FFF;
-                    text-decoration: none;
-                    background-color: $action-promo-hover;
-                }
+            .btn {
+                margin: 0;
+                @include add-border-inset( $white, 2px );
+                @include hoverify{ background-color: rgba( $white, .2 ); }
             }
         }
     }
@@ -96,7 +89,7 @@ $action-promo-hover: darken( $green-light-victoria, 11% );
     $tc-logo-width:  150px;
 
     // Default logo - sizing based on `Triple Crown`-type logos.
-    > img {
+    img {
         margin:     .5em 1em;
         width:      auto;
         max-height: $tc-logo-height;

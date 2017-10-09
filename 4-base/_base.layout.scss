@@ -3,6 +3,10 @@
 ==============================================================================*/
 
 
+/**
+
+INCLUDED IN THE INLINE STYLES within index.html!
+
 *,
 *::after,
 *::before {
@@ -10,9 +14,17 @@
 }
 
 html {
-    height: 100%; // Sticky footer
     font-size: inherit; // Follow user's settings
     -webkit-font-smoothing: antialiased;
+}
+
+*/
+
+
+
+
+html {
+    height: 100%; // Sticky footer
 }
 
 body {
@@ -34,17 +46,5 @@ body {
 
     @include breakpoint( $tablet ) {
         font-size: $tablet-layout-ratio * 1rem;
-    }
-
-    > footer {
-        padding: 1.75em .5em;
-
-        @include breakpoint( $mobile-large) {
-            padding-bottom: 4.5em;
-        }
-
-        @include breakpoint( $mobile) {
-            padding-bottom: 5.5em;
-        }
     }
 }
