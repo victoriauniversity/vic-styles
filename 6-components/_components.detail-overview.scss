@@ -65,7 +65,14 @@ $detail-overview-text-size: .9em;
     }
 
     ul {
-        .highlight { margin-bottom: .75em; }
+        .highlight {
+            margin-bottom: .35em;
+
+            + li:not(.highlight) {
+                margin-top: 1.2em;
+            }
+        }
+
         .tooltip-icon {
             vertical-align: baseline;
             line-height: 0;

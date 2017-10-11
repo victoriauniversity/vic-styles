@@ -176,14 +176,14 @@ $hint-inline-heading-underline-colour: darken( $heading-colour, 20 );
     }
 }
 
-// Adds additional space behind a given element, if it is not *last*
+// Adds additional space behind a given element
 //
 // Tip: Can be useful if an element needs spacing, but only
 //      under certain conditions that cannot be captured through
 //      CSS selectors - e.g. if the second element is a link and
 //      appending the spacing to the link's element would cause
 //      unwanted spacing on line breaks.
-.append-space:not(:last-child) {
+.append-space {
     @include after() {
         margin-right: .5em;
     }
