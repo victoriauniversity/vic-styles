@@ -34,6 +34,7 @@
 
         .breadcrumbs {
             > li {
+                font-size: 95%;
                 display: inline-block;
                 color: $grey-silver;
                 font-family: $caption-font-family;
@@ -285,6 +286,7 @@ $menu-tabbed-underline-size:           4px;
     }
 }
 
+
 // Makes two col button container with one button left & one right
 .two-btn-nav {
     display: flex;
@@ -342,43 +344,4 @@ $menu-tabbed-underline-size:           4px;
 
 .sticky-top {
     box-shadow: rgba(#000, .2) 0 1px 20px;
-}
-
-
-// Sticks panels to the bottom (Mobile only)
-.mobile-sticky-down {
-    @include breakpoint( $mobile-large-and-smaller ) {
-
-        &.sector {
-            z-index: $z-index-top;
-            //@include position( fixed, 0 0 null 0 );
-
-            &.highlighted {
-                //border-bottom: 1px solid $block-highlight-border;
-            }
-        }
-
-        .menu-tabbed {
-
-            > li > a {
-                display: block; // Override to enable label's ellipsis
-                padding: .6em .4em .4em;
-
-                > div { display: inline; } // Override to enable label's ellipsis
-            }
-
-            .label {
-                display: inline-block;
-                margin: .4em 0 0;
-                width: 100%;
-                font-size: 90%;
-                text-overflow: ellipsis;
-                line-height: 1;
-
-                /* Required for text-overflow to do anything */
-                white-space: nowrap;
-                overflow: hidden;
-            }
-        }
-    }
 }
