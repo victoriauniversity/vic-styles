@@ -106,6 +106,8 @@
                 h1 {
                     margin: .35em 0;
                     font-size: 180%;
+
+
                 }
 
                 .btns-holder {
@@ -141,6 +143,7 @@
                     font-size: 2.3rem;
 
                     &.compact { font-size: 1.9rem; }
+                    &.large { font-size: 2.5rem; }
 
                     // Smaller text before the main information
                     .preline {
