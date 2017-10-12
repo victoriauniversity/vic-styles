@@ -2,25 +2,6 @@
 =      STANDALONE UI WIDGETS          =
 =====================================*/
 
-$vic-large-logo-width: 480px;
-
-.logo.large {
-    width: $vic-large-logo-width;
-
-    @include media( $desktop-and-smaller ) {
-        width: $vic-large-logo-width * 0.8;
-    }
-
-    @include media( $mobile-large-and-smaller ) {
-        width: $vic-large-logo-width * 0.7;
-    }
-
-    @include media( $mobile ) {
-        width: 95%;
-        max-width: $vic-large-logo-width * 0.6;
-    }
-}
-
 .overlaid { overflow: hidden; }
 
 
@@ -53,7 +34,7 @@ $tile-bg:      #f0f0f0;
         display: inline-block;
         padding: .15em .6em;
         border-radius: .2em;
-        background-color: $green-victoria;
+        background-color: $green-light-victoria;
         color: $white;
         white-space: nowrap;
     }
@@ -64,7 +45,7 @@ $tile-bg:      #f0f0f0;
     }
 
     .sub-title {
-        color: $grey-dusty-gray;
+        color: $grey-dusty;
         font-weight: $weight-normal;
     }
     .code {
@@ -74,7 +55,7 @@ $tile-bg:      #f0f0f0;
         line-height: 1;
         font-size: 90%;
         font-weight: $weight-normal;
-        color: $grey-dusty-gray;
+        color: $grey-dusty;
     }
 
     &:nth-child(odd){ margin-left: 0; }
@@ -93,8 +74,6 @@ $tile-bg:      #f0f0f0;
             margin: 0;
             font-size: inherit;
         }
-
-        .title { font-size: 1.25em; }
 
         .btn-holder {
             flex: 0 0 auto;
@@ -141,11 +120,11 @@ $tile-bg:      #f0f0f0;
         }
 
         /** Tiles' responsivity. */
-        @include media ( $tablet-and-smaller ) {
+        @include breakpoint ( $tablet-and-smaller ) {
             .tile__list > li { display: block; }
         }
 
-        @include media ( $mobile-large-and-smaller ) {
+        @include breakpoint ( $mobile-large-and-smaller ) {
             .tile__body{ flex-wrap: wrap; }
             .tile__list{ flex: inherit; }
             .btn-holder {
@@ -218,7 +197,7 @@ $tile-bg:      #f0f0f0;
         }
 
         /** Content-based breakpoints. */
-        @media screen and ( max-width: em( 400px, $em-browser-default ) ) {
+        @media screen and ( max-width: 25rem ) {
             & > li {
                 width: 100%;
                 margin-bottom: .7em;
@@ -228,7 +207,7 @@ $tile-bg:      #f0f0f0;
 }
 
 /** Tiles' responsivity */
-@include media ( $tablet-and-smaller ) {
+@include breakpoint ( $tablet-and-smaller ) {
     .tiles {
         -webkit-column-count: 1; /* Chrome, Safari, Opera */
            -moz-column-count: 1; /* Firefox */
@@ -244,7 +223,7 @@ $tile-bg:      #f0f0f0;
     }
 }
 
-@include media ( $mobile-large-and-smaller ) {
+@include breakpoint ( $mobile-large-and-smaller ) {
     .tile__header {
         margin: 1em;
     }
@@ -255,7 +234,7 @@ $tile-bg:      #f0f0f0;
     }
 }
 
-@include media ( $mobile ) {
+@include breakpoint ( $mobile ) {
     .tile__header .code {
         float: none;
         display: inline-block;
@@ -296,7 +275,7 @@ $tile-bg:      #f0f0f0;
         }
     }
 
-    @include media ( $mobile-large-and-smaller ) {
+    @include breakpoint ( $mobile-large-and-smaller ) {
 
         li,
         > strong {
@@ -366,7 +345,7 @@ $contact-portrait-size: 150px;
     display: inline-block;
     vertical-align: top;
     width: 49%;
-    margin: .45em 0;
+    margin: 0 0 .5em 0;
 
     // 2 columns-layout -> Make all even cards margined from the odd cards
     &:nth-child(even) { margin-left: 2%; }
@@ -399,13 +378,13 @@ $contact-portrait-size: 150px;
     // Card's body
     .card-info { overflow: hidden; }
 
-    @include media ( $tablet-and-smaller ) {
+    @include breakpoint ( $tablet-and-smaller ) {
         margin-left: 0;
         width: 100%;
         &:nth-child(even) { margin-left: 0; }
     }
 
-    @include media ( $mobile-large-and-smaller ) {
+    @include breakpoint ( $mobile-large-and-smaller ) {
         text-align: left;
 
         &:not(:last-child){
@@ -471,7 +450,7 @@ $popup-border:   #fff;
     }
 }
 
-@include media ( $mobile-large-and-smaller ) {
+@include breakpoint ( $mobile-large-and-smaller ) {
     .popup-positioner {
         margin: 0;
         bottom: auto; top: 0;
@@ -490,7 +469,7 @@ $popup-border:   #fff;
     .block {
         background-color: $yellow-spring-wood;
 
-        @include media ( $tablet-and-bigger ) {
+        @include breakpoint ( $tablet-and-bigger ) {
             margin: $base-margin;
         }
     }

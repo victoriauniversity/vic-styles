@@ -65,7 +65,14 @@ $detail-overview-text-size: .9em;
     }
 
     ul {
-        .highlight { margin-bottom: .75em; }
+        .highlight {
+            margin-bottom: .35em;
+
+            + li:not(.highlight) {
+                margin-top: 1.2em;
+            }
+        }
+
         .tooltip-icon {
             vertical-align: baseline;
             line-height: 0;
@@ -73,7 +80,7 @@ $detail-overview-text-size: .9em;
 
         li {
             padding-right: .35em;
-            padding-bottom: .45em;
+            padding-bottom: .55em;
 
             // Don't use margins, otherwise collapsifying calculation won't
             // work properly.
@@ -101,7 +108,7 @@ $detail-overview-text-size: .9em;
             padding-top: .75em;
 
             &:before {
-                @include background( linear-gradient( rgba($grey-gallery, 0) 25%, $grey-gallery 100% ));
+                background: linear-gradient( rgba($grey-gallery, 0) 25%, $grey-gallery 100% );
             }
         }
 
@@ -110,7 +117,7 @@ $detail-overview-text-size: .9em;
             margin-bottom: 0;
             font-size: $detail-overview-text-size;
 
-            @include media( $tablet-and-bigger ) {
+            @include breakpoint( $tablet-and-bigger ) {
                 text-align: left;
 
                 > a { padding: 0; }
@@ -134,7 +141,7 @@ $detail-overview-text-size: .9em;
             flex-grow: 2;
         }
 
-        @include media( $mobile-large-and-smaller ) {
+        @include breakpoint( $mobile-large-and-smaller ) {
             margin-bottom: 0;
 
             &.flexi-block + .flexi-block {

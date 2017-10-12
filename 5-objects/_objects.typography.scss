@@ -3,12 +3,13 @@
 =============================================*/
 
 /* Standard content with only basic formatting options. */
-
 .content-simple {
+
     /* Collections with shared attributes. */
     ul,
     ol,
     p {
+        //max-width: 45em;
         margin-bottom: 1.2em;
 
         &:last-child { margin-bottom: 0; }
@@ -20,13 +21,14 @@
 
     ul, ol {
         > li {
-            margin-bottom: .35em;
+            margin-bottom: .5em;
             line-height: $base-line-height;
 
             // Nested sublist
             ul,
             ol {
-                &:last-child, & {
+                &:last-child,
+                & {
                     margin-bottom: .6em;
                     padding-left: 1.85em;
                 }
@@ -58,10 +60,20 @@
             padding-left: $list-bullet-indent-left;
         }
     }
+
+    a:not(.btn) {
+        @include hoverify {
+            text-decoration: underline;
+        }
+    }
 }
 
 
+
+
+
 /* ===== GENERIC HELPERS ==================================================== */
+
 
 .centered { text-align: center; }
 
@@ -76,7 +88,7 @@
 /** Inline hint (~ tooltip). */
 
 $hint-inline-colour:            $base-font-colour;
-$hint-inline-underline-colour:  $grey-dusty-gray;
+$hint-inline-underline-colour:  $grey-dusty;
 $hint-inline-active-colour:     black;
 
 $hint-inline-heading-underline-colour: darken( $heading-colour, 20 );
@@ -123,10 +135,15 @@ $hint-inline-heading-underline-colour: darken( $heading-colour, 20 );
     @include hoverify() { color: $grey-stack; }
 }
 
+.tooltip-block {
+    cursor: default;
+
+    > span { pointer-events: none; }
+}
+
 
 // Generic inline action link of lower importance
 .link-action {
-    transition: none;
     font-size: 90%;
     white-space: nowrap;
 }
@@ -141,6 +158,15 @@ $hint-inline-heading-underline-colour: darken( $heading-colour, 20 );
     & + .link-action { margin-left: 0; }
 }
 
+.list-inline {
+    > li {
+        display: inline-block;
+        margin-right: 1.2em;
+
+        .ico { margin-right: .2em; }
+    }
+}
+
 // Adds short delimiting line AFTER actual item
 .item-separated {
     @include after( block ){
@@ -150,14 +176,14 @@ $hint-inline-heading-underline-colour: darken( $heading-colour, 20 );
     }
 }
 
-// Adds additional space behind a given element, if it is not *last*
+// Adds additional space behind a given element
 //
 // Tip: Can be useful if an element needs spacing, but only
 //      under certain conditions that cannot be captured through
 //      CSS selectors - e.g. if the second element is a link and
 //      appending the spacing to the link's element would cause
 //      unwanted spacing on line breaks.
-.append-space:not(:last-child) {
+.append-space {
     @include after() {
         margin-right: .5em;
     }

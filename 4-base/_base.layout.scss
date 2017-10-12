@@ -1,6 +1,11 @@
-/*===============================
-=            LAYOUT             =
-===============================*/
+/*=============================================================================
+=                                   LAYOUT                                    =
+==============================================================================*/
+
+
+/**
+
+INCLUDED IN THE INLINE STYLES within index.html!
 
 *,
 *::after,
@@ -9,34 +14,37 @@
 }
 
 html {
-    height: 100%; // Sticky footer
-    font-size: inherit;
+    font-size: inherit; // Follow user's settings
     -webkit-font-smoothing: antialiased;
 }
 
+*/
+
+
+
+
+html {
+    height: 100%; // Sticky footer
+}
+
 body {
-    @include flex-direction( column );  // Sticky footer
-    @include display( flex );           // Sticky footer
-    min-height: 100%;                   // Sticky footer
+    display: flex;           // Sticky footer
+    flex-direction: column;  // Sticky footer
+    min-height: 100%;        // Sticky footer
     font-size: $base-font-size;
     font-family: $base-font-family;
     line-height: $base-line-height;
     color: $base-font-colour;
 
-    > footer {
-        padding: 1.75em .5em;
+    @include breakpoint( $mobile ) {
+        font-size: $mobile-layout-ratio * 1rem;
+    }
 
-        @include media( $mobile-large) {
-            padding-bottom: 4.5em;
-        }
+    @include breakpoint( $mobile-large ) {
+        font-size: $mobile-large-layout-ratio * 1rem;
+    }
 
-        @include media( $mobile) {
-            padding-bottom: 5.5em;
-        }
+    @include breakpoint( $tablet ) {
+        font-size: $tablet-layout-ratio * 1rem;
     }
 }
-
-    // Sticky footer
-    .app {
-        @include flex( 1 1 auto );
-    }

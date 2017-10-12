@@ -5,12 +5,25 @@
 .entry-requirements {
     .form { margin-bottom: $base-margin; }
     .control-group .link-action { margin-left: .35em; }
-    .requirements-list { overflow: hidden; }
+
+    .requirements-list {
+        overflow: hidden;
+
+        @include breakpoint ( $tablet-and-bigger ) {
+            display: flex;
+            align-items: center;
+        }
+
+        > header {
+            flex: 1 1;
+            padding-right: 2em;
+        }
+    }
 
     .btn-holder {
-        @include media ( $tablet-and-bigger ) {
-            float: right;
-            margin-left: 2em;
+        text-align: center;
+
+        @include breakpoint ( $tablet-and-bigger ) {
 
             + header {
                 margin-top: .25em;
@@ -21,7 +34,7 @@
         .btn {
             white-space: nowrap;
 
-            @include media ( $tablet-and-bigger ) { margin: 0; }
+            @include breakpoint ( $tablet-and-bigger ) { margin: 0; }
         }
     }
 }
@@ -48,7 +61,7 @@
         font-size: 90%;
     }
 
-    @include media ( $tablet-and-bigger ) {
+    @include breakpoint ( $tablet-and-bigger ) {
         .collapsible__control { text-align: left; }
     }
 }
@@ -59,11 +72,13 @@
     background-color: $grey-gallery;
     border-left: .3em solid $grey-alto;
 
-    @include media ( $tablet-and-bigger ) {
+    @include breakpoint( $tablet-and-bigger ) {
         padding: 1.1em;
     }
 
-    h3, h4, h5 {
+    h3,
+    h4,
+    h5 {
         margin-bottom: 0;
         color: $grey-mine-shaft;
     }
@@ -72,7 +87,7 @@
         font-size: 120%;
 
         > em {
-            color: $green-victoria;
+            color: $green-light-victoria;
             font-style: inherit;
         }
     }
@@ -82,14 +97,13 @@
         margin-top: .7em;
 
         h4 { font-size: 110%; }
+        &:last-child h4 { margin-bottom: 0; }
 
         > .list-item {
             margin-bottom: .2em;
-            padding: .7em 1em;
+            padding: 1em;
             background-color: $grey-alto;
         }
-
-        &:last-child h4 { margin-bottom: 0; }
     }
 
         // Move `margin-top` to the `collapsible` block to avoid animation issues
@@ -104,7 +118,7 @@
         margin-top: .2em;
         padding: 0 .5em;
 
-        @include media ( $tablet-and-bigger ) {
+        @include breakpoint ( $tablet-and-bigger ) {
             padding: 0 1.2em;
         }
 
@@ -112,7 +126,7 @@
 
         > .list-item {
             border-bottom: 1px solid #C7C7C7;
-            padding: .5em .15em;
+            padding: .75em .15em;
 
             &:last-child{ border-bottom: none;  }
         }
@@ -122,7 +136,7 @@
     .sub-sub-sublist {
         margin: .3em .35em 0;
 
-        @include media ( $tablet-and-bigger ) {
+        @include breakpoint ( $tablet-and-bigger ) {
             margin: .5em .8em 0;
         }
 
@@ -130,6 +144,27 @@
             font-size: 90%;
 
             > p { display: inline; }
+        }
+    }
+}
+
+
+.majors-requirements .majors-list,
+.qualifications > div {
+    > .collapsible-wrapper {
+        > .collapsible__control {
+            padding: 0 1.3em;
+            text-align: left;
+            font-size: 110%;
+
+            > a {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        &.collapsed {
+            > .collapsible__control { margin-top: 0; }
         }
     }
 }
@@ -144,23 +179,7 @@
             padding-top: 0;
             padding-bottom: .3em;
         }
-
-        > .collapsible__control {
-            padding: 0 1.5em;
-            text-align: left;
-            font-size: 110%;
-
-            > a {
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-
-        &.collapsed {
-            > .collapsible__control { margin-top: 0; }
-        }
     }
-
 
     .container-opened {
         border-bottom: 1px solid $grey-gallery;

@@ -2,20 +2,220 @@
 =            NAVIGATION TABS            =
 =======================================*/
 
+
+
+/* ===== MAIN HEADER ======================================================== */
+
+
+.site-header {
+    // For compatibility reasons *only* - remove after removing the old header
+    &.new { padding: 0; }
+
+    // Containers for the header elements
+    .pane {
+        display: flex;
+        align-items: center;
+        padding: .65em 1em;
+
+        // For compatibility reasons *only* - remove after removing the old header
+        &:last-child { margin-bottom: 0; }
+
+        + .main-nav {
+            .search-bar { padding-top: 0; }
+        }
+
+        .logo { padding: .75em 1.5em 0 0; }
+
+        .lines-button {
+            position: relative;
+            margin: 0;
+        }
+    }
+
+        .breadcrumbs {
+            > li {
+                font-size: 95%;
+                display: inline-block;
+                color: $grey-silver;
+                font-family: $caption-font-family;
+                font-weight: $weight-normal;
+
+                // Link to the homepage
+                &:first-child:before {
+                    @include iconify( inline, $ico-code-house );
+                    margin-right: .35em;
+                    font-size: 90%;
+                }
+
+                > a {
+                    color: inherit;
+
+                    @include hoverify {
+                        text-decoration: underline;
+                        color: $white;
+                    }
+                }
+
+                @include after( $text: $code-triangle-right ){
+                    color: $grey-dusty;
+                    font-size: 75%;
+                    margin: 0 .75em;
+                }
+
+                &:last-child::after { content: none; }
+            }
+        }
+
+        /** Quick menu panel with icon-like controls. */
+        .quick-menu {
+            flex-grow: 1;
+            text-align: right;
+
+            > a {
+                color: $grey-dusty;
+
+                @include hoverify { color: $white; }
+            }
+
+            a[role=search] { font-size: 110%; }
+        }
+
+
+    @include breakpoint( $mobile-large-and-smaller ) {
+        .breadcrumbs,
+        .pane:last-child .logo,
+        .quick-menu a[role=search] {
+            display: none;
+        }
+
+        // Top part of the strip
+        .pane:first-child .logo {
+            margin: 0;
+        }
+
+            .quick-menu[ role='search' ] { display: none; }
+
+        // Bottom part of the strip
+        .pane:last-child {
+            border-top: 1px solid rgba( $white, .15 );
+        }
+
+            .site-intro {
+                flex-wrap: wrap;
+
+                h1 {
+                    margin: .35em 0;
+                    font-size: 180%;
+
+
+                }
+
+                .btns-holder {
+                    margin: .75em;
+                    margin-top: .5em;
+                    text-align: center;
+                    width: 100%;
+                    font-size: 115%;
+                }
+
+                h1,
+                .btns-holder {
+                    text-align: center;
+                }
+            }
+
+    }
+
+    @include breakpoint( $tablet-and-bigger ) {
+        .pane:first-child .logo,
+        .main-menu,
+        .main-nav .secondary-nav {
+            display: none;
+        }
+
+        .pane:last-child { padding-bottom: 1.5em; }
+
+            .site-intro {
+                padding: 0 0 0 1.5em;
+                border-left: 1px solid rgba( $white, .15 );
+
+                h1 {
+                    font-size: 2.3rem;
+
+                    &.compact { font-size: 1.9rem; }
+                    &.large { font-size: 2.5rem; }
+
+                    // Smaller text before the main information
+                    .preline {
+                        display: block;
+                        line-height: 1.3;
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .btns-holder { margin-left: 2em; }
+            }
+    }
+}
+
+
+.btn-header {
+    display: inline-block;
+    padding: .35em .8em;
+    font-size: 90%;
+    border-radius: 4px;
+    border: 1px solid $grey-dove;
+    white-space: nowrap;
+
+    @include hoverify {
+        border-color: $white;
+        background-color: $grey-mine-shaft;
+    }
+
+    .ico:first-child { margin-right: .35em; }
+    .ico:last-child { margin-left: .35em; }
+}
+
+.site-intro {
+    display: flex;
+    flex: 1 1;
+    align-items: center;
+    align-self: stretch;
+
+    h1 {
+        line-height: 1.1;
+        flex: 1 1 auto;
+        margin: 0;
+        color: $white;
+
+        .code {
+            font-weight: $weight-normal;
+            color: $grey-silver;
+        }
+    }
+}
+
+
+
+
+
 /* ===== NAVIGATION MENU - TABS ============================================= */
+
 
 // Tabed menu - general
 $menu-tabbed-padding-horiz:            .7em !default;
 $menu-tabbed-padding-vertic:           .9em !default;
 // Single tab (~ menu item)
 $menu-tabbed-item-max-width:           $base-width / 4 !default; // accommodates up to 4 items
-$menu-tabbed-item-triangle-width:      1.5em !default;
+$menu-tabbed-item-triangle-width:      1.25em !default;
 $menu-tabbed-item-triangle-height:     ( $menu-tabbed-item-triangle-width / 3 ) !default;
 $menu-tabbed-item-label-colour:        $grey-stack !default;
-$menu-tabbed-item-hover-label-colour:  $blue-curious-blue !default;
+$menu-tabbed-item-hover-label-colour:  $blue-curious !default;
 $menu-tabbed-item-hover-bg-colour:     $grey-alto !default;
-$menu-tabbed-item-active-label-colour: $white !default;
-$menu-tabbed-item-active-bg-colour:    $green-victoria !default;
+$menu-tabbed-item-active-label-colour: $grey-mine-shaft !default;
+$menu-tabbed-item-active-bg-colour:    $green-light-victoria !default;
+$menu-tabbed-underline-size:           4px;
+
 
 /* Menu or submenu using tab-like layout of its items. */
 .menu-tabbed {
@@ -43,23 +243,25 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
 
         // Selected or activated tab
         &.active {
-            color: $white;
-            background-color: $menu-tabbed-item-active-bg-colour;
+            color: $menu-tabbed-item-active-label-colour;
 
             & > a {
                 color: inherit;
 
-                @include hoverify {
-                    background-color: inherit;
+
+                @include hoverify() {
                     color: inherit;
+                    background-color: inherit;
                 }
+
+                &:focus{ outline: 0; }
             }
+
             @include after( $position: absolute ) {
-                left: 50%;
+                @include size( 100% $menu-tabbed-underline-size );
+                background-color: $menu-tabbed-item-active-bg-colour;
                 bottom: 0;
-                margin-left: -$menu-tabbed-item-triangle-width / 2;
-                margin-bottom: -$menu-tabbed-item-triangle-height;
-                @include triangle( $menu-tabbed-item-triangle-width $menu-tabbed-item-triangle-height, $menu-tabbed-item-active-bg-colour, down);
+                left: 0;
             }
         }
 
@@ -69,9 +271,9 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
             padding: $menu-tabbed-padding-vertic $menu-tabbed-padding-horiz;
             font-size: 1.1em;
             font-family: $caption-font-family;
-            font-weight: $weight-light;
-            line-height: 1;
-            color: $grey-stack;
+            font-weight: $weight-extrabold;
+            line-height: 1.2;
+            color: $menu-tabbed-item-label-colour;
             text-decoration: none;
 
             > div {
@@ -87,8 +289,10 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
     }
 }
 
+
 // Makes two col button container with one button left & one right
 .two-btn-nav {
+    display: flex;
     font-size: 115%; // Large buttons sizing - propagete into its own class
 
     p {
@@ -97,87 +301,50 @@ $menu-tabbed-item-active-bg-colour:    $green-victoria !default;
         color: $grey-stack;
     }
 
-    .btn { margin: 0; }
+    .block {
+        width: 50%;
 
-    &:first-child {
-        padding-right: .5em;
-    }
-
-    &:last-child {
-        padding-left: .5em;
-
-        .two-btn-wrap {
-            float: right;
-            text-align: right;
-        }
-    }
-
-    @include media( $tablet-and-bigger ) {
-        &:first-child {
-            .two-btn-wrap { padding-left: 20%; }
-        }
+        &:first-child { padding-right: .5em; }
 
         &:last-child {
-            .two-btn-wrap { padding-right: 20%; }
+            padding-left: .5em;
+
+            .two-btn-wrap {
+                float: right;
+                text-align: right;
+            }
+        }
+
+        @include breakpoint( $tablet-and-bigger ) {
+            &:first-child {
+                .two-btn-wrap { padding-left: 20%; }
+            }
+
+            &:last-child {
+                .two-btn-wrap { padding-right: 20%; }
+            }
         }
     }
+
+    .btn { margin: 0; }
 }
 
-    .sector .two-col-layout .two-btn-nav.block {
-        display: table-cell;
+    .sector .two-col-layout.two-btn-nav .block {
         width: 100% * $two-btn-layout; // Makes `two button columns` same width
 
-        &:last-child { padding-top: $block-margin; } // Locks top padding for mobile views
+        &:last-child { // Locks top padding for mobile views
+            padding-top: $block-margin-vertical;
+
+            @include breakpoint( $mobile ) {
+                padding-top: $block-mobile-margin-vertical;
+            }
+
+            @include breakpoint( $mobile-large ) {
+                padding-top: $block-mobile-large-margin-vertical;
+            }
+        }
     }
 
 .sticky-top {
     box-shadow: rgba(#000, .2) 0 1px 20px;
-}
-
-
-// Sticks panels to the bottom (Mobile only)
-.mobile-sticky-down {
-    @include media( $mobile-large-and-smaller ) {
-        box-shadow: rgba(#000, .12) 0 -1px 10px;
-
-        &.sector {
-            z-index: $z-index-top;
-            @include position( fixed, null 0 0 0);
-
-            &.highlighted {
-                border-top: 1px solid $block-highlight-border;
-            }
-        }
-        .menu-tabbed {
-            // Switch caret from bottom to top
-            .active:after {
-                bottom: auto;
-                margin-bottom: 0;
-                border-top: none;
-                top: 0;
-                margin-top: -$menu-tabbed-item-triangle-height;
-                border-bottom: $menu-tabbed-item-triangle-height solid $menu-tabbed-item-active-bg-colour;
-            }
-
-            > li > a {
-                display: block; // Override to enable label's ellipsis
-                padding: .6em .4em .4em .4em;
-
-                > div { display: inline; } // Override to enable label's ellipsis
-            }
-
-            .label {
-                display: inline-block;
-                font-size: 85%;
-                margin: .4em 0 0;
-                width: 100%;
-                text-overflow: ellipsis;
-                line-height: 1;
-
-                /* Required for text-overflow to do anything */
-                white-space: nowrap;
-                overflow: hidden;
-            }
-        }
-    }
 }

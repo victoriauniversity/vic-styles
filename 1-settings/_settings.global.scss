@@ -1,11 +1,13 @@
-/*==========================================================
-=            WIDELY USED VARIABLES AND SETTINGS            =
-==========================================================*/
+/*=============================================================================
+=                    GLOBALLY USED VARIABLES AND SETTINGS                     =
+==============================================================================*/
 
 
 /* ===== CONSTANTS ========================================================== */
 
-// Positioning
+
+/** Placement on the Z-axis */
+
 $z-index-max:       9999 !default;
 $z-index-top:       10 !default;
 $z-index-middle:    5 !default;
@@ -13,57 +15,66 @@ $z-index-lower:     1 !default;
 $z-index-default:   0 !default;
 
 
+/** Available weights */
+
+$weight-thin:      200;
+$weight-light:     300;
+$weight-normal:    400;
+$weight-medium:    500; // *DO NOT* use for headings
+$weight-semibold:  600;
+$weight-bold:      700; // *DO NOT* use for headings
+$weight-extrabold: 800;
+
+
+
+
+
 /* ===== DEFAULTS =========================================================== */
 
-// Sets global base em size for the px-to-em and px-to-rem function. This should be the same size as your body font-size. Default is 16px.
-$em-browser-default:    16px;
-$em-base:               14px;
+
+// How much bigger should our default UI be compared to the browser's default (~16px)
+$base-layout-ratio:     1.125;
 
 // Layout & Grid
-$base-width-px:            1280px;
-$base-width:               em( $base-width-px );
+$base-width:            80rem;
 
-// % of left column's width (2-column layout)
+// % of left column's width in 2-column layout
 $two-col-layout-left-ratio:  .65 !default;
-// % of right column's width (2-column layout)
+// % of right column's width 2-column layout
 $two-col-layout-right-ratio: ( 1 - $two-col-layout-left-ratio ) !default;
 
 
-//tow button layout
-$two-btn-layout:  .5 !default;
-
 // Typography
-$base-font-size:    em( $em-base, $em-browser-default ) !default;
+$base-font-size:    $base-layout-ratio * 1rem !default;
 $base-font-colour:  $black-tundora !default;
 $base-line-height:  1.6 !default;
 $base-font-family:  'Helvetica Neue', 'Segoe WP', 'Nimbus Sans L', 'Helvetica', 'Arial' !default;
 $base-spacing:      $base-line-height * 1em !default;
 
+
 // Positioning
 $base-z-index:      $z-index-default !default;
 
+
 // Colours
-$base-bg-colour:    $white;
+$base-bg-colour:    $white !default;
+
 
 // Borders & Lines
 $base-border-radius:    3px !default;
 $base-border-width:     1px !default;
 $base-border-colour:    $grey-gallery !default;
 
-$base-border:   $base-border-width solid $grey-dusty-gray !default;
-
-//FORMS
-// Original borders
-$text-input-border: 2px solid $grey-silver !default;
-
+$base-border:   $base-border-width solid $grey-dusty !default;
 
 
 // Box model
-$base-margin:   1.5em !default;
-$base-padding:  2em !default;
+$base-margin:   1.5rem !default;
+$base-padding:  2rem !default;
 
-// Accessiblity
-$base-outline: 2px solid #2E8ACA;
+
+// Accessiblity outlining
+$base-outline:  2px solid $blue-accessibility;
 
 
 // Animations
@@ -72,20 +83,35 @@ $base-transition-function: ease !default;
 $base-transition: all $base-transition-duration $base-transition-function !default;
 
 
+
+
+
 /* ===== SPECIFIC =========================================================== */
+
 
 // Typography
 $caption-font-family:   '#{$font-victoria}' !default;
-$caption-colour:        $green-mako;
-$caption-line-height:   1.35;
+$caption-colour:        $grey-mako;
+$caption-line-height:   1.25;
 
 $link-colour:           $blue-endeavoura;
+$link-hover-colour:     $blue-curious;
+
+$text-fade-colour:      $blue-grey-tower; // What is this used for?
+
 
 // Layout & Grid
 $block-highlight-colour: $grey-gallery;
 $block-highlight-border: $grey-alto;
 
+$two-btn-layout:  .5 !default;
+
+
 // Borders & Lines
-$delim-border-colour:   $grey-gallery;
-$delim-border:          $base-border-width solid $delim-border-colour;
-$darker-border-colour:  $grey-silver;
+$delim-border-colour:           $grey-gallery;
+$delim-highlight-bg-colour:     $grey-alto;
+$delim-border:                  $base-border-width solid $delim-border-colour;
+$darker-border-colour:          $grey-silver;
+
+// Forms
+$text-input-border: 2px solid $grey-silver !default;

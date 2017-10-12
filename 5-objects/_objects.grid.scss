@@ -2,12 +2,25 @@
 =            GRID-BASED LAYOUT ELEMENTS            =
 ==================================================*/
 
-$block-margin:              $base-margin;
-$block-mobile-large-margin: $base-margin / 1.25;
-$block-mobile-margin:       $base-margin / 1.5;
+
+/* ===== PROPERTIES ========================================================= */
+
+
+
+$block-margin-horizontal:              $base-margin;
+$block-mobile-large-margin-horizontal: $block-margin-horizontal / 1.66;
+$block-mobile-margin-horizontal:       $block-margin-horizontal / 2;
+
+$block-margin-vertical:              $base-margin * 1.2;
+$block-mobile-large-margin-vertical: $block-margin-vertical / 1.25;
+$block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
+
+
+
 
 
 /* ===== SECTORS ============================================================ */
+
 
 // To divide page into independent sectors.
 .sector,
@@ -34,7 +47,6 @@ $block-mobile-margin:       $base-margin / 1.5;
 }
 
 
-
 // The only way to cover horizontal separator of the previous block is to shift
 // current block slightly upwards and re-draw it with separator of the
 // background colour.
@@ -53,24 +65,55 @@ $block-mobile-margin:       $base-margin / 1.5;
 
 /* ===== BLOCKS ============================================================= */
 
+
 // Standard block container
 .block {
     display: block;
-    padding: $block-margin;
-    vertical-align: top; // used when `display: block` is converted into `display: table`
+    padding: $block-margin-vertical $block-margin-horizontal;
+    //    vertical-align: top;  used when `display: block` is converted into `display: table`
 
     // 1. Collapse space in all siblings (default)...
     .sector + .sector & { padding-top: 0; }
 
     // 2. Enable in some cases
-    .sector + .sector.highlighted & { padding-top: $block-margin; }
+    .sector + .sector.highlighted & {
+        padding-top: $block-margin-vertical;
+
+        @include breakpoint( $mobile ) {
+            padding-top: $block-mobile-margin-vertical;
+        }
+
+        @include breakpoint( $mobile-large ) {
+            padding-top: $block-mobile-large-margin-vertical;
+        }
+    }
 
     .sector.highlighted + .sector &,
     .sector.separated + .sector &,
-    .sector.blank + .sector & { padding-top: $block-margin; }
+    .sector.blank + .sector & {
+        padding-top: $block-margin-vertical;
+
+        @include breakpoint( $mobile ) {
+            padding-top: $block-mobile-margin-vertical;
+        }
+
+        @include breakpoint( $mobile-large ) {
+            padding-top: $block-mobile-large-margin-vertical;
+        }
+    }
 
     // Resets block's margin
-    .sector .layout-rebase & { padding-top: $block-margin; }
+    .sector .layout-rebase & {
+        padding-top: $block-margin-vertical;
+
+        @include breakpoint( $mobile ) {
+            padding-top: $block-mobile-margin-vertical;
+        }
+
+        @include breakpoint( $mobile-large ) {
+            padding-top: $block-mobile-large-margin-vertical;
+        }
+    }
 
     // 1B. ... and all block-containers
     .sector .block-container &:not(:first-child) { padding-top: 0; }
@@ -79,14 +122,12 @@ $block-mobile-margin:       $base-margin / 1.5;
 
 
     // 2) Responsiveness
-    @include media( $mobile ) {
-        padding-left: $block-mobile-margin;
-        padding-right: $block-mobile-margin;
+    @include breakpoint( $mobile ) {
+        padding: $block-mobile-margin-vertical $block-mobile-margin-horizontal;
     }
 
-    @include media( $mobile-large ) {
-        padding-left: $block-mobile-large-margin;
-        padding-right: $block-mobile-large-margin;
+    @include breakpoint( $mobile-large ) {
+        padding: $block-mobile-large-margin-vertical $block-mobile-large-margin-horizontal;
     }
 
     &.no-bg { background: inherit; } // Eliminates background
@@ -96,21 +137,19 @@ $block-mobile-margin:       $base-margin / 1.5;
 // Makes content aligned to the center if the width of the
 // viewport surpasses $base-width.
 .centraliser {
-    @include outer-container();
-}
-
-.short-col-wide {
-    @include media( $desktop-large ) {
-        @include span-columns( 12 )
-    }
+    @include centralise;
 }
 
 /* Two-column grid layout. */
 .sector .two-col-layout {
 
     // Outter container
-    &.block-container {
-        @include make-table-grid();
+    //TODO: Refactor and turn into new grid
+    &.block-container { width: 100%; }
+
+    @include breakpoint( $desktop-and-bigger ) {
+        display: flex;
+        align-items: stretch;
     }
 
     // Column; makes two cols - 65% and 35% width
@@ -120,13 +159,14 @@ $block-mobile-margin:       $base-margin / 1.5;
 
         &.btns-holder {
             text-align: center;
-            vertical-align: middle;
 
-            ul, ol { text-align: left; }
+            ul,
+            ol {
+                text-align: left;
+            }
         }
 
-        @include media( $desktop-and-bigger ) {
-
+        @include breakpoint( $desktop-and-bigger ) {
             // Left column
             &:first-child {
                 @include make-table-column( $two-col-layout-left-ratio );
@@ -135,12 +175,28 @@ $block-mobile-margin:       $base-margin / 1.5;
             // Right column
             &:last-child {
                 @include make-table-column( $two-col-layout-right-ratio );
-                padding-top: $block-margin;
+                padding-top: $block-margin-vertical;
+
+                @include breakpoint( $mobile ) {
+                    padding-top: $block-mobile-margin-vertical;
+                }
+
+                @include breakpoint( $mobile-large ) {
+                    padding-top: $block-mobile-large-margin-vertical;
+                }
             }
 
             &.btns-holder {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
                 text-align: right;
                 @include make-table-column( $two-col-layout-right-ratio );
+
+                .btn {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
             }
         }
 
@@ -151,7 +207,7 @@ $block-mobile-margin:       $base-margin / 1.5;
 
         // Swap column blocks - 35% left and 65% right
         .block {
-            @include media( $desktop-and-bigger ) {
+            @include breakpoint( $desktop-and-bigger ) {
 
                 // Left column
                 &:first-child {
@@ -172,12 +228,20 @@ $block-mobile-margin:       $base-margin / 1.5;
 
             // Right column
             &:last-child {
-                padding-top: $block-margin;
+                padding-top: $block-margin-vertical;
                 border-left: none;
                 border-top: $delim-border;
+
+                @include breakpoint( $mobile ) {
+                    padding-top: $block-mobile-margin-vertical;
+                }
+
+                @include breakpoint( $mobile-large ) {
+                    padding-top: $block-mobile-large-margin-vertical;
+                }
             }
 
-            @include media( $desktop-and-bigger) {
+            @include breakpoint( $desktop-and-bigger) {
                 &:last-child {
                     border-left: $delim-border;
                     border-top: none;
@@ -206,7 +270,7 @@ $block-mobile-margin:       $base-margin / 1.5;
 
     //.column{}
 
-    @include media( $mobile-large-and-smaller ) {
+    @include breakpoint( $mobile-large-and-smaller ) {
         display: block;
     }
 }
@@ -223,9 +287,9 @@ $block-mobile-margin:       $base-margin / 1.5;
 }
 
     .flexi-block {
-        width: auto;
         margin-bottom: 1em;
         margin-right: 8%;
+        width: auto;
 
         &:last-child { margin-bottom: 0; }
 

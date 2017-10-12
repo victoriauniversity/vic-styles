@@ -22,7 +22,7 @@ $grid-list-items-per-row:   3;
         float: left;
         display: block;
 
-        @include media( $desktop-and-bigger ) {
+        @include breakpoint( $desktop-and-bigger ) {
             width: 100% / $grid-list-items-per-row;
             &:nth-child(3n+1) { clear: left; }
 
@@ -31,7 +31,7 @@ $grid-list-items-per-row:   3;
         }
 
         // Tablet (~ 2 column)
-        @include media( $tablet ) {
+        @include breakpoint( $tablet ) {
             width: 100% / ( $grid-list-items-per-row - 1 );
             &:nth-child(2n+1) { clear: left; }
 
@@ -40,7 +40,7 @@ $grid-list-items-per-row:   3;
         }
 
         // Mobile (~ 1 column)
-        @include media( $mobile-large-and-smaller ) {
+        @include breakpoint( $mobile-large-and-smaller ) {
             width: 100%;
             clear: left;
 
@@ -61,7 +61,7 @@ $grid-list-items-per-row:   3;
     &.columns3 {
         > li { width: 33.33%; }
 
-        @include media( $mobile-large-and-smaller ) {
+        @include breakpoint( $mobile-large-and-smaller ) {
             > li { width: 50%; }
         }
     }

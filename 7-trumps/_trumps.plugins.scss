@@ -1,11 +1,69 @@
+/*=============================================================================
+=                              3RD PARTY PLUGINS                              =
+==============================================================================*/
 
 
-    /* ===== PLUGIN SPECIFIC =============================================== */
+/** Select2 custom selector: https://github.com/select2/select2 */
+
+$select2-dropdown-border-colour: $grey-chalice;
 
 
-    /** Select2 custom selector:  https://github.com/select2/select2 */
-    .select2 {
-        .fees & { width: auto !important; }
+.select2 {
+    margin-left: .3em;
+    margin-right: .3em;
+
+    .fees &,
+    .pane-controls & {
+        width: auto !important;
+    }
+
+    .fees & { margin-left: .7em; }
+
+
+    /** Selector as a standard link with a caret */
+    .pane-controls & {
+        vertical-align: inherit;
+
+        .select2-selection--single {
+            position: relative;     // Resetting caret's vertical position
+            height: auto;
+            margin-bottom: .35em;   // Push dropdown down
+            border: 0;
+            background-color: transparent;
+            color: $link-colour;
+
+            @include hoverify() {
+                color: $link-hover-colour;
+
+                .select2-selection__arrow b { border-top-color: $link-hover-colour; }
+            }
+        }
+
+        .select2-selection__rendered {
+            overflow: initial;
+            padding-left: .1em;
+            line-height: 1;
+            color: inherit;
+        }
+
+        // Caret triangles
+        .select2-selection__arrow {
+            margin-top: 0;  // Resetting caret's vertical position
+            height: auto;   // Resetting caret's vertical position
+
+            b {
+                top: auto;   // Resetting caret's vertical position
+                margin-top: 0;
+                border-top-color: $link-colour;
+            }
+        }
+
+        &.select2-container--open  .select2-selection__arrow b { border-bottom-color: $link-colour; }
+    }
+}
+
+    .select2-container--open .select2-dropdown--below {
+        border-top: 1px solid $select2-dropdown-border-colour;
     }
 
     //.select2-container {}
@@ -16,14 +74,11 @@
 
     .detail-overview {
         .select2-container {
-            position: relative; top: -.1em;
-            margin-left: .3em;
-            margin-right: .05em;
+            vertical-align: top;
+            position: relative; top: -.3em;
             font-weight: $weight-bold;
         }
     }
-
-    .select2-container { margin-right: .15em; }
 
     .form__select + .select2 {
         font-weight: $weight-bold;
@@ -31,6 +86,10 @@
         .select2-selection--single {
             padding: .25em;
             height: auto;
+
+            @include breakpoint( $mobile-large-and-smaller ) {
+                padding: 0;
+            }
         }
     }
 

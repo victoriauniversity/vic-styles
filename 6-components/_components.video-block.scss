@@ -11,144 +11,98 @@ $bg-color: $grey-gallery;
         margin-right: auto; margin-left: auto; // Center
         max-width: 970px;
 
-        @include media ($tablet-and-smaller) {
+        @include breakpoint ( $tablet-and-smaller ) {
             padding: 1em;
         }
     }
 
     .cover-text-overlay {
-         @include media ($tablet-and-bigger) {
-            position: absolute;
-            top: 0;
-            @include span-columns (4)
-            margin: 2em 1em 1em;
-            z-index: 1;
-            background-color: rgba($green-victoria, 0.9);
-         }
-
-        @include outer-container;
-        background-color: $green-victoria;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
         padding: 1em;
-        header {
-            @include span-columns (12);
-            @include media ($mobile-large-and-bigger) {
-                @include span-columns (4);
+        background-color: $green-light-victoria;
 
+        @include hoverify (){
+            background-color: rgba( $green-light-victoria, 1 );
+            cursor: pointer;
+
+            + .cover-image-holder img {
+                filter: none;
+                transition: all ease-out .75s;
             }
-            float: left;
+        }
+
+        > header,
+        .button-wrap {
+            flex: 1 1 auto;
+        }
+
+        > header {
+            vertical-align: middle;
+
             h2,
-            h4 {
+            h3 {
+                margin: 0;
                 color: $white;
             }
         }
+
         .button-wrap {
-            // padding: 0.5em;
+            padding: 0 $base-margin;
             text-align: center;
-            @include span-columns (12);
-            @include media ($mobile-large-and-bigger) {
-                @include span-columns (2);
-            }
+
             .ico {
                 color: $white;
-                &.youtube-play {
-                    font-size: 3em;
-                }
+
+                &.youtube-play { font-size: 3em; }
             }
-        }
-        @include hoverify (){
-            background-color: rgba($green-victoria, 1);
-            cursor: pointer;
         }
     }
-    .video-body {
-        position: relative;
-        padding: 0;
-        margin: 0 auto;
 
-        @include media ($desktop-and-bigger) {
-            max-width: 970px;
-            min-height: 546px;
+    .cover-image-holder > img {
+        @include size ( 100% auto );
+    }
+
+    @include breakpoint( $tablet-and-bigger ) {
+        .cover-text-overlay {
+            z-index: $z-index-middle;
+            position: absolute; top: 0;
+            margin: 1.5em 1em 1em;
+            width: 50%;
+            background-color: rgba( $green-light-victoria, .9 );
         }
-        @include media ($tablet-and-smaller) {
-            min-width: 100%;
-            min-height: 360px;
-        }
-        @include media ($mobile-large-and-smaller) {
-            max-width: 480px;
-            min-height: 270px;
-        }
-        .cover-overlay {
-            z-index: $z-index-lower;
-            @include position( absolute, 0);
-            @include media ($tablet-and-bigger) {}
-            @include size ( 100%);
 
-            .cover-image-holder {
-                @include position( absolute, 0);
-                overflow: hidden;
-
-                img {
-                    @include position( absolute, 0);
-                    @include size ( auto 100%);
-
-                    @include media ($mobile-large-and-bigger) {
-                        @include size ( 100% auto)
-                    }
-
-                    @include media ($mobile ) {
-                        left: 50%;
-                        margin-left: -240px;
-                    }
-
-
-                    @include media ($desktop-and-bigger) {
-                        @include size (auto 100%)
-                    }
-                }
-            }
-        }
-        .close {
-            color: $white;
-            background-color: rgba($green-victoria, 0.5);
-            font-size: 2em;
-            margin: 0.3em;
-            padding: 0 1em;
-            @include position( absolute, null 0 null null);
-            z-index: $z-index-top;
-        }
-        .video-wrap {
-            position: relative;
-        }
-        .video-frame-wrap {
-            @include size(100%) @include position( absolute, 0);
+        .cover-image-holder > img {
+            filter: grayscale( 35% );
         }
     }
 }
 
+.video__body {
+    position: relative;
+    padding: 0;
+    margin: 0 auto;
+}
+
 .video__description {
-    text-align: center;
     margin-top: .5em;
+    text-align: center;
 }
 
 // TODO: refactor
 .embed-responsive {
+    overflow: hidden;
     position: relative;
     display: block;
-    height: 0;
     padding: 0;
-    overflow: hidden;
+    height: 0;
 }
 
-.embed-responsive.embed-responsive-16by9 {
-    padding-bottom: 56.25%;
-}
+.embed-responsive.embed-responsive-16by9 { padding-bottom: 56.25%; }
 
 .embed-responsive-item {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    @include position( absolute, 0 null 0 0 );
+    @include size( 100% 100% );
     border: 0;
 }

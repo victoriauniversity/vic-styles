@@ -1,0 +1,10 @@
+/*=============================================================================
+=                LIBRARIES AND 3RD PARTY SETTINGS OVERRIDES                   =
+==============================================================================*/
+
+
+// Default grid options override - see more at http://neat.bourbon.io/docs/2.1.0/
+$neat-grid: (
+    columns: 12,
+    gutter: 0
+)

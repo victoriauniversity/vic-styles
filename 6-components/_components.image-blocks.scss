@@ -2,59 +2,51 @@
 =   WELLINGTON PROMO BLOCK      =
 ===============================*/
 
-$top-promo-color:    rgba( $green-victoria, 0.9 );
-$action-promo-color: rgba( darken( $green-victoria, 8% ), 0.75 );
-$action-promo-hover: darken( $green-victoria, 11% );
+$top-promo-color:    rgba( $green-light-victoria, 0.9 );
+$action-promo-hover: darken( $green-light-victoria, 11% );
 
 
 .block__image-promo {
-    position: relative;
     overflow: hidden;
+    position: relative;
+    padding: $base-margin;
     height: auto;
-    padding: 1.5em $base-margin;
 
     .promo-body .promo-action { margin-top: 0; }
 
     .cover-holder {
         img {
             @include position( absolute, 0 );
-            // height: ;
             min-height: 100%;
             min-width: 1200px;
             width: 100%;
         }
     }
     .promo-body {
-        max-width: 750px;
-        @include margin (2em auto);
+        z-index: $z-index-lower;
+        @include margin ( 2em auto );
         position: relative;
+        max-width: 750px;
         background-color: $top-promo-color;
         text-align: center;
-        z-index: $z-index-lower;
 
-        h2, p, a {
+        h2,
+        p,
+        a {
             color: $white;
         }
 
-        header {
-            padding: 2em;
-        }
+        header { padding: $base-margin * 1.5 $base-margin; }
 
-        .promo-action {
+        .btns-holder {
+            display: block;
+            padding: 0 0 1.5em;
             width: 100%;
-            background-color: $action-promo-color;
 
-            a {
-                display: block;
-                width: 100%;
-                padding: 1em;
-                text-decoration: underline;
-
-                @include hoverify () {
-                    color: #FFF;
-                    text-decoration: none;
-                    background-color: $action-promo-hover;
-                }
+            .btn {
+                margin: 0;
+                @include add-border-inset( $white, 2px );
+                @include hoverify{ background-color: rgba( $white, .2 ); }
             }
         }
     }
@@ -97,7 +89,7 @@ $action-promo-hover: darken( $green-victoria, 11% );
     $tc-logo-width:  150px;
 
     // Default logo - sizing based on `Triple Crown`-type logos.
-    > img {
+    img {
         margin:     .5em 1em;
         width:      auto;
         max-height: $tc-logo-height;

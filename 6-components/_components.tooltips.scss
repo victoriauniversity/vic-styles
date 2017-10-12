@@ -7,9 +7,10 @@ $tooltip-caret-size:    20px;
 
 #tooltip {
     position: absolute;
-    z-index: $z-index-middle;
-    padding: 1em;
-    max-width: 35em;
+    font-size: .9em;
+    z-index: $z-index-max;
+    padding: $base-margin / 2;
+    max-width: $base-width * .45;
     text-align: center;
     color: $white;
     background: $tooltip-bg;
@@ -18,14 +19,14 @@ $tooltip-caret-size:    20px;
         @include size( 88px 33px ); // TODO: Make universal
     }
 
+
     /* Tooltip's `tip` */
 
     // Bottom position (default)
-    &:after {
+    @include after( $position: absolute ) {
+        left: 50%;
         @include size ( 0 );
-        @include position( absolute, null null null 50% );
         margin-left: -10px;
-        content: '';
     }
 
     // Positions
@@ -40,7 +41,7 @@ $tooltip-caret-size:    20px;
     &.top {
         &:after {
             @include triangle( $tooltip-caret-size $tooltip-caret-size/2, $tooltip-bg transparent, up );
-            top: -1/2*($tooltip-caret-size);
+            top: -1 / 2*($tooltip-caret-size);
             bottom: auto;
         }
     }

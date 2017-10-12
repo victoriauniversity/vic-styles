@@ -25,7 +25,6 @@ $ico-margin:       .9em;
     border-radius: $btn-corners;
     background-color: $btn-bg;
     font-family: $caption-font-family;
-    font-size: 100%;
     font-weight: $weight-semibold;
     text-decoration: none;
     color: $btn-label-colour;
@@ -37,15 +36,19 @@ $ico-margin:       .9em;
     }
 
     // Sizing (normal size by default)
-    &.large { font-size: 100%; }
+    &.large {
+        font-size: 115%;
+        border-radius: 4px;
+    }
+
     &.small { font-size: 60%; }
 
     // Standard icon styles
     .ico {
+        display: inline;
         margin-left: $ico-margin;
         line-height: 0;
         vertical-align: middle;
-        display: inline;
         transition: none;
 
         &:before { display: inline; }
@@ -67,8 +70,20 @@ $ico-margin:       .9em;
     }
 
     &.disabled {
-        background-color: #BBB;
+        background-color: $grey-silver-chalice;
         cursor: no-drop;
+    }
+
+    &.inverted {
+        box-shadow: inset 0 0 0 2px $blue-azure;
+        background: transparent;
+        color: $blue-azure;
+
+        @include hoverify() {
+            color: white;
+            background-color: $blue-st-tropaz;
+            box-shadow: inset 0 0 0 2px $blue-st-tropaz;
+        }
     }
 
     // Sub-label

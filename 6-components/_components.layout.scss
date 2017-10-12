@@ -1,54 +1,47 @@
-/*==============================
-=            LAYOUT            =
-==============================*/
+/*=============================================================================
+=                                   LAYOUT                                    =
+==============================================================================*/
 
 
 /* ===== RESPONSIVE VIEW WRAPPERS =========================================== */
 
-.view-large, .dialog, .popup {
-    font-size: em( 18px);
-    @include media( $tablet) {
-        font-size: em( 18px );
-    }
 
-    @include media( $mobile-large) {
-        font-size: em( 16px );
-    }
-
-    @include media( $mobile) {
-        font-size: em( 15px );
-    }
-    .main-view {}
+// Apps's dynamic container
+.app {
+    flex: 1 1 auto; // Sticky footer
 }
+
+
+
 
 
 /* ===== LAYOUT MODIFIERS =================================================== */
 
+
 .sticky-top {
-    @include media ( $tablet-and-bigger) {
-
-        box-shadow: rgba(#000, .2) 0 1px 15px;
-
-        @include position(fixed, 0 null null null);
-        width: 100%;
+    @include breakpoint ( $tablet-and-bigger) {
         z-index: $z-index-top;
+        @include position( fixed, 0 null null null );
+        box-shadow: rgba(#000, .2) 0 1px 15px;
+        width: 100%;
         border-bottom: 1px solid $block-highlight-border;
 
         &.slide-up {
             //top: panel's height
-            @include transition( top .75s ease-in-out );
+            transition: top .75s ease-in-out;
         }
 
         &.slide-down {
             //top: 0;
-            @include transition( top .2s ease-in );
+            transition: top .2s ease-in;
         }
     }
 
     li {
-        border-left: 1px solid $block-highlight-border;
+        //border-left: 1px solid $block-highlight-border;
+
         &:last-child {
-            border-right: 1px solid $block-highlight-border;
+            //border-right: 1px solid $block-highlight-border;
         }
     }
 }

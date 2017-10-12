@@ -3,25 +3,24 @@
 =============================================*/
 
 
-.print-only { display: none; }
+/** TODO: Discontinue (deprecate) or refactor completely by moving into _components.navigation.scss  */
 
-//Special media break
-$menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $tablet-grid-columns);
 
 $logo-mobile-width: 12rem;
 $logo-tablet-height: 5.7rem;
 
 
+.print-only { display: none; }
 .header-wrapper { overflow: hidden; } // IE11 inflated header fix
 
 .site-header {
     position: relative;
     background-color: $black-victoria;
-    border-bottom: 6px solid $green-victoria;
+    border-bottom: 6px solid $green-light-victoria;
 
-    @include media ($tablet-and-bigger) {
-        padding-top: .6em;
-        padding-bottom: .6em;
+    @include breakpoint ($tablet-and-bigger) {
+        padding-top: 1em;
+        padding-bottom: 1em;
     }
 
     a { color: $white; }
@@ -36,28 +35,26 @@ $logo-tablet-height: 5.7rem;
 
         img { width: 100%; }
 
-        @include media( $tablet-and-bigger ) {
+        @include breakpoint( $tablet-and-bigger ) {
             float: left;
-            padding: 0 3em 0 .5em;
-            margin: 1.45em 0 .75em;
+            padding: .25em 2em 0 .5em;
             @include size( 27% auto );
             text-align: center;
         }
 
-        @include media( $tablet ) {
+        @include breakpoint( $tablet ) {
             padding-right: 1.8em;
             width: auto;
 
             img { height: $logo-tablet-height; }
         }
 
-        @include media( $desktop ) {
-            margin-top: 1.8em;
-            padding-right: 1.75em;
-            width: 23%;
+        @include breakpoint( $desktop ) {
+            padding-right: 1.7em;
+            margin-bottom: .25em;
         }
 
-        @include media( $mobile-large-and-smaller ) {
+        @include breakpoint( $mobile-large-and-smaller ) {
             margin: 0 .75em;
             padding: 1.5em 0 1em;
             width: $logo-mobile-width;
@@ -67,38 +64,40 @@ $logo-tablet-height: 5.7rem;
     .main-nav {
         padding: 1em;
         max-height: 1000px;
-        transition: .7s ease all;
+        transition: all .7s ease;
 
-        @include media ($mobile-large-and-bigger) {
+        @include breakpoint ($mobile-large-and-bigger) {
             padding: 2em;
         }
 
-        @include media ($tablet-and-bigger) {
+        @include breakpoint ($tablet-and-bigger) {
             padding: 0;
         }
-        @include media ($mobile-large-and-smaller) {
+        @include breakpoint ($mobile-large-and-smaller) {
             background-color: $black;
         }
 
         &.ng-hide {
-            @include media ($mobile-large-and-smaller) {
+            @include breakpoint ($mobile-large-and-smaller) {
                 max-height: 0;
                 opacity: 0;
                 padding: 0;
             }
         }
         &.ng-hide:not(.ng-hide-animate) {
-            @include media ($tablet-and-bigger) {
+            @include breakpoint ($tablet-and-bigger) {
                 display: block !important;
             }
         }
 
         ul {
             li {
+                font-size: 95%;
                 width: 100%;
                 position: relative;
                 box-sizing: border-box;
-                @include media ($tablet-and-bigger) {
+
+                @include breakpoint ($tablet-and-bigger) {
                     display: block;
                     width: auto;
                     float: left;
@@ -107,7 +106,7 @@ $logo-tablet-height: 5.7rem;
                     a {
                         border-top: 0;
                         border-radius: 3px 3px 0 0;
-                        @include media ($tablet-and-bigger) {
+                        @include breakpoint ($tablet-and-bigger) {
                             border-radius: 0;
                             &:before {
                                 content: "";
@@ -119,35 +118,33 @@ $logo-tablet-height: 5.7rem;
                 &:nth-child(6) {
                     a {
                         border-radius: 0 0 3px 3px;
-                        @include media ($tablet-and-bigger) {
+                        @include breakpoint ($tablet-and-bigger) {
                             border-radius: 0;
                         }
                     }
                 }
                 a {
                     font-family: $font-victoria;
-                    font-size: 1.5em;
+                    font-size: $h4-size;
                     background-color: $black-victoria;
                     text-align: left;
                     display: block;
                     padding: 10px 20px;
                     border-top: 2px solid rgba(250, 250, 250, .14902);
                     transition: all .3s linear;
-                    @include media ($mobile-large-and-smaller) {
+                    @include breakpoint ($mobile-large-and-smaller) {
                         @include hoverify () {
                             background-color: $grey-stack;
                         }
                     }
-                    @include media ($tablet-and-bigger) {
+                    @include breakpoint ($tablet-and-bigger) {
                         border: 0;
                         padding: 0 .3em 0 0;
                         font-family: "Nimbus Roman No 9 L", "FreeSerif", "Georgia", serif;
                         font-weight: 500;
-                        @include media ($menu-break) {
-                            font-size: 1.2em;
-                        }
+
                         @include hoverify () {
-                            color: $grey-dusty-gray;
+                            color: $grey-dusty;
                         }
                         &:before {
                             padding-right: .3em;
@@ -162,23 +159,24 @@ $logo-tablet-height: 5.7rem;
             .search-btn {
                 display: none;
 
-                @include media ( $tablet-and-bigger ) {
+                @include breakpoint ( $tablet-and-bigger ) {
                     display: block;
                 }
             }
         }
 
         .search-bar {
-            @include media ($tablet-and-bigger) {
+            @include breakpoint ($tablet-and-bigger) {
                 clear: both;
                 display: block;
                 width: 100%;
+                padding: 1em 0;
                 max-height: 160px;
-                transition: .2s ease all;
+                transition: all .2s ease;
                 opacity: 1;
 
                 &.ng-hide {
-                    transition: .7s ease all;
+                    transition: all .7s ease;
                     max-height: 0;
                     opacity: 0;
                     padding: 0;
@@ -186,18 +184,16 @@ $logo-tablet-height: 5.7rem;
             }
 
             .search-form {
-                margin-top: 1em;
                 background-color: $grey-alto;
-                padding: 1em;
+                padding: .75em;
                 border-radius: $base-border-radius;
-                @include media ($tablet-and-bigger) {
+                @include breakpoint ($tablet-and-bigger) {
                     margin-top: 0;
-                    margin-bottom: 1em;
                     margin-right: auto;
                     margin-left: auto;
                     width: 70%;
                     max-height: 160px;
-                    transition: .7s ease all;
+                    transition: all .7s ease;
                     opacity: 1;
                     input[type=text],
                     input[type=search] {
@@ -205,7 +201,7 @@ $logo-tablet-height: 5.7rem;
                         margin-bottom: 0;
                         margin-right: 2%;
                         max-height: 160px;
-                        transition: .7s ease all;
+                        transition: all .7s ease;
                         opacity: 1;
                         &.ng-hide {
                             max-height: 0;
@@ -227,28 +223,35 @@ $logo-tablet-height: 5.7rem;
                     margin: 0;
                     outline: 0;
                     border: 0;
-                    font-size: 1.3em;
                     max-height: 40px;
                 }
             }
         }
     }
+
     .secondary-nav {
         display: none;
-        @include media ($tablet-and-bigger) {
+
+        @include breakpoint ( $tablet-and-bigger ) {
+            margin-bottom: .2em;
+            padding-top: .15em;
+
             display: block !important;
+
             ul {
                 overflow: hidden;
                 clear: right;
-                padding-top: 1.3em;
+                line-height: 1;
+
                 li {
                     float: left;
                     padding-right: 1em;
+
                     a {
                         text-transform: uppercase;
                         color: $grey-silver-chalice;
                         letter-spacing: 2px;
-                        font-size: 11px;
+                        font-size: 65%;
                         font-weight: bold;
                         font-family: "Nimbus Roman No 9 L", "FreeSerif", "Georgia", serif;
                         @include hoverify () {
@@ -259,8 +262,8 @@ $logo-tablet-height: 5.7rem;
             }
         }
 
-        @include media( $tablet ) {
-            ul { margin-bottom: .35em; }
+        @include breakpoint( $tablet ) {
+            ul { margin-bottom: .2em; }
         }
     }
 }
@@ -276,7 +279,7 @@ $menu-button-transition: .3s; // increase this to see the transformations in slo
 
 // Hamburger menu <-> Cross icon made with pure CSS
 .lines-button {
-    @include media ($tablet-and-bigger) {
+    @include breakpoint ($tablet-and-bigger) {
         display: none;
     }
 

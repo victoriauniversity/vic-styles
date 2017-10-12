@@ -1,8 +1,10 @@
-/*=====================================
-=            FORMS' INPUTS            =
-=====================================*/
+/*=============================================================================
+=                             FORM'S CONTROLS                                 =
+==============================================================================*/
+
 
 /* ===== PROPERTIES ========================================================= */
+
 
 // Standard
 $input-height:          38px !default;
@@ -10,11 +12,16 @@ $input-border-width:    $base-border-width !default;
 $input-border-radius:   0 !default;
 $input-border-color:    $grey-mine-shaft !default;
 
+
 // Active
 $input-active-border-color: $blue-endeavoura !default;
 
 
+
+
+
 /* ===== GLOBAL ============================================================= */
+
 
 input[ type=text ] {
     min-height: $input-height;

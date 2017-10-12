@@ -1,6 +1,6 @@
-/*========================================================
-=            PATHS AND URLS TO RELATED ASSETS            =
-========================================================*/
+/*============================================================================= =                               PATHS AND URLS                                =
+==============================================================================*/
+
 
 // *Note*: All paths are relative and *COULD* be overriden!
 // Usage inside CSS properties through interpolation as following: #{$pathType}
@@ -8,17 +8,21 @@
 
 /* ===== LOCAL PATHS ======================================================== */
 
+
 // Relative path from main css file to the assets folder
 $path-assets:    '..' !default;
+
 
 // 1st level
 $path-imgs:      $path-assets + '/img' !default;
 $path-fonts:     $path-assets + '/fonts' !default;
 
-// 2nd level
+
+
 
 
 /* ===== CDNS =============================================================== */
+
 
 // 1st level
 $path-cdn:        'https://static.victoria.ac.nz';
@@ -30,7 +34,13 @@ $path-cdn-fonts:   $path-cdn + '/fonts' !default;
 
 
 
+
+
 /* ===== FONTS ============================================================== */
+
 
 $path-font-victoria:      $path-cdn-fonts + '/NationalWebLF' !default;
 $path-fonticon-victoria:  $path-fonts + '/icons' !default;
+
+
+

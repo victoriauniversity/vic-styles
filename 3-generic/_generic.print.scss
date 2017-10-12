@@ -1,6 +1,6 @@
-/*====================================
-=            PRINT STYLES            =
-====================================*/
+/*=============================================================================
+=                                 PRINT STYLES                                =
+==============================================================================*/
 
 $print-margin-vertical:     1em;
 $print-margin-horizontal:   0;
@@ -73,7 +73,12 @@ $print-logo-width:          300px;
         page-break-after: avoid;
     }
 
-    #{headings( 1, 6 )} {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
@@ -317,7 +322,10 @@ $print-logo-width:          300px;
         font-size: 1.6em !important;
     }
 
-    .fact__content { text-align: center !important; }
+    .fact__content {
+        padding-top: 0 !important;
+        text-align: center !important;
+    }
 
     // Wellington promo
     .promo-body {
@@ -325,8 +333,6 @@ $print-logo-width:          300px;
 
         header { padding: 0 !important;}
     }
-
-    .fact__content { padding-top: 0 !important; }
 
     // SlideShow
     .slide-show__wrap {
@@ -391,13 +397,16 @@ $print-logo-width:          300px;
 
     // Tiles
     .tiles {
-        @include columns( 1 );
+        columns: 1;
         column-count: 1 !important;
 
         .tile { margin-bottom: 0 !important;}
 
         .tile__header,
-        .tile__list { margin-left: 0 !important; margin-right: 0 !important;  }
+        .tile__list {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
     }
 
     // Contacts

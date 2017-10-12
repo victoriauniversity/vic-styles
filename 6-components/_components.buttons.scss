@@ -33,7 +33,7 @@ $bubble-size: 2.5em;
         margin: .03em .45em;
     }
 
-    @include media( $desktop-and-smaller ) {
+    @include breakpoint( $desktop-and-smaller ) {
         margin: 1em;
         right: auto;
         bottom: auto;
@@ -41,7 +41,7 @@ $bubble-size: 2.5em;
         left: 0;
     }
 
-    @include media( $mobile-large-and-smaller ) {
+    @include breakpoint( $mobile-large-and-smaller ) {
         margin-top: 3.2em;
     }
 }
