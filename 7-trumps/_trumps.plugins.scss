@@ -12,8 +12,7 @@ $select2-dropdown-border-colour: $grey-chalice;
     margin-left: .3em;
     margin-right: .3em;
 
-    .fees &,
-    .pane-controls & {
+    .fees & {
         width: auto !important;
     }
 
@@ -22,7 +21,8 @@ $select2-dropdown-border-colour: $grey-chalice;
 
     /** Selector as a standard link with a caret */
     .pane-controls & {
-        vertical-align: inherit;
+        vertical-align: sub;
+        max-width: 100%;
 
         .select2-selection--single {
             position: relative;     // Resetting caret's vertical position
@@ -40,9 +40,9 @@ $select2-dropdown-border-colour: $grey-chalice;
         }
 
         .select2-selection__rendered {
-            overflow: initial;
+            //overflow: initial;
+            line-height: 1.2;
             padding-left: .1em;
-            line-height: 1;
             color: inherit;
         }
 
