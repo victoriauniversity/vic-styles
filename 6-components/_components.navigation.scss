@@ -345,6 +345,22 @@ $menu-tabbed-underline-size:           4px;
         }
     }
 
+
 .sticky-top {
     box-shadow: rgba(#000, .2) 0 1px 20px;
+    z-index: $z-index-top;
+    @include position( fixed, 0 null null null );
+    box-shadow: rgba(#000, .2) 0 1px 15px;
+    width: 100%;
+    border-bottom: 1px solid $block-highlight-border;
+
+    &.slide-up {
+        //top: panel's height
+        transition: top .75s ease-in-out;
+    }
+
+    &.slide-down {
+        //top: 0;
+        transition: top .2s ease-in;
+    }
 }

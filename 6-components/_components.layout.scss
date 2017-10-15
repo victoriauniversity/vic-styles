@@ -11,37 +11,3 @@
     flex: 1 1 auto; // Sticky footer
 }
 
-
-
-
-
-/* ===== LAYOUT MODIFIERS =================================================== */
-
-
-.sticky-top {
-    @include breakpoint ( $tablet-and-bigger) {
-        z-index: $z-index-top;
-        @include position( fixed, 0 null null null );
-        box-shadow: rgba(#000, .2) 0 1px 15px;
-        width: 100%;
-        border-bottom: 1px solid $block-highlight-border;
-
-        &.slide-up {
-            //top: panel's height
-            transition: top .75s ease-in-out;
-        }
-
-        &.slide-down {
-            //top: 0;
-            transition: top .2s ease-in;
-        }
-    }
-
-    li {
-        //border-left: 1px solid $block-highlight-border;
-
-        &:last-child {
-            //border-right: 1px solid $block-highlight-border;
-        }
-    }
-}
