@@ -174,7 +174,8 @@ $banner-separator-colour:   $delim-highlight-bg-colour !default;
         .control-group {
             max-width: 100%;
             white-space: normal;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
 
             &:not(:last-child) {
                 margin-right: .25em;
