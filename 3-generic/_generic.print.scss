@@ -85,6 +85,14 @@ $print-logo-width:          300px;
 
     h1 { font-size: 2em !important; }
 
+    .content-simple {
+        ul {
+            list-style: square !important;
+            text-indent: initial !important;
+            li:before { @extend %hide; }
+        }
+    }
+
 
     // Links
     a,
@@ -109,11 +117,17 @@ $print-logo-width:          300px;
         @extend %hide;
     } // Don't show links for images, or javascript/internal links
 
+    // Buttons
+    .btn-up {
+        @extend %hide;
+    }
+
 
     /** Layout */
 
     // Hide stuff we don't need to print
-    .site-header,
+    .site-header:not(.new),
+    .breadcrumbs,
     .cover-holder,
     .cover-overlay,
     .need-more,
@@ -137,6 +151,48 @@ $print-logo-width:          300px;
 
     /** Header */
 
+
+    .site-header.new {
+        border: none;
+
+        .logo,
+        .pane:first-child,
+        .quick-menu {
+            @extend %hide;
+        }
+
+        .pane { padding: 0 !important; }
+
+        .site-intro { flex-wrap: wrap; }
+
+        .btn-header {
+            font-weight: $weight-bold;
+            font-size: 100% !important;
+            margin: $print-margin-vertical 0;
+            text-decoration: none !important;
+            padding: 0 !important;
+            border: 0 !important;
+
+            &:after,
+            .arr-short-down {
+                @extend %hide;
+            }
+        }
+
+        h1 {
+            order: 2;
+            width: 100% !important;
+        }
+    }
+
+    .banner-with-cover {
+        .abstract {
+            padding-bottom: 0 !important;
+        }
+
+        .btn { margin-top: $print-margin-vertical !important; }
+    }
+
     // Switcher panel
     .content-switcher {
         position: absolute !important; top: 0; right: 0;
@@ -157,6 +213,17 @@ $print-logo-width:          300px;
         position: static !important;
     }
 
+    .banner-overview {
+        text-align: left !important;
+
+        .btns-holder { display: none !important; }
+
+        .pane-controls {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+    }
+
     // Tabbed menu
     .menu-tabbed li {
         @extend %hide;
@@ -173,6 +240,7 @@ $print-logo-width:          300px;
             font-weight: $weight-semibold !important;
             font-size: 1.85rem !important;
             padding: .35em 0 !important;
+            margin-top: .5em !important;
             text-align: left !important;
             text-decoration: none !important;
         }
@@ -180,7 +248,9 @@ $print-logo-width:          300px;
         .label { margin-left: .25em !important; }
     }
 
+    .sticky-top { position: relative !important; }
     select { @extend %hide; }
+    .select2-selection__arrow { @extend %hide; }
 
     .menu-tabbed .active {
         width: 100% !important;
@@ -254,12 +324,19 @@ $print-logo-width:          300px;
 
     .requirements-list a:after { @extend %hide; }
 
+    .majors-requirements .form {
+        @extend %hide;
+    }
+
 
     /** Widgets */
 
     .content-anchors-container { @extend %hide; }
 
-    #tooltip, .tooltip-icon { @extend %hide; }
+    #tooltip,
+    .tooltip-icon {
+        @extend %hide;
+    }
 
     .intro .title {
         margin: 0 !important;
@@ -287,9 +364,9 @@ $print-logo-width:          300px;
 
     .quals-listing {
         .btn-holder {
-            float: none !important;
+            width: 100% !important;
             margin-left: 0 !important;
-            margin-bottom: .5em !important;
+            margin-bottom: 0 !important;
 
             .note,
             a > small { @extend %hide; }
@@ -300,7 +377,7 @@ $print-logo-width:          300px;
         .tile__body { margin-left: .4em !important; }
 
         .tile__body,
-        .tile__list { margin-bottom: 0 !important;}
+        .tile__list { margin-bottom: 0 !important; }
     }
 
     .related-degree .toggle-header {
@@ -310,7 +387,7 @@ $print-logo-width:          300px;
 
     // Quote
     .quote-image {
-        margin-right: 1em !important;
+        margin-right: $print-margin-vertical !important;
     }
 
     .block__quote .btn { @extend %hide; }
@@ -329,9 +406,12 @@ $print-logo-width:          300px;
 
     // Wellington promo
     .promo-body {
+        text-align: left !important;
         margin: 0 !important;
+        max-width: initial !important;
 
-        header { padding: 0 !important;}
+        header { padding: 0 !important; }
+        .btns-holder { margin-top: $print-margin-vertical !important; }
     }
 
     // SlideShow
@@ -357,9 +437,14 @@ $print-logo-width:          300px;
         }
     }
 
+    // Sub-qualifications
+    .qualifications .form {
+        @extend %hide;
+    }
+
     // Video
     .cover-text-overlay {
-        @extend %hide;
+        padding: 0 !important;
     }
 
     .video-body {
@@ -375,6 +460,18 @@ $print-logo-width:          300px;
         content: "Play YouTube video at: <" attr(title) ">";
     }
 
+    // Large overview card
+    .detail-overview{
+        .kis {
+            order: initial !important;
+            width: 100% !important;
+        }
+
+        .highlight > a { @extend %hide; }
+    }
+
+
+
     // Intro - subject/quals listing
     .subject-listing {
         a:after { @extend %hide; }
@@ -389,10 +486,20 @@ $print-logo-width:          300px;
             font-size: 1.35rem !important;
             text-decoration: none !important;
         }
+
+        .title .ico { @extend %hide; }
     }
+
 
     // Feedback
     .feedback { @extend %hide; }
+
+    // Dialogs
+    .dialog { @extend %hide; }
+    .ngdialog-open {
+        overflow: initial !important;
+        position: relative !important;
+    }
 
 
     // Tiles
@@ -477,6 +584,10 @@ $print-logo-width:          300px;
                         content: "No";
                         font-weight: $weight-bold;
                     }
+                    &:before,
+                    &:after {
+                        @extend %hide;
+                    }
                 }
 
                 &:checked + label {
@@ -490,6 +601,7 @@ $print-logo-width:          300px;
 
     /** Attribution bubble - Don't show. */
     .bubble-attribution {
-        display: none !important;
+        @extend %hide;
     }
+
 }
