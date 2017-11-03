@@ -44,7 +44,7 @@ $action-promo-hover: darken( $green-light-victoria, 11% );
             width: 100%;
 
             .btn {
-                margin: 0;
+                margin: 0 .35em .35em;
                 @include add-border-inset( $white, 2px );
                 @include hoverify{ background-color: rgba( $white, .2 ); }
             }

@@ -141,6 +141,8 @@ $detail-overview-text-size: .9em;
             flex-grow: 2;
         }
 
+        .block { padding-left: 0; padding-right: 0; }
+
         @include breakpoint( $mobile-large-and-smaller ) {
             margin-bottom: 0;
 

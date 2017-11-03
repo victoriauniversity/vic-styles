@@ -3,7 +3,7 @@
 ================================*/
 
 .entry-requirements {
-    .form { margin-bottom: $base-margin; }
+    .form:not(:last-child) { margin-bottom: $base-margin; }
     .control-group .link-action { margin-left: .35em; }
 
     .requirements-list {
@@ -37,9 +37,14 @@
             @include breakpoint ( $tablet-and-bigger ) { margin: 0; }
         }
     }
+
+    .block {
+        > p + ul { margin-top: .75em; }
+    }
+
+    .kis { display: inline-block; }
 }
 
-.kis-requirements { display: inline-block; }
 
 
 

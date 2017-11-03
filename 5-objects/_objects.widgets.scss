@@ -7,24 +7,30 @@
 
 /* Cards-like tiles. */
 $tile-padding: 1.5em;
-$tile-bg:      #f0f0f0;
+$tile-bg:      $grey-gallery;
 
 .tiles {
     -webkit-column-count: 2; /* Chrome, Safari, Opera */
     -moz-column-count: 2; /* Firefox */
     column-count: 2;
+
+    > * {
+        display: block; // Fixes breaking of the columns to the new line
+    }
 }
 
 .tile {
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid; /* Firefox is dumb */
     break-inside: avoid;
+
     // Desktop-view ONLY
+    overflow: hidden;
     display: inline-block;
+    //display: grid; // Solves the issue with incorrect breaking in newer browsers that support grids
+    width: 100%;
     margin-bottom: 1.2em;
     background: $tile-bg;
-    vertical-align: top;
-    width: 100%;
 
     &.collapsible-wrapper .collapsible__control { margin-top: 0; }
 
@@ -40,7 +46,7 @@ $tile-bg:      #f0f0f0;
     }
 
     .btn-holder {
-        margin: .5em 0;
+        margin: .5em $tile-padding;
         text-align: center;
     }
 
@@ -139,7 +145,11 @@ $tile-bg:      #f0f0f0;
     }
 }
 
-.tile__header { margin: $tile-padding; }
+.tile__header {
+    display: inline-block;
+    padding: $tile-padding;
+    width: 100%;
+}
 
 .tile__body,
 .tile__list { margin: 0 $tile-padding 1em; }
@@ -171,13 +181,15 @@ $tile-bg:      #f0f0f0;
     .tooltip-icon { vertical-align: initial; }
 
     &.grid {
-        margin: 1.5em 1em;
+        margin: 0 1em 1.5em;
         text-align: center;
 
         > li {
+            margin-bottom: 0;
             vertical-align: top;
             display: inline-block;
-            width: 32%;        }
+            width: 32%;
+        }
 
         .label, .value, .note {
             display: block;
