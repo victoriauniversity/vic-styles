@@ -194,6 +194,7 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
                 @include make-table-column( $two-col-layout-right-ratio );
 
                 .btn {
+                    text-align: center;
                     margin-top: 0;
                     margin-bottom: 0;
                 }
