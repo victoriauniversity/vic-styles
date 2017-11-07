@@ -145,10 +145,13 @@ $tile-bg:      $grey-gallery;
     }
 }
 
+.tiles .tile__header { padding: $tile-padding; }
+
 .tile__header {
     display: inline-block;
-    padding: $tile-padding;
     width: 100%;
+
+    .title { margin-bottom: .25em; }
 }
 
 .tile__body,
