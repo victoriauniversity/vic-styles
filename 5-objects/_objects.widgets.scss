@@ -338,6 +338,7 @@ $collapsible-transparency-height: 4em;
 
 
 .collapsible {
+    position: relative;
     display: block;
     overflow: hidden;
     height: auto;
