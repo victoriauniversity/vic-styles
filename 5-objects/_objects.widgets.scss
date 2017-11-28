@@ -245,10 +245,6 @@ $tile-bg:      $grey-gallery;
 }
 
 @include breakpoint ( $mobile-large-and-smaller ) {
-    .tile__header {
-        margin: 1em;
-    }
-
     .tile__list {
         margin-left: 1em;
         margin-right: 1em;

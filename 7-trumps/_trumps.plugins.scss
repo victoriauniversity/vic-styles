@@ -9,11 +9,11 @@ $select2-dropdown-border-colour: $grey-chalice;
 
 
 .select2 {
-    margin-left: .3em;
     margin-right: .3em;
 
     .fees &,
     .pane-controls & {
+        margin-left: .3em;
         width: auto !important;
     }
 
