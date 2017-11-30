@@ -205,6 +205,7 @@ $nm-bg-color: $grey-gallery;
     &.ico:before {
         margin-right: .25em;
         font-size: 110%;
+        line-height: 0;
     }
 
     &.small { font-size: 90%; }
@@ -264,14 +265,6 @@ $nm-bg-color: $grey-gallery;
     }
 }
 
-    // List of tile-like qualifications
-    .quals-listing {
-        margin-top: .5em;
-
-        .abstract { margin-bottom: .7em; }
-    }
-
-
 /** Collapsible control is LEFT inside smaller of the two column block. */
 @include breakpoint ( $desktop-and-bigger ) {
     .two-col-layout .block:last-child .collapsible__control {
@@ -283,7 +276,6 @@ $nm-bg-color: $grey-gallery;
 /** Example courses block (based on `related-areas`) */
 .example-courses {
     .grid-list { font-size: 85%; }
-    .title { height: 3em; }
 }
 
 

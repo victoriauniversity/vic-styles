@@ -17,6 +17,12 @@ $tile-bg:      $grey-gallery;
     > * {
         display: block; // Fixes breaking of the columns to the new line
     }
+
+    &-wide {
+        margin-top: .8em;
+
+        .abstract { margin-bottom: 1em; }
+    }
 }
 
 .tile {
@@ -67,11 +73,11 @@ $tile-bg:      $grey-gallery;
     &:nth-child(odd){ margin-left: 0; }
     &:nth-child(even){ margin-right: 0; }
 
-    /** Tile inside related qualifications listing. */
-    .quals-listing & {
+    /** Full-width (stretched) tiles */
+    .tiles-wide & {
+        display: block;
         clear: both;
 
-        &:first-child { margin-top: .75em; }
         .tile__header { margin: 1em $tile-padding; }
 
         .code {
@@ -239,10 +245,6 @@ $tile-bg:      $grey-gallery;
 }
 
 @include breakpoint ( $mobile-large-and-smaller ) {
-    .tile__header {
-        margin: 1em;
-    }
-
     .tile__list {
         margin-left: 1em;
         margin-right: 1em;
@@ -338,6 +340,7 @@ $collapsible-transparency-height: 4em;
 
 
 .collapsible {
+    position: relative;
     display: block;
     overflow: hidden;
     height: auto;

@@ -7,7 +7,7 @@
 
 $grid-area-margin:              .15em !default;
 $grid-area-title-colour:        $grey-mako !default;
-$grid-area-title-caret-colour: #AAA !default;
+$grid-area-title-caret-colour:  $grey-chalice !default;
 $grid-area-hover-title-colour:  $white !default;
 $grid-area-bg:                  $grey-gallery !default;
 $grid-area-hover-bg:            $grey-alto !default;
@@ -16,12 +16,14 @@ $grid-area-active-bg:           $green-light-victoria !default;
 
 // Standard grid list containing areas and their previews
 .area {
+    height: 100%;
     padding: $grid-area-margin;
 
     .title {
         display: table;
         margin: 0;
-        @include size( 100% 3.3em );
+        @include size( 100% 100% );
+        min-height: 3em;
         font-weight: $weight-light;
         line-height: 1.3;
         text-align: center;
@@ -31,7 +33,7 @@ $grid-area-active-bg:           $green-light-victoria !default;
 
         > a {
             display: table-cell;
-            padding: .5em 1em;
+            padding: .75em 1em;
             color: inherit;
             vertical-align: middle;
             font-size: 75%;
@@ -45,11 +47,21 @@ $grid-area-active-bg:           $green-light-victoria !default;
         }
     }
 
+    $area-preview-triangle-size: 1.2em;
+
     .preview {
         display: none; // Hide preview by default
         position: absolute; left: 0;
-        margin: $grid-area-margin 0;
+        width: 100%;
+        margin: $grid-area-margin/2 0 0;
         background: $grid-area-bg;
+
+        @include before() {
+            position: absolute;
+            margin-top: -$area-preview-triangle-size / 2;
+            left: -$area-preview-triangle-size / 2;
+            @include triangle( $area-preview-triangle-size, $grid-area-bg, up );
+        }
     }
 
         .btns-holder {
@@ -61,11 +73,11 @@ $grid-area-active-bg:           $green-light-victoria !default;
     // Active area showing 'preview'
     .expanded & {
         .title {
-            position: relative; top: .1em;
+            position: relative; top: $grid-area-margin/2;
             color: $grid-area-hover-title-colour;
 
             // Flick the caret!
-            .ico { margin-left: .4em;  }
+            .ico { margin-left: .6em;  }
 
             > a {
                 background-color: $grid-area-active-bg;
