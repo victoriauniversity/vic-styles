@@ -29,6 +29,16 @@ $detail-overview-text-size: .9em;
 
     .flexi-block:last-child{ margin-bottom: 0; }
 
+    .flexi-grid > header {
+        width: 100%;
+        margin-bottom: .7em;
+
+        .sub-title {
+            display: block;
+            color: $base-font-colour;
+        }
+    }
+
     h3 {
         margin-bottom:  .6em;
         font-weight:    $weight-semibold;
@@ -39,6 +49,8 @@ $detail-overview-text-size: .9em;
             margin-right: .4em;
             font-weight: $weight-normal;
         }
+
+        .tooltip-icon { line-height: 0; }
     }
 
     .highlight {
