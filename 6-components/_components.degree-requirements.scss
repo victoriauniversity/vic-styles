@@ -88,6 +88,12 @@
         color: $grey-mine-shaft;
     }
 
+    a {
+        @include hoverify() {
+            text-decoration: underline;
+        }
+    }
+
     h3 {
         font-size: 120%;
 
