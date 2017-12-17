@@ -49,8 +49,6 @@ $detail-overview-text-size: .9em;
             margin-right: .4em;
             font-weight: $weight-normal;
         }
-
-        .tooltip-icon { line-height: 0; }
     }
 
     .highlight {
@@ -108,6 +106,8 @@ $detail-overview-text-size: .9em;
             @include hoverify-underline();
             white-space: nowrap;
         }
+
+        .tooltip-icon { line-height: 0; }
     }
 
     .flexi-block > p:first-child { font-size: inherit; }
@@ -163,6 +163,11 @@ $detail-overview-text-size: .9em;
                 margin-bottom: 1.3em;
             }
         }
+    }
+
+    .btn-holder > a {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 

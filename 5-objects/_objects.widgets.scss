@@ -23,6 +23,8 @@ $tile-bg:      $grey-gallery;
 
         .abstract { margin-bottom: 1em; }
     }
+
+    .no-lines & { padding-bottom: 0; }
 }
 
 .tile {
