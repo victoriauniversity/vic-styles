@@ -8,6 +8,7 @@
 
 // Apps's dynamic container
 .app {
+    height: 100%; // IE11+ height issues fix
     flex: 1 1 auto; // Sticky footer
 }
 
