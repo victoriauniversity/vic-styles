@@ -218,6 +218,19 @@ $menu-tabbed-underline-size:           4px;
 
 
 /* Menu or submenu using tab-like layout of its items. */
+
+/** TODO: Refactor and remove what's not needed */
+#tabs-nav, .extra-panel {
+    z-index: $z-index-top;
+    position: sticky; top: 0;
+}
+
+.extra-panel {
+    height: 50px;
+    background-color: black;
+}
+
+
 .menu-tabbed {
     display: table;
     table-layout: fixed;
@@ -247,7 +260,6 @@ $menu-tabbed-underline-size:           4px;
 
             & > a {
                 color: inherit;
-
 
                 @include hoverify() {
                     color: inherit;
