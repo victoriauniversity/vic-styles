@@ -8,7 +8,7 @@
 
 // Apps's dynamic container
 .app {
-    height: 100%; // IE11+ height issues fix
+    min-height: 100%; // IE11+ height issues fix; `min-height` instead of `height` to avoid Safari mobile bug where the content gets stuck and cannot be scrolled
     flex: 1 1 auto; // Sticky footer
 }
 
