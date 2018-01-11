@@ -293,6 +293,26 @@ $menu-tabbed-underline-size:           4px;
                 vertical-align: middle;
             }
 
+
+            @include breakpoint( $mobile-large-and-smaller ) {
+                padding: .6em .35em .5em;
+
+                > div {
+                    max-width: 2.5em;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .label {
+                    font-size: 80%;
+                    margin-left: 0;
+                    white-space: nowrap;
+                }
+
+                // Icon placed on a single line
+                .ico:before { display: block; margin-bottom: .2em; }
+            }
+
             @include hoverify {
                 background-color: $menu-tabbed-item-hover-bg-colour;
                 color: $menu-tabbed-item-hover-label-colour;
