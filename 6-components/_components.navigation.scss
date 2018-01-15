@@ -378,8 +378,6 @@ $menu-tabbed-underline-size:           4px;
     #tab-content { display: block; }
 
     .sticky {
-        box-shadow: rgba(#000, .2) 0 1px 20px;
-        //@include position( fixed, 0 null null null );
         box-shadow: rgba(#000, .2) 0 1px 15px;
         width: 100%;
         border-bottom: 1px solid $block-highlight-border;
@@ -394,8 +392,8 @@ $menu-tabbed-underline-size:           4px;
         }
     }
 
-    /** Button 'go to top' */
 
+    /** Button 'go to top' */
     $btn-up-size: 3.5em;
 
     .btn-up {
@@ -421,6 +419,6 @@ $menu-tabbed-underline-size:           4px;
             background-color: $grey-alto;
         }
 
-        .sticky + & { opacity: 1;  }
+        .sticky & { opacity: 1;  }
         .ico { font-size: 150%; }
     }
