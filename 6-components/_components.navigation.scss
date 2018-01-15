@@ -218,19 +218,6 @@ $menu-tabbed-underline-size:           4px;
 
 
 /* Menu or submenu using tab-like layout of its items. */
-
-/** TODO: Refactor and remove what's not needed */
-#tabs-nav, .extra-panel {
-    z-index: $z-index-top;
-    position: sticky; top: 0;
-}
-
-.extra-panel {
-    height: 50px;
-    background-color: black;
-}
-
-
 .menu-tabbed {
     display: table;
     table-layout: fixed;
@@ -304,7 +291,7 @@ $menu-tabbed-underline-size:           4px;
                 }
 
                 .label {
-                    font-size: 80%;
+                    font-size: 85%;
                     margin-left: 0;
                     white-space: nowrap;
                 }
@@ -377,11 +364,22 @@ $menu-tabbed-underline-size:           4px;
         }
     }
 
-
-    .sticky-top {
-        box-shadow: rgba(#000, .2) 0 1px 20px;
+    /** Stick to top feature */
+    .panel-sticky {
+        display: block;
         z-index: $z-index-top;
-        @include position( fixed, 0 null null null );
+        position: -webkit-sticky; // Safari
+        position: sticky;
+        top: 0;
+
+        @include clearfix;
+    }
+
+    #tab-content { display: block; }
+
+    .sticky {
+        box-shadow: rgba(#000, .2) 0 1px 20px;
+        //@include position( fixed, 0 null null null );
         box-shadow: rgba(#000, .2) 0 1px 15px;
         width: 100%;
         border-bottom: 1px solid $block-highlight-border;
@@ -392,11 +390,9 @@ $menu-tabbed-underline-size:           4px;
         }
 
         &.slide-down {
-            //top: 0;
             transition: top .2s ease-in;
         }
     }
-
 
     /** Button 'go to top' */
 
@@ -425,6 +421,6 @@ $menu-tabbed-underline-size:           4px;
             background-color: $grey-alto;
         }
 
-        .sticky-top + & { opacity: 1;  }
+        .sticky + & { opacity: 1;  }
         .ico { font-size: 150%; }
     }
