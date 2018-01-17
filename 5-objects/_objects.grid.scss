@@ -290,6 +290,10 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
                     width: 100% * $two-col-layout-right-ratio;
                     margin-left: 2.5em;
                 }
+
+                @include breakpoint( $mobile-large-and-smaller ) {
+                    margin-top: 1.5em;
+                }
             }
         }
 
@@ -301,7 +305,6 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
 
             @include breakpoint( $mobile-large-and-smaller ) {
                 text-align: center;
-                margin-top: 1.5em;
             }
         }
     }
