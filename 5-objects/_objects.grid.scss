@@ -279,7 +279,7 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
     &.two-columns {
         .column {
             // 1st column
-            &:first-child {
+            &:first-child:not(:last-child) {
                 width: 100% * (1 - $two-col-layout-right-ratio );
                 flex: 1 1 auto;
             }
