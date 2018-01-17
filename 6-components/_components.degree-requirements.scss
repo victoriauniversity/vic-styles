@@ -88,7 +88,7 @@
         color: $grey-mine-shaft;
     }
 
-    a {
+    a:not(.btn) {
         @include hoverify() {
             text-decoration: underline;
         }
