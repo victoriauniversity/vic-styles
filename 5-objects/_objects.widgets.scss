@@ -320,7 +320,10 @@ $collapsible-transparency-height: 4em;
         margin: 1em 0;
         text-align: center;
 
-        > a { padding: .5em; }
+        > a {
+            padding: .5em;
+            @include hoverify() { text-decoration: none; }
+        }
     }
 
     //.collapsed {}
