@@ -334,7 +334,7 @@ $collapsible-transparency-height: 4em;
             pointer-events: none;
             top: -$collapsible-transparency-height;
             @include size( 100% $collapsible-transparency-height );
-            background: linear-gradient( rgba( #000, 0 ) 0%, white 100% );
+            background: linear-gradient( rgba( white, 0 ) 0%, white 100% );
         }
     }
 }
