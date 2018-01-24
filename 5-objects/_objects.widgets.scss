@@ -24,7 +24,10 @@ $tile-bg:      $grey-gallery;
         .abstract { margin-bottom: 1em; }
     }
 
-    .no-lines & { padding-bottom: 0; }
+    .no-lines & {
+        padding-bottom: 0;
+        padding-top: 0 !important;
+    }
 }
 
 .tile {
@@ -62,6 +65,7 @@ $tile-bg:      $grey-gallery;
         color: $grey-dusty;
         font-weight: $weight-normal;
     }
+
     .code {
         display: block;
         float: right;
@@ -499,7 +503,11 @@ $popup-border:   #fff;
 
     // Implies it *MUST BE* used as a block rather than a strip (~nested element)
     &.block-container {
+
+        &:first-child { margin-top: 1.5rem; }
+
         .block {
+            padding-top: 0 !important;
             margin-top: 0;
             margin-bottom: $base-margin;
         }

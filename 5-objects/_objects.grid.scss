@@ -46,15 +46,23 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
     }
 }
 
+.separated {
+    // The only way to cover horizontal separator of the previous block is to shift
+    // current block slightly upwards and re-draw it with separator of the
+    // background colour.
+    & + &.no-lines {
+        position:   relative; top: -1 * $base-border-width;
+        border:     none;
+        border-top: $base-border-width solid $base-bg-colour;
+    }
 
-// The only way to cover horizontal separator of the previous block is to shift
-// current block slightly upwards and re-draw it with separator of the
-// background colour.
-.separated + .separated.no-lines {
-    position:   relative; top: -1 * $base-border-width;
-    border:     none;
-    border-top: $base-border-width solid $base-bg-colour;
+    // Add a margin around a block without lines OR with highlight when there's another highlighted block to avoid background blending together
+    &.highlighted + &.no-lines { padding-top: $base-padding; }
+
+    &.no-lines + &.highlighted,
+    &.highlighted + &.highlighted { margin-top: $base-padding; }
 }
+
 
 
 //.layout-rebase {} // Layout normaliser => Reset previous layouting rules
@@ -76,31 +84,13 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
     .sector + .sector & { padding-top: 0; }
 
     // 2. Enable in some cases
-    .sector + .sector.highlighted & {
-        padding-top: $block-margin-vertical;
-
-        @include breakpoint( $mobile ) {
-            padding-top: $block-mobile-margin-vertical;
-        }
-
-        @include breakpoint( $mobile-large ) {
-            padding-top: $block-mobile-large-margin-vertical;
-        }
-    }
+    .sector + .sector.highlighted &,
 
     .sector.highlighted + .sector &,
     .sector.separated + .sector &,
-    .sector.blank + .sector & {
-        padding-top: $block-margin-vertical;
-
-        @include breakpoint( $mobile ) {
-            padding-top: $block-mobile-margin-vertical;
-        }
-
-        @include breakpoint( $mobile-large ) {
-            padding-top: $block-mobile-large-margin-vertical;
-        }
-    }
+    .sector.blank + .sector &,
+    .sector .block-container .blank:first-child,
+    .sector .block-container .blank + &:not(:first-child), // Overrides 1B in case dynamic block is NOT rendered (e.g. specific content only)
 
     // Resets block's margin
     .sector .layout-rebase & {
@@ -115,11 +105,11 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
         }
     }
 
+
     // 1B. ... and all block-containers
     .sector .block-container &:not(:first-child) { padding-top: 0; }
     .block + .block-container &:first-child { padding-top: 0; }
     .block + .block-container.two-col-layout &:last-child { padding-top: 0; }
-
 
     // 2) Responsiveness
     @include breakpoint( $mobile ) {
