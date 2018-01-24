@@ -315,7 +315,11 @@ $nm-bg-color: $grey-gallery;
         color: $grey-dusty;
 
         @include breakpoint( $mobile-large-and-smaller ) {
-            margin-left: 0;
+            position: relative;
+            display: block;
+            margin: .8em auto 1.15em;
+            width: 1em;
+            font-size: 110%;
 
             &:before {
                 transform: rotate( 90deg );
