@@ -59,6 +59,7 @@ $grid-area-active-bg:           $green-light-victoria !default;
         @include before() {
             position: absolute;
             margin-top: -$area-preview-triangle-size / 2;
+            top: .05em; // Safari-related compensation to remove white-space
             left: -$area-preview-triangle-size / 2;
             @include triangle( $area-preview-triangle-size, $grid-area-bg, up );
         }

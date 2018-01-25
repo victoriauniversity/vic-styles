@@ -46,15 +46,23 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
     }
 }
 
+.separated {
+    // The only way to cover horizontal separator of the previous block is to shift
+    // current block slightly upwards and re-draw it with separator of the
+    // background colour.
+    & + &.no-lines {
+        position:   relative; top: -1 * $base-border-width;
+        border:     none;
+        border-top: $base-border-width solid $base-bg-colour;
+    }
 
-// The only way to cover horizontal separator of the previous block is to shift
-// current block slightly upwards and re-draw it with separator of the
-// background colour.
-.separated + .separated.no-lines {
-    position:   relative; top: -1 * $base-border-width;
-    border:     none;
-    border-top: $base-border-width solid $base-bg-colour;
+    // Add a margin around a block without lines OR with highlight when there's another highlighted block to avoid background blending together
+    &.highlighted + &.no-lines { padding-top: $base-padding; }
+
+    &.no-lines + &.highlighted,
+    &.highlighted + &.highlighted { margin-top: $base-padding; }
 }
+
 
 
 //.layout-rebase {} // Layout normaliser => Reset previous layouting rules
@@ -65,59 +73,44 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
 
 /* ===== BLOCKS ============================================================= */
 
+// To be @extend-ed
+@mixin block-top-margin {
+    padding-top: $block-margin-vertical;
+
+    @include breakpoint( $mobile ) {
+        padding-top: $block-mobile-margin-vertical;
+    }
+
+    @include breakpoint( $mobile-large ) {
+        padding-top: $block-mobile-large-margin-vertical;
+    }
+}
+
 
 // Standard block container
 .block {
     display: block;
     padding: $block-margin-vertical $block-margin-horizontal;
-    //    vertical-align: top;  used when `display: block` is converted into `display: table`
 
     // 1. Collapse space in all siblings (default)...
     .sector + .sector & { padding-top: 0; }
 
     // 2. Enable in some cases
-    .sector + .sector.highlighted & {
-        padding-top: $block-margin-vertical;
-
-        @include breakpoint( $mobile ) {
-            padding-top: $block-mobile-margin-vertical;
-        }
-
-        @include breakpoint( $mobile-large ) {
-            padding-top: $block-mobile-large-margin-vertical;
-        }
-    }
+    .sector + .sector.highlighted &,
 
     .sector.highlighted + .sector &,
     .sector.separated + .sector &,
-    .sector.blank + .sector & {
-        padding-top: $block-margin-vertical;
-
-        @include breakpoint( $mobile ) {
-            padding-top: $block-mobile-margin-vertical;
-        }
-
-        @include breakpoint( $mobile-large ) {
-            padding-top: $block-mobile-large-margin-vertical;
-        }
-    }
+    .sector.blank + .sector &, // Overrides 1B in case dynamic block is NOT rendered (e.g. specific content only)
 
     // Resets block's margin
     .sector .layout-rebase & {
-        padding-top: $block-margin-vertical;
-
-        @include breakpoint( $mobile ) {
-            padding-top: $block-mobile-margin-vertical;
-        }
-
-        @include breakpoint( $mobile-large ) {
-            padding-top: $block-mobile-large-margin-vertical;
-        }
+        @include block-top-margin();
     }
 
+
     // 1B. ... and all block-containers
-    .sector .block-container &:not(:first-child) { padding-top: 0; }
-    .block + .block-container &:first-child { padding-top: 0; }
+    .sector .block-container &:not(:first-child),
+    .block + .block-container &:first-child,
     .block + .block-container.two-col-layout &:last-child { padding-top: 0; }
 
 
@@ -131,6 +124,11 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
     }
 
     &.no-bg { background: inherit; } // Eliminates background
+}
+
+
+.sector .block-container .blank:first-child {
+    @include block-top-margin();
 }
 
 
@@ -175,15 +173,7 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
             // Right column
             &:last-child {
                 @include make-table-column( $two-col-layout-right-ratio );
-                padding-top: $block-margin-vertical;
-
-                @include breakpoint( $mobile ) {
-                    padding-top: $block-mobile-margin-vertical;
-                }
-
-                @include breakpoint( $mobile-large ) {
-                    padding-top: $block-mobile-large-margin-vertical;
-                }
+                @include block-top-margin();
             }
 
             &.btns-holder {
@@ -229,17 +219,9 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
 
             // Right column
             &:last-child {
-                padding-top: $block-margin-vertical;
                 border-left: none;
                 border-top: $delim-border;
-
-                @include breakpoint( $mobile ) {
-                    padding-top: $block-mobile-margin-vertical;
-                }
-
-                @include breakpoint( $mobile-large ) {
-                    padding-top: $block-mobile-large-margin-vertical;
-                }
+                @include block-top-margin();
             }
 
             @include breakpoint( $desktop-and-bigger) {
@@ -279,7 +261,7 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
     &.two-columns {
         .column {
             // 1st column
-            &:first-child {
+            &:first-child:not(:last-child) {
                 width: 100% * (1 - $two-col-layout-right-ratio );
                 flex: 1 1 auto;
             }
@@ -289,6 +271,10 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
                 @include breakpoint( $tablet-and-bigger ) {
                     width: 100% * $two-col-layout-right-ratio;
                     margin-left: 2.5em;
+                }
+
+                @include breakpoint( $mobile-large-and-smaller ) {
+                    margin-top: 1.5em;
                 }
             }
         }
@@ -301,7 +287,6 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
 
             @include breakpoint( $mobile-large-and-smaller ) {
                 text-align: center;
-                margin-top: 1.5em;
             }
         }
     }

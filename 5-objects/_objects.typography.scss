@@ -127,12 +127,19 @@ $hint-inline-heading-underline-colour: darken( $heading-colour, 20 );
     cursor: pointer;
     margin: 0 .35em;
     vertical-align: middle;
-    font-size: 90%;
     color: $grey-chalice;
 
     &:before { display: inline; }
 
     @include hoverify() { color: $grey-stack; }
+
+    @include breakpoint ( $tablet-and-bigger ) {
+        font-size: 90%;
+    }
+
+    @include breakpoint ( $mobile ) {
+        font-size: 105%;
+    }
 }
 
 .tooltip-block {
