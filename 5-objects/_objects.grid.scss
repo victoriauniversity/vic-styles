@@ -60,6 +60,8 @@ $block-mobile-margin-vertical:       $block-margin-vertical / 1.5;
     &.highlighted + &.no-lines { padding-top: $base-padding; }
 
     &.no-lines + &.highlighted,
+    &.no-lines + &.blank + &.highlighted, // 'blank' ~ not showing
+    &.highlighted + &.blank + &.highlighted,
     &.highlighted + &.highlighted { margin-top: $base-padding; }
 }
 
