@@ -315,6 +315,10 @@ $print-logo-width:          300px;
         @extend %hide;
     }
 
+    .need-more {
+        text-align: left !important;
+    }
+
     .block,
     .intro {
         padding: $print-margin !important;
