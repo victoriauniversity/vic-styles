@@ -13,18 +13,18 @@
  */
 
 
-$mobile-max-width:          30rem;
+$mobile-max-width:          30em;
 $mobile-layout-ratio:       .85;
 
-$mobile-large-min-width:    30rem;
-$mobile-large-max-width:    45rem;
+$mobile-large-min-width:    30em;
+$mobile-large-max-width:    45em;
 $mobile-large-layout-ratio: .9;
 
-$tablet-min-width:          45rem;
-$tablet-max-width:          60rem;
+$tablet-min-width:          45em;
+$tablet-max-width:          60em;
 $tablet-layout-ratio:       .95;
 
-$desktop-min-width:         60rem;
+$desktop-min-width:         60em;
 $desktop-max-width:         $base-width;
 
 $desktop-large-min-width:   $base-width;
@@ -38,33 +38,33 @@ $desktop-large-min-width:   $base-width;
 
 // Small-screen mobile devices
 
-$mobile:                    'screen and ( max-width: $mobile-max-width )';
+$mobile:                    'screen and ( max-width: #{$mobile-max-width} )';
 
 
 // Medium-size to large mobile devices
 
-$mobile-large:              'screen and ( max-width: $mobile-large-max-width ) and ( min-width: $mobile-large-min-width )';
-$mobile-large-and-smaller:  'screen and ( max-width: $mobile-large-max-width )';
-$mobile-large-and-bigger:   'screen and ( min-width: $mobile-large-min-width )';
+$mobile-large:              'screen and ( max-width: #{$mobile-large-max-width} ) and ( min-width: #{$mobile-large-min-width} )';
+$mobile-large-and-smaller:  'screen and ( max-width: #{$mobile-large-max-width} )';
+$mobile-large-and-bigger:   'screen and ( min-width: #{$mobile-large-min-width} )';
 
 
 // Tablet devices
 
-$tablet:                    'screen and ( max-width: $tablet-max-width ) and ( min-width: $tablet-min-width )';
-$tablet-and-smaller:        'screen and ( max-width: $tablet-max-width)';
-$tablet-and-bigger:         'screen and ( min-width: $tablet-min-width)';
+$tablet:                    'screen and ( max-width: #{$tablet-max-width} ) and ( min-width: #{$tablet-min-width} )';
+$tablet-and-smaller:        'screen and ( max-width: #{$tablet-max-width} )';
+$tablet-and-bigger:         'screen and ( min-width: #{$tablet-min-width} )';
 
 
 // Smaller desktop devices
 
-$desktop:                   'screen and ( max-width: $desktop-max-width ) and ( min-width: $desktop-min-width )';
-$desktop-and-smaller:       'screen and ( max-width: $desktop-max-width )';
-$desktop-and-bigger:        'screen and ( min-width: $desktop-min-width )';
+$desktop:                   'screen and ( max-width: #{$desktop-max-width} ) and ( min-width: #{$desktop-min-width} )';
+$desktop-and-smaller:       'screen and ( max-width: #{$desktop-max-width} )';
+$desktop-and-bigger:        'screen and ( min-width: #{$desktop-min-width} )';
 
 
 // Large desktop devices
 
-$desktop-large:             'screen and ( min-width: $desktop-large-min-width )';
+$desktop-large:             'screen and ( min-width: #{$desktop-large-min-width} )';
 
 @mixin breakpoint( $devices-range ) {
     @media #{$devices-range} {
