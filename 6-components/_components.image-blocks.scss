@@ -99,5 +99,9 @@ $action-promo-hover: darken( $green-light-victoria, 11% );
         border:         none;
 
         // &.logo--type {} to override default behavior
+        &.large {
+            max-width:  2 * $tc-logo-width;
+            max-height: 2 * $tc-logo-height;
+        }
     }
 }
