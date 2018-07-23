@@ -310,7 +310,30 @@ $nm-bg-color: $grey-gallery;
 ===============================*/
 
 .fees {
+    @include breakpoint ( $tablet-and-bigger ) {
+        .flexi-columns .column {
+            flex: 0 0 auto;
+
+            &:first-child { max-width: 55%; } // Allows stretching of the first column up to this width.
+            &:last-child { flex: 1 1 auto; }
+        }
+    }
+
+    .tile__list & {
+        .value {
+            display: block;
+
+            strong {
+                white-space: pre-line;
+                font-size: 90%;
+            }
+
+            &:last-child { margin-bottom: .5em; }
+        }
+    }
+
     .ico.exchange {
+        display: inline-block;
         margin: 0 1em;
         color: $grey-dusty;
 
