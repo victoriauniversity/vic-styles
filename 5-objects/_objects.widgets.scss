@@ -322,7 +322,6 @@ $collapsible-transparency-height: 4em;
         position: relative;
         display: block;
         margin: 1em 0;
-        text-align: center;
 
         > a {
             padding: .5em;
@@ -347,6 +346,14 @@ $collapsible-transparency-height: 4em;
         margin-bottom: 0;
     }
 
+
+.collapsible__control {
+    .collapsible-wrapper & { text-align: center; }
+    .content-simple & {
+        text-align: left;
+        > a { padding-left: 0; }
+    }
+}
 
 .collapsible {
     position: relative;
