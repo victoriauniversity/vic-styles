@@ -2,6 +2,7 @@
 =            PATHS AND URLS TO RELATED ASSETS            =
 ========================================================*/
 
+
 // *Note*: All paths are relative and *COULD* be overriden!
 // Usage inside CSS properties through interpolation as following: #{$pathType}
 
@@ -14,20 +15,30 @@ $path-assets:    '..' !default;
 // 1st level
 $path-imgs:      $path-assets + '/img' !default;
 $path-fonts:     $path-assets + '/fonts' !default;
-$path-shared:    $path-assets + '/shared' !default;
 
-// 2nd level
-$path-shared-imgs:    $path-shared + '/img' !default;
-$path-shared-fonts:   $path-shared + '/fonts' !default;
+
+
 
 
 /* ===== CDNS =============================================================== */
 
-$urlCDNFonts:      '//fonts.googleapis.com/css' !default;
+// 1st level
+$path-cdn:        'https://static.victoria.ac.nz' !default;
+
+
+// 2nd level
+$path-cdn-imgs:    $path-cdn + '/images' !default;
+$path-cdn-fonts:   $path-cdn + '/fonts' !default;
+
+
+
 
 
 /* ===== FONTS ============================================================== */
 
-$path-font-oxygen:        $urlCDNFonts + '?family=Oxygen:300,400,700' !default;
-$path-font-victoria:      $path-shared-fonts + '/NationalWebLF' !default;
-$path-fonticon-victoria:  $path-shared-fonts + '/vic-icons' !default;
+
+$path-font-victoria:      $path-cdn-fonts + '/NationalWebLF' !default;
+$path-fonticon-victoria:  $path-fonts + '/icons' !default;
+
+
+

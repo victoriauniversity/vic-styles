@@ -33,7 +33,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
         display: block;
         margin-left: auto;
         margin-right: auto;
-        background-image: url("#{$path-imgs}/vic-logo-mobile.png"); // Tablet and smaller
+        background-image: url("#{$path-cdn-imgs}/logo-mini.svg"); // Tablet and smaller
         background-size: 100%;
         @include media ($mobile) {
             margin-left: 1em;
@@ -41,7 +41,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
             background-position: 0 5%;
         }
         @include media ($desktop-and-bigger) {
-            background-image: url("#{$path-imgs}/logo_desktop-2x.png"); // Desktop and bigger
+            background-image: url("#{$path-cdn-imgs}/logo-white-full.svg"); // Desktop and bigger
             float: left;
             height: 88px;
             width: 22.5%;
