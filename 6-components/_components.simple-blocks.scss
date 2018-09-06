@@ -51,6 +51,7 @@ $fun-fact-bg-color: $grey-gallery;
 $nm-bg-color: $grey-gallery;
 
 .need-more {
+    font-size: 1.125rem; //FIXME: Make into 100% or 1rem
     background-color: $nm-bg-color;
     padding: 1em;
     text-align: center;

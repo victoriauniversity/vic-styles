@@ -1,91 +1,104 @@
 /*=============================================
-=            OLD SITE NAVIGATION            =
+=                 SITE HEADER                 =
 =============================================*/
 
-$bar-color: $green-victoria-study;
-.print-only {
-    display: none;
-}
 
-//Special media break
-$menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $tablet-grid-columns);
-#site-header {
+/** TODO: Discontinue (deprecate) or refactor completely by moving into _components.navigation.scss  */
+
+
+$logo-mobile-width: 12rem;
+$logo-tablet-height: 5.7rem;
+
+
+.print-only { display: none; }
+.header-wrapper { overflow: hidden; } // IE11 inflated header fix
+
+.site-header {
+    font-size: 18px; //FIXME: Turn into 100% or 1rem
     position: relative;
     background-color: $black-victoria;
-    border-bottom: 6px solid $bar-color;
-    padding-top: 1.5em;
-    @include media ($desktop-and-bigger) {
-        // @include outer-container;
-        min-height: 110px;
-        padding-top: .6em;
-        padding-bottom: .6em;
+    border-bottom: 6px solid $green-victoria-study;
+
+    @include breakpoint ($tablet-and-bigger) {
+        padding-top: 1em;
+        padding-bottom: 1em;
     }
-    // padding: 0 3em 3em;
-    a {
-        color: $white;
-    }
-    .vic-logo {
-        text-indent: -666em;
-        background-color: transparent;
-        background-repeat: no-repeat;
-        height: 50px;
-        width: 200px;
+
+    a { color: $white; }
+
+    // Logo container
+    .logo {
         display: block;
-        margin-left: auto;
-        margin-right: auto;
-        background-image: url("#{$path-cdn-imgs}/logo-mini.svg"); // Tablet and smaller
-        background-size: 100%;
-        @include media ($mobile) {
-            margin-left: 1em;
-            background-size: 90%;
-            background-position: 0 5%;
+
+        > a {
+            @include hoverify() { opacity: .7; }
         }
-        @include media ($desktop-and-bigger) {
-            background-image: url("#{$path-cdn-imgs}/logo-white-full.svg"); // Desktop and bigger
+
+        img { width: 100%; }
+
+        @include breakpoint( $tablet-and-bigger ) {
             float: left;
-            height: 88px;
-            width: 22.5%;
-            margin: .5em 0 0 .5%;
-            background-size: 192px 48px;
-            background-position: 0 47%;
-            max-width: 250px;
+            padding: .25em 2em 0 .5em;
+            @include size( 27% auto );
+            text-align: center;
+        }
+
+        @include breakpoint( $tablet ) {
+            padding-right: 1.8em;
+            width: auto;
+
+            img { height: $logo-tablet-height; }
+        }
+
+        @include breakpoint( $desktop ) {
+            padding-right: 1.7em;
+            margin-bottom: .25em;
+        }
+
+        @include breakpoint( $mobile-large-and-smaller ) {
+            margin: 0 .75em;
+            padding: 1.5em 0 1em;
+            width: $logo-mobile-width;
         }
     }
+
     .main-nav {
         padding: 1em;
-        @include media ($mobile-large-and-bigger) {
-            padding: 3em;
+        max-height: 1000px;
+        transition: all .7s ease;
+
+        @include breakpoint ($mobile-large-and-bigger) {
+            padding: 2em;
         }
-        @include media ($desktop-and-bigger) {
+
+        @include breakpoint ($tablet-and-bigger) {
             padding: 0;
         }
-        @include media ($tablet-and-smaller) {
+        @include breakpoint ($mobile-large-and-smaller) {
             background-color: $black;
         }
-        max-height: 1000px;
-        transition: .7s ease all;
+
         &.ng-hide {
-            @include media ($tablet-and-smaller) {
+            @include breakpoint ($mobile-large-and-smaller) {
                 max-height: 0;
                 opacity: 0;
                 padding: 0;
             }
         }
         &.ng-hide:not(.ng-hide-animate) {
-            @include media ($desktop-and-bigger) {
+            @include breakpoint ($tablet-and-bigger) {
                 display: block !important;
             }
         }
+
         ul {
-            // padding: 2em;
-            @include media ($desktop-and-bigger) {
-                float: left;
-            }
             li {
+                font-size: 95%;
                 width: 100%;
                 position: relative;
                 box-sizing: border-box;
-                @include media ($desktop-and-bigger) {
+
+                @include breakpoint ($tablet-and-bigger) {
                     display: block;
                     width: auto;
                     float: left;
@@ -94,7 +107,7 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                     a {
                         border-top: 0;
                         border-radius: 3px 3px 0 0;
-                        @include media ($desktop-and-bigger) {
+                        @include breakpoint ($tablet-and-bigger) {
                             border-radius: 0;
                             &:before {
                                 content: "";
@@ -106,35 +119,33 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                 &:nth-child(6) {
                     a {
                         border-radius: 0 0 3px 3px;
-                        @include media ($desktop-and-bigger) {
+                        @include breakpoint ($tablet-and-bigger) {
                             border-radius: 0;
                         }
                     }
                 }
                 a {
                     font-family: $font-victoria;
-                    font-size: 1.5em;
+                    font-size: 1.25rem;
                     background-color: $black-victoria;
                     text-align: left;
                     display: block;
                     padding: 10px 20px;
                     border-top: 2px solid rgba(250, 250, 250, .14902);
                     transition: all .3s linear;
-                    @include media ($tablet-and-smaller) {
+                    @include breakpoint ($mobile-large-and-smaller) {
                         @include hoverify () {
                             background-color: $grey-stack;
                         }
                     }
-                    @include media ($desktop-and-bigger) {
+                    @include breakpoint ($tablet-and-bigger) {
                         border: 0;
                         padding: 0 .3em 0 0;
                         font-family: "Nimbus Roman No 9 L", "FreeSerif", "Georgia", serif;
                         font-weight: 500;
-                        @include media ($menu-break) {
-                            font-size: 1.2em;
-                        }
+
                         @include hoverify () {
-                            color: $grey-dusty-gray;
+                            color: $grey-dusty;
                         }
                         &:before {
                             padding-right: .3em;
@@ -148,29 +159,100 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
             }
             .search-btn {
                 display: none;
-                @include media ($desktop-and-bigger) {
+
+                @include breakpoint ( $tablet-and-bigger ) {
                     display: block;
-                    .ico {
-                        padding: 0 .5em;
+                }
+            }
+        }
+
+        .search-bar {
+            @include breakpoint ($tablet-and-bigger) {
+                clear: both;
+                display: block;
+                width: 100%;
+                padding: 1em 0;
+                max-height: 160px;
+                transition: all .2s ease;
+                opacity: 1;
+
+                &.ng-hide {
+                    transition: all .7s ease;
+                    max-height: 0;
+                    opacity: 0;
+                    padding: 0;
+                }
+            }
+
+            .search-form {
+                background-color: $grey-alto;
+                padding: .75em;
+                border-radius: $base-border-radius;
+                @include breakpoint ($tablet-and-bigger) {
+                    margin-top: 0;
+                    margin-right: auto;
+                    margin-left: auto;
+                    width: 70%;
+                    max-height: 160px;
+                    transition: all .7s ease;
+                    opacity: 1;
+                    input[type=text],
+                    input[type=search] {
+                        width: 79%;
+                        margin-bottom: 0;
+                        margin-right: 2%;
+                        max-height: 160px;
+                        transition: all .7s ease;
+                        opacity: 1;
+                        &.ng-hide {
+                            max-height: 0;
+                            opacity: 0;
+                            padding: 0;
+                        }
                     }
+                    input.btn {
+                        width: 18%;
+                        margin: 1px 0;
+                    }
+                    &.ng-hide {
+                        max-height: 0;
+                        opacity: 0;
+                        padding: 0;
+                    }
+                }
+                input.btn {
+                    margin: 0;
+                    outline: 0;
+                    border: 0;
+                    max-height: 40px;
                 }
             }
         }
     }
+
     .secondary-nav {
         display: none;
-        @include media ($desktop-and-bigger) {
+
+        @include breakpoint ( $tablet-and-bigger ) {
+            margin-bottom: .2em;
+            padding-top: .15em;
+
             display: block !important;
+
             ul {
-                padding-top: 1.3em;
+                overflow: hidden;
+                clear: right;
+                line-height: 1;
+
                 li {
                     float: left;
                     padding-right: 1em;
+
                     a {
                         text-transform: uppercase;
                         color: $grey-silver-chalice;
                         letter-spacing: 2px;
-                        font-size: 11px;
+                        font-size: 65%;
                         font-weight: bold;
                         font-family: "Nimbus Roman No 9 L", "FreeSerif", "Georgia", serif;
                         @include hoverify () {
@@ -180,84 +262,9 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
                 }
             }
         }
-    }
-    .main-nav,
-    .secondary-nav {
-        li {
-            // display: inline;
-        }
-    }
-    .lines-button {
-        @include position (absolute,
-        0 0 null null);
-        margin-right: .5em;
-        margin-top: .28em;
-    }
-}
 
-.search-wrap {
-    @include media ($desktop-and-bigger) {
-        // width: 70%;
-        clear: both;
-        display: block;
-        // float: left;
-        width: 100%;
-        max-height: 160px;
-        transition: .2s ease all;
-        opacity: 1;
-        &.ng-hide {
-            transition: .7s ease all;
-            max-height: 0;
-            opacity: 0;
-            padding: 0;
-        }
-    }
-    .search-form {
-        margin-top: 1em;
-        background-color: $grey-alto;
-        padding: 1em;
-        border-radius: $base-border-radius;
-        @include media ($desktop-and-bigger) {
-            // display: none;
-            margin-top: 0;
-            margin-bottom: 1em;
-            // float: left;
-            margin-right: auto;
-            margin-left: auto;
-            width: 70%;
-            max-height: 160px;
-            transition: .7s ease all;
-            opacity: 1;
-            input[type=text] {
-                // float: left;
-                width: 79%;
-                margin-bottom: 0;
-                margin-right: 2%;
-                max-height: 160px;
-                transition: .7s ease all;
-                opacity: 1;
-                &.ng-hide {
-                    max-height: 0;
-                    opacity: 0;
-                    padding: 0;
-                }
-            }
-            input.btn {
-                width: 18%;
-                margin: 1px 0;
-            }
-            &.ng-hide {
-                max-height: 0;
-                opacity: 0;
-                padding: 0;
-            }
-        }
-        input.btn {
-            margin: 0;
-            outline: 0;
-            border: 0;
-            font-size: 1.3em;
-            max-height: 40px;
+        @include breakpoint( $tablet ) {
+            ul { margin-bottom: .2em; }
         }
     }
 }
@@ -268,98 +275,83 @@ $menu-break: new-breakpoint( min-width $tablet-min-width max-width 1200px $table
 =============================================*/
 
 $button-size: 2.5em;
-$transition: .3s; // increase this to see the transformations in slow-motion
+$menu-button-transition: .3s; // increase this to see the transformations in slow-motion
+
+
+// Hamburger menu <-> Cross icon made with pure CSS
 .lines-button {
-    @include media ($desktop-and-bigger) {
+    @include breakpoint ($tablet-and-bigger) {
         display: none;
     }
-    display: inline-block;
-    padding: $button-size/2 $button-size/4;
-    transition: .3s;
-    cursor: pointer;
-    user-select: none;
-    border: 0;
+
+    position: absolute; top: 0; right: 0;
+    display: block;
+    transition: $menu-button-transition;
     background-color: transparent;
+    margin: 1.5em 1em;
+    cursor: pointer;
+
     &:hover {
         opacity: 1;
-    }
-    &:active {
-        transition: 0;
-    }
-    &:focus {
-        outline: 0;
-    }
-}
 
-@mixin line {
-    display: inline-block;
-    width: $button-size;
-    height: $button-size/7;
-    background: $white;
-    border-radius: $button-size/14;
-    transition: $transition;
-}
-
-.lines {
-    //create middle line
-    @include line;
-    position: relative;
-    /*create the upper and lower lines as pseudo-elements of the middle line*/
-    &:before,
-    &:after {
-        @include line;
-        position: absolute;
-        left: 0;
-        content: "";
-        transform-origin: $button-size/14 center;
-    }
-    &:before {
-        top: $button-size/4;
-    }
-    &:after {
-        top: -$button-size/4;
-    }
-}
-
-.lines-button:hover {
-    opacity: 1;
-    .lines {
-        background-color: $grey-silver;
-        &:before {
-            top: $button-size/3.5;
+        .lines {
             background-color: $grey-silver;
+
+            &:before {
+                top: $button-size/3.5;
+                background-color: $grey-silver;
+            }
+            &:after {
+                top: -$button-size/3.5;
+                background-color: $grey-silver;
+            }
         }
+    }
+
+    &:active { transition: 0; }
+
+    &.x.close .lines {
+        background: transparent; // Hide the middle line
+
+        /*overlay the lines by setting both their top values to 0*/
+        &:before,
         &:after {
-            top: -$button-size/3.5;
-            background-color: $grey-silver;
+            transform-origin: 50% 50%;
+            top: 0;
+            width: $button-size;
         }
+
+        // rotate the lines to form the 'x' shape
+        &:before { transform: rotate3d(0, 0, 1, 45deg); }
+        &:after { transform: rotate3d(0, 0, 1, -45deg); }
     }
 }
 
-.lines-button.x.close .lines {
-    /*hide the middle line*/
-    background: transparent;
-    /*overlay the lines by setting both their top values to 0*/
-    &:before,
-    &:after {
-        transform-origin: 50% 50%;
-        top: 0;
-        width: $button-size;
-    }
-    // rotate the lines to form the x shape
-    &:before {
-        transform: rotate3d(0, 0, 1, 45deg);
-    }
-    &:after {
-        transform: rotate3d(0, 0, 1, -45deg);
-    }
-}
+    // Lines making the icon
+    .lines {
+        position: relative;
 
-.testlink {
-    font-size: 70%;
-    opacity: .4;
-    margin: 1em;
-    @include hoverify() {
-        opacity: 1;
+        //create middle line
+        &,
+        &:before,
+        &:after {
+            display: inline-block;
+            @include size( $button-size $button-size/7 );
+            background: $white;
+            border-radius: $button-size/14;
+            transition: $menu-button-transition;
+        }
+
+        /*create the upper and lower lines as pseudo-elements of the middle line*/
+
+        &:before,
+        &:after {
+            position: absolute;
+            left: 0;
+            content: "";
+            transform-origin: $button-size/14 center;
+        }
+
+        &:before { top: $button-size/4; }
+        &:after { top: -$button-size/4; }
     }
-}

@@ -6,38 +6,36 @@ $contact-bg-color:      $black-victoria;
 $ico-margin:    0.9em;
 
 .footer {
+    font-size: 18px; //FIXME: Replace with 1rem or 100%;
+    padding: 1.75em .5em;
     background-color: $contact-bg-color;
 
     .fine-print {
-        color: $grey-dusty-gray;
+        color: $grey-dusty;
         text-align: center;
 
-        a,
-        p {
-            font-size: .9em;
+        p { font-size: .8em; }
+
+        .minilinks {
+            margin-bottom: .3em;
+            font-size: .85em;
         }
+    }
 
-        ul {
-            float: left;
+    .minilinks {
+        a {
+            display: inline-block;
+            padding: 0 .25em;
+            color: inherit;
+            text-decoration: underline;
 
-            li {
-                display: inline-block;
-                padding: 0 .25em;
-
-                a {
-                    color: $grey-dusty-gray;
-                    @include hoverify () {
-                        color: $white;
-                    }
-                }
-            }
+            @include hoverify () { color: $white; }
         }
-
-        .version { margin: .25em; }
     }
 }
 
 .victoria-contact {
+    font-size: 1.125rem; //FIXME: Make into 100% or 1rem
     background-color: $contact-bg-color;
     padding: 1.75em .5em;
 

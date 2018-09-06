@@ -7,6 +7,7 @@
 }
 
 html {
+    height: 100%;
     font-size: inherit;
     -webkit-font-smoothing: antialiased;
 }
@@ -16,15 +17,9 @@ body {
     font-family: $base-font-family;
     line-height: $base-line-height;
     color: $base-font-colour;
+    min-height: 100%;
 
-    > footer {
-        padding: 1.75em .5em;
-
-        @include media( $mobile-large) {
-            padding-bottom: 4.5em;
-        }
-        @include media( $mobile) {
-            padding-bottom: 5.5em;
-        }
-    }
+    display: flex;
+    flex-direction: column;
 }
+

@@ -15,7 +15,7 @@
 // 3) Assign colour to the variable as following: ${base_color}-{unique_name}.
 
 // =========================
-// -----*-WARNING-*----- 
+// -----*-WARNING-*-----
 // -------------------------
 // DO NOT change the colour code of the variables
 //
@@ -48,7 +48,7 @@ $green-bottle-darker:  #093521;
 $black-victoria:       #1d2624;
 //-- STUDY GREEN
 $green-victoria-study: #64a659;
-//-- Study green variations 
+//-- Study green variations
 // - Menus, shades, highlights.
 $green-hippie: #549349;
 
@@ -80,7 +80,8 @@ $grey-silver:          #CCC;
 
 // NEW GREYS
 $grey-silver-chalice:  #bfbfbf;
-$grey-dusty-gray:      #999;
+$grey-dusty-gray:      #999; $grey-dusty: #999;
+$grey-dove:            #666;
 $grey-stack:           #808080;
 $grey-mako:            #475153;
 $grey-mine-shaft:      #333;

@@ -92,18 +92,19 @@ $tag-bg-color: $blue-humming-bird;
 // ---------------------
 //use for a heading before the inline list
 .tag-list-title {
-    float: left;
     padding-right: 0.5em;
 }
 
 .tag-list {
     li.tag {
-        display: inline;
+        display: inline-block;
         background-color: $tag-bg-color;
-        padding: 0.3em 0.6em;
-        margin: 0.2em;
+        padding: .15rem .5rem;
+        margin-right: .35em;
+
         a.active {
             padding-right: 24px;
+
             &:after {
                 padding-left: 0.4em;
                 // display:;
