@@ -521,6 +521,12 @@ $popup-border:   #fff;
 
         .content-simple { padding-top: $base-margin;}
     }
+
+    &.sector .block-container .block {
+        padding-top:   $base-margin;
+        margin-top:    0;
+        margin-bottom: $base-margin;
+    }
 }
 
 /** Simple warning wrapper. */
