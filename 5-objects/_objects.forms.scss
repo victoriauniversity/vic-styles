@@ -2,9 +2,9 @@
 /* ===== FORMS ============================================================== */
 
 /** Basic form */
+/* @deprecated TODO: REFACTOR! */
 .form {
 
-    // TODO: Refactor!
     .form__group { margin-bottom: 1em; }
 
     .form__select {
@@ -20,6 +20,153 @@
 
     .btn { margin-top: 0; margin-bottom: 0; }
 }
+
+
+
+
+/** Generic data forms. */
+
+$form-label-width: 28%;
+$form-background: #F0F0F0;
+$form-group-gap: $base-spacing / 2;
+
+
+.form-container {
+    &.block {
+        // Only if the form has got a background
+        padding-top: 0 !important;
+
+        &:not(:last-child) { padding-bottom: 0; }
+    }
+}
+
+
+.form {
+    .form-container & {
+        background-color: $form-background;
+        padding: $base-spacing;
+    }
+
+    label {
+        padding: $base-spacing / 3 0;
+    }
+
+    fieldset {
+        border: 1px solid $grey-silver;
+        padding: $base-spacing / 2 $base-spacing;
+        margin-bottom: $base-spacing;
+        border-radius: 5px;
+    }
+
+    legend {
+        color: $grey-dusty;
+        padding: 0 1rem;
+    }
+
+    // Groups two or more form elements
+    .group {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: $base-spacing / 2;
+
+        > textarea { height: auto; }
+        > select { height: 2.4rem; }
+
+        > label {
+            width: 100%;
+            font-weight: $weight-bold;
+            padding-right: .75rem;
+            line-height: 1.3;
+        }
+
+        .group {
+            align-items: center;
+            flex-wrap: nowrap;
+            display: flex;
+            margin-bottom: 0;
+        }
+    }
+
+    .field {
+        flex-grow: 1;
+        margin: 0;
+
+        &.mktoInvalid { border-color: $red-roof-teraccota; }
+    }
+
+    .field-value {
+        padding: $base-spacing / 3 0;
+        margin-left: 1rem;
+        order: 10;
+    }
+
+    // Radio selectors
+    .group-radio,
+    .group-checkbox {
+        > input[type=radio],
+        > input[type=checkbox] {
+            width: initial;
+            flex-grow: 0; // Stop from growing in width
+            margin: auto 0;
+            height: 1em;
+            vertical-align: middle;
+        }
+
+        > label { margin: 0 $base-spacing 0 .35rem; }
+    }
+
+    .text-error {
+        order: 10;
+        margin-top: $base-spacing / 3;
+        width: 100 - $form-label-width;
+        color: $red-roof-teraccota;
+    }
+
+    .text-hint { margin: 1rem 0; }
+    .btn { margin: $base-spacing 0 0; }
+
+
+    @include breakpoint( $mobile-large-and-bigger ) {
+
+        .group {
+            align-items: flex-start;
+
+            > label {
+                width: $form-label-width;
+            }
+
+            > input,
+            > select { max-width: 20rem; }
+
+            > textarea {
+                max-width: 30rem;
+                height: auto;
+            }
+
+            .group { flex: 1 1 auto; }
+        }
+
+        .group-radio,
+        .group-checkbox {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 100% - $form-label-width;
+        }
+
+        .text-error {
+            margin-left: $form-label-width;
+        }
+
+        .text-hint {
+            max-width: calc( #{$form-label-width} + 30rem );
+        }
+
+        .field { flex: 1 1; }
+    }
+}
+
+
+
 
 //TODO: Move to widgets >>
 $toggle-height:          1.6em;
@@ -122,4 +269,5 @@ $toggle-bg-colour:       #1d2624;
 }
 
 /** Wrapper around 2 (or more) elements that must be visually grouped together. */
+/* @deprecated TODO: REFACTOR! */
 .control-group { white-space: nowrap; }

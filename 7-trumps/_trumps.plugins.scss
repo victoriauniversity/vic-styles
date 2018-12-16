@@ -7,19 +7,35 @@
 
 $select2-dropdown-border-colour: $grey-chalice;
 
-
 .select2 {
     margin-right: .3em;
+    width: auto !important;
 
     .fees &,
     .pane-controls &,
     .entry-requirements &
      {
         margin-left: .3em;
-        width: auto !important;
     }
 
     .fees & { margin-left: .7em; }
+
+    // Inside a generic data-form
+    .form & {
+        .select2-selection--single { height: auto; }
+
+        .select2-selection__rendered {
+            padding-top: .5em;
+            padding-bottom: .5em;
+            line-height: normal;
+        }
+    }
+
+    .form .mktoInvalid ~ & {
+        // Invalid selector within a form
+        .select2-selection--single { border: 2px solid $red-roof-teraccota; }
+    }
+
 
 
     /** Selector as a standard link with a caret */
