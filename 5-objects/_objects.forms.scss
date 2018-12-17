@@ -105,7 +105,9 @@ $form-group-gap: $base-spacing / 2;
     .group-checkbox {
         > input[type=radio],
         > input[type=checkbox] {
+            width: auto; // IE counterpart of 'initial'
             width: initial;
+            flex: auto; // Makes the elements keep standard width
             flex-grow: 0; // Stop from growing in width
             margin: auto 0;
             height: 1em;
