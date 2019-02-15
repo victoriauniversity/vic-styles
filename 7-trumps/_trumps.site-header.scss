@@ -38,7 +38,7 @@ $logo-tablet-height: 5.7rem;
         @include breakpoint( $tablet-and-bigger ) {
             float: left;
             padding: .25em 2em 0 .5em;
-            @include size( 27% auto );
+            @include size( 25% auto );
             text-align: center;
         }
 
@@ -72,10 +72,21 @@ $logo-tablet-height: 5.7rem;
 
         @include breakpoint ($tablet-and-bigger) {
             padding: 0;
+
+            ul li { margin: 0 .75em .325rem; }
         }
-        @include breakpoint ($mobile-large-and-smaller) {
-            background-color: $black;
+
+
+        @include breakpoint( $mobile-large-and-smaller ) {
+            ul {
+                margin-bottom: .75rem;
+                background: $black-tundora;
+                font-size: 110%;
+
+                li:not(:last-child) { border-bottom: 2px solid $grey-stack; }
+            }
         }
+
 
         &.ng-hide {
             @include breakpoint ($mobile-large-and-smaller) {
@@ -91,8 +102,9 @@ $logo-tablet-height: 5.7rem;
         }
 
         ul {
+            overflow: hidden;
+
             li {
-                font-size: 95%;
                 width: 100%;
                 position: relative;
                 box-sizing: border-box;
@@ -102,19 +114,17 @@ $logo-tablet-height: 5.7rem;
                     width: auto;
                     float: left;
                 }
+
                 &:nth-child(2) {
                     a {
                         border-top: 0;
                         border-radius: 3px 3px 0 0;
                         @include breakpoint ($tablet-and-bigger) {
                             border-radius: 0;
-                            &:before {
-                                content: "";
-                                margin-left: -.3em;
-                            }
                         }
                     }
                 }
+
                 &:nth-child(6) {
                     a {
                         border-radius: 0 0 3px 3px;
@@ -123,15 +133,14 @@ $logo-tablet-height: 5.7rem;
                         }
                     }
                 }
+
                 a {
-                    font-family: $font-victoria;
-                    font-size: $h4-size;
-                    background-color: $black-victoria;
-                    text-align: left;
                     display: block;
-                    padding: 10px 20px;
-                    border-top: 2px solid rgba(250, 250, 250, .14902);
+                    font-weight: $weight-medium;
+                    text-align: left;
+                    padding: .9em 1.5em;
                     transition: all .3s linear;
+
                     @include breakpoint ($mobile-large-and-smaller) {
                         @include hoverify () {
                             background-color: $grey-stack;
@@ -139,24 +148,16 @@ $logo-tablet-height: 5.7rem;
                     }
                     @include breakpoint ($tablet-and-bigger) {
                         border: 0;
-                        padding: 0 .3em 0 0;
-                        font-family: "Nimbus Roman No 9 L", "FreeSerif", "Georgia", serif;
-                        font-weight: 500;
+                        padding: 0;
 
                         @include hoverify () {
                             color: $grey-dusty;
-                        }
-                        &:before {
-                            padding-right: .3em;
-                            content: "|";
-                            color: #555;
-                            font-size: 18px;
-                            font-weight: normal;
                         }
                     }
                 }
             }
             .search-btn {
+                float: right;
                 display: none;
 
                 @include breakpoint ( $tablet-and-bigger ) {
@@ -233,7 +234,7 @@ $logo-tablet-height: 5.7rem;
         display: none;
 
         @include breakpoint ( $tablet-and-bigger ) {
-            margin-bottom: .2em;
+            margin-bottom: .75em;
             padding-top: .15em;
 
             display: block !important;
@@ -245,18 +246,15 @@ $logo-tablet-height: 5.7rem;
 
                 li {
                     float: left;
-                    padding-right: 1em;
+                    margin: 0 .75em;
 
                     a {
+                        font-weight: $weight-medium;
                         text-transform: uppercase;
                         color: $grey-silver-chalice;
-                        letter-spacing: 2px;
-                        font-size: 65%;
-                        font-weight: bold;
-                        font-family: "Nimbus Roman No 9 L", "FreeSerif", "Georgia", serif;
-                        @include hoverify () {
-                            color: $white;
-                        }
+                        font-size: 75%;
+
+                        @include hoverify () { color: $white; }
                     }
                 }
             }
