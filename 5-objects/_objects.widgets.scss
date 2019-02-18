@@ -508,10 +508,17 @@ $popup-border:   #fff;
         }
     }
 
+    &.sector .block-container .block {
+        padding-top:   $base-margin;
+        margin-top:    0;
+        margin-bottom: $base-margin;
+    }
+
+    &.sector.separated .block-container .block { margin-top: $base-margin;     }
+
     // Implies it *MUST BE* used as a block rather than a strip (~nested element)
     &.block-container {
-
-        &:first-child { margin-top: 1.5rem; }
+        &:first-child { margin-top: $base-margin; }
 
         .block {
             padding-top: 0 !important;
@@ -520,12 +527,6 @@ $popup-border:   #fff;
         }
 
         .content-simple { padding-top: $base-margin;}
-    }
-
-    &.sector .block-container .block {
-        padding-top:   $base-margin;
-        margin-top:    0;
-        margin-bottom: $base-margin;
     }
 }
 
