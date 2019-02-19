@@ -13,6 +13,8 @@ $logo-tablet-height: 5.7rem;
 .print-only { display: none; }
 .header-wrapper { overflow: hidden; } // IE11 inflated header fix
 
+
+
 .site-header {
     font-size: 1.125rem;
 
@@ -26,6 +28,38 @@ $logo-tablet-height: 5.7rem;
 
     @include breakpoint( $tablet ) {
         font-size: 1rem;
+    }
+
+    @include breakpoint( $mobile-large-and-smaller ) {
+        .centraliser, .main-nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .search-bar {
+            margin-bottom: 1.5em;
+            order: 10;
+        }
+
+        .main-nav > ul { order: 90; }
+
+        .secondary-nav {
+            text-align: center;
+            padding: 0 1rem 1.5rem;
+
+            li {
+                font-size: 110%;
+                display: inline-block;
+
+                > a {
+                    display: inline-block;
+                    margin: .2em .5em;
+                    text-decoration: underline;
+                }
+            }
+
+            order: 100;
+        }
     }
 
     position: relative;
@@ -244,8 +278,8 @@ $logo-tablet-height: 5.7rem;
         }
     }
 
+
     .secondary-nav {
-        display: none;
 
         @include breakpoint ( $tablet-and-bigger ) {
             margin-bottom: .75em;
