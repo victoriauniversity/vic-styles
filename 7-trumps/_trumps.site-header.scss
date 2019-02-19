@@ -23,6 +23,38 @@ $logo-tablet-height: 5.7rem;
         padding-bottom: 1em;
     }
 
+    @include breakpoint( $mobile-large-and-smaller ) {
+        .centraliser, .main-nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .search-bar {
+            margin-bottom: 1.5em;
+            order: 10;
+        }
+
+        .main-nav > ul { order: 90; }
+
+        .secondary-nav {
+            text-align: center;
+            padding: 0 1rem 1.5rem;
+            order: 100;
+
+            li {
+                font-size: 110%;
+                display: inline-block;
+
+                > a {
+                    display: inline-block;
+                    margin: .2em .5em;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+
     a { color: $white; }
 
     // Logo container
@@ -231,8 +263,6 @@ $logo-tablet-height: 5.7rem;
     }
 
     .secondary-nav {
-        display: none;
-
         @include breakpoint ( $tablet-and-bigger ) {
             margin-bottom: .75em;
             padding-top: .15em;
