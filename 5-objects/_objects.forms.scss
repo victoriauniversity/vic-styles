@@ -47,9 +47,24 @@ $form-group-gap: $base-spacing / 2;
         padding: $base-spacing;
     }
 
-    label {
-        padding: $base-spacing / 3 0;
+    .note {
+        max-width: 50rem;
+        font-size: 90%;
+        margin: 1.5em 0 0;
     }
+
+    .tooltip-icon {
+        font-weight: $weight-normal;
+        font-size: 110%;
+        line-height: 0;
+        white-space: nowrap;
+
+        &:after {
+            @include iconify( inline, '\e813' ); // '?' icon
+        }
+    }
+
+    label { padding: $base-spacing / 3 0; }
 
     fieldset {
         border: 1px solid $grey-silver;

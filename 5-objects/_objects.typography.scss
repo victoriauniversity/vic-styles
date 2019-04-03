@@ -181,7 +181,7 @@ $multi-column-list-gap: 4.5rem;
 @include breakpoint ( $tablet-and-bigger ) {
     .lists {
         display: flex;
-     
+
         &.two-column {
             > ul {
                 max-width: calc( 50% - #{$multi-column-list-gap/2} );
