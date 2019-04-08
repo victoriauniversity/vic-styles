@@ -6,7 +6,8 @@
 
 //This shloud probably be in base
 input,
-select[multiple=multiple] {
+select[multiple=multiple],
+textarea {
   background-color: $base-bg-colour;
   border: $text-input-border;
   box-sizing: border-box;
@@ -15,9 +16,7 @@ select[multiple=multiple] {
   padding: $base-padding / 3;
   width: 100%;
 
-  &:hover {
-    border-color: $grey-dusty;
-  }
+  &:hover { border-color: $grey-dusty; }
 
   &:focus {
     border-color: $blue-endeavoura;
@@ -28,8 +27,11 @@ select[multiple=multiple] {
     background-color: $grey-gallery;
     cursor: not-allowed;
 
-    &:hover {
-      border: $base-border;
-    }
+    &:hover { border: $base-border; }
   }
+}
+
+input[type=range] {
+    padding-left: 0;
+    padding-right: 0;
 }
