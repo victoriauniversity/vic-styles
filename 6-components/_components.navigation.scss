@@ -234,7 +234,7 @@ $menu-tabbed-underline-size:           4px;
         vertical-align: middle;
         outline: 0;
 
-        .ico:before { vertical-align: top; }
+        .ico:before { vertical-align: top; top: unset; }
 
         .label {
             display: inline;
