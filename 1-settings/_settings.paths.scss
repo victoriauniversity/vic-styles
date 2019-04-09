@@ -40,7 +40,7 @@ $path-cdn-fonts:   $path-cdn + '/fonts' !default;
 
 
 $path-font-victoria:      $path-cdn-fonts + '/NationalWebLF' !default;
-$path-fonticon-victoria:  $path-fonts + '/vicicons' !default;
+$path-fonticon-victoria:  $path-cdn-fonts + '/vicicons' !default;
 
 
 
