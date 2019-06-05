@@ -49,6 +49,11 @@
             a,
             span,
             div { text-indent: 0; }
+
+            //TODO - fix Squiz API so it doesn't nest P tag inside of a list element.
+            p {
+                display: inline;
+            }
         }
     }
 
