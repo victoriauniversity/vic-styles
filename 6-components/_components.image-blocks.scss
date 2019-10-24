@@ -105,3 +105,13 @@ $action-promo-hover: darken( $green-light-victoria, 11% );
         }
     }
 }
+/* Style for image wrape compnenent */
+.logo--wrap {
+    float: right;
+
+    @include breakpoint( $mobile-large-and-smaller ) {
+        img {
+            max-width: 150px;
+        }
+    }
+}
