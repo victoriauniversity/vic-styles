@@ -195,6 +195,13 @@ $nm-bg-color: $grey-gallery;
         margin-left: 1.5em;
         cursor: default;
     }
+
+    .tags-bold {
+        font-weight: 600;
+        .tag {
+            font-weight: 600;
+        }
+    }
 }
 
 /* List of tags */
