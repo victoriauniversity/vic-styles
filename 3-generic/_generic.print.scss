@@ -192,6 +192,23 @@ $print-logo-width:          300px;
 
 @media print {
 
+    /* Fixes for firefox only printing first page */
+
+    body {
+        height: 100% !important;
+        display: block !important;
+        overflow: visible !important;
+    }
+
+
+    .top-col,
+    .sector,
+    .block,
+    .block-container {
+        display: block !important;
+
+    }
+
     /** HELPERS */
 
     %hide {
@@ -219,11 +236,11 @@ $print-logo-width:          300px;
     } // Black prints faster: h5bp.com/s
 
     *, *::before, *::after {
-        -webkit-transition: none !important; 
-        -moz-transition: none !important; 
-        -o-transition: none !important; 
-        -ms-transition: none !important; 
-        transition: none !important; 
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
     }
 
     html {
@@ -258,7 +275,7 @@ $print-logo-width:          300px;
     p,
     h2,
     h3,
-    h4, 
+    h4,
     h5,
     li {
         orphans: 3;
@@ -295,9 +312,9 @@ $print-logo-width:          300px;
     .tooltip-inline { text-decoration: none !important; }
 
     a[href^="jav"]:after, // javascript:;
-    a[href^="#"]:after, 
-    a[href^="mailto:"]:after, 
-    a[href^="tel:"]:after, 
+    a[href^="#"]:after,
+    a[href^="mailto:"]:after,
+    a[href^="tel:"]:after,
     a[href*="/search?q="]:after {
         @extend %hide;
     } // Don't show links for images, or javascript/internal links
@@ -391,7 +408,7 @@ $print-logo-width:          300px;
     .screen-only {
         display: none !important;
     }
-    
+
 
     /** Small UI elements */
 
@@ -730,7 +747,7 @@ $print-logo-width:          300px;
         padding: 0 !important;
     }
     .fees-est {
-        display: none !important; 
+        display: none !important;
     }
     .course-id-block .course-id {
         font-size: 2em !important;
@@ -753,5 +770,5 @@ $print-logo-width:          300px;
         font-size: 1.25em !important;
     }
 
-    
+
 }
