@@ -110,4 +110,4 @@ The library separates the styles into following layers, each represented by simi
 
 ## SUPPORT & CONTRIBUTION
 
-This library is supervised and maintained by the [Web team](http://www.victoria.ac.nz/search?q=WEB+DEVELOPMENT&site=people_search_collection), but any contributions in form of Pull-Requests are welcomed.
+This library is supervised and maintained by the [Web team](http://www.wgtn.ac.nz/search?q=WEB+DEVELOPMENT&site=people_search_collection), but any contributions in form of Pull-Requests are welcomed.
