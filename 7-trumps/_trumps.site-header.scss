@@ -64,7 +64,7 @@ $logo-tablet-height: 5.7rem;
 
     position: relative;
     background-color: $black-victoria;
-    border-bottom: 6px solid $green-victoria-study;
+    border-bottom: 6px solid $green-victoria;
 
     @include breakpoint ($tablet-and-bigger) {
         padding-top: 1em;
